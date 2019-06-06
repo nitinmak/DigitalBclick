@@ -1,0 +1,205 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <!-- <a href="javascript:void(0)" class="menu-left"><i class="material-icons">menu</i></a> -->
+            <a href="#" class="link icon-only open-panel menu-left"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding">  Company Info</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="company" class="page">
+       <div class="page-content">
+          
+                    
+                    <style type="text/css">
+    .cke_chrome{
+        margin-top: 3% !important;
+    }
+
+.dbiframe
+{
+    width: 420px;
+      height:350px;
+}
+
+@media screen and (max-width: 480px)
+{
+.dbiframe
+{
+    width: 200px;
+      height:200px;
+}
+
+}
+ html,body{
+   -webkit-overflow-scrolling : touch !important;
+   overflow: auto !important;
+   height: 100% !important;
+}
+
+input[type="text"] {
+    -webkit-user-select: text;
+    color: white
+}
+
+
+</style>
+                   
+                           <div class="card" style="background-color: #07314a;">
+   <div class="card-header">
+      <div class="col-12">
+        <div class="snackbar">Some text some message..</div>
+                                 
+                                  <h5 class=" text-center text-white">Update Company Info</h5>
+                                 
+                               </div>
+                               
+   </div>
+   <div class="card-body" style="padding: 0" >
+    
+
+                            <div class="col-12" style="padding: 0">
+
+                                               <form method="post" id="contact_form">
+                                    <div class="card-body  text-white">
+                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
+                                       
+                                               
+                                                <!-- <p>You SMS credit is 1</p> -->
+                                             <div class="col-12">
+                                                  <input type="hidden" name="secrete" value="virus">
+
+                                            <input type="hidden" name="user_id" id="user_idq">
+                                            <input type="hidden" name="add_am" value="1" id="add_am">
+                                            </div>
+                                             <div class="col-12">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">Company Name</label>
+                                                        <input type="text" class="form-control text-white " id="c_name" name="c_name" >
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                            <div class="col-12">
+                                               <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static"> Vision </label>
+                                                        <input type="text" class="form-control text-white " id="vision" name="vision" >
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                             <div class="col-12">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static"> Mission </label>
+                                                        <input type="text" class="form-control text-white " id="mission" name="mission">
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+
+                                              <div class="col-12">
+                                              <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">About Company</label>
+                                                        <textarea class="form-control text-white " id="about_comp" name="about_comp"></textarea>
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                             
+
+                                            <div class="col-12">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">Company Address</label>
+                                                        <textarea class="form-control text-white " id="comp_address" name="comp_address" ></textarea>
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                 <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">Address Map Link</label>
+                                                        <input type="url" class="form-control text-white " id="map_link" name="map_link" >
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">About Company Youtube Link</label>
+                                                        <input class="form-control text-white " type="url" id="about_cyoutube" name="about_cyoutube" >
+                                                        <small class="form-control-feedback"></small>
+                                                </div>
+                                            </div>
+                                           </div>
+                                        
+                                        <div class="card-footer" >
+                                        <div class="col-12">
+                                            <!-- <input type="hidden" name="add_am" value="1"> -->
+                                           <!-- <button type="submit" id="save_button" class="button button-rounded button-green-3d button-green">Submit</button> -->
+                                            <button  type="button" name="add_am" id="save_button" style="background: #007aff;border:none;color:white" class="btn  mb-1 btn-light px-4">Submit</button>
+                                           <a href="#"   class="btn view_card mb-1 btn-light  px-4" style="text-align: center;margin: 0px 10px 0px 10px;background: #007aff;border:none;color:white">Preview Card</a>
+                                           <a href="profile.html"  class="btn backpage  mb-1 btn-light  px-4" style="background: #007aff;border:none;color:white">Back</a>
+                                           <!-- <a href="vcard.html" id="v"></a> -->
+                                            
+                                        </div>
+                                          </div>  
+                                </form>
+                                        </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                     
+                    </div>
+                    <br>
+            </div>
+
+
+
+
+            <div class="modal1 fade" id="colorscheme" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom theme-header">
+                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <br>
+                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
+                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+               
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    
+</script>
