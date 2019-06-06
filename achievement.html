@@ -1,0 +1,177 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="link icon-only open-panel"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding">Achievement</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="achievement" class="page">
+       <div class="page-content" >
+        <style type="text/css">
+  html,body{
+   -webkit-overflow-scrolling : touch !important;
+   overflow: auto !important;
+   height: 100% !important;
+}
+
+input[type="text"] {
+    -webkit-user-select: text;
+}
+        </style>
+      
+<div class="card" style="background-color: #07314a;">
+   <div class="card-header">
+      <div class="col-50">
+        <div class="snackbar">Some text some message..</div>
+                                 <div class="pull-left">
+                                  <h5 class=" text-center text-white">Achievement</h5>
+                                 </div>
+                               </div>
+                               <div class="col-50">
+                                 <div class="pull-right">
+                                      <a href="#" data-toggle="modal" data-target="#add_expertise" class="btn btn-primary btnsz1 ">
+                                        <i class="fa fa-plus m-r-5"></i>
+                                        <span class="btn-text">Add Achievement</span>
+                                    </a>
+                                 
+                                   
+                                </div>
+                            </div>
+   </div>
+  <div class="card-body" >
+    
+
+                            <div class="col-12">
+                                            <!-- <div class="col-5 text-right mt-3">
+                                                <a href="#" data-toggle="modal" data-target="#colorscheme"><i class="fa fa-share-alt text-white" ></i></a>
+                                            </div> -->
+                                      
+                                     <form method="post" id="share_form">   
+                              
+                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
+                                        <div class="row"  style="margin-top: 0px;">
+                                              <div class="col-12" style="padding: 5px;">
+                                                <table class="responsive table border-1" style="height: auto;" >
+                                                    <thead style="color: White">
+                                                        <tr>
+          <th>Sr.No.</th>
+                                                     <th style="width: 30%">  Name</th>
+                                                     <th style="width: 30%">  Description</th>
+                                                     <!-- <th>Skill Value</th> -->
+                                                    <th>Edit</th>
+
+                                                    <th>Delete</th>
+      </tr>
+                                                    </thead>
+                                                    <tbody id="my_achievement" style="color: White" >
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          </div>
+                                        </form>
+                                      </div>
+                                           
+         
+               
+
+  <div class="card-footer" >
+    <div class="block" style="width: 100%; padding: 5px;">
+  <p class="row">
+    <button type="button" name="send_sms"  id="button" class="col-xs button button-fill view_card " style="width: 47%;">Preview Card</button>
+    <a href="profile.html"  class="col-xs button button-fill " style="width: 47%;">Back</a>
+   
+  </p> 
+</div>
+    
+  </div>
+</div>
+                       
+
+
+    <form method="post" id="add_achievement_form">
+  <div class="modal1 fade" id="add_expertise" style="top:40px;" role="dialog">
+    <div class="modal-dialog modal-sm">
+    
+      <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">
+        <h6 class="modal-title">Add Achievement</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+         <div class="modal-body">
+        <div class="form-group bmd-form-group">
+            <label class="text-dark bmd-label-static">Achievement Name</label>
+            <input type="text" class="form-control text-dark " id="name" name="name" required>
+            <small class="form-control-feedback"></small>
+        </div>
+        <div class="form-group bmd-form-group">
+            <label class="text-dark bmd-label-static">Achievement Description</label>
+            <input type="text" class="form-control text-dark " id="s_value" name="s_value" required>
+            <small class="form-control-feedback"></small>
+        </div>
+
+        <div class="">
+
+        <button class="btn btn-primary" type="button" id="add_tag" name="add_tag">Submit</button>
+        </div>
+        </div>
+
+        </div>
+
+        </div>
+        </div>
+        </form>
+
+
+  <form method="post" id="update_achievement_form">
+    <div class="modal1 fade" id="update_expertise" style="top:40px;" role="dialog">
+    <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+    <div class="modal-header">
+    <h6 class="modal-title">Edit Achievement</h6>
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+  <div class="modal-body">
+    <div class="form-group bmd-form-group">
+                    <label class="text-dark bmd-label-static">Achievement Name</label>
+                    <input type="text" class="form-control text-dark " id="e_name" name="e_name" required>
+                    <small class="form-control-feedback"></small>
+                </div>
+                <div class="form-group bmd-form-group">
+                    <label class="text-dark bmd-label-static">Achievement Description</label>
+                    <input type="text" class="form-control text-dark " id="e_value" name="e_value" required>
+                    <input type="hidden" name="tag_id" id="tag_id">
+                    <small class="form-control-feedback"></small>
+                </div>
+
+                <div class="">
+              
+                <button class="btn btn-primary" type="button" id="update_tag" name="update_tag">Update</button>
+               
+            </div>
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+    </form>               
+
+
+    </div>
+  </div>
+</div>
