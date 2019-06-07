@@ -126,69 +126,84 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="lead.html" onclick="close_sidebar();" class="sidebar-close ">
+                        <a href="#" onclick="close_sidebar('lead_link');" class="sidebar-close ">
                             <div class="item-title">
                                 <i class="fa fa-users"></i> My Contact
                             </div>
                         </a>
                     </li>
+                    <a href="lead.html" id="lead_link"></a>
                     <li class="nav-item">
-                        <a href="viewcard.html" onclick="close_sidebar();" class="sidebar-close ">
+                        <a href="#" onclick="close_sidebar('viewcard');" class="sidebar-close ">
                             <div class="item-title">
                                 <i class="fa fa-id-card" aria-hidden="true"></i> See DBCard
                             </div>
                         </a>
                     </li>
+                    <a href="viewcard.html" id="viewcard"></a>
+
                     <li class="nav-item">
-                        <a href="profile.html" onclick="close_sidebar();" class="sidebar-close activex">
+                        <a href="#" onclick="close_sidebar('profile');" class="sidebar-close activex">
                             <div class="item-title">
                                 <i class="fa fa-pencil-square-o"></i> Change DBCard Info
                             </div>
                         </a>
                     </li>
+                    <a href="profile.html" id="profile"></a>
+
                       <li class="nav-item">
-                        <a href="vcard.html" onclick="close_sidebar();" class="sidebar-close activex">
+                        <a href="#" onclick="close_sidebar('vcard');" class="sidebar-close activex">
                             <div class="item-title">
                                 <i class="material-icons pull-left icon">share</i> Card Message Template
                             </div>
                         </a>
                     </li>
+                    <a href="vcard.html" id="vcard"></a>
+
                      <li class="nav-item">
-                        <a href="referral.html" onclick="close_sidebar();" class="sidebar-close activex">
+                        <a href="#" onclick="close_sidebar('referral');" class="sidebar-close activex">
                             <div class="item-title">
                                <i class="fa fa-link"></i> My Referral
                             </div>
                         </a>
                     </li>
+                    <a href="referral.html" id="referral"></a>
+
                      <li class="nav-item">
-                        <a href="redeem.html" onclick="close_sidebar();" class="sidebar-close activex">
+                        <a href="#" onclick="close_sidebar('redeem');" class="sidebar-close activex">
                             <div class="item-title">
                                <i class="fa fa-exchange"></i> Referral Reward
                             </div>
                         </a>
                     </li>
+                    <a href="redeem.html" id="redeem"></a>
 
                      <li class="nav-item">
-                        <a href="directory.html" onclick="close_sidebar();" class="sidebar-close activex">
+                        <a href="#" onclick="close_sidebar('directory');" class="sidebar-close activex">
                             <div class="item-title">
                               <i class="material-icons pull-left icon">next_week</i> My Directory
                             </div>
                         </a>
                     </li> 
+                    <a href="directory.html" id="directory"></a>
+
                     <li class="nav-item">
-                        <a href="support.html" onclick="close_sidebar();" class="sidebar-close activex">
+                        <a href="#" onclick="close_sidebar('support');" class="sidebar-close activex">
                             <div class="item-title">
                              <i class="material-icons pull-left icon">contact_phone</i> Customer Care
                             </div>
                         </a>
                     </li>
+                    <a href="support.html" id="support"></a>
+
                     <li class="nav-item">
-                        <a href="settings.html" onclick="close_sidebar();" class="sidebar-close activex">
+                        <a href="#" onclick="close_sidebar('settings');" class="sidebar-close activex">
                             <div class="item-title">
                             <i class="fa fa-cogs pull-left icon"></i> Settings
                             </div>
                         </a>
                     </li>                    
+                    <a href="settings.html" id="settings"></a>
                     
                      <li class="nav-item">
                         <a href="#" onclick="logout(),close_sidebar()" class="sidebar-close">
@@ -206,7 +221,7 @@
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar-->
-
+<a href="home.html" class="home_link"></a>
  <div class="modal1 fade" id="colors" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content ">
@@ -305,211 +320,7 @@
         </div>
     </div>
 
-       <div style="display: none">
-                        <form method="post" id="checkout_form" name="customerData" >
-    <table width="40%" height="100" border='1' align="center"><caption><font size="4" color="blue"><b>Integration Kit</b></font></caption></table>
-      <table width="50%" height="100" border='1' align="center">
-        <tr>
-          <td>Parameter Name:</td><td>Parameter Value:</td>
-        </tr>
-        <tr>
-          <td colspan="2"> Compulsory information</td>
-        </tr>
-        <tr>
-                    <td>Tid</td>
-                    <td><input readonly="readonly" type="text" name="tid" id="tid" value=""/></td>
-                </tr>
-        <tr>
-          <td>Merchant Id :</td><td><input type="text" name="merchant_id" value="205165"/></td>
-        </tr>
-        <tr>
-          <td>Order Id  :</td><td><input type="text" name="order_id" value="123654789"/></td>
-        </tr>
-        <tr>
-          <td>Amount  :</td><td><input type="text" name="amount" value="6000.00"/></td>
-        </tr>
-        <tr>
-          <td>Currency  :</td><td><input type="text" name="currency" value="INR"/></td>
-        </tr>
-        <tr>
-          <td>Redirect URL  :</td><td><input type="text" name="redirect_url" value="http://192.168.0.89:8080/ccavResponseHandler.asp"/></td>
-        </tr>
-        <tr>
-          <td>Cancel URL  :</td><td><input type="text" name="cancel_url" value="http://192.168.0.89:8080/ccavResponseHandler.asp"/></td>
-        </tr>
-        <tr>
-          <td>Language  :</td><td><input type="text" name="language" value="EN"/></td>
-        </tr>
-          <tr>
-            <td colspan="2">Billing information(optional):</td>
-          </tr>
-            <tr>
-              <td>Billing Name  :</td><td><input type="text" name="billing_name" value="Charli"/></td>
-            </tr>
-            <tr>
-              <td>Billing Address :</td><td><input type="text" name="billing_address" value="Room no 1101, near Railway station Ambad"/></td>
-            </tr>
-            <tr>
-              <td>Billing City  :</td><td><input type="text" name="billing_city" value="Indore"/></td>
-            </tr>
-            <tr>
-              <td>Billing State :</td><td><input type="text" name="billing_state" value="MH"/></td>
-            </tr>
-            <tr>
-              <td>Billing Zip :</td><td><input type="text" name="billing_zip" value="425001"/></td>
-            </tr>
-            <tr>
-              <td>Billing Country :</td><td><input type="text" name="billing_country" value="India"/></td>
-            </tr>
-            <tr>
-              <td>Billing Tel :</td><td><input type="text" name="billing_tel" value="9896226054"/></td>
-            </tr>
-            <tr>
-              <td>Billing Email :</td><td><input type="text" name="billing_email" value="test@gmail.com"/></td>
-            </tr>
-            <tr>
-              <td colspan="2">Shipping information(optional)</td>
-            </tr>
-            <tr>
-              <td>Shipping Name :</td><td><input type="text" name="delivery_name" value="Chaplin"/></td>
-            </tr>
-            <tr>
-              <td>Shipping Address  :</td><td><input type="text" name="delivery_address" value="room no.701 near bus stand"/></td>
-            </tr>
-            <tr>
-              <td>shipping City :</td><td><input type="text" name="delivery_city" value="Hyderabad"/></td>
-            </tr>
-            <tr>
-              <td>shipping State  :</td><td><input type="text" name="delivery_state" value="Andhra"/></td>
-            </tr>
-            <tr>
-              <td>shipping Zip  :</td><td><input type="text" name="delivery_zip" value="425001"/></td>
-            </tr>
-            <tr>
-              <td>shipping Country  :</td><td><input type="text" name="delivery_country" value="India"/></td>
-            </tr>
-            <tr>
-              <td>Shipping Tel  :</td><td><input type="text" name="delivery_tel" value="9896226054"/></td>
-            </tr>
-            <tr>
-              <td>Merchant Param1 :</td><td><input type="text" name="merchant_param1" value="additional Info."/></td>
-            </tr>
-            <tr>
-              <td>Merchant Param2 :</td><td><input type="text" name="merchant_param2" value="additional Info."/></td>
-            </tr>
-        <tr>
-          <td>Merchant Param3 :</td><td><input type="text" name="merchant_param3" value="additional Info."/></td>
-        </tr>
-        <tr>
-          <td>Merchant Param4 :</td><td><input type="text" name="merchant_param4" value="additional Info."/></td>
-        </tr>
-        <tr>
-          <td>Merchant Param5 :</td><td><input type="text" name="merchant_param5" value="additional Info."/></td>
-        </tr>
-         
-         <tr>
-            <td colspan="2">Payment information:</td>
-          </tr>
-         <tr> <td> Payment Option: </td> 
-                <td> 
-                    <input class="payOption" type="radio" name="payment_option" value="OPTCRDC">Credit Card
-                    <input class="payOption" type="radio" name="payment_option" value="OPTDBCRD">Debit Card  <br/>
-                    <input class="payOption" type="radio" name="payment_option" value="OPTNBK">Net Banking 
-                    <input class="payOption" type="radio" name="payment_option" value="OPTCASHC">Cash Card <br/>
-                    <input class="payOption" type="radio" name="payment_option" value="OPTMOBP">Mobile Payments
-                    <input class="payOption" type="radio" name="payment_option" value="OPTEMI">EMI
-                    <input class="payOption" type="radio" name="payment_option" value="OPTWLT">Wallet
-                 </td>
-             </tr>
-             
-             <!-- EMI section start -->
-             
-             <tr >
-             <td  colspan="2">
-              <div id="emi_div" style="display: none">
-               <table border="1" width="100%">
-               <tr> <td colspan="2">EMI Section </td></tr>
-               <tr> <td> Emi plan id: </td>
-                  <td><input readonly="readonly" type="text" id="emi_plan_id"  name="emi_plan_id" value=""/> </td>
-               </tr>
-               <tr> <td> Emi tenure id: </td>
-                  <td><input readonly="readonly" type="text" id="emi_tenure_id" name="emi_tenure_id" value=""/>  </td>
-               </tr>
-               <tr><td>Pay Through</td>
-                 <td>
-                   <select name="emi_banks"  id="emi_banks">
-                   </select>
-                 </td>
-              </tr>
-              <tr><td colspan="2">
-                 <div id="emi_duration" class="span12">
-                      <span class="span12 content-text emiDetails">EMI Duration</span>
-                        <table id="emi_tbl" cellpadding="0" cellspacing="0" border="1" >
-              </table> 
-                    </div>
-                </td>
-              </tr>
-              <tr>
-                 <td id="processing_fee" colspan="2">
-                </td>
-              </tr>
-              </table>
-            </div>
-            </td>
-            </tr>
-            <!-- EMI section end -->
-             
-             
-             <tr> <td> Card Type: </td>
-                 <td><input type="text" id="card_type" name="card_type" value="" readonly="readonly"/></td>
-             </tr>
-            
-            <tr> <td> Card Name: </td>
-                 <td> <select name="card_name" id="card_name"> <option value="">Select Card Name</option> </select> </td>
-            </tr>
-            
-            <tr> <td> Data Accepted At </td>
-                 <td><input type="text" id="data_accept" name="data_accept" readonly="readonly"/></td>
-            </tr>
-             
-             <tr> <td> Card Number: </td>
-                <td> <input type="text" id="card_number" name="card_number" value=""/>e.g. 4111111111111111 </td>
-             </tr>
-              <tr> <td> Expiry Month: </td>
-                   <td> <input type="text" name="expiry_month" value=""/>e.g. 07 </td>
-             </tr>
-              <tr> <td> Expiry Year: </td>
-                   <td> <input type="text" name="expiry_year" value=""/>e.g. 2027</td>
-             </tr>
-              <tr> <td> CVV Number:</td>
-                   <td> <input type="text" name="cvv_number" value=""/>e.g. 328</td>
-             </tr>
-             <tr> <td> Issuing Bank:</td>
-                <td><input type="text" name="issuing_bank" value=""/>e.g. State Bank Of India</td>
-             </tr>
-      <tr> 
-        <td> Mobile Number:</td>
-                  <td><input type="text" name="mobile_number" value=""/>e.g. 9770707070</td>
-             </tr>
-      <tr> 
-        <td> MMID:</td>
-                  <td><input type="text" name="mm_id" value=""/>e.g. 1234567</td>
-             </tr>
-      <tr> 
-        <td> OTP:</td>
-                  <td><input type="text" name="otp" value=""/>e.g. 123456</td>
-             </tr>
-             <tr> 
-            <td> Promotions:</td>
-                <td> <select name="promo_code" id="promo_code"> <option value="">All Promotions &amp; Offers</option> </select> </td>
-            </tr>
-         
-            <tr>
-              <td></td><td><INPUT TYPE="button" id="pay_button" value="CheckOut"></td>
-            </tr>
-          </table>
-        </form>
-      </div>
+
                         <script type="text/javascript">
                             function my_toast(){
     $('.snackbar').css('visibility','visible');
@@ -697,7 +508,106 @@ if (id!=5) {
               });
  
             }
+            function check_payment(l){
+ var payment =  window.localStorage.getItem("payment");
+ // alert(payment);
+if(payment == 0){
 
+                 var redirect = confirm('please make a payment RS 500  to use Bcard features.');
+   if (redirect == true) {
+  make_payment();
+    // window.localStorage.setItem("payment",0);
+// location.reload();
+  // $$('#payment_btn').trigger('click');
+   }else{
+    // location.reload();
+    // $$('#home').trigger('click');
+
+   }
+}else{
+    // alert(l)
+    $$('#'+l).trigger('click');
+    // $$('#'+l).trigger("click");
+
+    // lead_linkalert(l)
+   // $('#'+l).click();
+    // windowslocation = l;
+    
+}
+            }
+function make_payment(){
+    var user_id =  window.localStorage.getItem("user_id");
+                  // alert(user_id);
+            var mobile =   window.localStorage.getItem("mobile");
+               var email = window.localStorage.getItem("email");
+               var name = window.localStorage.getItem("name");
+
+
+    var options = {
+  description: 'You are one click away',
+  // image: 'img/logo.png',
+  currency: 'INR',
+  key: 'rzp_live_768xMhNYUzlQUU',
+  amount: '100',
+  name: 'Digital Business Card',
+  prefill: {
+    email: email,
+    contact: mobile,
+    name: name
+  },
+
+   external: {
+    wallets: 'paytm'
+  },
+}
+
+var successCallback = function(payment_id) {
+  // alert('payment_id: ' + payment_id)
+  // alert('payment_done');
+
+  var user_id =  window.localStorage.getItem("user_id");
+                  // alert(user_id);      
+                      jQuery.ajax({
+                                type: 'POST',
+                                data: {'secrete': 'virus','user_id':user_id},
+                                url: 'https://digitalbcards.in/api/payment_done/',
+                                success: function (data) {
+                                                    if(data.status == 0){
+                // $('#setting_form')[0].reset();
+                // myApp.alert(data.message);
+                $('.snackbar').html(data.message);
+                my_toast();
+    // $('.loader').css('display','none');
+
+              }else{
+
+              // $('#setting_form')[0].reset();
+               
+                  $('.snackbar').html(data.message);
+
+                my_toast();
+                // alert('donr');
+                $$('#home').trigger('click');
+          // $('.loader').css('display','none');
+              }   
+                                },
+                                error: function (e) {
+
+                                }
+                                });
+}
+
+var cancelCallback = function(error) {
+  // alert(error.description + ' (Error '+error.code+')')
+               window.localStorage.setItem("payment",0);
+  // location.reload();
+
+  $$('#home').trigger('click')
+}
+
+RazorpayCheckout.open(options, successCallback, cancelCallback)
+
+}
 
       function check_email_exist(){
      
@@ -793,7 +703,11 @@ $('#view_card_in_popup').modal('show');
         });  
                               
                             }
-                            function close_sidebar(){
+                            function close_sidebar(link){
+                                // alert(link);
+check_payment(link);
+                                //make_payment();
+
                               $('body').removeClass('with-panel-left-reveal');
                               // $('body').css('width','100%');
                               $('.sidebar-left').removeClass('active');
@@ -864,6 +778,7 @@ $('#view_card_in_popup').modal('show');
                            <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="fa fa-key"></i></span>  
                            <input type="hidden" name="secrete" value="virus">  
                            <a href="home.html" id="home"> </a>
+                           <a href="pay.html" id="payment_btn"> </a>
                 <input class="form-control text-dark" type="password" id="password" name="password" placeholder="Password" required="">
                             </div>
                           </div>
@@ -947,7 +862,7 @@ $('#view_card_in_popup').modal('show');
 
     <!-- Swiper carousel jquery file -->
     <script src="vendor/swiper/js/swiper.min.js"></script>
-<script src='node_modules/vcards-js/index.js'></script>
+<script src='js/index.js'></script>
     <!-- Application main common jquery file -->
     <script src="js/main.js"></script>
     <script src="js/select2.min.js"></script>

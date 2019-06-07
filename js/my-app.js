@@ -15,7 +15,12 @@ $$(document).on('deviceready', function() {
     // my_toast();
    
 
-
+//  if(payment == 0){
+// // alert($('#payment_btn').attr('href'));
+//      // $('.payment_btn').trigger('click');
+//       $$('#payment_btn').trigger("click");
+//     $( "#payment_btn" ).trigger( "click" );
+//   }
    $(document).on('click', '.t1', function() {
     
     $('.t1').addClass('active');
@@ -45,12 +50,30 @@ $("input").focusin(function(){
  });
 
         // myApp.alert('Here comes About page');
-                // window.localStorage.setItem("login",0);
+                // window.localStorage.setItem("payment",0);
         var islogin = window.localStorage.getItem("login");
-// alert(islogin); 
+        var email = window.localStorage.getItem("email");
+// alert(email); 
+update_profile(email);
+       
+
+
+
+        var payment = window.localStorage.getItem("payment");
+  // alert(payment);
 
 if(islogin == 1){
+  // alert('fdfd');
+  // alert(payment);
+   if(payment == 0){
+// alert($('#payment_btn').attr('href'));
+     // $('.payment_btn').trigger('click');
+      $$('#payment_btn').trigger("click");
+    $( "#payment_btn" ).trigger( "click" );
+  }else{
     $$('#home').trigger("click");
+
+  }
  // window.location.href = "home.html"
   }
     $(document).on('click', '#login_user', function(){  
@@ -98,6 +121,11 @@ if(islogin == 1){
           form =$('#login_form').serialize();
           var  action = $('#action').val();
           var  email = $('#email').val();
+          // alert(email);
+                window.localStorage.setItem("email",email);
+                var email =  window.localStorage.getItem("email");
+// alert(email);
+
          $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
                 
@@ -120,11 +148,19 @@ if(islogin == 1){
                 window.localStorage.setItem("login",1);
                 window.localStorage.setItem("email",email);
 
+ update_profile(email);
+              var payment =   window.localStorage.getItem("payment");
+              // alert(payment);
                // alert(data.message);
                $('.snackbar').html(data.message);
   // setTimeout(function(){ $('.snackbar').show(); }, 3000);
                 my_toast();
-    $$('#home').trigger("click");
+                if(payment != ''){
+                  location.reload();
+                }else{
+
+    $$('#payment_btn').trigger("click");
+                }
     $('.loader').css('display','none');
 
               // $('#home').click();
@@ -2434,20 +2470,22 @@ save_redeem(form);
   }
 })
 $$(document).on('pageInit', '.page[data-page="vcard"]', function (e) {
+   // check_payment();       
 // myFunction();
  var user_id =  window.localStorage.getItem("user_id");
  // alert(user_id);
   $('#user_idd').val(user_id);
-  var redirect = confirm('please make a payment RS 500  to use Bcard features.');
-   if (redirect == true) {
-    // alert('fdfd');
-    // $$('#home').trigger("click");
-    // location.reload();
-       // document.forms['customerData'].submit();
-   }else{
-    location.reload();
-    // $$('#home').trigger("click");
-   }
+  // var redirect = confirm('please make a payment RS 500  to use Bcard features.');
+  //  if (redirect == true) {
+  //   check_payment();
+  //   // alert('fdfd');
+  //   // $$('#home').trigger("click");
+  //   // location.reload();
+  //      // document.forms['customerData'].submit();
+  //  }else{
+  //   location.reload();
+  //   // $$('#home').trigger("click");
+  //  }
                       var language =  window.localStorage.getItem("language");
                       // alert(language)
 
@@ -2779,6 +2817,7 @@ $('#my_leadssss').html(data);
 
 })
 $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
+   // check_payment();       
  var referral =  window.localStorage.getItem("referral");
  // var user_id =  window.localStorage.getItem("user_id");
  // alert(referral)
@@ -2834,13 +2873,17 @@ $('#card').html(data);
  
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
+   
+   // check_payment();   
+   // alert('gfgf');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
- // var user_id =  window.localStorage.setItem("login",0);
+
+
  $('.navbar').show();
     $('.back').hide();
      var email =  window.localStorage.getItem("email");
@@ -3116,7 +3159,7 @@ $("#segment").trigger('create');
 
 })
 $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
-                    
+            // check_payment();          
      
  var search = '';
                       // alert(user_id);
