@@ -19,7 +19,7 @@
         <!-- <preference name="android-minSdkVersion" value="14" /> -->
         <allow-intent href="market:*" />
     </platform>
-     <preference name="phonegap-version" value="cli-8.2.2" />
+     <!-- <preference name="phonegap-version" value="cli-8.2.2" /> -->
         <preference name="keepRunning" value="true" />
         <preference name="android-minSdkVersion" value="19" />
         <preference name="android-targetSdkVersion" value="28" />
