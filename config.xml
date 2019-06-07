@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="card.digitalcard.com" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+        <icon src="icon/icon.png" platform="ios" width="57" height="57" density="mdpi" />
+            <icon src="icon/icon.png" />
+
+
     <name>digitalcard</name>
     <description>
         A basic Framework7 template for PhoneGap.
@@ -16,9 +20,13 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
+  
+  <icon background="icon/icon.png" foreground="icon/icon.png" />
+  
         <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />
     </platform>
+
     <!-- <preference name="android-minSdkVersion" value="16" />  -->
         <!-- <preference name="android-targetSdkVersion" value="26" /> -->
          <preference name="android-targetSdkVersion" value="21" />
