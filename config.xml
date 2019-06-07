@@ -21,7 +21,7 @@
     </platform>
      <!-- <preference name="phonegap-version" value="cli-8.2.2" /> -->
         <!-- <preference name="keepRunning" value="true" /> -->
-        <preference name="android-minSdkVersion" value="19" />
+        <preference name="android-minSdkVersion" value="17" />
         <preference name="android-targetSdkVersion" value="28" />
         <!-- <preference name="android-build-tool" value="gradle" /> -->
     <!-- <preference name="android-minSdkVersion" value="16" />  -->
