@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="card.digitalcard.com" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="card.digitalcard.com" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>digitalcard</name>
     <description>
         A basic Framework7 template for PhoneGap.
@@ -20,7 +20,7 @@
         <allow-intent href="market:*" />
     </platform>
     <!-- <preference name="android-minSdkVersion" value="16" />  -->
-        <!-- <preference name="android-targetSdkVersion" value="28" /> -->
+        <preference name="android-targetSdkVersion" value="26" />
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
@@ -33,7 +33,7 @@
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-contacts" spec="1.0.0" />
-    
+
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
     <preference name="fullscreen" value="false" />
     
