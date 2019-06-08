@@ -14,6 +14,7 @@
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -119,91 +120,91 @@
              <nav class="navbar" style="background: none;">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="home.html" onclick="close_sidebar();" class="sidebar-close activex" >
+                        <a href="home.html" onclick="close_sidebar(this);" class="sidebar-close activex" >
                             <div class="item-title">
                                 <i class="material-icons">dashboard</i> Dashboard
                             </div>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" onclick="close_sidebar('lead_link');" class="sidebar-close ">
+                        <a href="lead.html" onclick="close_sidebar(this);" class="sidebar-close ">
                             <div class="item-title">
                                 <i class="fa fa-users"></i> My Contact
                             </div>
                         </a>
                     </li>
-                    <a href="lead.html" id="lead_link"></a>
+                    <!-- <a href="lead.html" id="lead_link"></a> -->
                     <li class="nav-item">
-                        <a href="#" onclick="close_sidebar('viewcard');" class="sidebar-close ">
+                        <a href="viewcard.html" onclick="close_sidebar(this);" class="sidebar-close ">
                             <div class="item-title">
                                 <i class="fa fa-id-card" aria-hidden="true"></i> See DBCard
                             </div>
                         </a>
                     </li>
-                    <a href="viewcard.html" id="viewcard"></a>
+                    <!-- <a href="viewcard.html" id="viewcard"></a> -->
 
                     <li class="nav-item">
-                        <a href="#" onclick="close_sidebar('profile');" class="sidebar-close activex">
+                        <a href="profile.html" onclick="close_sidebar(this);" class="sidebar-close activex">
                             <div class="item-title">
                                 <i class="fa fa-pencil-square-o"></i> Change DBCard Info
                             </div>
                         </a>
                     </li>
-                    <a href="profile.html" id="profile"></a>
+                    <!-- <a href="profile.html" id="profile"></a> -->
 
                       <li class="nav-item">
-                        <a href="#" onclick="close_sidebar('vcard');" class="sidebar-close activex">
+                        <a href="vcard.html" onclick="close_sidebar(this);" class="sidebar-close activex">
                             <div class="item-title">
                                 <i class="material-icons pull-left icon">share</i> Card Message Template
                             </div>
                         </a>
                     </li>
-                    <a href="vcard.html" id="vcard"></a>
+                    <!-- <a href="vcard.html" id="vcard"></a> -->
 
                      <li class="nav-item">
-                        <a href="#" onclick="close_sidebar('referral');" class="sidebar-close activex">
+                        <a href="referral.html" onclick="close_sidebar(this);" class="sidebar-close activex">
                             <div class="item-title">
                                <i class="fa fa-link"></i> My Referral
                             </div>
                         </a>
                     </li>
-                    <a href="referral.html" id="referral"></a>
+                    <!-- <a href="referral.html" id="referral"></a> -->
 
                      <li class="nav-item">
-                        <a href="#" onclick="close_sidebar('redeem');" class="sidebar-close activex">
+                        <a href="redeem.html" onclick="close_sidebar(this);" class="sidebar-close activex">
                             <div class="item-title">
                                <i class="fa fa-exchange"></i> Referral Reward
                             </div>
                         </a>
                     </li>
-                    <a href="redeem.html" id="redeem"></a>
+                    <!-- <a href="redeem.html" id="redeem"></a> -->
 
                      <li class="nav-item">
-                        <a href="#" onclick="close_sidebar('directory');" class="sidebar-close activex">
+                        <a href="directory.html" onclick="close_sidebar(this);" class="sidebar-close activex">
                             <div class="item-title">
                               <i class="material-icons pull-left icon">next_week</i> My Directory
                             </div>
                         </a>
                     </li> 
-                    <a href="directory.html" id="directory"></a>
+                    <!-- <a href="directory.html" id="directory"></a> -->
 
                     <li class="nav-item">
-                        <a href="#" onclick="close_sidebar('support');" class="sidebar-close activex">
+                        <a href="support.html" onclick="close_sidebar(this);" class="sidebar-close activex">
                             <div class="item-title">
                              <i class="material-icons pull-left icon">contact_phone</i> Customer Care
                             </div>
                         </a>
                     </li>
-                    <a href="support.html" id="support"></a>
+                    <!-- <a href="support.html/" id="support"></a> -->
 
                     <li class="nav-item">
-                        <a href="#" onclick="close_sidebar('settings');" class="sidebar-close activex">
+                        <a href="settings.html" onclick="close_sidebar(this);" class="sidebar-close activex">
                             <div class="item-title">
                             <i class="fa fa-cogs pull-left icon"></i> Settings
                             </div>
                         </a>
                     </li>                    
-                    <a href="settings.html" id="settings"></a>
+                    <!-- <a href="settings.html" id="settings"></a> -->
                     
                      <li class="nav-item">
                         <a href="#" onclick="logout(),close_sidebar()" class="sidebar-close">
@@ -221,6 +222,7 @@
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar-->
+            <a href="pay.html" id="payment_btn"> </a>
 <a href="home.html" class="home_link"></a>
  <div class="modal1 fade" id="colors" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -508,40 +510,15 @@ if (id!=5) {
               });
  
             }
-            function check_payment(l){
- var payment =  window.localStorage.getItem("payment");
- // alert(payment);
-if(payment == 0){
+            function check_payment(t){
 
-                 var redirect = confirm('please make a payment RS 500  to use Bcard features.');
-   if (redirect == true) {
-  make_payment();
-    // window.localStorage.setItem("payment",0);
-// location.reload();
-  // $$('#payment_btn').trigger('click');
-   }else{
-    // location.reload();
-    // $$('#home').trigger('click');
-
-   }
-}else{
-    // alert(l)
-    $$('#'+l).trigger('click');
-    // $$('#'+l).trigger("click");
-
-    // lead_linkalert(l)
-   // $('#'+l).click();
-    // windowslocation = l;
-    
-}
             }
 function make_payment(){
-    var user_id =  window.localStorage.getItem("user_id");
+    // var user_id =  window.localStorage.getItem("user_id");
                   // alert(user_id);
-            var mobile =   window.localStorage.getItem("mobile");
-               var email = window.localStorage.getItem("email");
-               var name = window.localStorage.getItem("name");
-
+            // var mobile =   window.localStorage.getItem("mobile");
+            //    var email = window.localStorage.getItem("email");
+            //    var name = window.localStorage.getItem("name");
 
     var options = {
   description: 'You are one click away',
@@ -550,20 +527,21 @@ function make_payment(){
   key: 'rzp_live_768xMhNYUzlQUU',
   amount: '100',
   name: 'Digital Business Card',
-  prefill: {
-    email: email,
-    contact: mobile,
-    name: name
-  },
+  // prefill: {
+  //   email: email,
+  //   contact: mobile,
+  //   name: name
+  // },
 
    external: {
     wallets: 'paytm'
   },
 }
 
+// alert(options);
 var successCallback = function(payment_id) {
-  // alert('payment_id: ' + payment_id)
-  // alert('payment_done');
+  alert('payment_id: ' + payment_id)
+  alert('payment_done');
 
   var user_id =  window.localStorage.getItem("user_id");
                   // alert(user_id);      
@@ -598,7 +576,8 @@ var successCallback = function(payment_id) {
 }
 
 var cancelCallback = function(error) {
-  // alert(error.description + ' (Error '+error.code+')')
+    alert('fdfd');
+  alert(error.description + ' (Error '+error.code+')')
                window.localStorage.setItem("payment",0);
   // location.reload();
 
@@ -705,13 +684,19 @@ $('#view_card_in_popup').modal('show');
                             }
                             function close_sidebar(link){
                                 // alert(link);
-check_payment(link);
                                 //make_payment();
 
                               $('body').removeClass('with-panel-left-reveal');
                               // $('body').css('width','100%');
                               $('.sidebar-left').removeClass('active');
                               $('.sidebar-left').css('display','none');
+                               var payment =  window.localStorage.getItem("payment");
+
+if(payment == 0){
+$(link).attr('href','pay.html');
+ $(link).trigger('click');
+}
+// check_payment(link);
                             }
          function logout(){
       localStorage.clear()
@@ -778,7 +763,7 @@ check_payment(link);
                            <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="fa fa-key"></i></span>  
                            <input type="hidden" name="secrete" value="virus">  
                            <a href="home.html" id="home"> </a>
-                           <a href="pay.html" id="payment_btn"> </a>
+                           
                 <input class="form-control text-dark" type="password" id="password" name="password" placeholder="Password" required="">
                             </div>
                           </div>
@@ -875,6 +860,7 @@ check_payment(link);
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.1/croppie.js"></script>
 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.1/croppie.css" />
      <script type="text/javascript" src="js/jquery.Jcrop.js"></script>
 

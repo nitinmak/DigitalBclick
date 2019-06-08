@@ -288,6 +288,36 @@ skils_action(form);
  } 
 
 })
+$$(document).on('pageInit', '.page[data-page="pay"]', function (e) {
+ 
+// var rzp1 = new Razorpay(options);
+                  $("#pay_button").click(function(e) {
+// alert('here');
+var options = {
+    "key": "rzp_live_SrhWTuzFnqnF1F", // Enter the Key ID generated from the Dashboard
+    "amount": "150000",
+    "name": "Digital Business Card",
+    "description": "You Just One Click Away",
+    // "image": "img/your_logo.png",
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+    },
+    /**
+      * You can track the modal lifecycle by * adding the below code in your options
+      */
+    "modal": {
+        "ondismiss": function(){
+          alert('Dismiss');
+            // console.log(‘Checkout form closed’);
+        }
+    }
+};
+var rzp1 = new Razorpay(options);
+ rzp1.open();
+    e.preventDefault();
+
+                  })
+})
 $$(document).on('pageInit', '.page[data-page="testimonial"]', function (e) {
 
  var user_id =  window.localStorage.getItem("user_id");
@@ -2817,6 +2847,13 @@ $('#my_leadssss').html(data);
 
 })
 $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
+
+   $(document).on('click', '#pay_button', function() {
+make_payment();
+   })
+
+})
+$$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
    // check_payment();       
  var referral =  window.localStorage.getItem("referral");
  // var user_id =  window.localStorage.getItem("user_id");
@@ -3159,8 +3196,15 @@ $("#segment").trigger('create');
 
 })
 $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
-            // check_payment();          
-     
+            check_payment();          
+     // window.location = 'pay.html';
+      $$('#payment_btn').trigger("click");
+    $( "#payment_btn" ).trigger( "click" );
+     // $$('#payment_btn').trigger('click');
+     // $(document).ready(function() { $$('#payment_btn').trigger('click'); });
+
+
+ // $('#about')[0].click();
  var search = '';
                       // alert(user_id);
                       get_contact(search);
