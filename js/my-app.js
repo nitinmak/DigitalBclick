@@ -289,16 +289,54 @@ skils_action(form);
 
 })
 $$(document).on('pageInit', '.page[data-page="pay"]', function (e) {
- 
+ // $( document ).ajaxStop(function(){
+ //  alert("stop0");
+ //  });
+
+
+
+// document.getElementById('rzp-button1').onclick = function(e){
+//     var options = {
+//     "key": "rzp_live_SrhWTuzFnqnF1F", // Enter the Key ID generated from the Dashboard
+//     "amount": "29935", // INR 299.35
+//     "name": "Acme Corp",
+//     "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
+//     "image": "https://example.com/your_logo",
+//     "order_id": "order_9A33XWu170gUtm",//Order ID is generated as Orders API has been implemented. Refer the Checkout form table given below
+//     "handler": function (response){
+//         alert(response.razorpay_payment_id);
+//     },
+//     "prefill": {
+//         "name": "Gaurav Kumar",
+//         "email": "gaurav.kumar@example.com"
+//     },
+//     "notes": {
+//         "address": "note value"
+//     },
+//     "theme": {
+//         "color": "#F37254"
+//     }
+// };
 // var rzp1 = new Razorpay(options);
-                  $("#pay_button").click(function(e) {
+//     rzp1.open();
+//     e.preventDefault();
+// }
+
+
+
+
+
+                  $("#rzp-button1").click(function(e) {
 // alert('here');
+
+
 var options = {
-    "key": "rzp_live_SrhWTuzFnqnF1F", // Enter the Key ID generated from the Dashboard
-    "amount": "150000",
-    "name": "Digital Business Card",
-    "description": "You Just One Click Away",
-    // "image": "img/your_logo.png",
+     "key": "rzp_live_SrhWTuzFnqnF1F", // Enter the Key ID generated from the Dashboard
+    "amount": "29935", // INR 299.35
+    "name": "Acme Corp",
+    "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
+    "image": "https://example.com/your_logo",
+    // "order_id": "order_9A33XWu170gUtm",//Order ID is generated as Orders API has been implemented. Refer the Checkout form table given below
     "handler": function (response){
         alert(response.razorpay_payment_id);
     },
@@ -312,6 +350,7 @@ var options = {
         }
     }
 };
+
 var rzp1 = new Razorpay(options);
  rzp1.open();
     e.preventDefault();

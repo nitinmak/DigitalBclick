@@ -19,8 +19,21 @@
     <div data-page="about" class="page">
         <div class="page-content">
             <div class="content-block">
-                <p>Here is About page!</p>
-                <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
+                <form action="https://www.example.com/payment/success/" method="POST">
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="YOUR_KEY_ID" // Enter the Key ID generated from the Dashboard
+    data-amount="29935" // INR 235
+    data-buttontext="Pay with Razorpay"
+    data-name="Acme Corp"
+    data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
+    data-image="https://example.com/your_logo.jpg"
+    data-prefill.name="Gaurav Kumar"
+    data-prefill.email="gaurav.kumar@example.com"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" custom="Hidden Element" name="hidden">
+</form>
             </div>
         </div>
     </div>

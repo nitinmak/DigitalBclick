@@ -85,7 +85,6 @@ function onSuccess(contacts){
         newLI.innerHTML = contacts[i].phoneNumbers[0].value;
         ul.appendChild(newLI);*/
 		 
-			
 			var option = document.createElement("option");
 			option.value =  contacts[i].phoneNumbers[0].value;
 			option.text = contacts[i].displayName;
@@ -97,12 +96,12 @@ function onSuccess(contacts){
 function onError(){
     alert('Some Error');
 }
-$(document).on('click', '#choose_contact', function() {
+// $(document).on('click', '#choose_contact', function() {
   
-    alert('ffd');
-      $('#contacts-list').click();
-// displaycontacts();
-   })
+//     alert('ffd');
+//       $('#contacts-list').click();
+// // displaycontacts();
+//    })
 function displaycontacts()
 {
 navigator.contacts.pickContact(function(contact){
