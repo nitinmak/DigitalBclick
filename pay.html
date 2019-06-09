@@ -67,9 +67,9 @@
                                         <div class="block" style="width: 100%; padding: 5px;">
   <p class="row">
  
-    <button type="button" name="send_sms"   onclick="var user_id =  window.localStorage.getItem('user_id');$('#pay_user_id').val(user_id);$('#frm1').submit();" class="col-xs button button-fill color-orange" style="width: 47%;">Pay Now</button>
+    <button type="button" name="send_sms"   onclick="var user_id =  window.localStorage.getItem('user_id');var pageURL = $(location).attr('href');$('#pay_user_id').val(user_id);$('#app_url').val(pageURL);$('#frm1').submit();" class="col-xs button button-fill color-orange" style="width: 47%;">Pay Now</button>
     <a  href="home.html" class="col-xs button button-fill color-orange" style="width: 47%;">Skip</a>
-    <!-- <a href="https://facebook.com/me" data-applink="fb://profile">My Facebook Profile</a> -->
+    <!-- <a href="#" onclick="window" >My Facebook Profile</a> -->
     <script type="text/javascript">
         
     </script>
