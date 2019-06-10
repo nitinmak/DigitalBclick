@@ -391,7 +391,7 @@ p {
     position: relative;
 }
 .navbar .navbar-nav li a.active {
-    background:#d49100;
+    background: rgba(0, 0, 0, 0.2);
 }
 .navbar .navbar-nav li .dropdown-menu a {
     padding-left: 48px;
