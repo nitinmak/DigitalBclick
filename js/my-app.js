@@ -22,12 +22,13 @@ $$(document).on('deviceready', function() {
             {
                 permission.requestPermission(permission.WRITE_CONTACTS,function(results){
                     if(results[permission]){
-                          alert("permission granted");
+                          // alert("permission granted");
                    }
                 },alert("permission failed"))
-                alert("permission granted failed");
+                // alert("permission granted failed");
             }
-        }, alert("permission failed"))
+        }, 
+        )
 //  if(payment == 0){
 // // alert($('#payment_btn').attr('href'));
 //      // $('.payment_btn').trigger('click');
