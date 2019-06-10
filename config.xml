@@ -22,8 +22,8 @@
     <platform name="android">
   
         <allow-intent href="market:*" />
-        <uses-permission android-maxSdkVersion="28" android-name="android.permission.READ_CONTACTS" />
-        <uses-permission android-maxSdkVersion="28" android-name="android.permission.WRITE_CONTACTS" />
+        <uses-permission android-targetSdkVersion="28" android-name="android.permission.READ_CONTACTS" />
+        <uses-permission android-targetSdkVersion="28" android-name="android.permission.WRITE_CONTACTS" />
         <icon background="icon/icon.png" foreground="icon/icon.png" />
   
     </platform>
