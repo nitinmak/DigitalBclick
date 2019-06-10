@@ -24,7 +24,7 @@ $$(document).on('deviceready', function() {
                     if(results[permission]){
                           // alert("permission granted");
                    }
-                },alert("permission failed"))
+                },)
                 // alert("permission granted failed");
             }
         }, 
