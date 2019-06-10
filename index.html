@@ -96,6 +96,9 @@
 .razorpay-payment-button{
     display: none;
 }
+.navbar:after{
+    display: none !important;
+}
 </style>
 </head>
 
@@ -124,7 +127,7 @@
              <nav class="navbar" style="background: none;">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="home.html" onclick="close_sidebar(this);" class="sidebar-close activex" >
+                        <a href="home.html" id="home" onclick="close_sidebar('home');" class="sidebar-close active" >
                             <div class="item-title">
                                 <i class="material-icons">dashboard</i> Dashboard
                             </div>
@@ -219,20 +222,24 @@
                     </li>
                 </ul>
             </nav>
-            <form action="https://www.example.com/payment/success/" id="frm1" method="POST">
+            <form action="https://digitalbcards.in/api/payment_done/" id="frm1" method="POST">
 <script
     src="https://checkout.razorpay.com/v1/checkout.js"
     data-key="rzp_live_SrhWTuzFnqnF1F" // Enter the Key ID generated from the Dashboard
-    data-amount="150000" // INR 235
+    data-amount="100" // INR 235
     data-buttontext="Pay with Razorpay"
     data-name="Digital Buisness Card"
-    data-description="You Just one click Away"
+    data-description="You Just One Click Away"
+        
    
- 
 ></script>
-  <!-- // data-prefill.name="Gaurav Kumar"
-   // data-prefill.email="gaurav.kumar@example.com"
-    //data-theme.color="#F37254" -->
+
+    <!-- data-prefill.email="gaurav.kumar@example.com" -->
+ <!-- data-prefill.name="Gaurav Kumar"
+    data-theme.color="#F37254" -->
+<input type="hidden" id="app_url"  name="app_url">
+<input type="hidden" id="pay_user_id"  name="user_id">
+
 <input type="hidden" custom="Hidden Element" name="hidden">
 </form>
     </div>
@@ -637,8 +644,11 @@ $('#'+link).attr('href','pay.html');
 
                               $('body').removeClass('with-panel-left-reveal');
                               // $('body').css('width','100%');
+                              $('a.active').removeClass('active');
                               $('.sidebar-left').removeClass('active');
                               $('.sidebar-left').css('display','none');
+                              $('#'+link).addClass('active');
+                              // $('a.active').parents('li').css("background", "#d49100");
                                var payment =  window.localStorage.getItem("payment");
 
 // alert(payment);
