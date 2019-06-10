@@ -3275,7 +3275,7 @@ $("#segment").trigger('create');
 
 })
 $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
-            check_payment();          
+            // check_payment();          
      // window.location = 'pay.html';
       $$('#payment_btn').trigger("click");
     $( "#payment_btn" ).trigger( "click" );
