@@ -21,7 +21,7 @@
 
     <platform name="android">
         <icon background="icon/icon.png" foreground="icon/icon.png" />
-        <preference name="android-minSdkVersion" value="16" />
+        <preference name="android-minSdkVersion" value="19" />
         <allow-intent href="market:*" />
     </platform>
 
@@ -33,6 +33,7 @@
          <preference name="android-targetSdkVersion" value="28" />
 
     <preference name="android-maxSdkVersion" value="28" /> -->
+
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
