@@ -14,15 +14,26 @@ $$(document).on('deviceready', function() {
     console.log("Device is ready!");
     // my_toast();
    
+ // **my permission code**
+        var permission = cordova.plugins.permissions;
 
+        permission.hasPermission(permission.READ_CONTACTS,function(results){
+            if(!results[permission])
+            {
+                permission.requestPermission(permission.WRITE_CONTACTS,function(results){
+                    if(results[permission]){
+                          alert("permission granted");
+                   }
+                },alert("permission failed"))
+                alert("permission granted failed");
+            }
+        }, alert("permission failed"))
 //  if(payment == 0){
 // // alert($('#payment_btn').attr('href'));
 //      // $('.payment_btn').trigger('click');
 //       $$('#payment_btn').trigger("click");
 //     $( "#payment_btn" ).trigger( "click" );
 //   }
-
-
    $(document).on('click', '.t1', function() {
     
     $('.t1').addClass('active');
@@ -56,12 +67,12 @@ $("input").focusin(function(){
         var islogin = window.localStorage.getItem("login");
         var email = window.localStorage.getItem("email");
 // alert(email); 
-        var payment = window.localStorage.getItem("payment");
 update_profile(email);
        
 
 
 
+        var payment = window.localStorage.getItem("payment");
   // alert(payment);
 
 if(islogin == 1){
@@ -157,12 +168,12 @@ if(islogin == 1){
                $('.snackbar').html(data.message);
   // setTimeout(function(){ $('.snackbar').show(); }, 3000);
                 my_toast();
-               
+                if(payment != ''){
                   location.reload();
-               
+                }else{
 
     $$('#payment_btn').trigger("click");
-               
+                }
     $('.loader').css('display','none');
 
               // $('#home').click();
@@ -3237,7 +3248,7 @@ $("#segment").trigger('create');
 
 })
 $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
-            // check_payment();          
+            check_payment();          
      // window.location = 'pay.html';
       $$('#payment_btn').trigger("click");
     $( "#payment_btn" ).trigger( "click" );
@@ -3666,4 +3677,3 @@ function edit_offer(name,id,description,tag_line){
           }
         })
         }
-
