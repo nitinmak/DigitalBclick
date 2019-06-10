@@ -24,6 +24,7 @@
         <allow-intent href="market:*" />
         <uses-permission android-targetSdkVersion="28" android-name="android.permission.READ_CONTACTS" />
         <uses-permission android-targetSdkVersion="28" android-name="android.permission.WRITE_CONTACTS" />
+
         <icon background="icon/icon.png" foreground="icon/icon.png" />
   
     </platform>
@@ -31,7 +32,7 @@
     <!-- <preference name="android-minSdkVersion" value="16" />  -->
         <preference name="android-targetSdkVersion" value="28" />
          <!-- <preference name="android-targetSdkVersion" value="21" /> -->
-    <preference name="android-maxSdkVersion" value="28" />
+    <preference name="android-maxSdkVersion" value="21" />
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
