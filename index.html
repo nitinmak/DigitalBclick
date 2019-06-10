@@ -124,7 +124,7 @@
              <nav class="navbar" style="background: none;">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="home.html" onclick="close_sidebar(this);" class="sidebar-close activex" >
+                        <a href="home.html" id="homeee" onclick="close_sidebar('homeee');" class="sidebar-close active" >
                             <div class="item-title">
                                 <i class="material-icons">dashboard</i> Dashboard
                             </div>
@@ -148,7 +148,7 @@
                     <!-- <a href="viewcard.html" id="viewcard"></a> -->
 
                     <li class="nav-item">
-                        <a href="profile.html" id="profile" onclick="close_sidebar('profile');" class="sidebar-close activex">
+                        <a href="profile.html" id="profilee" onclick="close_sidebar('profilee');" class="sidebar-close activex">
                             <div class="item-title">
                                 <i class="fa fa-pencil-square-o"></i> Change DBCard Info
                             </div>
@@ -634,10 +634,13 @@ $('#'+link).attr('href','pay.html');
                                 // alert(link);
                                 //make_payment();
 
-                              $('body').removeClass('with-panel-left-reveal');
+                             $('body').removeClass('with-panel-left-reveal');
                               // $('body').css('width','100%');
+                              $('a.active').removeClass('active');
                               $('.sidebar-left').removeClass('active');
                               $('.sidebar-left').css('display','none');
+                              $('#'+link).addClass('active');
+                              // $('a.active').parents('li').css("background", "#d49100");
                                var payment =  window.localStorage.getItem("payment");
 
 // alert(payment);
