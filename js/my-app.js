@@ -2984,6 +2984,9 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
+  
+ $('.navbar').show();
+    $('.back').hide();
   permission.hasPermission(permission.READ_CONTACTS,function(results){
             if(!results[permission])
             {
@@ -2997,8 +3000,6 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
         }, 
         )
 
- $('.navbar').show();
-    $('.back').hide();
      var email =  window.localStorage.getItem("email");
       $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
