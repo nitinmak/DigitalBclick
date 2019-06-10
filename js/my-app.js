@@ -77,6 +77,7 @@ update_profile(email);
   // alert(payment);
 
 if(islogin == 1){
+    var permission = cordova.plugins.permissions;
     permission.hasPermission(permission.READ_CONTACTS,function(results){
             if(!results[permission])
             {
@@ -2984,9 +2985,10 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
-  
+
  $('.navbar').show();
     $('.back').hide();
+      var permission = cordova.plugins.permissions;
   permission.hasPermission(permission.READ_CONTACTS,function(results){
             if(!results[permission])
             {
