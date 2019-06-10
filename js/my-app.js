@@ -15,20 +15,7 @@ $$(document).on('deviceready', function() {
     // my_toast();
    
  // **my permission code**
-        var permission = cordova.plugins.permissions;
-
-        permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.WRITE_CONTACTS,function(results){
-                    if(results[permission]){
-                          // alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+       
 //  if(payment == 0){
 // // alert($('#payment_btn').attr('href'));
 //      // $('.payment_btn').trigger('click');
@@ -77,6 +64,20 @@ update_profile(email);
   // alert(payment);
 
 if(islogin == 1){
+   var permission = cordova.plugins.permissions;
+
+        permission.hasPermission(permission.READ_CONTACTS,function(results){
+            if(!results[permission])
+            {
+                permission.requestPermission(permission.WRITE_CONTACTS,function(results){
+                    if(results[permission]){
+                          // alert("permission granted");
+                   }
+                },)
+                // alert("permission granted failed");
+            }
+        }, 
+        )
   // alert('fdfd');
   // alert(payment);
    if(payment == 0){
