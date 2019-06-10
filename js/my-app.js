@@ -15,19 +15,19 @@ $$(document).on('deviceready', function() {
     // my_toast();
    
  // **my permission code**
-        var permission = cordova.plugins.permissions;
+        // var permission = cordova.plugins.permissions;
 
-        permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.WRITE_CONTACTS,function(results){
-                    if(results[permission]){
-                          alert("permission granted");
-                   }
-                },alert("permission failed"))
-                alert("permission granted failed");
-            }
-        }, alert("permission failed"))
+        // permission.hasPermission(permission.READ_CONTACTS,function(results){
+        //     if(!results[permission])
+        //     {
+        //         permission.requestPermission(permission.WRITE_CONTACTS,function(results){
+        //             if(results[permission]){
+        //                   alert("permission granted");
+        //            }
+        //         },alert("permission failed"))
+        //         alert("permission granted failed");
+        //     }
+        // }, alert("permission failed"))
 //  if(payment == 0){
 // // alert($('#payment_btn').attr('href'));
 //      // $('.payment_btn').trigger('click');
