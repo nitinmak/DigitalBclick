@@ -222,12 +222,14 @@
             <form action="https://www.example.com/payment/success/" id="frm1" method="POST">
 <script
     src="https://checkout.razorpay.com/v1/checkout.js"
+    id="payment_frm"
     data-key="rzp_live_SrhWTuzFnqnF1F" // Enter the Key ID generated from the Dashboard
+    data-name="B-Click Digital";
     data-amount="150000" // INR 235
     data-buttontext="Pay with Razorpay"
-    data-name="B-Click Digital"
+    
     data-description="You Just One Click Away"
-   
+ 
 ></script>
 <input type="hidden" custom="Hidden Element" name="hidden">
 </form>
@@ -702,6 +704,7 @@ $('#'+link).attr('href','pay.html');
   border-radius: 0px;
   color: white;
 }
+
   </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
     
