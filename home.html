@@ -26,7 +26,7 @@
             <div class="card">
                <a href="profile.html"  style="color: white;">
     <div class="card-header"  style="background-color: #d49100; padding: 0;">
-         <div class="col-60" style="color: white;">
+         <div class="col-60 ml-3" style="color: white;">
                       YOUR DBCARD
                     </div>
                     <div class="col-40">
@@ -65,7 +65,7 @@
                                             </div>
                                         </div>
                                               <div class="col-12">
-                                                <div class="form-group">
+                                                <div class="form-group bmd-form-group ">
                                                   <input type='text' value=''  class='form-control icon-input text-white' id="receivername" name="name"placeholder="Type Receiver’s Name"><a><i class='fa fa-users fa-2x times-icon' onclick="displaycontacts();" style="color: #d49100" aria-hidden='true'></i></a>
                                                 <!-- <label>Phone Number</label> -->
                                                  <!-- <input type="text" class="form-control text-white " required="" id="receivername" name="name" placeholder="Type Receiver’s Name" > -->
@@ -153,13 +153,13 @@ padding-right:60px !important;
 .form-control{
   background: none;
   color:white;
-  /*border: none;*/
-  /*border-bottom: 1px groove;*/
+  border: none;
+  border-bottom: 1px groove;
   
 }
           </style>
                                              <div class="col-12">
-                                                <div class="form-group">
+                                                <div class="form-group bmd-form-group cc1">
                                                     <input type="text" pattern="\d*" class="form-control text-white " id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
                           <!-- <ul id="contacts-list"></ul> -->
                                                     <!-- <input type="text" class="form-control  text-white" value="+91"> -->
@@ -269,22 +269,18 @@ padding-right:60px !important;
 
 <div class="block" style="width: 100%; padding: 5px;">
   <p class="row">
-    <button type="button" name="send_sms"  id="button" class="col-xs button button-fill color-orange" style="width: 47%;">More</button>
-    <button type="button" id="reset_form" name="send_sms" class="col-xs button button-fill color-orange" style="width: 47%;">Reset</button>
+    <button type="button" name="send_sms"  id="button" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">More</button>
+    <button type="button" id="reset_form" name="send_sms" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Reset</button>
    
   </p> 
   <p class="row">
-    <button type="submit" id="save_only" name="save_only" class="col-xs button button-fill color-orange" style="width: 47%;"
-style="width: 47%;">SAVE NOW</button>
-    <button type="submit" name="send_whatsapp" class="col-xs button button-fill color-orange"style="width: 47%;"
-style="width: 47%;" >WhatsApp</button>
+    <button type="submit" id="save_only" name="save_only" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">SAVE NOW</button>
+    <button type="submit" name="send_whatsapp" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;" >WhatsApp</button>
  <!-- <button class="col button color-orange">colcol-xs-3tton button-fill color-orange -->
   </p>
   <p class="row">
-    <button type="submit" name="send_email" class="col-xs button button-fill color-orange" style="width: 47%;"
-style="width: 47%;">Send Email</button>
-    <button type="submit" name="send_sms" class="col-xs button button-fill color-orange" style="width: 47%;"
-style="width: 47%;">Send SMS</button>
+    <button type="submit" name="send_email" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Send Email</button>
+    <button type="submit" name="send_sms" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Send SMS</button>
   </p>
 </div>
 
