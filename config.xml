@@ -94,7 +94,7 @@
 
 -->
      
-    <plugin name="cordova-plugin-whitelist" spec="https://github.com/apache/cordova-plugin-whitelist.git" />
+    <!-- <plugin name="cordova-plugin-whitelist" spec="https://github.com/apache/cordova-plugin-whitelist.git" /> -->
     <preference name="fullscreen" value="false" />
     
 
