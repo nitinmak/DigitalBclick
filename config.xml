@@ -20,7 +20,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-  <gap:plugin name="cordova-plugin-whitelist" version="1.1.0" source="npm" />
+ 
         <allow-intent href="market:*" />
         <uses-permission android-targetSdkVersion="28" android-name="android.permission.READ_CONTACTS" />
         <uses-permission android-targetSdkVersion="28" android-name="android.permission.WRITE_CONTACTS" />
@@ -34,10 +34,11 @@
          <!-- <preference name="android-targetSdkVersion" value="21" /> -->
     <preference name="android-maxSdkVersion" value="28" />
     <platform name="ios">
+            <icon src="icon/icon.png" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
-        <icon src="icon/icon.png" foreground="icon/icon.png" />
+        
 
     </platform>
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
