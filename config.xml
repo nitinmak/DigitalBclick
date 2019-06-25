@@ -37,10 +37,13 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <preference name="phonegap-version" value="cli-7.1.0" />
+        <preference name="cordova-ios" version="4.5.4" /> <preference name="phonegap-version" value="cli-8.0.0" />
+        
+        <icon src="icon/icon.png" platform="ios" width="1024" height="1024" />
+
         <preference name="BackupWebStorage" value="none" />
         <!-- <icon src="icon/icon.png" foreground="icon/icon.png" /> -->
-          <icon src="icon/icon.png"  width="1024" height="1024" />
+          <!-- <icon src="icon/icon.png"  width="180" height="180" /> -->
 
     </platform>
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
