@@ -66,16 +66,23 @@
         <preference name="BackupWebStorage" value="none" />
     </platform>
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
-     <plugin name="cordova-plugin-ionic-keyboard" />
+     <!-- <plugin name="cordova-plugin-ionic-keyboard" /> -->
     <preference name="DisallowOverscroll" value="true" />
     <preference name="KeyboardShrinksView" value="true" />
-    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
+    <!-- <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-contacts" spec="1.0.0" />
        <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
 
 
-    <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
+    <plugin name="cordova-plugin-statusbar" spec="~1.0.1" /> -->
+
+    <plugin name="cordova-plugin-android-permissions" spec="1.0.0" />
+<plugin name="cordova-plugin-console" spec="1.0.7" />
+<plugin name="cordova-plugin-contacts" spec="1.0.0" />
+<plugin name="cordova-plugin-ionic-keyboard" spec="2.1.3" />
+<plugin name="cordova-plugin-statusbar" spec="1.0.1" />
+<plugin name="cordova-plugin-whitelist" spec="1.2.2" />
     <preference name="fullscreen" value="false" />
     
 
