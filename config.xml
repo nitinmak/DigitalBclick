@@ -37,9 +37,10 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <preference name="phonegap-version" value="cli-7.1.0" />
         <preference name="BackupWebStorage" value="none" />
         <!-- <icon src="icon/icon.png" foreground="icon/icon.png" /> -->
-          <icon src="icon/icon.png"  width="180" height="180" />
+          <icon src="icon/icon.png"  width="1024" height="1024" />
 
     </platform>
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
