@@ -199,9 +199,10 @@ if(islogin == 1){
   // setTimeout(function(){ $('.snackbar').show(); }, 3000);
                 my_toast();
                 if(payment != ''){
-                  location.reload();
+                  location.href = 'home.html';
+                  // location.reload();
                 }else{
-
+                  location.href = 'home.html';
     $$('#payment_btn').trigger("click");
                 }
     $('.loader').css('display','none');
@@ -4012,6 +4013,8 @@ $('#'+link).attr('href','pay.html');
 
                             function close_sidebar(link){
                                 // alert(link);
+                                var lnk = $('#'+link).attr('href');
+                                // alert(lnk);
                                 //make_payment();
 
                              $('body').removeClass('with-panel-left-reveal');
@@ -4031,6 +4034,8 @@ $('#'+link).attr('href','pay.html');
   // setTimeout(function(){ 
  $$('#'+link).trigger('click');
    // }, 2000);
+}else{
+location.href = lnk;
 }
 // check_payment(link);
                             }
