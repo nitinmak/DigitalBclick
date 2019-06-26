@@ -205,7 +205,7 @@
                 <div data-page="index" class="page">
                     <!-- Scrollable page content -->
                     <div class="page-content" >
-                        <div class="loader justify-content-center ">
+                      <!--   <div class="loader justify-content-center ">
         <div class="maxui-roller align-self-center">
             <div></div>
             <div></div>
@@ -216,14 +216,10 @@
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> -->
 
 
-                        <script type="text/javascript">
-                          
-
-
-                        </script>
+                      
               
                         <div class="content-block">
                           
@@ -231,7 +227,7 @@
     <div class="wrapper">
         <!-- page main start -->
         <div class="page">
-            <div class="page-content " style="background: #EEEEEEEE;">
+            <div class="page-content " style="background: white;">
           
              <div class="col-12">
           <center><img src="img/new_logo.jpg" width="100%"  height="100px" alt="" style="margin-top: 10px;margin-bottom: 10px;padding: 8px;" ></center>
@@ -244,7 +240,7 @@
                       YOUR DBCARD
                     </div>
                     <div class="col-40">
-                         <a href="profile.html" id="profileee" onclick="check_p('profileee')"  class="social" style="color: white;">
+                         <a href="profile.html" id="profileee" onclick="check_p('profileee'),location.href='profile.html'"  class="social" style="color: white;">
                                  <i class="fa fa-pencil-square-o" style="font-size:20px;"></i></a>
                     </div>
     </div>
@@ -382,7 +378,7 @@ padding-right:60px !important;
                                            <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                  <input type="email" class="form-control" id="email" name="email" placeholder="Type Receiver’s Email">
+                                                  <input type="email" class="form-control text-white" id="email" name="email" placeholder="Type Receiver’s Email">
                                                 </div>
                                             </div>
                                             <div id="test" style="display: none;width: 100%">
@@ -560,19 +556,19 @@ padding-right:60px !important;
 
 
 
-                  var permission = cordova.plugins.permissions;
-  permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+  //                 var permission = cordova.plugins.permissions;
+  // permission.hasPermission(permission.READ_CONTACTS,function(results){
+  //           if(!results[permission])
+  //           {
+  //               permission.requestPermission(permission.READ_CONTACTS,function(results){
+  //                   if(results[permission]){
+  //                          alert("permission granted");
+  //                  }
+  //               },)
+  //               // alert("permission granted failed");
+  //           }
+  //       }, 
+  //       )
 
      var email =  window.localStorage.getItem("email");
       $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
@@ -643,8 +639,11 @@ padding-right:60px !important;
    
 
    // $("#button").click(function() {
-    $(document).on('click', '#button', function(){  
-    
+    // $(document).on('click', '.testclick', function() {
+      // alert('fdfd');
+  $(document).on('click', '#button', function(){  
+    // $(document).on('click', '#button', function(){  
+      // alert('fdfd');
       
        var lable = $("#button").text().trim();
 
@@ -713,7 +712,7 @@ $(document).on('click', '.flag-container', function() {
                 // var data = JSON.stringify(data);
 // alert(data);
 $('#segment').append(data);
-$("#segment").trigger('create');
+// $("#segment").trigger('create');
     $('.loader').css('display','none');
 
             //    $('#username').html(data.name);
