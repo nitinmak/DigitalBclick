@@ -79,7 +79,7 @@ function onSuccess(contacts){
     //var ul = document.getElementById('contacts-list');
 	var x = document.getElementById("contacts-list");
     for (var i = 0; i < contacts.length; i++) {
-// alert(JSON.stringify(contacts[i]));
+alert(JSON.stringify(contacts[i]));
 		//MyContactList.push(contacts[i].phoneNumbers[0].value);
         /*var newLI = document.createElement('li');
         newLI.innerHTML = contacts[i].phoneNumbers[0].value;
@@ -105,7 +105,7 @@ function onError(){
 function displaycontacts()
 {
 navigator.contacts.pickContact(function(contact){
-    alert(contact.displayName); 
+    
     var  contact_name =  contact.displayName;
     var contact_number = contact.phoneNumbers[0].value;
     var trim = contact_number.replace(/\s/g,'');
