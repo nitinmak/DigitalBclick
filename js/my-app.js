@@ -15,20 +15,20 @@ $$(document).on('deviceready', function() {
     // my_toast();
    
  // **my permission code**
-        var permission = cordova.plugins.permissions;
+        // var permission = cordova.plugins.permissions;
 
-        permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+        // permission.hasPermission(permission.READ_CONTACTS,function(results){
+        //     if(!results[permission])
+        //     {
+        //         permission.requestPermission(permission.READ_CONTACTS,function(results){
+        //             if(results[permission]){
+        //                    alert("permission granted");
+        //            }
+        //         },)
+        //         // alert("permission granted failed");
+        //     }
+        // }, 
+        // )
 
 //                                $.ajax({
 //             url: "https://digitalbcards.in/api/fetch_amount/", 
@@ -165,8 +165,10 @@ if(islogin == 1){
           form =$('#login_form').serialize();
           var  action = $('#action').val();
           var  email = $('#email').val();
-          // alert(email);
+          var  password = $('#password').val();
+          // alert(password);
                 window.localStorage.setItem("email",email);
+                window.localStorage.setItem("password",password);
                 var email =  window.localStorage.getItem("email");
 // alert(email);
 
@@ -4002,14 +4004,15 @@ $('#view_card_in_popup').modal('show');
                             function  check_p(link){
                                   var payment =  window.localStorage.getItem("payment");
 
-// alert(payment);
+alert(payment);
 if(payment == 0){
     // $("#frm1").submit();
     // alert(link);
 $('#'+link).attr('href','pay.html');
-  // setTimeout(function(){ 
- $$('#'+link).trigger('click');
-   // }, 2000);
+  setTimeout(function(){ 
+    location.href = 'pay.html';
+ // $$('#'+link).trigger('click');
+   }, 2000);
 }
                             }
 
@@ -4033,8 +4036,10 @@ if(payment == 0){
     // $("#frm1").submit();
     // alert(link);
 $('#'+link).attr('href','pay.html');
+    location.href = 'pay.html'
+
   // setTimeout(function(){ 
- $$('#'+link).trigger('click');
+ // $$('#'+link).trigger('click');
    // }, 2000);
 }else{
 location.href = lnk;

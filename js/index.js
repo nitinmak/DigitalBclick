@@ -79,7 +79,7 @@ function onSuccess(contacts){
     //var ul = document.getElementById('contacts-list');
 	var x = document.getElementById("contacts-list");
     for (var i = 0; i < contacts.length; i++) {
-alert(JSON.stringify(contacts[i]));
+// alert(JSON.stringify(contacts[i]));
 		//MyContactList.push(contacts[i].phoneNumbers[0].value);
         /*var newLI = document.createElement('li');
         newLI.innerHTML = contacts[i].phoneNumbers[0].value;
@@ -109,8 +109,8 @@ navigator.contacts.pickContact(function(contact){
     var  contact_name =  contact.displayName;
     var contact_number = contact.phoneNumbers[0].value;
     var trim = contact_number.replace(/\s/g,'');
-    alert(contact_name);
-    alert('firt');
+    // alert(contact_name);
+    // alert('firt');
     document.getElementById("receivermobile").value = trim.slice(-10);
     document.getElementById("receivername").value =  contact_name;
         // alert('The following contact has been selected:' + JSON.stringify(contact));
@@ -138,7 +138,7 @@ function updateContacts()
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
 	var selectedText = selectBox.options[selectBox.selectedIndex].text;
     alert(selectedText);
-    alert('here');
+    // alert('here');
 alert($.trim(selectedValue.slice(-11)));
 	document.getElementById("receivermobile").value = $.trim(selectedValue.slice(-11));
 	document.getElementById("receivername").value =  selectedText;
