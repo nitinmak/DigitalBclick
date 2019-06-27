@@ -93,10 +93,9 @@
   background: none;
   
 }
-.razorpay-payment-button{
- background: white;
- padding: 12px;
-}
+/*.razorpay-payment-button{
+    display: none;
+}*/
 </style>
 </head>
 
@@ -203,8 +202,7 @@
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
                 <!-- Page, "data-page" contains page name -->
-                <!-- <div data-page="index" class="page"> -->
-               
+                <div data-page="index" class="page">
                     <!-- Scrollable page content -->
                     <div class="page-content" >
 
@@ -223,12 +221,11 @@
                             <div class="col-12">
                                
 
-                                               <!-- <form method="post" id="setting_form"> -->
+                                               <form method="post" id="setting_form">
                                     <div class="card-body  text-white">
                                         <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
                                         <div class="row">
                                               <div class="col-12">
-                          
 
                                                 <div class="form-group">
                                               
@@ -241,20 +238,6 @@
                                                    </div>
                                        
                                             </div>
-                                                                         <form action="https://www.example.com/payment/success/" id="frm1" method="POST">
-<script
-    src="https://checkout.razorpay.com/v1/checkout.js"
-    id="payment_frm"
-    data-key="rzp_live_SrhWTuzFnqnF1F" // Enter the Key ID generated from the Dashboard
-    data-name="B-Click Digital";
-    data-amount="150000" // INR 235
-    data-buttontext="Pay with Razorpay"
-    
-    data-description="You Just One Click Away"
- 
-></script>
-<input type="hidden" custom="Hidden Element" name="hidden">
-</form>
                                    
                                                
                                                 <!-- <p>You SMS credit is 1</p> -->
@@ -270,17 +253,19 @@
                                            
                                         </div>
                                         </div>
-                                       <!--  <div class="block" style="width: 100%; padding: 5px;">
+                                        <div class="block" style="width: 100%; padding: 5px;">
   <p class="row">
-    <button type="button" name="send_sms"  class="col-xs button button-fill color-orange" style="width: 47%;">Pay Now</button>
-    <a  href="home.html" class="col-xs button button-fill color-orange" style="width: 47%;">Skip</a>
+    <button type="button" name="send_sms" id="make_pay"  class="col-xs button button-fill color-orange" style="width: 47%;">Pay Now</button>
+    <a  href="home.html" onclick="location.href='home.html'" class="col-xs button button-fill color-orange" style="width: 47%;">Skip</a>
    
   </p> 
  
-</div> -->
+</div>
                                             
-                                <!-- </form> -->
-
+                                </form>
+<div id="res">
+    
+</div>
                            
                                         </div>
                                         <br>
@@ -378,7 +363,43 @@
                $('.navbar').show();
     $('.back').hide();
                 $("#menu_side").load("sidebar.html"); 
- 
+ $(document).on('click', '#make_pay', function(){  
+    
+     
+    var referral =  window.localStorage.getItem("referral");
+ // var user_id =  window.localStorage.getItem("user_id");
+ // alert(referral)
+  
+    $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+ var user_id =  window.localStorage.getItem("user_id");
+ var email =  window.localStorage.getItem("email");
+ var password =  window.localStorage.getItem("password");
+ location.href="https://digitalbcards.in/index.php?e="+email+"&p="+password+"";
+ // alert(user_id);
+//                                 $.ajax({
+//             url: "https://digitalbcards.in/api/payment/", 
+//             method: "POST",
+//             data:{email:email,password:password,user_id:user_id,secrete:"virus"}, 
+//             dataType:"json",            
+           
+//             success: function(data) {
+//                 // var data = JSON.stringify(data);
+// alert(data);
+// $('#res').html(data);
+//  document.forms['customerData'].submit();
+//     $('.loader').css('display','none');
+
+//             //    $('#username').html(data.name);
+//              //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+              
+//             //location.reload();
+//           }
+//         });  
+    
+
+
+                  })
                           </script>      
 
 
