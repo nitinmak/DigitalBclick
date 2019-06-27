@@ -4051,34 +4051,34 @@ location.href = lnk;
 
     }
 
-    $$(document).on('click', '#rzp-button1', function(){  
+//     $$(document).on('click', '#rzp-button1', function(){  
                
-alert('here');
+// // alert('here');
 
 
-var options = {
-     "key": "rzp_live_SrhWTuzFnqnF1F", // Enter the Key ID generated from the Dashboard
-    "amount": "29935", // INR 299.35
-    "name": "Acme Corp",
-    "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
-    "image": "https://example.com/your_logo",
-    // "order_id": "order_9A33XWu170gUtm",//Order ID is generated as Orders API has been implemented. Refer the Checkout form table given below
-    "handler": function (response){
-        alert(response.razorpay_payment_id);
-    },
-    /**
-      * You can track the modal lifecycle by * adding the below code in your options
-      */
-    "modal": {
-        "ondismiss": function(){
-          alert('Dismiss');
-            // console.log(‘Checkout form closed’);
-        }
-    }
-};
+// var options = {
+//      "key": "rzp_live_SrhWTuzFnqnF1F", // Enter the Key ID generated from the Dashboard
+//     "amount": "29935", // INR 299.35
+//     "name": "Acme Corp",
+//     "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
+//     "image": "https://example.com/your_logo",
+//     // "order_id": "order_9A33XWu170gUtm",//Order ID is generated as Orders API has been implemented. Refer the Checkout form table given below
+//     "handler": function (response){
+//         alert(response.razorpay_payment_id);
+//     },
+//     /**
+//       * You can track the modal lifecycle by * adding the below code in your options
+//       */
+//     "modal": {
+//         "ondismiss": function(){
+//           alert('Dismiss');
+//             // console.log(‘Checkout form closed’);
+//         }
+//     }
+// };
 
-var rzp1 = new Razorpay(options);
- rzp1.open();
-    e.preventDefault();
+// var rzp1 = new Razorpay(options);
+//  rzp1.open();
+//     e.preventDefault();
 
-                  })
+//                   })
