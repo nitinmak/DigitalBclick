@@ -3462,7 +3462,7 @@ $('#register_form').validate({ // initialize the plugin
                 my_toast();
     $('.loader').css('display','none');
 
-    alert('sdsd');
+    // alert('sdsd');
             location.href = "home.html";
             location.reload();
               }
@@ -3725,8 +3725,9 @@ function edit_offer(name,id,description,tag_line){
 
 
           function my_toast(){
+            alert('toast');
     $('.snackbar').css('visibility','visible');
-    $('.snackbar').css('z-index','9999999999999');
+    $('.snackbar').css('z-index','9999999999999999');
     $('.snackbar').css('font-size','14px');
   setTimeout(function(){ $('.snackbar').css('visibility','hidden'); }, 3000);
 }
