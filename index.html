@@ -301,8 +301,8 @@
                          <div class="snackbar">Some text some message..</div>
                         <div class="row no-gutters ">
                           <center>
-                <p class="mgt"><a href="forgot_password.html" style="color:#333;">Forgot Password ?</a>
-                    <a style="margin-left: 60px" href="register.html"> <span class="color">Create an account</span></a></p>
+                <p class="mgt"><a href="forgot_password.html"  onclick="location.href='forgot_password.html'" style="color:#333;">Forgot Password ?</a>
+                    <a style="margin-left: 60px" href="register.html" onclick="location.href='register.html'"> <span class="color">Create an account</span></a></p>
                </center>
                         </div>                        
                     </div>
@@ -387,7 +387,7 @@
 <script type="text/javascript">
      var islogin = window.localStorage.getItem("login");
         var email = window.localStorage.getItem("email");
-// alert(email); 
+// alert(islogin); 
 // update_profile(email);
        
 
@@ -416,8 +416,9 @@ if(islogin == 1){
    if(payment == 0){
 // alert($('#payment_btn').attr('href'));
      // $('.payment_btn').trigger('click');
-      $$('#payment_btn').trigger("click");
-    $( "#payment_btn" ).trigger( "click" );
+     location.href = 'pay.html';
+      // $$('#payment_btn').trigger("click");
+    // $( "#payment_btn" ).trigger( "click" );
   }else{
     // $$('#home').trigger("click");
  location.href = "home.html"

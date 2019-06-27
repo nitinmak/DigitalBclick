@@ -343,7 +343,7 @@
                                     </span></a>
                                  </div>
                                  <div class="col-50" >
-                                    <a href="company.html">
+                                    <a href="company.html" onclick="location.href='company.html'">
                                        <i class="fa fa-building-o call" style="color: white;"></i>
                                        <span style="margin-left: 15px;">
                                           <h7 class="mt-1 text-white">Company</h7>
@@ -353,7 +353,7 @@
                               </div>
                               <div class="row no-gutters mb-4">
                                  <div class="col-50">
-                                    <a href="product.html">
+                                    <a href="product.html" onclick="location.href='product.html'">
                                        <i class="material-icons call text-white icon-1x">web</i>
                                        <span style="margin-left: 15px;">
                                           <h7 class="mt-1 text-white"> Products</h7>
@@ -361,7 +361,7 @@
                                     </span></a>
                                  </div>
                                  <div class="col-50" >
-                                    <a href="social_link.html">
+                                    <a href="social_link.html" onclick="location.href='social_link.html'">
                                        <i class="material-icons call text-white icon-1x">share</i>
                                        <span style="margin-left: 15px;">
                                           <h7 class="mt-1 text-white">Social Links</h7>
@@ -371,7 +371,7 @@
                               </div>
                               <div class="row no-gutters mb-4">
                                  <div class="col-50">
-                                    <a href="payment_link.html">
+                                    <a href="payment_link.html" onclick="location.href='payment_link.html'">
                                        <i class="fa fa-link call" style="color: white;"></i>
                                        <span style="margin-left: 15px;">
                                           <h7 class="mt-1 text-white">Payment Link</h7>
@@ -379,7 +379,7 @@
                                     </span> </a>
                                  </div>
                                  <div class="col-50" >
-                                    <a href="gallery.html">
+                                    <a href="gallery.html"  onclick="location.href='gallery.html'">
                                        <i class="material-icons call" style="color: white;">photo_library</i>
                                        <span style="margin-left: 15px;">
                                           <h7 class="mt-1 text-white"> Product Album</h7>
@@ -390,7 +390,7 @@
                               <!--start-->
                               <div class="row no-gutters mb-4">
                                  <div class="col-50">
-                                    <a href="offer.html">
+                                    <a href="offer.html" onclick="location.href='offer.html'">
                                        <i class="material-icons call" style="color: white;">class</i>
                                        <span style="margin-left: 15px;">
                                           <h7 class="mt-1 text-white">Offers</h7>
@@ -398,7 +398,7 @@
                                     </span></a>
                                  </div>
                                  <div class="col-50" >
-                                    <a href="key_client.html">
+                                    <a href="key_client.html" onclick="location.href='key_client.html'">
                                        <i class="fa fa-certificate  call" style="color: white;"></i>
                                        <span style="margin-left: 15px;">
                                           <h7 class="mt-1 text-white">Key Clients</h7>
@@ -409,7 +409,7 @@
                               <!--end-->
                               <div class="row no-gutters mb-4">
                                  <div class="col-50">
-                                    <a href="memberships.html">
+                                    <a href="memberships.html" onclick="location.href='memberships.html'">
                                        <i class="fa fa-user-plus   call" style="color: white;"></i>
                                        <span style="margin-left: 15px;">
                                           <h7 class="mt-1 text-white">Membership</h7>
@@ -417,7 +417,7 @@
                                     </span> </a>
                                  </div>
                                   <div class="col-50">
-                                    <a href="theme.html">
+                                    <a href="theme.html" onclick="location.href='theme.html'">
                                        <i class="fa fa-photo   call" style="color: white;"></i>
                                        <span style="margin-left: 15px;">
                                           <h7 class="mt-1 text-white">Theme</h7>
@@ -429,10 +429,10 @@
                            <br>
                            <div class="row" style="text-align: center;">
                               <div class="col-50">
-                                 <a href="home.html"  id="button" class="btn  mb-1 btn-light text-primary px-4" style="width: 120px;">Back</a>
+                                 <a href="home.html" onclick="location.href='home.html'"  id="button" class="btn  mb-1 btn-light text-primary px-4" style="width: 120px;">Back</a>
                               </div>
                               <div class="col-50">
-                                 <button  type="button" onclick="location.href='index.html'" id="button" class="btn k mb-1 view_card btn-light text-primary px-4" style="width: 120px">Preview Card</button>
+                                 <button  type="button" id="button" class="btn k mb-1 view_card btn-light text-primary px-4" style="width: 120px">Preview Card</button>
                               </div>
                            </div>
                      </form>
@@ -525,7 +525,9 @@
     $('.back').hide();
                 $("#menu_side").load("sidebar.html"); 
 
-
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 
             </script>      
 
