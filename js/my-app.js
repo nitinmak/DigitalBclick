@@ -3462,8 +3462,8 @@ $('#register_form').validate({ // initialize the plugin
                 my_toast();
     $('.loader').css('display','none');
 
-    
-            //window.location.href = "home.html";
+    alert('sdsd');
+            location.href = "home.html";
             location.reload();
               }
             //location.reload();
@@ -4040,10 +4040,12 @@ location.href = lnk;
 // check_payment(link);
                             }
          function logout(){
+          alert('fdfd');
       localStorage.clear()
                 window.localStorage.setItem("login",0);
- window.location = "index.html";
-           // window.location.href = "index.html";
-    // $$('#loginn').trigger("click");
+
+ // window.location = "index.html";
+           location.href = "index.html";
+    $$('#loginn').trigger("click");
 
     }
