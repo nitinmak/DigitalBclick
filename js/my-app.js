@@ -93,26 +93,27 @@ update_profile(email);
   // alert(payment);
 
 if(islogin == 1){
-    var permission = cordova.plugins.permissions;
-    permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+    // var permission = cordova.plugins.permissions;
+    // permission.hasPermission(permission.READ_CONTACTS,function(results){
+    //         if(!results[permission])
+    //         {
+    //             permission.requestPermission(permission.READ_CONTACTS,function(results){
+    //                 if(results[permission]){
+    //                        alert("permission granted");
+    //                }
+    //             },)
+    //             // alert("permission granted failed");
+    //         }
+    //     }, 
+    //     )
   // alert('fdfd');
   // alert(payment);
    if(payment == 0){
 // alert($('#payment_btn').attr('href'));
      // $('.payment_btn').trigger('click');
-      $$('#payment_btn').trigger("click");
-    $( "#payment_btn" ).trigger( "click" );
+     // location.href = 'pay.html';
+      // $$('#payment_btn').trigger("click");
+    // $( "#payment_btn" ).trigger( "click" );
   }else{
     $$('#home').trigger("click");
 
