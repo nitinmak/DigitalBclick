@@ -3725,7 +3725,7 @@ function edit_offer(name,id,description,tag_line){
 
 
           function my_toast(){
-            alert('toast');
+            // alert('toast');
     $('.snackbar').css('visibility','visible');
     $('.snackbar').css('z-index','9999999999999999');
     $('.snackbar').css('font-size','14px');
@@ -4041,7 +4041,7 @@ location.href = lnk;
 // check_payment(link);
                             }
          function logout(){
-          alert('fdfd');
+          // alert('fdfd');
       localStorage.clear()
                 window.localStorage.setItem("login",0);
 

@@ -105,7 +105,7 @@ function onError(){
 function displaycontacts()
 {
 navigator.contacts.pickContact(function(contact){
-    alert(contact);
+    alert(contact.displayName); 
     var  contact_name =  contact.displayName;
     var contact_number = contact.phoneNumbers[0].value;
     var trim = contact_number.replace(/\s/g,'');
