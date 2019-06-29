@@ -34,6 +34,7 @@
          <!-- <preference name="android-targetSdkVersion" value="21" /> -->
     <preference name="android-maxSdkVersion" value="28" />
     <platform name="ios">
+             <splash src="icon/icon.png" width="750" height="1334"/>
         <icon src="icon/icon-60@3x.png" width="180" height="180" />
       
         <!-- iOS 7.0+ -->
