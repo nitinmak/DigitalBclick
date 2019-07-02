@@ -2657,3 +2657,9 @@ table {
   --f7-button-small-text-transform: none;
   --f7-button-small-outline-border-width: 1px;
 }
+
+
+
+.navbar:after {
+    display: none !important;
+}

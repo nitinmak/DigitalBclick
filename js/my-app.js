@@ -29,6 +29,22 @@ $$(document).on('deviceready', function() {
             }
         }, 
         )
+
+//                                $.ajax({
+//             url: "https://digitalbcards.in/api/fetch_amount/", 
+//             method: "POST",
+//             data:{secrete:"virus"}, 
+//             dataType:"json",            
+           
+//             success: function(data) {
+//                 // var data = JSON.stringify(data);
+
+// $('#payment_frm').attr("data-amount","20"); //setter
+// alert($('#payment_frm').data('amount'));
+// }
+// })
+
+
 //  if(payment == 0){
 // // alert($('#payment_btn').attr('href'));
 //      // $('.payment_btn').trigger('click');
