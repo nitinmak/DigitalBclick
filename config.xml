@@ -86,6 +86,24 @@
         <plugin name="cordova-plugin-statusbar" spec="1.0.1" />
         <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
     <preference name="fullscreen" value="false" />
-    
+    <gap:plugin name="phonegap-plugin-barcodescanner" source="npm" />
+
+<preference name="android-build-tool" value="gradle" />
+
+<config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription">
+    <string>It is used for scaning QR code.</string>
+</config-file>
+
+<edit-config platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription" mode="merge">
+    <string>It is used for scaning QR code.</string>
+</edit-config>
+
+<config-file platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+    <string>It is used for scanning QR code</string>
+</config-file>
+
+<edit-config platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="merge">
+    <string>It is used for scanning QR code</string>
+</edit-config>
 
 </widget>
