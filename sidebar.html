@@ -131,8 +131,10 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
+var email =   window.localStorage.getItem("email");
 
-     $('.snackbar').html('Testing tab');
+     update_profile(email);
+     // $('.snackbar').html('Testing tab');
 my_toast();
         function my_toast(){
             // alert('toast');
