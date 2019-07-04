@@ -265,6 +265,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
     
                                 <div class="item-after">
+                                   <div class="snackbar" style="z-index: 99999999999999999999999">Some text some message..</div>
                                    <div class="card-content card-content-padding">
      <div class="form-group item-input-wrap" style="margin: 25px;border: groove;">
       <div class="col-md-8 col-sm-8 input-group item-input-wrap">
@@ -298,7 +299,7 @@
                         </div>
                             </div>
                         </div>
-                         <div class="snackbar">Some text some message..</div>
+                        
                         <div class="row no-gutters ">
                           <center>
                 <p class="mgt"><a href="forgot_password.html"  onclick="location.href='forgot_password.html'" style="color:#333;">Forgot Password ?</a>
@@ -388,7 +389,7 @@
 
 
       $(document).on('click', '#login_user', function(){  
-alert('here');
+// alert('here');
   $('#login_form').validate({ // initialize the plugin
         errorLabelContainer: "#cs-error-note",
    
@@ -457,25 +458,27 @@ alert('here');
     
                 // alert(data.message);
               }else{
-alert(email);
+// alert(email);
                 window.localStorage.setItem("login",1);
                 window.localStorage.setItem("email",email);
 
  update_profile(email);
               var payment =   window.localStorage.getItem("payment");
-              alert(payment);
-               alert(data.message);
+              // alert('fdfd');
                $('.snackbar').html(data.message);
+               
   // setTimeout(function(){ $('.snackbar').show(); }, 3000);
+              // alert(payment);
                 my_toast();
-                if(payment != ''){
+                
+                  // alert('here');
+                  $('.loader').css('display','none');
+                  // alert(data.message);
                   location.href = 'home.html';
                   // location.reload();
-                }else{
-                  location.href = 'home.html';
-    $$('#payment_btn').trigger("click");
-                }
-    $('.loader').css('display','none');
+
+                
+
 
               // $('#home').click();
               // $('#icon').html('<i class="fa fa-check font-30 icon-circle icon-l color-green-dark bg-white shadow-icon-large"></i>');
@@ -524,15 +527,82 @@ if(islogin == 1){
 // alert($('#payment_btn').attr('href'));
      // $('.payment_btn').trigger('click');
      location.href = 'pay.html';
-      // $$('#payment_btn').trigger("click");
+      // $('#payment_btn').trigger("click");
     // $( "#payment_btn" ).trigger( "click" );
   }else{
-    // $$('#home').trigger("click");
+    // $('#home').trigger("click");
  location.href = "home.html"
 
   }
  // window.location.href = "home.html"
   }
+
+
+
+    function update_profile(email){
+      // alert(email);
+               $.ajax({
+            url: "https://digitalbcards.in/api/user_profile/", 
+            method: "POST",
+            data:{email:email,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+               window.localStorage.setItem("payment",data.pay_status);
+                // alert(data.pay_status);
+               window.localStorage.setItem("user_id",data.id);
+               window.localStorage.setItem("language",data.language);
+               window.localStorage.setItem("referral",data.Refferal_id);
+               window.localStorage.setItem("mobile",data.mobile);
+               window.localStorage.setItem("profession",data.profession);
+               window.localStorage.setItem("about_me",data.about_me);
+               window.localStorage.setItem("skype",data.skype);
+               window.localStorage.setItem("fb_url",data.fb_url);
+
+               window.localStorage.setItem("y_tube_link",data.y_tube_link);
+               window.localStorage.setItem("website",data.website);
+                
+               window.localStorage.setItem("whatsapp",data.whatsapp);
+               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
+               window.localStorage.setItem("name",data.name);
+               //window.localStorage.setItem("username",data.name);
+               window.localStorage.setItem("user_image",data.profile_img);
+
+               window.localStorage.setItem("company_name",data.company_name);
+               window.localStorage.setItem("vision",data.vision);
+               window.localStorage.setItem("mission",data.mission);
+               window.localStorage.setItem("about_comp",data.about_comp);
+               window.localStorage.setItem("comp_address",data.comp_address);
+               window.localStorage.setItem("map_link",data.map_link);
+               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
+               window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("theme",data.theme);
+
+              
+               // alert(data.name);
+                $('#user').html(data.name);
+                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+                // $('#user_image').css("height",'80px');
+                // $('#user_image').css("width",'80px');
+               // $('#preloader').hide();
+    $('.loader').css('display','none');
+                
+              
+            //location.reload();
+          }
+        })
+        }
+
+
+        // my_toast();
+        function my_toast(){
+            // alert('toast');
+    $('.snackbar').css('visibility','visible');
+    $('.snackbar').css('z-index','9999999999999999');
+    $('.snackbar').css('font-size','14px');
+  setTimeout(function(){ $('.snackbar').css('visibility','hidden'); }, 3000);
+}
 </script>
 
         
