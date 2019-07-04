@@ -1,3 +1,24 @@
+<style type="text/css">
+@media only screen and (width:768px)  {
+.new_logo{
+  width: 50% !important;
+}
+.page-content{
+margin-top: 20px;
+}
+}
+
+/* ipad Mini Landscape */
+@media only screen and (width:1024px)  {
+  .new_logo{
+  width: 50% !important;
+}
+.page-content{
+  margin-top: 20px;
+}
+}
+</style>
+
  <div class="profile-link">
                 <a href="#" class="media">
                     <div class="w-auto h-100">
@@ -135,7 +156,7 @@ var email =   window.localStorage.getItem("email");
 
      update_profile(email);
      // $('.snackbar').html('Testing tab');
-my_toast();
+// my_toast();
         function my_toast(){
             // alert('toast');
     $('.snackbar').css('visibility','visible');
@@ -317,6 +338,7 @@ function edit_offer(name,id,description,tag_line){
                         }
                         }
                         function color(id) {
+   window.localStorage.setItem("theme",id);
  var user_id =  window.localStorage.getItem("user_id");
                         
                       jQuery.ajax({
@@ -326,6 +348,7 @@ function edit_offer(name,id,description,tag_line){
                                 success: function (data) {
                                     $('.snackbar').html(data);
                                     my_toast();
+
                                    location.reload();
                                     
                                 },
