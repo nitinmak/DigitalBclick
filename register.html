@@ -377,6 +377,16 @@
  
 
 <script type="text/javascript">
+
+     $('.snackbar').html('Testing tab');
+my_toast();
+        function my_toast(){
+            // alert('toast');
+    $('.snackbar').css('visibility','visible');
+    $('.snackbar').css('z-index','9999999999999999');
+    $('.snackbar').css('font-size','14px');
+  setTimeout(function(){ $('.snackbar').css('visibility','hidden'); }, 3000);
+}
      $(document).on('click', '#register_user', function(){  
  
 $('#register_form').validate({ // initialize the plugin
