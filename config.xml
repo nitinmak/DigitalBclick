@@ -32,8 +32,10 @@
         <preference name="android-targetSdkVersion" value="28" />
          <!-- <preference name="android-targetSdkVersion" value="21" /> -->
     <preference name="android-maxSdkVersion" value="28" />
-    <platform name="ios">
-            <preference name="target-device" value="handset" />
+ 
+        <config-file target="*-Info.plist" parent="UIApplicationExitsOnSuspend">
+          <true/>
+        </config-file>
         <icon src="ios/icon-512-2x.png" width="1024" height="1024" />
         <icon src="icon/icon-60@3x.png" width="180" height="180" />
         
@@ -89,22 +91,26 @@
     <preference name="fullscreen" value="false" />
     <gap:plugin name="phonegap-plugin-barcodescanner" source="npm" />
 
-<preference name="android-build-tool" value="gradle" />
+    <preference name="android-build-tool" value="gradle" />
 
-<config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription">
-    <string>It is used for scaning QR code.</string>
-</config-file>
+    <config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription">
+        <string>It is used for scaning QR code.</string>
+    </config-file>
 
-<edit-config platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription" mode="merge">
-    <string>It is used for scaning QR code.</string>
-</edit-config>
+       <config-file platform="ios" target="*-Info.plist" parent="NSContactsUsageDescription">
+        <string>It is used for pick contact To share Id</string>
+    </config-file>
 
-<config-file platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
-    <string>It is used for scanning QR code</string>
-</config-file>
+    <edit-config platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription" mode="merge">
+        <string>It is used for scaning QR code.</string>
+    </edit-config>
 
-<edit-config platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="merge">
-    <string>It is used for scanning QR code</string>
-</edit-config>
+    <config-file platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+        <string>It is used for scanning QR code</string>
+    </config-file>
+
+    <edit-config platform="ios" target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="merge">
+        <string>It is used for scanning QR code</string>
+    </edit-config>
 
 </widget>
