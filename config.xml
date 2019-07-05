@@ -89,14 +89,18 @@
     </config-file>
 
     <edit-config  target="*-Info.plist" parent="NSCameraUsageDescription" mode="merge">
-        <string>It is used for scaning QR code.</string>
+        <string>It is used for  take aphoto for user profile.</string>
     </edit-config>
+    
+<config-file platform="ios" target="*-Info.plist" parent="NSContactsUsageDescription">
+        <string>It is used for pick contact To share Id</string>
+    </config-file>
 
     <config-file  target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
-        <string>It is used for scanning QR code</string>
+        <string>It is used for Pick photo to set user profile</string>
     </config-file>
 
     <edit-config  target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="merge">
-        <string>It is used for scanning QR code</string>
+        <string>It is used for Pick photo to set user profile</string>
     </edit-config>
 </widget>
