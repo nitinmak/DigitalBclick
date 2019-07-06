@@ -191,7 +191,61 @@ if(islogin == 1){
                 window.localStorage.setItem("login",1);
                 window.localStorage.setItem("email",email);
 
- update_profile(email);
+                 $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+                     $.ajax({
+            url: "https://digitalbcards.in/api/user_profile/", 
+            method: "POST",
+            data:{email:email,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+                // alert(data.Refferal_id);
+               window.localStorage.setItem("payment",data.pay_status);
+               window.localStorage.setItem("user_id",data.id);
+               window.localStorage.setItem("language",data.language);
+               window.localStorage.setItem("referral",data.Refferal_id);
+               window.localStorage.setItem("mobile",data.mobile);
+               window.localStorage.setItem("profession",data.profession);
+               window.localStorage.setItem("about_me",data.about_me);
+               window.localStorage.setItem("skype",data.skype);
+               window.localStorage.setItem("fb_url",data.fb_url);
+
+               window.localStorage.setItem("y_tube_link",data.y_tube_link);
+               window.localStorage.setItem("website",data.website);
+                
+               window.localStorage.setItem("whatsapp",data.whatsapp);
+               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
+               window.localStorage.setItem("name",data.name);
+               //window.localStorage.setItem("username",data.name);
+               window.localStorage.setItem("user_image",data.profile_img);
+
+               window.localStorage.setItem("company_name",data.company_name);
+               window.localStorage.setItem("vision",data.vision);
+               window.localStorage.setItem("mission",data.mission);
+               window.localStorage.setItem("about_comp",data.about_comp);
+               window.localStorage.setItem("comp_address",data.comp_address);
+               window.localStorage.setItem("map_link",data.map_link);
+               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
+               window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("theme",data.theme);
+var referral =  window.localStorage.getItem("referral");
+                   // alert(referral);
+              
+               // alert(data.fb_url);
+                $('#user').html(data.name);
+                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+                // $('#user_image').css("height",'80px');
+                // $('#user_image').css("width",'80px');
+               // $('#preloader').hide();
+    $('.loader').css('display','none');
+                
+              
+            //location.reload();
+          }
+        }) 
+
               var payment =   window.localStorage.getItem("payment");
               // alert(payment);
                // alert(data.message);
@@ -3001,7 +3055,8 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
-
+ var referral =  window.localStorage.getItem("referral");
+ // alert(referral);
  $('.navbar').show();
     $('.back').hide();
       var permission = cordova.plugins.permissions;
@@ -3019,7 +3074,61 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
         )
 
      var email =  window.localStorage.getItem("email");
-     update_profile(email);
+      $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+                     $.ajax({
+            url: "https://digitalbcards.in/api/user_profile/", 
+            method: "POST",
+            data:{email:email,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+                // alert(data.Refferal_id);
+               window.localStorage.setItem("payment",data.pay_status);
+               window.localStorage.setItem("user_id",data.id);
+               window.localStorage.setItem("language",data.language);
+               window.localStorage.setItem("referral",data.Refferal_id);
+               $('#referral_idd').val(data.Refferal_id);
+               window.localStorage.setItem("mobile",data.mobile);
+               window.localStorage.setItem("profession",data.profession);
+               window.localStorage.setItem("about_me",data.about_me);
+               window.localStorage.setItem("skype",data.skype);
+               window.localStorage.setItem("fb_url",data.fb_url);
+
+               window.localStorage.setItem("y_tube_link",data.y_tube_link);
+               window.localStorage.setItem("website",data.website);
+                
+               window.localStorage.setItem("whatsapp",data.whatsapp);
+               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
+               window.localStorage.setItem("name",data.name);
+               //window.localStorage.setItem("username",data.name);
+               window.localStorage.setItem("user_image",data.profile_img);
+
+               window.localStorage.setItem("company_name",data.company_name);
+               window.localStorage.setItem("vision",data.vision);
+               window.localStorage.setItem("mission",data.mission);
+               window.localStorage.setItem("about_comp",data.about_comp);
+               window.localStorage.setItem("comp_address",data.comp_address);
+               window.localStorage.setItem("map_link",data.map_link);
+               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
+               window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("theme",data.theme);
+var referral =  window.localStorage.getItem("referral");
+                   // alert(referral);
+              
+               // alert(data.fb_url);
+                $('#user').html(data.name);
+                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+                // $('#user_image').css("height",'80px');
+                // $('#user_image').css("width",'80px');
+               // $('#preloader').hide();
+    $('.loader').css('display','none');
+                
+              
+            //location.reload();
+          }
+        }) 
   app.initialize();
   //alert("app started"); 
  
@@ -3112,18 +3221,17 @@ $("#segment").trigger('create');
             //location.reload();
           }
         });  
-  var email =  window.localStorage.getItem("email");
-     update_profile(email);
+
                       var user_id =  window.localStorage.getItem("user_id");
                       var language =  window.localStorage.getItem("language");
                       var referral =  window.localStorage.getItem("referral");
+                      var rrr =  window.localStorage.getItem("referral");
                       var name =  window.localStorage.getItem("name");
                       var user_image =  window.localStorage.getItem("user_image");
-                   // alert(referral);
                                 var user =  window.localStorage.getItem("user_id");
              $('#user_id').val(user);
              $('#language').val(language);
-             $('#referral_idd').val(referral);
+             
              $('#user_name').val(name);
              
              var mail_link = 'mailto:?subject=Digital%20Bcard&body=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name;
