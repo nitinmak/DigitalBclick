@@ -3019,59 +3019,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
         )
 
      var email =  window.localStorage.getItem("email");
-      $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
-                     $.ajax({
-            url: "https://digitalbcards.in/api/user_profile/", 
-            method: "POST",
-            data:{email:email,secrete:"virus"}, 
-            dataType:"json",            
-           
-            success: function(data) {
-                // var data = JSON.stringify(data);
-                // alert(data.pay_status);
-               window.localStorage.setItem("payment",data.pay_status);
-               window.localStorage.setItem("user_id",data.id);
-               window.localStorage.setItem("language",data.language);
-               window.localStorage.setItem("referral",data.Refferal_id);
-               window.localStorage.setItem("mobile",data.mobile);
-               window.localStorage.setItem("profession",data.profession);
-               window.localStorage.setItem("about_me",data.about_me);
-               window.localStorage.setItem("skype",data.skype);
-               window.localStorage.setItem("fb_url",data.fb_url);
-
-               window.localStorage.setItem("y_tube_link",data.y_tube_link);
-               window.localStorage.setItem("website",data.website);
-                
-               window.localStorage.setItem("whatsapp",data.whatsapp);
-               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
-               window.localStorage.setItem("name",data.name);
-               //window.localStorage.setItem("username",data.name);
-               window.localStorage.setItem("user_image",data.profile_img);
-
-               window.localStorage.setItem("company_name",data.company_name);
-               window.localStorage.setItem("vision",data.vision);
-               window.localStorage.setItem("mission",data.mission);
-               window.localStorage.setItem("about_comp",data.about_comp);
-               window.localStorage.setItem("comp_address",data.comp_address);
-               window.localStorage.setItem("map_link",data.map_link);
-               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
-               window.localStorage.setItem("company_img",data.company_img);
-               window.localStorage.setItem("theme",data.theme);
-
-              
-               // alert(data.fb_url);
-                $('#user').html(data.name);
-                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
-                // $('#user_image').css("height",'80px');
-                // $('#user_image').css("width",'80px');
-               // $('#preloader').hide();
-    $('.loader').css('display','none');
-                
-              
-            //location.reload();
-          }
-        }) 
+     update_profile(email);
   app.initialize();
   //alert("app started"); 
  
@@ -3164,13 +3112,14 @@ $("#segment").trigger('create');
             //location.reload();
           }
         });  
-
+  var email =  window.localStorage.getItem("email");
+     update_profile(email);
                       var user_id =  window.localStorage.getItem("user_id");
                       var language =  window.localStorage.getItem("language");
                       var referral =  window.localStorage.getItem("referral");
                       var name =  window.localStorage.getItem("name");
                       var user_image =  window.localStorage.getItem("user_image");
-                   // alert(referral);
+                   alert(referral);
                                 var user =  window.localStorage.getItem("user_id");
              $('#user_id').val(user);
              $('#language').val(language);
