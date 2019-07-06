@@ -3119,7 +3119,7 @@ $("#segment").trigger('create');
                       var referral =  window.localStorage.getItem("referral");
                       var name =  window.localStorage.getItem("name");
                       var user_image =  window.localStorage.getItem("user_image");
-                   alert(referral);
+                   // alert(referral);
                                 var user =  window.localStorage.getItem("user_id");
              $('#user_id').val(user);
              $('#language').val(language);
