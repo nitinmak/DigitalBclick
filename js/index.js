@@ -94,7 +94,7 @@ function onSuccess(contacts){
 }
 
 function onError(){
-   // alert('Some Error');
+    alert('Some Error');
 }
 // $(document).on('click', '#choose_contact', function() {
   
@@ -105,12 +105,9 @@ function onError(){
 function displaycontacts()
 {
 navigator.contacts.pickContact(function(contact){
-    
     var  contact_name =  contact.displayName;
     var contact_number = contact.phoneNumbers[0].value;
     var trim = contact_number.replace(/\s/g,'');
-    // alert(contact_name);
-    // alert('firt');
     document.getElementById("receivermobile").value = trim.slice(-10);
     document.getElementById("receivername").value =  contact_name;
         // alert('The following contact has been selected:' + JSON.stringify(contact));
@@ -137,8 +134,6 @@ function updateContacts()
 	var selectBox = document.getElementById("contacts-list");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
 	var selectedText = selectBox.options[selectBox.selectedIndex].text;
-    alert(selectedText);
-    // alert('here');
 alert($.trim(selectedValue.slice(-11)));
 	document.getElementById("receivermobile").value = $.trim(selectedValue.slice(-11));
 	document.getElementById("receivername").value =  selectedText;
