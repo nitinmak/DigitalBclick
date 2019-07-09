@@ -52,9 +52,10 @@
         <icon src="icon/ios/Icon-App-76x76@1x.png" width="76" height="76" />
         <icon src="icon/ios/Icon-App-76x76@2x.png" width="156" height="156" />
         <!-- iOS 7.0+ -->
-        <icon src="icon/ios/Icon-App-83.5x83.5@2x.png" width="166" height="166" />
+        
+        <icon src="icon/Icon-App-512@2x.png" width="1024" height="1024" />
         <!-- iPhone / iPod Touch  -->
-        <icon src="icon/icon.png" width="1024" height="1024" />
+        <icon src="icon/icon.png" widt="1024" height="1024" />
        
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
