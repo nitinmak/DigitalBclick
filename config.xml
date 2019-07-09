@@ -55,7 +55,7 @@
         
         <icon src="icon/Icon-App-512@2x.png" width="1024" height="1024" />
         <!-- iPhone / iPod Touch  -->
-        <icon src="icon/icon.png" widt="1024" height="1024" />
+        <icon src="icon/icon.png" width="1024" height="1024" />
        
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
