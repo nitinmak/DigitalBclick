@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="card.digitalcard.com" version="1.1.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-        <!-- <icon src="icon/icon.png"  width="57" height="57" density="mdpi" /> -->
-            <!-- <icon src="icon/icon.png" /> -->
+<widget id="card.digitalcard.com" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<!--         <icon src="icon/icon.png"  width="57" height="57" density="mdpi" /> -->
+            <icon src="icon/icon.png" />
 
 
     <name>digitalcard</name>
@@ -52,8 +52,8 @@
         <icon src="icon/ios/Icon-App-76x76@1x.png" width="76" height="76" />
         <icon src="icon/ios/Icon-App-76x76@2x.png" width="156" height="156" />
         <!-- iOS 7.0+ -->
-        
-        <icon src="icon/Icon-App-512@2x.png" width="1024" height="1024" />
+        <icon src="icon/icon.png" platform="ios" width="1024" height="1024"/>
+        <icon src="icon/Icon-App-512@2x.png" platform="ios" width="1024" height="1024" />
         <!-- iPhone / iPod Touch  -->
         <icon src="icon/icon.png" width="1024" height="1024" />
        
