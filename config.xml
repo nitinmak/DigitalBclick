@@ -79,14 +79,14 @@
 	     <preference name="android-build-tool" value="gradle" /> 
 
 
-	 <config-file  target="*-Info.plist" parent="NSCameraUsageDescription" mode="overwrite">
+	 <config-file  target="*-Info.plist" parent="NSCameraUsageDescription" mode="replace">
 
 
 	        <string>It is used for scaning QR code.</string>
 	    </config-file>
 
 
-	    <edit-config  target="*-Info.plist" parent="NSCameraUsageDescription" mode="merge">
+	    <edit-config  target="*-Info.plist" parent="NSCameraUsageDescription" mode="replace">
 	        <string>It is used for  take aphoto for user profile.</string>
 	    </edit-config>
 	    
@@ -100,7 +100,7 @@
 	    </config-file>
 
 
-	    <edit-config  target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="merge">
+	    <edit-config  target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="replace">
 	        <string>It is used for Pick photo to set user profile</string>
 	    </edit-config>
 	</widget>
