@@ -137,8 +137,8 @@
 	         <!-- <preference name="android-targetSdkVersion" value="21" /> -->
 	    <preference name="android-maxSdkVersion" value="28" />
 	    <platform name="ios">
-<!-- 	            <icon src="icon/icon.png" width="1024" height="1024" /> -->
-	            <icon src="icon/icon-512-2x.png" width="1024" height="1024" />
+	            <icon src="icon/icon.png" width="1024" height="1024" />
+	            <!-- <icon src="icon/icon-512-2x.png" width="1024" height="1024" /> -->
 	        <icon src="icon/icon-60@3x.png" width="180" height="180" />
 	        <!-- iOS 7.0+ -->
 	        <!-- iPhone / iPod Touch  -->
