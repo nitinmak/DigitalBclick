@@ -33,8 +33,8 @@
 	         <!-- <preference name="android-targetSdkVersion" value="21" /> -->
 	    <preference name="android-maxSdkVersion" value="28" />
 	    <platform name="ios">
-	            <icon src="icon/icon.png" width="1024" height="1024" />
-<!-- 	            <icon src="ios/icon-512-2x.png" width="1024" height="1024" /> -->
+<!-- 	            <icon src="icon/icon.png" width="1024" height="1024" /> -->
+	            <icon src="icon/icon-512-2x.png" width="1024" height="1024" />
 	        <icon src="icon/icon-60@3x.png" width="180" height="180" />
 	        <!-- iOS 7.0+ -->
 	        <!-- iPhone / iPod Toh  -->
@@ -72,7 +72,7 @@
 	        <plugin name="cordova-plugin-statusbar" spec="1.0.1" />
 	        <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
 	    <preference name="fullscreen" value="false" />
-	    
+<!-- 	    
 	     <gap:plugin name="phonegap-plugin-barcodescanner" source="npm" />
 
 
@@ -102,5 +102,5 @@
 
 	    <edit-config  target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="replace">
 	        <string>It is used for Pick photo to set user profile</string>
-	    </edit-config>
+	    </edit-config> -->
 	</widget>
