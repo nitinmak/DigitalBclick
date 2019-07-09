@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="card.digitalcard.com" version="1.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-<!--         <icon src="icon/icon.png"  width="57" height="57" density="mdpi" /> -->
-<!--             <icon src="icon/icon.png" /> -->
+<widget id="card.digitalcard.com" version="1.1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+        <!-- <icon src="icon/icon.png" platform="ios" width="57" height="57" density="mdpi" /> -->
+            <!-- <icon src="icon/icon.png" /> -->
 
 
     <name>digitalcard</name>
     <description>
-       Digital B Cards
+        DigitalBcards
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
@@ -33,43 +33,31 @@
          <!-- <preference name="android-targetSdkVersion" value="21" /> -->
     <preference name="android-maxSdkVersion" value="28" />
     <platform name="ios">
-                  <icon src="ios/icon-512-2x.png" width="1024" height="1024" />
-            <preference name="target-device" value="handset" />
-        <icon src="icon/ios/Icon-App-20x20@1x.png" width="20" height="20" />
-        <icon src="icon/ios/Icon-App-20x20@2x.png" width="40" height="40" />
-        <icon src="icon/ios/Icon-App-20x20@3x.png" width="60" height="60" />
-
-        <icon src="icon/ios/Icon-App-29x29@1x.png" width="29" height="29" />
-        <icon src="icon/ios/Icon-App-29x29@2x.png" width="58" height="58" />
-        <icon src="icon/ios/Icon-App-29x29@3x.png" width="87" height="87" />
-        
-        <icon src="icon/ios/Icon-App-40x40@1x.png" width="40" height="40" />
-        <icon src="icon/ios/Icon-App-40x40@2x.png" width="80" height="80" />
-        <icon src="icon/ios/Icon-App-40x40@3x.png" width="120" height="120" />
-
-        <icon src="icon/ios/Icon-App-60x60@2x.png" width="120" height="120" />
-        <icon src="icon/ios/Icon-App-60x60@3x.png" width="180" height="180" />
-        
-        <icon src="icon/ios/Icon-App-76x76@1x.png" width="76" height="76" />
-        <icon src="icon/ios/Icon-App-76x76@2x.png" width="156" height="156" />
+        <icon src="ios/icon-512-2x.png" width="1024" height="1024" />
+        <icon src="icon/icon-60@3x.png" width="180" height="180" />
         <!-- iOS 7.0+ -->
-<!--         <icon src="icon/icon.png" platform="ios" width="1024" height="1024"/> -->
-<!--         <icon src="icon/Icon-App-512@2x.png" platform="ios" width="1024" height="1024" /> -->
         <!-- iPhone / iPod Touch  -->
-<!--         <icon src="icon/icon.png" width="1024" height="1024" /> -->
-      
+        <icon src="icon/icon-60.png" width="60" height="60" />
+        <icon src="icon/icon-60@2x.png" width="120" height="120" />
+        <!-- iPad -->
+        <icon src="icon/icon-76.png" width="76" height="76" />
+        <icon src="icon/icon-76@2x.png" width="152" height="152" />
+        <!-- iOS 6.1 -->
+        <!-- Spotlight Icon -->
+        <!-- <icon src="icon/icon-40.png" width="40" height="40" /> -->
+        <icon src="icon/icon-40@2x.png" width="80" height="80" />
+        <!-- iPhone / iPod Touch -->
+        <icon src="icon/icon.png" width="57" height="57" />
+        <icon src="icon/icon@2x.png" width="114" height="114" />
+        <!-- iPad -->
+        <icon src="icon/icon-72.png" width="72" height="72" />
+        <icon src="icon/icon-72@2x.png" width="144" height="144" />
+        <icon src="icon/icon-small@2x.png" width="58" height="58" />
+        <icon src="icon/icon.png" width="1024" height="1024" />
+        <icon src="icon/icon-50@2x.png" width="100" height="100" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
-
-        <!-- iPhone and iPod touch -->
-
-<splash src="icon/icon.png"  width="1024" height="1024" />
-
-<!-- Retina iPad -->
-
-<!-- <splash src="icon/icon.png"  width="2048" height="1536" /> -->
-
     </platform>
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />  
     <preference name="DisallowOverscroll" value="true" />
@@ -86,7 +74,7 @@
 
     <preference name="android-build-tool" value="gradle" />
 
-    <config-file  target="*-Info.plist" parent="NSCameraUsageDescription">
+ <config-file  target="*-Info.plist" parent="NSCameraUsageDescription">
         <string>It is used for scaning QR code.</string>
     </config-file>
 
