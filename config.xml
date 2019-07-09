@@ -101,4 +101,7 @@
     <edit-config  target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="merge">
         <string>It is used for Pick photo to set user profile</string>
     </edit-config>
+
 </widget>
+
+
