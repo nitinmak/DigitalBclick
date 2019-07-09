@@ -74,7 +74,7 @@
 
     <preference name="android-build-tool" value="gradle" />
 
- <config-file  target="*-Info.plist" parent="NSCameraUsageDescription">
+ <config-file  target="*-Info.plist" parent="NSCameraUsageDescription" mode="overwrite">
         <string>It is used for scaning QR code.</string>
     </config-file>
 
