@@ -1,269 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
 
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    
-
-
-    <!-- Your app title -->
-    <title>My App</title>
-
-    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
-        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
-     -->
-
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
-
-    <link rel="stylesheet" href="css/styles.css">
-      <link rel="apple-touch-icon" href="img/f7-icon-square.html">
-    <link rel="icon" href="img/f7-icon.html">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="vendor/bootstrap-4.1.3/css/bootstrap.min.css">
-
-    <!-- Material design icons CSS -->
-    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
-
-    <!-- swiper carousel CSS -->
-    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
-     
-    <!-- app CSS -->
-    <link id="theme" rel="stylesheet" href="css/style.css" type="text/css">
-    <link  rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/select2.min.css">
-    <link rel="stylesheet" href="css/intlTelInput.css">
-     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.css">
-       <link rel="stylesheet" type="text/css" href="css/crop_image/style.css" />
-          <link rel="stylesheet" type="text/css" href="css/crop_image/style-example.css" />
-          <link rel="stylesheet" type="text/css" href="css/crop_image/jquery.Jcrop.css" />
-  <link rel="stylesheet" href="newassets/css/style.css">
- <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-
-
-
-
-  
-    
-    
-    
-     
-     
-<style>
-  *{
-    font-family: 'PT Sans', sans-serif;
-  }
-  .navbar-inner{
-        background-color: #07314a;
-  }
-  .form-control{
-  background: none;
-  border-left: none;
-  border-top: none;
-  border-right: none;
-  border-radius: 0px;
-  color: white;
-}
-  .navbar .center {
-    color: white;
-}
-
-.btn{
-  border-radius: 0px
-}
-.form-control:focus{
-  background: none;
-  
-}
-.razorpay-payment-button{
-    display: none;
-}
-</style>
-</head>
-
-<body>
-    <!-- Status bar overlay for full screen mode (PhoneGap) -->
-    <div class="statusbar-overlay"></div>
-
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal sidebar sidebar-left " id="menu_side">
-       <!--  <div class="content-block">
-            <p>Left panel content goes here</p>
-        </div> -->
-       
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <!-- <a href="javascript:void(0)" class="menu-left"><i class="material-icons">menu</i></a> -->
+            <a href="#" class="link icon-only open-panel menu-left"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding" style="text-align: center;font-size: 20px">Dashboard</div>
+        <div class="right">
+        </div>
     </div>
-
-    <!-- Views -->
-    <div class="views">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
-            <a href="pay.html" id="payment_btn"> </a>
-<a href="home.html" class="home_link"></a>
- <div class="modal1 fade" id="colors" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content ">
-                    <div class="modal-header border-bottom theme-header">
-                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
-                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="text-center theme-color">
-                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
-                            <p>Share my Digital BCard in your network.</p>
-                            <button id="wp_link" class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
-                            <button id="twiter" class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
-                            <button id="google" class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
-                            <button id="fb_link" class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
-                            <br>
-                          
-                            <button id="linklind" class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-linkedin facardld"></i></button>
-                            <button id="mail_link" class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
-                         
-                        </div>
-                        <hr class="mt-4">
-                        <div class="row align-items-center mt-4">
-                           
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
- 
-
-
-             <div class="modal1 fade"  id="view_card_in_popup" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content ">
-                    <div class="modal-header border-bottom">
-                        <p class="title text-uppercase font-weight-bold text-dark my-2">Choose your color</p>
-                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" id="card_body" style="overflow: scroll;height: 450px;padding: 0px">
-                        <div class="text-center theme-color">
-                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
-                            <p>Share my Digital BCard in your network.</p>
-                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
-                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
-                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme=""><i class="fa fa-twitter facardtt"></i></button>
-                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
-                            <br>
-                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
-                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
-                         
-                        </div>
-                        <hr class="mt-4">
-                        <div class="row align-items-center mt-4">
-                           
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-            <div class="navbar" style="display: none;">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                        <a href="#" class="link icon-only open-panel"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
-                    <div class="right">
-                    <!-- <div class="center sliding">Awesome App</div> -->
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                    </div>
-                </div>
-            </div>
-            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
-                <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
-                    <!-- Scrollable page content -->
-                    <div class="page-content" >
-                      <!--   <div class="loader justify-content-center ">
-        <div class="maxui-roller align-self-center">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div> -->
-
-
-                      
-              
-                        <div class="content-block">
-                          
-    </div>
-    <div class="wrapper">
-        <!-- page main start -->
-        <div class="page">
-            <div class="page-content " style="background: white;">
-          
-             <div class="col-12">
-          <center><img src="img/new_logo.jpg" class="new_logo" width="100%"  height="100px" alt="" style="margin-top: 10px;margin-bottom: 10px;padding: 8px;" ></center>
+</div>
+<div class="pages">
+    <div data-page="home" class="page">
+       <div class="page-content" >
+        <div class="col-12">
+          <center><img src="img/new_logo.jpg" width="100%"  height="100px" alt="" style="margin-top: 10px;margin-bottom: 10px;padding: 8px;" ></center>
         </div>
         <!-- <a href="pay.html" id="payment_btn" ></a> -->
             <div class="card">
                <a href="profile.html"  style="color: white;">
     <div class="card-header"  style="background-color: #d49100; padding: 0;">
-          <a href="profile.html" id="profil" onclick="close_sidebar('profil')"><div class="col-60 ml-3" style="color: white;">
+         <div class="col-60 ml-3" style="color: white;font-size: 14px">
                       YOUR DBCARD
                     </div>
                     <div class="col-40">
-                           
-                                 <i class=" social fa fa-pencil-square-o" style="font-size:20px;color: white" ></i></a>
+                         <a href="profile.html" id="profileee" onclick="check_p('profileee')"  class="social" style="color: white;">
+                                 <i class="fa fa-pencil-square-o" style="font-size:20px;"></i></a>
                     </div>
     </div>
   </a>
     <div class="card-content mt-1" style=" padding: 0;">
          <div class="card rounded-50 border-0  bg-primary" style="margin: 0">
                                     <div class="card-header" style="background-color: #07314a;">
-                                        <a   href="#" data-toggle="modal" data-target="#colors">
-                                         <div class="row" style="width: 100%; margin: auto;">
+                                        <div class="row" style="width: 100%; margin: auto;">
                                             <div class="col-md-12 col-sm-12" >
                                                 <div style="float: left;">
                                                 <h5 class="card-title  text-white"><p class="mb-0" style="font-size: 15px;color:white">Share DBcard / Save Contact</p></h5>
                                                 </div>
-                                              </a>
-                                                 <a   href="#" data-toggle="modal" data-target="#colors" style="text-align: right;">
-                                                <div style="float: right; padding-left: 20px;padding-right: 1px;">
-                                               <i class="fa fa-share-alt text-white" ></i>
+                                                <div style="float: right;">
+                                                <a style="text-align: right;"  href="#" data-toggle="modal" data-target="#colors"><i class="fa fa-share-alt text-white" ></i></a>
                                                 </div>
-                                              </a>
                                             </div>
-                                          
                                         </div>
-                                      </a>
                                     </div>
                                      <form method="post" id="share_form">   
                                     <div class="card-body  text-white" style="background-color: #07314a;">
@@ -288,29 +72,29 @@
                                                <!--   <input type='text' value='' onclick="displaycontacts()" class='form-control icon-input' id="receivername" name="name"placeholder="Type Receiver’s Name">   -->
                         <!-- </div> -->
                          <div id="showcontacts" style="display:none;">
-                          <!-- <select id="contacts-list" class="form-control text-white" name="phoneno" onchange="updateContacts();">
+                          <!-- <select id="contacts-list" class="form-control" name="phoneno" onchange="updateContacts();">
                             </select>
  -->                           
                          </div>
-                                                <input type="hidden" class="form-control text-white"  id="language" name="language" >
-                                                <input type="hidden" class="form-control text-white"  id="referral" name="referral" >
-                                                <input type="hidden" class="form-control text-white"  id="user_id" name="user_id" >
-                                                <input type="hidden" class="form-control text-white"  id="user_name" name="user_name" >
+                                                <input type="hidden" class="form-control"  id="language" name="language" >
+                                                <input type="hidden" class="form-control"  id="referral_idd" name="referral" >
+                                                <input type="hidden" class="form-control"  id="user_id" name="user_id" >
+                                                <input type="hidden" class="form-control"  id="user_name" name="user_name" >
                                                   <input type="hidden" name="secrete" value="virus">
                                                 </div>
                                             </div>
                                                 <div class="col-12">
                                                 <div class="form-group">
-                                                    <div class="snackbar" style="z-index: 99999999999999999999999">Some text some message..</div>
+                                                    <div class="snackbar">Some text some message..</div>
                                                 <!-- <label>Phone Number</label> -->
                                                      <div class = "list-block">
                                                         <ul>
                                                            
 <!-- Open In Popup + Searchbar + Multiple -->
 <li>
-  <a class="item-link smart-select smart-select-init" data-open-in="popup"  data-searchbar="true" data-searchbar-placeholder="Search car">
+  <a class="item-link smart-select smart-select-init" data-open-in="popup"  data-searchbar="true" data-searchbar-placeholder="Search Segment">
     <select placeholder="Decide Segment" class="form-control select2 selid" style="width:100%" id="segment" name="segment[]"  multiple required="">
-      <optgroup label="Japanese">
+      <optgroup label="">
         <!-- <option value="honda" selected>Honda</option> -->
         <option value="-1" selected></option>
         <!-- <option value="mazda">Mazda</option> -->
@@ -321,7 +105,7 @@
     </select>
     <div class="item-content">
       <div class="item-inner">
-        <div class="item-title">Segment</div>
+        <div class="item-title" style="font-size: 14px;color: #798f9d;">Segment</div>
       </div>
     </div>
   </a>
@@ -369,50 +153,52 @@ padding-right:60px !important;
 .form-control{
   background: none;
   color:white;
-  border: none;
-  border-bottom: 1px groove;
+
+  /*border-bottom: 1px groove;*/
   
 }
           </style>
                                              <div class="col-12">
                                                 <div class="form-group bmd-form-group cc1">
-                                                    <input type="text" pattern="\d*" class="form-control text-white " id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
+                                                    <input type="text" minlength="10"  pattern="\d*" class="form-control text-white " id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
                           <!-- <ul id="contacts-list"></ul> -->
                                                     <!-- <input type="text" class="form-control  text-white" value="+91"> -->
                                                 </div>
                                             </div>
                                            <div class="col-12">
                                                 <div class="form-group">
+
+    
                                                 <!-- <label>Phone Number</label> -->
-                                                  <input type="email" class="form-control text-white" id="email" name="email" placeholder="Type Receiver’s Email">
+                                                  <input type="email" class="form-control" id="email" name="email" placeholder="Type Receiver’s Email">
                                                 </div>
                                             </div>
                                             <div id="test" style="display: none;width: 100%">
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="position" name="position" autocomplete="off" placeholder="Position">
+                                                <input type="text" class="form-control" id="position" name="position" autocomplete="off" placeholder="Position">
                                                 
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="address" name="address" placeholder="Address Line 1">
+                                                <input type="text" class="form-control" id="address" name="address" placeholder="Address Line 1">
                                                  
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="address2" name="address2" placeholder="Address Line 2">
+                                                <input type="text" class="form-control" id="address2" name="address2" placeholder="Address Line 2">
                                                     
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="city" name="city" placeholder="City">
+                                                <input type="text" class="form-control" id="city" name="city" placeholder="City">
 
                                                 </div>
                                             </div>
@@ -420,42 +206,42 @@ padding-right:60px !important;
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="zip_code" name="zip_code" placeholder="Zip Code">
+                                                <input type="text" minlength="6" maxlength="6" class="form-control" id="zip_code" name="zip_code" placeholder="Zip Code">
                                                  
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="state" name="state" placeholder="State">
+                                                <input type="text" class="form-control" id="state" name="state" placeholder="State">
                                                  
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="country" name="country" placeholder="Country Name">
+                                                <input type="text" class="form-control" id="country" name="country" placeholder="Country Name">
                                                   
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                <input type="text" class="form-control text-white" id="website" name="website" placeholder="Website">
+                                                <input type="url" class="form-control" id="website" name="website" placeholder="Website">
                                                 
                                                   
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                <label>Birthdate</label>
-                                                <input type="date" placeholder="Birthday" class="form-control text-white" id="birthday" name="birthday">
+                                                <label>Birth Date</label>
+                                                <input type="date" placeholder="Birthday" class="form-control" id="birthday" name="birthday">
                                                   
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                <label>Anniversory</label>
-                                                <input type="date" class="form-control text-white" id="anniversory" name="anniversory">
+                                                <label>Anniversary</label>
+                                                <input type="date" class="form-control" id="anniversory" name="anniversory">
                                                   
                                                 </div>
                                             </div>
@@ -483,6 +269,7 @@ padding-right:60px !important;
     <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMS</button>
 </div> -->
 
+
 <div class="block" style="width: 100%; padding: 5px;">
   <p class="row">
     <button type="button" name="send_sms"  id="button" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">More</button>
@@ -499,427 +286,18 @@ padding-right:60px !important;
     <button type="submit" name="send_sms" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Send SMS</button>
   </p>
 </div>
-
+<script type="text/javascript">
+  
+</script>
     </div>
 </div>
-          
+                  
 
 
           
                
         </div>
-    </div>       
- 
-        </div>
     </div>
-  </div>
-
-    <script type="text/javascript" src="cordova.js"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-         <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1.3/js/bootstrap.min.js"></script>
-
-<!-- <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script> -->
-<script type="text/javascript" src="js/jquery.validate.js"></script>
-    <!-- Cookie jquery file -->
-    <script src="vendor/cookie/jquery.cookie.js"></script>
-
-    <!-- sparklines chart jquery file -->
-    <script src="vendor/sparklines/jquery.sparkline.min.js"></script>
-
-    <!-- Circular progress gauge jquery file -->
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-
-    <!-- Swiper carousel jquery file -->
-    <script src="vendor/swiper/js/swiper.min.js"></script>
-
-    <!-- Application main common jquery file -->
-    <script src="js/main.js"></script>
-    <script src="js/select2.min.js"></script>
-  <script src="js/intlTelInput.js"></script>
-  <script class="iti-load-utils" async="" src="js/utils.js?1537717752654"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.js"></script>
-    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
-    <script src="js/jquery.cropit.js"></script>
+</div>
 
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.1/croppie.js"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.1/croppie.css" />
-     <script type="text/javascript" src="js/jquery.Jcrop.js"></script>
-<!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
-          <script type="text/javascript" src="js/jquery.SimpleCropper.js"></script>
-          <!-- <script type="text/javascript" src="./node_modules/ccavenue/index.js"></script> -->
-
-   <script type="text/javascript">
-
-  function update_profile(email){
-               $.ajax({
-            url: "https://digitalbcards.in/api/user_profile/", 
-            method: "POST",
-            data:{email:email,secrete:"virus"}, 
-            dataType:"json",            
-           
-            success: function(data) {
-                // var data = JSON.stringify(data);
-                // alert(data.pay_status);
-               window.localStorage.setItem("payment",data.pay_status);
-               window.localStorage.setItem("user_id",data.id);
-               window.localStorage.setItem("language",data.language);
-               window.localStorage.setItem("referral",data.Refferal_id);
-               window.localStorage.setItem("mobile",data.mobile);
-               window.localStorage.setItem("profession",data.profession);
-               window.localStorage.setItem("about_me",data.about_me);
-               window.localStorage.setItem("skype",data.skype);
-               window.localStorage.setItem("fb_url",data.fb_url);
-
-               window.localStorage.setItem("y_tube_link",data.y_tube_link);
-               window.localStorage.setItem("website",data.website);
-                
-               window.localStorage.setItem("whatsapp",data.whatsapp);
-               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
-               window.localStorage.setItem("name",data.name);
-               //window.localStorage.setItem("username",data.name);
-               window.localStorage.setItem("user_image",data.profile_img);
-
-               window.localStorage.setItem("company_name",data.company_name);
-               window.localStorage.setItem("vision",data.vision);
-               window.localStorage.setItem("mission",data.mission);
-               window.localStorage.setItem("about_comp",data.about_comp);
-               window.localStorage.setItem("comp_address",data.comp_address);
-               window.localStorage.setItem("map_link",data.map_link);
-               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
-               window.localStorage.setItem("company_img",data.company_img);
-               window.localStorage.setItem("theme",data.theme);
-
-              
-               // alert(data.fb_url);
-                $('#user').html(data.name);
-                $('#').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
-                // $('#user_image').css("height",'80px');
-                // $('#user_image').css("width",'80px');
-               // $('#preloader').hide();
-    $('.loader').css('display','none');
-                
-              
-            //location.reload();
-          }
-        })
-        }
-
-               $('.navbar').show();
-    $('.back').hide();
-                $("#menu_side").load("sidebar.html"); 
-
-
-
-  //                 var permission = cordova.plugins.permissions;
-  // permission.hasPermission(permission.READ_CONTACTS,function(results){
-  //           if(!results[permission])
-  //           {
-  //               permission.requestPermission(permission.READ_CONTACTS,function(results){
-  //                   if(results[permission]){
-  //                          alert("permission granted");
-  //                  }
-  //               },)
-  //               // alert("permission granted failed");
-  //           }
-  //       }, 
-  //       )
-
-     var email =  window.localStorage.getItem("email");
-      $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
-                     $.ajax({
-            url: "https://digitalbcards.in/api/user_profile/", 
-            method: "POST",
-            data:{email:email,secrete:"virus"}, 
-            dataType:"json",            
-           
-            success: function(data) {
-                // var data = JSON.stringify(data);
-                // alert(data.pay_status);
-               window.localStorage.setItem("payment",data.pay_status);
-               window.localStorage.setItem("user_id",data.id);
-               window.localStorage.setItem("language",data.language);
-               window.localStorage.setItem("referral",data.Refferal_id);
-               window.localStorage.setItem("mobile",data.mobile);
-               window.localStorage.setItem("profession",data.profession);
-               window.localStorage.setItem("about_me",data.about_me);
-               window.localStorage.setItem("skype",data.skype);
-               window.localStorage.setItem("fb_url",data.fb_url);
-
-               window.localStorage.setItem("y_tube_link",data.y_tube_link);
-               window.localStorage.setItem("website",data.website);
-                
-               window.localStorage.setItem("whatsapp",data.whatsapp);
-               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
-               window.localStorage.setItem("name",data.name);
-               //window.localStorage.setItem("username",data.name);
-               window.localStorage.setItem("user_image",data.profile_img);
-
-               window.localStorage.setItem("company_name",data.company_name);
-               window.localStorage.setItem("vision",data.vision);
-               window.localStorage.setItem("mission",data.mission);
-               window.localStorage.setItem("about_comp",data.about_comp);
-               window.localStorage.setItem("comp_address",data.comp_address);
-               window.localStorage.setItem("map_link",data.map_link);
-               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
-               window.localStorage.setItem("company_img",data.company_img);
-               window.localStorage.setItem("theme",data.theme);
-
-              
-               // alert(data.fb_url);
-                $('#user').html(data.name);
-                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
-                // $('#user_image').css("height",'80px');
-                // $('#user_image').css("width",'80px');
-               // $('#preloader').hide();
-    $('.loader').css('display','none');
-                
-              
-            //location.reload();
-          }
-        }) 
-  app.initialize();
-  //alert("app started"); 
- 
-
-   $(".segment").select2({
-     'tags':true,
-      placeholder: "Decide Segment"
-      
-    });
-
-
-
-   
-
-   // $("#button").click(function() {
-    // $(document).on('click', '.testclick', function() {
-      // alert('fdfd');
-  $(document).on('click', '#button', function(){  
-    // $(document).on('click', '#button', function(){  
-      // alert('fdfd');
-      
-       var lable = $("#button").text().trim();
-
-       if(lable == "Less") {
-         $("#button").text("More");
-         $("#test").hide();
-       }
-       else {
-         $("#button").text("Less");
-         $("#test").show();
-       }
-        
-      });
-
-
-      $("#reset_form").click(function() {
-      
-       $('#share_form')[0].reset();
-        
-      });
-  // var list = $('.country-list');
-
-$(document).on('click', '.flag-container', function() {
-  // alert('dl');
-  $('.country-list').removeClass('hide');
-    // trigger.click();
-});
-
- var input = document.querySelector("#receivermobile");
-
-    var a=window.intlTelInput(input, {
-    initialCountry: "auto",
-     geoIpLookup: function(success, failure) {
-
-
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-      // alert(jsonp);
-      var countryCode = (resp && resp.country) ? resp.country : "";
-      // alert(countryCode);
-      success(countryCode);
-
-   $('.country-name').css('color','black');
-    });
-    },
-
-  hiddenInput: "full_phone",
-  utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
-});
-      // alert(a);
-    // Following code will be executed for page with data-page attribute equal to "about"
-   
-    // myApp.alert(email);
-                        // alert('fdfd');
-                         
-
-
-                      var user_id =  window.localStorage.getItem("user_id");
-                      // alert(user_id);
-                              $.ajax({
-            url: "https://digitalbcards.in/api/segment/", 
-            method: "POST",
-            data:{user_id:user_id,secrete:"virus"}, 
-            dataType:"json",            
-           
-            success: function(data) {
-                // var data = JSON.stringify(data);
-// alert(data);
-$('#segment').append(data);
-// $("#segment").trigger('create');
-    $('.loader').css('display','none');
-
-            //    $('#username').html(data.name);
-             //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
-              
-            //location.reload();
-          }
-        });  
-
-                      var user_id =  window.localStorage.getItem("user_id");
-                      var language =  window.localStorage.getItem("language");
-                      var referral =  window.localStorage.getItem("referral");
-                      var name =  window.localStorage.getItem("name");
-                      var user_image =  window.localStorage.getItem("user_image");
-                   
-                                var user =  window.localStorage.getItem("user_id");
-             $('#user_id').val(user);
-             $('#language').val(language);
-             $('#referral').val(referral);
-             $('#user_name').val(name);
-             
-             var mail_link = 'mailto:?subject=Digital%20Bcard&body=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name;
-             var linklind = 'https://www.linkedin.com/shareArticle?mini=true&url=https://digitalbcards.in/Bcard.php?zxc=DBC100751&title=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name+'&source=LinkedIn';
-             var google = 'https://plus.google.com/share?url=https://digitalbcards.in/Bcard.php?zxc='+referral;
-             var twiter = 'https://twitter.com/intent/tweet?text=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name+'&source=&related=shareaholic'
-             var fb_url = 'https://www.facebook.com/sharer/sharer.php?u=https://digitalbcards.in/Bcard.php?zxc='+referral+'&quote=Hey,%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link.Say%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.';
-        var wp_link  = 'https://api.whatsapp.com/send?text=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name;
-   $('#wp_link').attr('onClick', 'share_social("'+wp_link+'");');
-   $('#fb_link').attr('onClick', 'share_social("'+fb_url+'");');
-   $('#twiter').attr('onClick', 'share_social("'+twiter+'");');
-   $('#google').attr('onClick', 'share_social("'+google+'");');
-   $('#linklind').attr('onClick', 'share_social("'+linklind+'");');
-   $('#mail_link').attr('onClick', 'share_social("'+mail_link+'");');
-
-
-
-          $('#share_form').validate({ // initialize the plugin
-        errorLabelContainer: "#cs-error-note",
-   
-     errorClass: 'errors',
-    rules: {
-     
-        "segment[]": "required",
-       
-         name: {
-           
-            required: true,
-            
-        },
-        
-        
-        
-    },
-    messages: {
-       
-        "segment[]": "Please Select Segment",
-        
-         name: {
-           
-            required: "Please enter  Reciver Name.",
-            
-            
-        },
-        
-        
-       
-         
-    },
-        submitHandler: function (form) { // for demo
-          form =$('#share_form').serialize();
-         // alert(form);
-                      var payment =  window.localStorage.getItem("payment");
-
-        if(payment == 0){
-   $('.snackbar').html('Make a payment to use Bcard features.');
-            my_toast();
-          return false;
-}else{
-
-          var  action = $('#action').val();
-          var  email = $('#email').val();
-        $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
-     $.ajax({
-            url: "https://digitalbcards.in/api/send_whatsapp/",
-            method: "POST",
-            data:form, 
-            dataType:"json",            
-           
-            success: function(data) {
-               // alert(data,message);
-              if(data.status == 0){
-                 $('.snackbar').html(data.message);
-  
-    $('.loader').css('display','none');
-                my_toast();
-                // alert(data.message);
-
-              }else if(data.status == 2){
-
-                
-                // alert(data.message);
-                   $('.snackbar').html(data.message);
-  
-             $('.loader').css('display','none');
-                my_toast();
-            window.location.href = data.url;
-              }else{
-                 $('.snackbar').html(data.message);
-  
-                my_toast();
-    $('.loader').css('display','none');
-
-              }
-            //location.reload();
-          }
-        })
-         }
-            return false; // for demo
-        }
-    }); 
-
-                //called when key is pressed in textbox
-              $("#mobile").keypress(function (e) {
-                 //if the letter is not digit then display error and don't type anything
-                 if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                    //display error message
-                    //$("#errmsg").html("Digits Only").show().fadeOut("slow");
-                           return false;
-                }
-               });
-            </script>      
-
-
-
-
-        
-</body>
-<style type="text/css">
-    .errors{
-      color:red;
-    }
-    .pages{
-      background:white !important; 
-    }
-    .modal1{position:fixed;top:0;right:0;bottom:0;left:0;z-index:9999;opacity:1;display:none;overflow:hidden;outline:0}
-</style>
-
-</html>
