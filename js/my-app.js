@@ -3333,6 +3333,11 @@ $("#segment").trigger('create');
          
     },
         submitHandler: function (form) { // for demo
+         var c_code = $('#c_code').val();
+
+         var receivermobile = $('#receivermobile').val();
+         alert(c_code+receivermobile);
+         $('#full_phone').val(c_code+receivermobile);
           form =$('#share_form').serialize();
          // alert(form);
                       var payment =  window.localStorage.getItem("payment");
@@ -3345,8 +3350,8 @@ $("#segment").trigger('create');
 
           var  action = $('#action').val();
           var  email = $('#email').val();
-        $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
+        // $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    // $('.loader').css('display','flex');
      $.ajax({
             url: "https://digitalbcards.in/api/send_whatsapp/",
             method: "POST",
