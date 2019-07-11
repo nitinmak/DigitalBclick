@@ -3173,9 +3173,19 @@ var referral =  window.localStorage.getItem("referral");
   app.initialize();
   //alert("app started"); 
  
-
+  var dropdown = document.getElementById('segment');
+dropdown.addEventListener('touchstart', function(e) {
+    e.stopPropagation();
+}, false);
    $(".segment").select2({
      'tags':true,
+      placeholder: "Decide Segment"
+      
+    });
+
+
+    $(".hh").select2({
+   
       placeholder: "Decide Segment"
       
     });
@@ -3213,26 +3223,26 @@ $(document).on('click', '.flag-container', function() {
     // trigger.click();
 });
 
- var input = document.querySelector("#receivermobile");
+//  var input = document.querySelector("#receivermobile");
 
-    var a=window.intlTelInput(input, {
-    initialCountry: "auto",
-     geoIpLookup: function(success, failure) {
+//     var a=window.intlTelInput(input, {
+//     initialCountry: "auto",
+//      geoIpLookup: function(success, failure) {
 
 
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-      // alert(resp.country);
-      var countryCode = (resp && resp.country) ? resp.country : "";
-      // alert(countryCode);
-      success(countryCode);
+//     $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+//       // alert(resp.country);
+//       var countryCode = (resp && resp.country) ? resp.country : "";
+//       // alert(countryCode);
+//       success(countryCode);
 
-   $('.country-name').css('color','black');
-    });
-    },
+//    $('.country-name').css('color','black');
+//     });
+//     },
 
-  hiddenInput: "full_phone",
-  utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
-});
+//   hiddenInput: "full_phone",
+//   utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
+// });
       // alert(a);
     // Following code will be executed for page with data-page attribute equal to "about"
    
@@ -3764,7 +3774,14 @@ function edit_offer(name,id,description,tag_line){
 
         }
 
+function new_segment(){
+  $('#new_seg').show();
+}
+function add_segment(t){
+  $('#segment').append('<option value="'+t.value+'" selected="selected">'+t.value+'</option>');
+  $('#new_seg').hide();
 
+}
         function update_profile(email){
                $.ajax({
             url: "https://digitalbcards.in/api/user_profile/", 
