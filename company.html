@@ -293,7 +293,8 @@ input[type="text"] {
                                               <div class="col-12">
                                               <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-static">About Company</label>
-                                                        <textarea class="form-control text-white " id="about_comp" name="about_comp"></textarea>
+                                                           <textarea class="form-control editor text-white" id="editor2" rows="5" name="about" ></textarea>
+                                                        <input type="hidden" name="about_comp" id="about_comp">
                                                         <small class="form-control-feedback"></small>
                                                     </div>
                                             </div>
@@ -327,9 +328,9 @@ input[type="text"] {
                                         <div class="col-12">
                                             <!-- <input type="hidden" name="add_am" value="1"> -->
                                            <!-- <button type="submit" id="save_button" class="button button-rounded button-green-3d button-green">Submit</button> -->
-                                            <button  type="button" name="add_am" id="save_button" style="btn-light text-primary " class="btn tn-light text-primary  mb-1 btn-light px-4">Submit</button>
-                                           <a href="#"  onclick="location.href='viewcard.html'"  class="btn btn-light text-primary  mb-1 btn-light  px-2" style="text-align: center;margin: 0px 10px 0px 10px;btn-light text-primary ">Preview Card</a>
-                                           <a href="profile.html"  onclick="location.href='profile.html'"  class="btn backpage btn-light text-primary  mb-1 btn-light  px-4" style="btn-light text-primary ">Back</a>
+                                            <button  type="button" name="add_am" id="save_button" style="text-align: center;margin: 0px 8px 0px 8px;background: #007aff;border:none;color:white" class="btn tn-light   mb-1 btn-light px-4">Submit</button>
+                                           <a href="#"  onclick="location.href='viewcard.html'"  class="btn btn-light  mb-1 btn-light  px-2" style="text-align: center;margin: 0px 8px 0px 8px;background: #007aff;border:none;color:white">Preview Card</a>
+                                           <a href="profile.html"  onclick="location.href='profile.html'"  class="btn backpage btn-light  mb-1 btn-light  px-4" style="text-align: center;margin: 0px 8px 0px 8px;background: #007aff;border:none;color:white">Back</a>
                                            <!-- <a href="vcard.html" id="v"></a> -->
                                             
                                         </div>
@@ -397,6 +398,11 @@ input[type="text"] {
           <!-- <script type="text/javascript" src="./node_modules/ccavenue/index.js"></script> -->
 
    <script type="text/javascript">
+  $(document).ready(function() {
+
+             var editor2 = CKEDITOR.replace('editor2');
+           
+
                $('.navbar').show();
     $('.back').hide();
                 $("#menu_side").load("sidebar.html"); 
@@ -421,12 +427,14 @@ input[type="text"] {
  $('#vision').val(vision);
  $('#mission').val(mission);
  $('#about_comp').val(about_comp);
+ CKEDITOR.instances['editor2'].setData(about_comp)
  $('#comp_address').val(comp_address);
  $('#map_link').val(map_link);
  $('#about_cyoutube').val(about_cyoutube);
 
     $("#save_button").click(function() {
                     // var content = $( 'textarea.editor' ).val();
+                     $('#about_comp').val(editor2.getData());
                     //alert( );
 // $('#about_me_vl').val(editor.getData());
    var form =$('#contact_form').serialize();
@@ -486,7 +494,7 @@ update_profile(email);
                       
 
                       })
-
+})
 
                           </script>      
 

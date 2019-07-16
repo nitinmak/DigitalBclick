@@ -304,9 +304,9 @@
                                         <div class="text-center" style="padding-bottom: 10px;">
                                             <!-- <input type="hidden" name="add_am" value="1"> -->
                                            <!-- <button type="submit" id="save_button" class="button button-rounded button-green-3d button-green">Submit</button> -->
-                                            <button  type="button" name="add_am" id="save_button"  class="btn btn-light text-primary  mb-1 btn-light  px-4" style="text-align: center;">Submit</button>
-                                           <a href="#"   class="btn  mb-1 btn-light btn-light text-primary px-4" onclick="location.href='viewcard.html'" style="text-align: center;margin: 0px 10px 0px 10px;">Preview Card</a>
-                                           <a href="profile.html" onclick="location.href='profile.html'"  class="btn btn-light text-primary  mb-1 btn-light  px-4" style="text-align: center;">Back</a>
+                                            <button  type="button" name="add_am" id="save_button"  class="btn btn-light   mb-1 btn-light  px-4" style="text-align: center;margin: 0px 1px 0px 1px;background: #007aff;border:none;color:white">Submit</button>
+                                           <a href="#"   class="btn  mb-1 btn-light btn-light px-4" onclick="location.href='viewcard.html'" style="text-align: center;margin: 0px 1px 0px 1px;background: #007aff;border:none;color:white">Preview Card</a>
+                                           <a href="profile.html" onclick="location.href='profile.html'"  class="btn btn-light  mb-1 btn-light  px-4" style="text-align: center;margin: 0px 1px 0px px;background: #007aff;border:none;color:white">Back</a>
                                            <!-- <a href="vcard.html" id="v"></a> -->
                                             
                                             
@@ -447,11 +447,30 @@
                    $("#save_button").click(function() {
                     // var content = $( 'textarea.editor' ).val();
                     //alert( );
+                    
+                      var video_url = $('#video').val();
+                    var web_url = $('#website').val();
+                    //alert( );
                     if($('#f_name').val() == ''){
                       $('.snackbar').html('Please Enter Full Name ');
                       my_toast();
                       return false;
                     }
+url_validate = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+if(!url_validate.test(video_url)){
+   
+     $('.snackbar').html('Please Enter Valid Video Url ');
+                      my_toast();
+                      return false;
+}
+
+url_validate = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+if(!url_validate.test(web_url)){
+   
+     $('.snackbar').html('Please Enter Valid Website Url ');
+                      my_toast();
+                      return false;
+}
 $('#about_me_vl').val(editor.getData());
    var form =$('#about_me_form').serialize();
                         // alert(form);

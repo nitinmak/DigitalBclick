@@ -99,6 +99,7 @@
 </style>
 </head>
 
+
 <body>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
@@ -124,7 +125,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content ">
                     <div class="modal-header border-bottom theme-header">
-                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
+                        <p class="text-uppercase font-weight-bold text-white my-2">Share Your Card</p>
                         <button type="button" class="close " data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -309,7 +310,7 @@
    
      
      
-    </select><a><i class='fa fa-plus fa-2x times-icon' onclick="new_segment();" style="color: #d49100;z-index: 11111;font-size: 25px" aria-hidden='true'></i></a>
+    </select><a><i class='fa fa-plus fa-2x times-icon' id="dsa"  style="color: #d49100;z-index: 11111;font-size: 25px" aria-hidden='true'></i></a>
 
                                                 </div>
                                             </div>
@@ -607,6 +608,13 @@ padding-right:60px !important;
                                                     <!-- <input type="text" class="form-control  text-white" value="+91"> -->
                                                 </div>
                                             </div>
+                                            <div class="col-12">
+                                                <div class="form-group bmd-form-group cc1">
+                                                    <input type="text" minlength="10"  pattern="\d*" class="form-control text-white " id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
+                          <!-- <ul id="contacts-list"></ul> -->
+                                                    <input type="hidden" class="form-control  text-white" name="full_phone" id="full_phone" >
+                                                </div>
+                                            </div>
                                            <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
@@ -673,14 +681,14 @@ padding-right:60px !important;
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                <label>Birthdate</label>
+                                                <label>Birth Date</label>
                                                 <input type="date" placeholder="Birthday" class="form-control text-white" id="birthday" name="birthday">
                                                   
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                <label>Anniversory</label>
+                                                <label>Anniversary</label>
                                                 <input type="date" class="form-control text-white" id="anniversory" name="anniversory">
                                                   
                                                 </div>
@@ -782,9 +790,10 @@ padding-right:60px !important;
           <!-- <script type="text/javascript" src="./node_modules/ccavenue/index.js"></script> -->
 
    <script type="text/javascript">
-function new_segment(){
-  $('#new_seg').show();
-}
+    $(document).on('click', '#dsa', function(){  
+      $('#new_seg').show();
+  })
+
 function add_segment(t){
   $('#segment').append('<option value="'+t.value+'" selected="selected">'+t.value+'</option>');
   $('#new_seg').hide();
@@ -935,6 +944,7 @@ function add_segment(t){
    // $("#button").click(function() {
     // $(document).on('click', '.testclick', function() {
       // alert('fdfd');
+  
   $(document).on('click', '#button', function(){  
     // $(document).on('click', '#button', function(){  
       // alert('fdfd');
@@ -1076,6 +1086,11 @@ $('#segment').append(data);
          
     },
         submitHandler: function (form) { // for demo
+            var c_code = $('#c_code').val();
+
+         var receivermobile = $('#receivermobile').val();
+         alert(c_code+receivermobile);
+         $('#full_phone').val(c_code+receivermobile);
           form =$('#share_form').serialize();
          // alert(form);
                       var payment =  window.localStorage.getItem("payment");
