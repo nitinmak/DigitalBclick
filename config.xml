@@ -34,7 +34,7 @@
 	         <!-- <preference name="android-targetSdkVersion" value="21" /> -->
 	    <preference name="android-maxSdkVersion" value="28" />
 	    <platform name="ios">
-<!-- 	            <icon src="icon/icon.png" width="1024" height="1024" /> -->
+<!-- 	            <icon src="icon/icon.png" width="57" height="57" /> -->
 	            <icon src="icon/icon-512-2x.png" width="1024" height="1024" />
 	        <icon src="icon/icon-60@3x.png" width="180" height="180" />
 	        <!-- iOS 7.0+ -->
@@ -49,7 +49,7 @@
 	        <!-- <icon src="icon/icon-40.png" width="40" height="40" /> -->
 	        <icon src="icon/icon-40@2x.png" width="80" height="80" />
 	        <!-- iPhone / iPod Touch -->
-<!-- 	        <icon src="icon/icon.png" width="57" height="57" /> -->
+	        <icon src="icon/icon.png" width="57" height="57" />
 	        <icon src="icon/icon@2x.png" width="114" height="114" />
 	        <!-- iPad -->
 	        <icon src="icon/icon-72.png" width="72" height="72" />
