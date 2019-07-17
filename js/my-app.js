@@ -3103,6 +3103,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
 //             localStorage.clear()
 //                 window.localStorage.setItem("login",0);
 //  window.location = "index.html";
+             navigator.myApp.exitApp();
 
         }
         else {
