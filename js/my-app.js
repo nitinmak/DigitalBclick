@@ -832,7 +832,7 @@ skils_action(form);
                     (function($) {
                         $(document).ready(function(){
                             // $('#div1').hide();
-
+                            
                             $('#div2').hide();
                             $image_crop = $('#image_demo').croppie({
                                 enableExif: true,
@@ -844,10 +844,17 @@ skils_action(form);
                                 boundary:{
                                     width:300,
                                     height:300
-                                }
+                                },
+                                enableOrientation: true
                             });
+                            $('.rotate-ccw').click(function() {
+          // alert('fdfdfdfdd');
+        
+    $image_crop.croppie('rotate', '90');
+        });
                              
                             $('#upload_image').on('change', function(){
+                              $('.cropit_div').show();
                                 var reader = new FileReader();
                                 reader.onload = function (event) {
                                     $image_crop.croppie('bind', {
@@ -2164,10 +2171,24 @@ var user_id =  window.localStorage.getItem("user_id");
                                 boundary:{
                                     width:300,
                                     height:300
-                                }
+                                },
+                                  
+    enableOrientation: true
+                              
                             });
+                             
+                             $('.rotate-cw').click(function() {
+                              alert('fdfd');
+          $('#image_demo').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          // alert('fdfdfdfdd');
+        
+    $image_crop.croppie('rotate', '90');
+        });
 
                             $('#upload_image').on('change', function(){
+                              $('.cropit_div').show();
                                 var reader = new FileReader();
                                 reader.onload = function (event) {
                                     $image_crop.croppie('bind', {
@@ -2905,6 +2926,23 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
+
+ document.addEventListener("backbutton", function(e){
+  
+        if (confirm("Are you sure you want to Logout?")) {
+            /* Here is where my AJAX code for logging off goes */
+           localStorage.clear()
+                window.localStorage.setItem("login",0);
+ window.location = "index.html";
+        }
+        else {
+            return false;
+        }
+    
+}, false);
+
+ var referral =  window.localStorage.getItem("referral");
+ // alert(referral);
 
  $('.navbar').show();
     $('.back').hide();
