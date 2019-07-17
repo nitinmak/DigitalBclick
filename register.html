@@ -81,6 +81,8 @@
   border-right: none;
   border-radius: 0px;
   color: white;
+  padding: 0 !important;
+      height: calc(1.5rem + 2px) !important;
 }
   .navbar .center {
     color: white;
@@ -237,7 +239,7 @@
                         <form id="register_form" method="POST">
                         <div class="item-content " style="margin: 20px 0px 20px 0px">
                             <div class="item-media">
-                                <img src="img/logo.png" width="100px"  height="100px" alt="" >
+                                <img src="img/logo.png" width="100px"  height="90px" alt="" >
                             </div>
                             <div class="item-inner">
                                 <div class="item-title">
@@ -247,39 +249,39 @@
   </div>
                                 <div class="item-after">
                                    <div class="card-content card-content-padding">
-     <div class="form-group item-input-wrap" style="margin: 20px;border: groove;">
+     <div class="form-group item-input-wrap" style="margin: 15px;border: groove;">
       <div class="col-md-8 col-sm-8 input-group item-input-wrap">
-                           <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-user"></i></span>     
+                           <!-- <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-user"></i></span>      -->
                   <input class="form-control" type="text" name="name" id="name" placeholder="Full Name" onkeypress="return ((event.charCode >= 65 &amp;&amp; event.charCode <= 90) || (event.charCode >= 97 &amp;&amp; event.charCode <= 122) || (event.charCode == 32))" required="">
                             </div>
                           </div>
-                          <div class="form-group item-input-wrap" style="margin: 20px;border: groove;">
+                          <div class="form-group item-input-wrap" style="margin: 15px;border: groove;">
       <div class="col-md-8 col-sm-8 input-group item-input-wrap">
-                           <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-envelope"></i></span>     
+                           <!-- <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-envelope"></i></span>      -->
                 <input class="form-control" type="email" name="email" id="reg_email" onchange="check_email_exist();" placeholder="Email Address" required="">
                             </div>
                           </div>
-                          <div class="form-group item-input-wrap" style="margin: 20px;border: groove;">
+                          <div class="form-group item-input-wrap" style="margin: 15px;border: groove;">
       <div class="col-md-8 col-sm-8 input-group item-input-wrap">
-                           <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-phone"></i></span>     
+                           <!-- <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-phone"></i></span>      -->
                  <input class="form-control" type="tel" min="0" name="mobile" minlength="10" maxlength="10" required="" placeholder="Mobile No">
                             </div>
                           </div>
 
-                             <div class="form-group"  style="margin: 20px;border: groove;">
+                             <div class="form-group"  style="margin: 15px;border: groove;">
                                <div class="col-md-8 col-sm-8 input-group">
-                           <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="fa fa-key"></i> </span>
+                           <!-- <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="fa fa-key"></i> </span> -->
                                 <input class="form-control text-dark" type="password"  id="c_password" name="password" placeholder="Password" required>
                             </div>
-                            </div> <div class="form-group"  style="margin: 20px;border: groove;">
+                            </div> <div class="form-group"  style="margin: 15px;border: groove;">
                                <div class="col-md-8 col-sm-8 input-group">
-                           <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="fa fa-key"></i> </span>
+                           <!-- <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="fa fa-key"></i> </span> -->
                                 <input class="form-control text-dark" type="password"  id="password" name="password" placeholder="Password" required>
                             </div>
                             </div>
-                            <div class="form-group"  style="margin: 20px;border: groove;">
+                            <div class="form-group"  style="margin: 15px;border: groove;">
                                <div class="col-md-8 col-sm-8 input-group">
-                           <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-user"></i> </span>
+                           <!-- <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-user"></i> </span> -->
                            <input type="hidden" name="secrete" value="virus">
                                <input class="form-control" type="text" name="Refferal" id="Refferal" placeholder="Referral">
                             </div>
@@ -379,7 +381,7 @@
 <script type="text/javascript">
 
      $('.snackbar').html('Testing tab');
-my_toast();
+// my_toast();
         function my_toast(){
             // alert('toast');
     $('.snackbar').css('visibility','visible');
