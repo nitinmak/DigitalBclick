@@ -3102,7 +3102,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
             /* Here is where my AJAX code for logging off goes */
 //             localStorage.clear()
 //                 window.localStorage.setItem("login",0);
- window.location = "index.html";
+//  window.location = "index.html";
 
         }
         else {
