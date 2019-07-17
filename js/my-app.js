@@ -3100,10 +3100,10 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   
         if (confirm("Are you sure you want to Exit?")) {
             /* Here is where my AJAX code for logging off goes */
-//             localStorage.clear()
-//                 window.localStorage.setItem("login",0);
-//  window.location = "index.html";
-             navigator.myApp.exitApp();
+            localStorage.clear()
+                window.localStorage.setItem("login",0);
+ window.location = "index.html";
+//              navigator.myApp.exitApp();
 
         }
         else {
