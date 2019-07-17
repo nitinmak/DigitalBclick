@@ -1,24 +1,213 @@
-<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
 
-<!-- Top Navbar-->
-<div class="navbar">
-    <div class="navbar-inner">
-        <div class="left">
-            <a href="#" class="link icon-only open-panel"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
-            <!-- <a href="#" class="back link"> -->
-                <!-- <i class="icon icon-back"></i> -->
-                <!-- <span>Back</span> -->
-            <!-- </a> -->
-        </div>
-        <div class="center sliding">Testimonial</div>
-        <div class="right">
-        </div>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+      <link rel="apple-touch-icon" href="img/f7-icon-square.html">
+    <link rel="icon" href="img/f7-icon.html">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.1.3/css/bootstrap.min.css">
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- swiper carousel CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+     
+    <!-- app CSS -->
+    <link id="theme" rel="stylesheet" href="css/style.css" type="text/css">
+    <link  rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/intlTelInput.css">
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.css">
+       <link rel="stylesheet" type="text/css" href="css/crop_image/style.css" />
+          <link rel="stylesheet" type="text/css" href="css/crop_image/style-example.css" />
+          <link rel="stylesheet" type="text/css" href="css/crop_image/jquery.Jcrop.css" />
+  <link rel="stylesheet" href="newassets/css/style.css">
+ <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+
+
+
+  
+    
+    
+    
+     
+     
+<style>
+  *{
+    font-family: 'PT Sans', sans-serif;
+  }
+  .navbar-inner{
+        background-color: #07314a;
+  }
+  .form-control{
+  background: none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-radius: 0px;
+  color: white;
+}
+  .navbar .center {
+    color: white;
+}
+
+.btn{
+  border-radius: 0px
+}
+.form-control:focus{
+  background: none;
+  
+}
+.razorpay-payment-button{
+    display: none;
+}
+</style>
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal sidebar sidebar-left " id="menu_side">
+       <!--  <div class="content-block">
+            <p>Left panel content goes here</p>
+        </div> -->
+       
     </div>
-</div>
-<div class="pages">
-    <div data-page="testimonial" class="page">
-       <div class="page-content" >
-        <style type="text/css">
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <a href="pay.html" id="payment_btn"> </a>
+<a href="home.html" class="home_link"></a>
+ <div class="modal1 fade" id="colors" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom theme-header">
+                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button id="wp_link" class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button id="twiter" class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button id="google" class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <button id="fb_link" class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <br>
+                          
+                            <button id="linklind" class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-linkedin facardld"></i></button>
+                            <button id="mail_link" class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+
+
+             <div class="modal1 fade"  id="view_card_in_popup" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom">
+                        <p class="title text-uppercase font-weight-bold text-dark my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="card_body" style="overflow: scroll;height: 450px;padding: 0px">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme=""><i class="fa fa-twitter facardtt"></i></button>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <br>
+                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
+                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="navbar" style="display: none;">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                        <a href="#" class="link icon-only open-panel"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
+                    <div class="right">
+                    <!-- <div class="center sliding">Awesome App</div> -->
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content" >
+
+
+<style type="text/css">
   html,body{
    -webkit-overflow-scrolling : touch !important;
    overflow: auto !important;
@@ -40,7 +229,7 @@ input[type="text"] {
                                </div>
                                <div class="col-50">
                                  <div class="pull-right">
-                                      <a href="#" style="font-size: 15px" data-toggle="modal" data-target="#add_expertise" class="btn btn-primary btnsz1 ">
+                                      <a href="#" style="font-size: 13px" data-toggle="modal" data-target="#add_expertise" class="btn btn-primary btnsz1 ">
                                         <i class="fa fa-plus m-r-5"></i>
                                         <span class="btn-text">Add Testimonial</span>
                                     </a>
@@ -89,8 +278,8 @@ input[type="text"] {
   <div class="card-footer" >
     <div class="block" style="width: 100%; padding: 5px;">
   <p class="row">
-    <button type="button" name="send_sms"  id="button" class="col-xs button button-fill view_card " style="width: 47%;font-size: 15px">Preview Card</button>
-    <a href="profile.html"  class="col-xs button button-fill " style="width: 47%;font-size: 15px">Back</a>
+    <button type="button" name="send_sms" onclick="location.href='viewcard.html'"  id="button" class="col-xs  button button-fill" style="width: 47%;font-size: 15px">Preview Card</button>
+    <a href="profile.html" onclick="location.href='profile.html'" class="col-xs button button-fill " style="width: 47%;font-size: 15px">Back</a>
    
   </p> 
 </div>
@@ -181,6 +370,173 @@ input[type="text"] {
     </div>
     </form>               
 
+
+
+ </div>
     </div>
   </div>
-</div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+         <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1.3/js/bootstrap.min.js"></script>
+
+<!-- <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+    <!-- Cookie jquery file -->
+    <script src="vendor/cookie/jquery.cookie.js"></script>
+
+    <!-- sparklines chart jquery file -->
+    <script src="vendor/sparklines/jquery.sparkline.min.js"></script>
+
+    <!-- Circular progress gauge jquery file -->
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+
+    <!-- Swiper carousel jquery file -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- Application main common jquery file -->
+    <script src="js/main.js"></script>
+    <script src="js/select2.min.js"></script>
+  <script src="js/intlTelInput.js"></script>
+  <script class="iti-load-utils" async="" src="js/utils.js?1537717752654"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+    <script src="js/jquery.cropit.js"></script>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.1/croppie.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.1/croppie.css" />
+     <script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+<!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
+          <script type="text/javascript" src="js/jquery.SimpleCropper.js"></script>
+          <!-- <script type="text/javascript" src="./node_modules/ccavenue/index.js"></script> -->
+
+   <script type="text/javascript">
+               $('.navbar').show();
+    $('.back').hide();
+                $("#menu_side").load("sidebar.html"); 
+        $(document).ready(function() {
+
+
+var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+                  $("#add_tag").click(function() {
+   var form =$('#add_testimonial_form').serialize()+ "&add_tag=1&" +form_d;
+    if($('#name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#s_value').val() == ''){
+    $('.snackbar').html('Please Enter Tagline');
+    my_toast();
+    return false;
+   }
+   if($('#msg').val() == ''){
+    $('.snackbar').html('Please Enter Message');
+    my_toast();
+    return false;
+   }
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+   var form =$('#update_testimonial_form').serialize()+ "&update_tag=1&" +form_d;
+    if($('#e_name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#e_value').val() == ''){
+    $('.snackbar').html('Please Enter Tagline');
+    my_toast();
+    return false;
+   }
+   if($('#e_msg').val() == ''){
+    $('.snackbar').html('Please Enter Message');
+    my_toast();
+    return false;
+   }
+skils_action(form);
+
+                  })
+                 })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/testimonial/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_testimonial').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_testimonial').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+                          </script>      
+
+
+
+
+        
+</body>
+<style type="text/css">
+    .errors{
+      color:red;
+    }
+    .pages{
+      background:white !important; 
+    }
+    .modal1{position:fixed;top:0;right:0;bottom:0;left:0;z-index:9999;opacity:1;display:none;overflow:hidden;outline:0}
+</style>
+
+</html>
