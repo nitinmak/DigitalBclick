@@ -982,7 +982,7 @@ skils_action(form);
                     (function($) {
                         $(document).ready(function(){
                             // $('#div1').hide();
-
+                            
                             $('#div2').hide();
                             $image_crop = $('#image_demo').croppie({
                                 enableExif: true,
@@ -994,10 +994,17 @@ skils_action(form);
                                 boundary:{
                                     width:300,
                                     height:300
-                                }
+                                },
+                                enableOrientation: true
                             });
+                            $('.rotate-ccw').click(function() {
+          // alert('fdfdfdfdd');
+        
+    $image_crop.croppie('rotate', '90');
+        });
                              
                             $('#upload_image').on('change', function(){
+                              $('.cropit_div').show();
                                 var reader = new FileReader();
                                 reader.onload = function (event) {
                                     $image_crop.croppie('bind', {
