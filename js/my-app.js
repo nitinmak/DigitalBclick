@@ -2338,10 +2338,24 @@ var user_id =  window.localStorage.getItem("user_id");
                                 boundary:{
                                     width:300,
                                     height:300
-                                }
+                                },
+                                  
+    enableOrientation: true
+                              
                             });
+                             
+                             $('.rotate-cw').click(function() {
+                              alert('fdfd');
+          $('#image_demo').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          // alert('fdfdfdfdd');
+        
+    $image_crop.croppie('rotate', '90');
+        });
 
                             $('#upload_image').on('change', function(){
+                              $('.cropit_div').show();
                                 var reader = new FileReader();
                                 reader.onload = function (event) {
                                     $image_crop.croppie('bind', {
@@ -3098,12 +3112,9 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
  document.addEventListener("backbutton", function(e){
   
-        if (confirm("Are you sure you want to Logout?")) {
+        if (confirm("Are you sure you want to Exit?")) {
             /* Here is where my AJAX code for logging off goes */
-            localStorage.clear()
-                window.localStorage.setItem("login",0);
- window.location = "index.html";
-//              navigator.myApp.exitApp();
+            navigator.myApp.exitApp();
 
         }
         else {
@@ -3111,7 +3122,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
         }
     
 }, false);
-  
+
  var referral =  window.localStorage.getItem("referral");
  // alert(referral);
  $('.navbar').show();
