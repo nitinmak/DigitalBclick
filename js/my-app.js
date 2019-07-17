@@ -3098,10 +3098,10 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
  document.addEventListener("backbutton", function(e){
   
-        if (confirm("Are you sure you want to logout?")) {
+        if (confirm("Are you sure you want to Exit?")) {
             /* Here is where my AJAX code for logging off goes */
-            localStorage.clear()
-                window.localStorage.setItem("login",0);
+//             localStorage.clear()
+//                 window.localStorage.setItem("login",0);
  window.location = "index.html";
 
         }
