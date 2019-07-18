@@ -832,7 +832,7 @@ skils_action(form);
                     (function($) {
                         $(document).ready(function(){
                             // $('#div1').hide();
-                            
+
                             $('#div2').hide();
                             $image_crop = $('#image_demo').croppie({
                                 enableExif: true,
@@ -844,17 +844,10 @@ skils_action(form);
                                 boundary:{
                                     width:300,
                                     height:300
-                                },
-                                enableOrientation: true
+                                }
                             });
-                            $('.rotate-ccw').click(function() {
-          // alert('fdfdfdfdd');
-        
-    $image_crop.croppie('rotate', '90');
-        });
                              
                             $('#upload_image').on('change', function(){
-                              $('.cropit_div').show();
                                 var reader = new FileReader();
                                 reader.onload = function (event) {
                                     $image_crop.croppie('bind', {
@@ -1993,6 +1986,8 @@ $$(document).on('pageInit', '.page[data-page="contact_detail"]', function (e) {
  var mobile =  window.localStorage.getItem("mobile"); 
  var email =  window.localStorage.getItem("email"); 
  var whatsapp_no =  window.localStorage.getItem("whatsapp_no"); 
+ var address =  window.localStorage.getItem("address"); 
+ var address_map_link =  window.localStorage.getItem("address_map_link"); 
  var skype =  window.localStorage.getItem("skype"); 
  var fb_url =  window.localStorage.getItem("fb_url"); 
 // alert(fb_url);
@@ -2171,24 +2166,10 @@ var user_id =  window.localStorage.getItem("user_id");
                                 boundary:{
                                     width:300,
                                     height:300
-                                },
-                                  
-    enableOrientation: true
-                              
+                                }
                             });
-                             
-                             $('.rotate-cw').click(function() {
-                              alert('fdfd');
-          $('#image_demo').cropit('rotateCW');
-        });
-        $('.rotate-ccw').click(function() {
-          // alert('fdfdfdfdd');
-        
-    $image_crop.croppie('rotate', '90');
-        });
 
                             $('#upload_image').on('change', function(){
-                              $('.cropit_div').show();
                                 var reader = new FileReader();
                                 reader.onload = function (event) {
                                     $image_crop.croppie('bind', {
@@ -2927,23 +2908,6 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
 
- document.addEventListener("backbutton", function(e){
-  
-        if (confirm("Are you sure you want to Logout?")) {
-            /* Here is where my AJAX code for logging off goes */
-           localStorage.clear()
-                window.localStorage.setItem("login",0);
- window.location = "index.html";
-        }
-        else {
-            return false;
-        }
-    
-}, false);
-
- var referral =  window.localStorage.getItem("referral");
- // alert(referral);
-
  $('.navbar').show();
     $('.back').hide();
       var permission = cordova.plugins.permissions;
@@ -2980,6 +2944,8 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
                window.localStorage.setItem("profession",data.profession);
                window.localStorage.setItem("about_me",data.about_me);
                window.localStorage.setItem("skype",data.skype);
+               window.localStorage.setItem("address_map_link",data.address_map_link);
+               window.localStorage.setItem("address",data.address);
                window.localStorage.setItem("fb_url",data.fb_url);
 
                window.localStorage.setItem("y_tube_link",data.y_tube_link);
