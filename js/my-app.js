@@ -3137,7 +3137,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   if (navigator.myApp) {
     navigator.myApp.exitApp();
 } else if (navigator.device) {
-    navigator.device.exitApp();
+    navigator.myApp.exitApp();
 } else {
     window.close();
 }
