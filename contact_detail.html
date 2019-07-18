@@ -782,6 +782,20 @@
                                                         <small class="form-control-feedback"></small>
                                                     </div>
                                             </div>
+                                               <div class="col-12">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="text-white bmd-label-static"> Address</label>
+                                                        <textarea class="form-control text-white " id="address" name="address" ></textarea>
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                             <div class="col-12">
+                                                 <div class="form-group bmd-form-group">
+                                                        <label class="text-white bmd-label-static">Address Map Link</label>
+                                                        <input type="url" class="form-control text-white " id="address_map_link" name="address_map_link" >
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
                                              
 
                                             <div class="col-12">
@@ -908,12 +922,16 @@
  var email =  window.localStorage.getItem("email"); 
  var whatsapp_no =  window.localStorage.getItem("whatsapp_no"); 
  var skype =  window.localStorage.getItem("skype"); 
+ var address =  window.localStorage.getItem("address"); 
+ var address_map_link =  window.localStorage.getItem("address_map_link"); 
  var fb_url =  window.localStorage.getItem("fb_url"); 
 // alert(fb_url);
  $('#user_idq').val(user_id);
  $('#phone').val(mobile);
  $('#email').val(email);
  $('#whatsapp_no').val(whatsapp_no);
+ $('#address').val(address);
+ $('#address_map_link').val(address_map_link);
  $('#skype').val(skype);
  $('#fb_url').val(fb_url);
 

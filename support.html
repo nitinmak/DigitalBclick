@@ -394,7 +394,8 @@
     $('.back').hide();
                 $("#menu_side").load("sidebar.html"); 
 
-
+  var user_id =  window.localStorage.getItem("user_id");
+  $('#user_idd').val(user_id);
                  $(document).on('click', '#save_button', function(){  
 // alert('gf');
  

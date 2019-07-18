@@ -819,6 +819,8 @@ function add_segment(t){
                window.localStorage.setItem("profession",data.profession);
                window.localStorage.setItem("about_me",data.about_me);
                window.localStorage.setItem("skype",data.skype);
+                window.localStorage.setItem("address_map_link",data.address_map_link);
+               window.localStorage.setItem("address",data.address);
                window.localStorage.setItem("fb_url",data.fb_url);
 
                window.localStorage.setItem("y_tube_link",data.y_tube_link);
@@ -895,6 +897,8 @@ function add_segment(t){
                window.localStorage.setItem("profession",data.profession);
                window.localStorage.setItem("about_me",data.about_me);
                window.localStorage.setItem("skype",data.skype);
+                window.localStorage.setItem("address_map_link",data.address_map_link);
+               window.localStorage.setItem("address",data.address);
                window.localStorage.setItem("fb_url",data.fb_url);
 
                window.localStorage.setItem("y_tube_link",data.y_tube_link);
@@ -1091,7 +1095,7 @@ $('#segment').append(data);
             var c_code = $('#c_code').val();
 
          var receivermobile = $('#receivermobile').val();
-         alert(c_code+receivermobile);
+         // alert(c_code+receivermobile);
          $('#full_phone').val(c_code+receivermobile);
           form =$('#share_form').serialize();
          // alert(form);
