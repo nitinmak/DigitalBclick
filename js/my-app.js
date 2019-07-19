@@ -3134,7 +3134,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
  //                window.localStorage.setItem("login",0);
  // window.location = "index.html";
  // navigator.app.exitApp();
-  navigator.app.backHistory()
+  navigator.app.exitApp()
 //   if (navigator.myApp) {
 //     navigator.myApp.exitApp();
 // } else if (navigator.device) {
