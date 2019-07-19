@@ -14,6 +14,28 @@ $$(document).on('deviceready', function() {
     console.log("Device is ready!");
     // my_toast();
 
+document.addEventListener("backbutton", function(e){
+  
+        if (confirm("Are you sure you want to Exit?")) {
+            /* Here is where my AJAX code for logging off goes */
+ //           localStorage.clear()
+ //                window.localStorage.setItem("login",0);
+ // window.location = "index.html";
+ // navigator.app.exitApp();
+  navigator.app.exitApp()
+//   if (navigator.myApp) {
+//     navigator.myApp.exitApp();
+// } else if (navigator.device) {
+//     navigator.myApp.exitApp();
+// } else {
+//     window.close();
+// }
+        }
+        else {
+            return false;
+        }
+    
+}, false);
  // **my permission code**
         var permission = cordova.plugins.permissions;
 
