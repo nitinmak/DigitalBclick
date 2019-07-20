@@ -23,6 +23,17 @@ document.addEventListener("backbutton", function(e){
     alert(profile);
   }
 
+ var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+        // IOS DEVICE
+        history.go(-1);
+    } else if (userAgent.match(/Android/i)) {
+        // ANDROID DEVICE
+        navigator.app.backHistory();
+    } else {
+        // EVERY OTHER DEVICE
+        history.go(-1);
+    }
 
 
         if (confirm("Are you sure you want to Exit?")) {
@@ -31,9 +42,9 @@ document.addEventListener("backbutton", function(e){
  //                window.localStorage.setItem("login",0);
  // window.location = "index.html";
  // navigator.app.exitApp();
-  // navigator.app.exitApp()
-  history.go(-1);
-    navigator.app.backHistory();
+  navigator.app.exitApp()
+  // history.go(-1);
+    // navigator.app.backHistory();
 //   if (navigator.myApp) {
 //     navigator.myApp.exitApp();
 // } else if (navigator.device) {
