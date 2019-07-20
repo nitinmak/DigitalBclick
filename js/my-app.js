@@ -15,10 +15,10 @@ $$(document).on('deviceready', function() {
     // my_toast();
 
 document.addEventListener("backbutton", function(e){
-  
+  alert($.mobile.activePage[0].baseURI);
         if (confirm("Are you sure you want to Exit?")) {
             /* Here is where my AJAX code for logging off goes */
- //           localStorage.clear()
+ //           localStor age.clear()
  //                window.localStorage.setItem("login",0);
  // window.location = "index.html";
  // navigator.app.exitApp();
