@@ -12,26 +12,45 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-    //  if(device.platform === "iOS" && parseInt(device.version) === 9){
-    //     $.mobile.hashListeningEnabled = false;
-    // }
     // my_toast();
-   
- // **my permission code**
-        // var permission = cordova.plugins.permissions;
 
-        // permission.hasPermission(permission.READ_CONTACTS,function(results){
-        //     if(!results[permission])
-        //     {
-        //         permission.requestPermission(permission.READ_CONTACTS,function(results){
-        //             if(results[permission]){
-        //                    alert("permission granted");
-        //            }
-        //         },)
-        //         // alert("permission granted failed");
-        //     }
-        // }, 
-        // )
+document.addEventListener("backbutton", function(e){
+  
+        if (confirm("Are you sure you want to Exit?")) {
+            /* Here is where my AJAX code for logging off goes */
+ //           localStorage.clear()
+ //                window.localStorage.setItem("login",0);
+ // window.location = "index.html";
+ // navigator.app.exitApp();
+  navigator.app.exitApp()
+//   if (navigator.myApp) {
+//     navigator.myApp.exitApp();
+// } else if (navigator.device) {
+//     navigator.myApp.exitApp();
+// } else {
+//     window.close();
+// }
+        }
+        else {
+            return false;
+        }
+    
+}, false);
+ // **my permission code**
+        var permission = cordova.plugins.permissions;
+
+        permission.hasPermission(permission.READ_CONTACTS,function(results){
+            if(!results[permission])
+            {
+                permission.requestPermission(permission.READ_CONTACTS,function(results){
+                    if(results[permission]){
+                           alert("permission granted");
+                   }
+                },)
+                // alert("permission granted failed");
+            }
+        }, 
+        )
 
 //                                $.ajax({
 //             url: "https://digitalbcards.in/api/fetch_amount/", 
@@ -96,34 +115,189 @@ update_profile(email);
   // alert(payment);
 
 if(islogin == 1){
-    // var permission = cordova.plugins.permissions;
-    // permission.hasPermission(permission.READ_CONTACTS,function(results){
-    //         if(!results[permission])
-    //         {
-    //             permission.requestPermission(permission.READ_CONTACTS,function(results){
-    //                 if(results[permission]){
-    //                        alert("permission granted");
-    //                }
-    //             },)
-    //             // alert("permission granted failed");
-    //         }
-    //     }, 
-    //     )
+    var permission = cordova.plugins.permissions;
+    permission.hasPermission(permission.READ_CONTACTS,function(results){
+            if(!results[permission])
+            {
+                permission.requestPermission(permission.READ_CONTACTS,function(results){
+                    if(results[permission]){
+                           alert("permission granted");
+                   }
+                },)
+                // alert("permission granted failed");
+            }
+        }, 
+        )
   // alert('fdfd');
   // alert(payment);
    if(payment == 0){
 // alert($('#payment_btn').attr('href'));
      // $('.payment_btn').trigger('click');
-     // location.href = 'pay.html';
-      // $$('#payment_btn').trigger("click");
-    // $( "#payment_btn" ).trigger( "click" );
+      $$('#payment_btn').trigger("click");
+    $( "#payment_btn" ).trigger( "click" );
   }else{
     $$('#home').trigger("click");
 
   }
  // window.location.href = "home.html"
   }
+    $(document).on('click', '#login_user', function(){  
 
+  $('#login_form').validate({ // initialize the plugin
+        errorLabelContainer: "#cs-error-note",
+   
+     errorClass: 'errors',
+    rules: {
+     
+       
+        email: {
+           
+            required: true,
+            email:true,
+            
+        },
+         password: {
+           
+            required: true,
+            
+        },
+        
+    },
+    messages: {
+       
+        
+         email: {
+           
+            required: "Please enter  Email.",
+            email:"Please Enter Proper Email",
+            
+        },
+         password: {
+           
+            required: "Please enter  Password.",
+            
+            
+        },
+        
+       
+         
+    },
+        submitHandler: function (form) { // for demo
+          form =$('#login_form').serialize();
+          var  action = $('#action').val();
+          var  email = $('#email').val();
+          // alert(email);
+                window.localStorage.setItem("email",email);
+                var email =  window.localStorage.getItem("email");
+// alert(email);
+
+         $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+                
+     $.ajax({
+            url: "https://digitalbcards.in/api/login/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              if(data.status == 0){
+               $('.snackbar').html(data.message);
+                my_toast();
+                
+    $('.loader').css('display','none');
+    
+                // alert(data.message);
+              }else{
+// alert(email);
+                window.localStorage.setItem("login",1);
+                window.localStorage.setItem("email",email);
+
+                 $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+                     $.ajax({
+            url: "https://digitalbcards.in/api/user_profile/", 
+            method: "POST",
+            data:{email:email,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+                // alert(data.Refferal_id);
+               window.localStorage.setItem("payment",data.pay_status);
+               window.localStorage.setItem("user_id",data.id);
+               window.localStorage.setItem("language",data.language);
+               window.localStorage.setItem("referral",data.Refferal_id);
+               window.localStorage.setItem("mobile",data.mobile);
+               window.localStorage.setItem("profession",data.profession);
+               window.localStorage.setItem("about_me",data.about_me);
+               window.localStorage.setItem("skype",data.skype);
+               window.localStorage.setItem("address",data.address);
+                window.localStorage.setItem("address_map_link",data.address_map_link);
+               window.localStorage.setItem("fb_url",data.fb_url);
+
+               window.localStorage.setItem("y_tube_link",data.y_tube_link);
+               window.localStorage.setItem("website",data.website);
+                
+               window.localStorage.setItem("whatsapp",data.whatsapp);
+               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
+               window.localStorage.setItem("name",data.name);
+               //window.localStorage.setItem("username",data.name);
+               window.localStorage.setItem("user_image",data.profile_img);
+
+               window.localStorage.setItem("company_name",data.company_name);
+               window.localStorage.setItem("vision",data.vision);
+               window.localStorage.setItem("mission",data.mission);
+               window.localStorage.setItem("about_comp",data.about_comp);
+               window.localStorage.setItem("comp_address",data.comp_address);
+               window.localStorage.setItem("map_link",data.map_link);
+               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
+               window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("theme",data.theme);
+var referral =  window.localStorage.getItem("referral");
+                   // alert(referral);
+              
+               // alert(data.fb_url);
+                $('#user').html(data.name);
+                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+                // $('#user_image').css("height",'80px');
+                // $('#user_image').css("width",'80px');
+               // $('#preloader').hide();
+    $('.loader').css('display','none');
+                
+              
+            //location.reload();
+          }
+        }) 
+
+              var payment =   window.localStorage.getItem("payment");
+              // alert(payment);
+               // alert(data.message);
+               $('.snackbar').html(data.message);
+  // setTimeout(function(){ $('.snackbar').show(); }, 3000);
+                my_toast();
+                if(payment != ''){
+                  location.reload();
+                }else{
+
+    $$('#payment_btn').trigger("click");
+                }
+    $('.loader').css('display','none');
+
+              // $('#home').click();
+              // $('#icon').html('<i class="fa fa-check font-30 icon-circle icon-l color-green-dark bg-white shadow-icon-large"></i>');
+              // $('#error_msg_title').html('Login Succes');            
+        // $('#error_msg').html(data.message);            
+// $('#attention').addClass('active-menu-box-modal');
+ // window.location.href = "home.html"
+              }
+            //location.reload();
+          }
+        })
+            return false; // for demo
+        }
+    });
+})
 
 });
 
@@ -832,7 +1006,7 @@ skils_action(form);
                     (function($) {
                         $(document).ready(function(){
                             // $('#div1').hide();
-
+                            
                             $('#div2').hide();
                             $image_crop = $('#image_demo').croppie({
                                 enableExif: true,
@@ -844,10 +1018,17 @@ skils_action(form);
                                 boundary:{
                                     width:300,
                                     height:300
-                                }
+                                },
+                                enableOrientation: true
                             });
+                            $('.rotate-ccw').click(function() {
+          // alert('fdfdfdfdd');
+        
+    $image_crop.croppie('rotate', '90');
+        });
                              
                             $('#upload_image').on('change', function(){
+                              $('.cropit_div').show();
                                 var reader = new FileReader();
                                 reader.onload = function (event) {
                                     $image_crop.croppie('bind', {
@@ -1896,6 +2077,7 @@ $$(document).on('pageInit', '.page[data-page="referral"]', function (e) {
 
 });
 $$(document).on('pageInit', '.page[data-page="company"]', function (e) {
+  var editor = CKEDITOR.replace('editor2');
  var user_id =  window.localStorage.getItem("user_id"); 
  var referral =  window.localStorage.getItem("referral"); 
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -1914,6 +2096,8 @@ $$(document).on('pageInit', '.page[data-page="company"]', function (e) {
  $('#vision').val(vision);
  $('#mission').val(mission);
  $('#about_comp').val(about_comp);
+ CKEDITOR.instances['editor2'].setData(about_comp)
+ // CKEDITOR.instances.editor.setData(about_comp);
  $('#comp_address').val(comp_address);
  $('#map_link').val(map_link);
  $('#about_cyoutube').val(about_cyoutube);
@@ -1921,6 +2105,7 @@ $$(document).on('pageInit', '.page[data-page="company"]', function (e) {
     $("#save_button").click(function() {
                     // var content = $( 'textarea.editor' ).val();
                     //alert( );
+                    $('#about_comp').val(editor.getData());
 // $('#about_me_vl').val(editor.getData());
    var form =$('#contact_form').serialize();
                         // alert(form);
@@ -1986,16 +2171,19 @@ $$(document).on('pageInit', '.page[data-page="contact_detail"]', function (e) {
  var mobile =  window.localStorage.getItem("mobile"); 
  var email =  window.localStorage.getItem("email"); 
  var whatsapp_no =  window.localStorage.getItem("whatsapp_no"); 
+ var skype =  window.localStorage.getItem("skype"); 
  var address =  window.localStorage.getItem("address"); 
  var address_map_link =  window.localStorage.getItem("address_map_link"); 
- var skype =  window.localStorage.getItem("skype"); 
+
  var fb_url =  window.localStorage.getItem("fb_url"); 
-// alert(fb_url);
+// alert(address);
  $('#user_idq').val(user_id);
  $('#phone').val(mobile);
  $('#email').val(email);
  $('#whatsapp_no').val(whatsapp_no);
  $('#skype').val(skype);
+ $('#address').val(address);
+ $('#address_map_link').val(address_map_link);
  $('#fb_url').val(fb_url);
 
   $("#phone").keypress(function (e) {
@@ -2020,12 +2208,32 @@ $$(document).on('pageInit', '.page[data-page="contact_detail"]', function (e) {
                   $("#save_button").click(function() {
                     // var content = $( 'textarea.editor' ).val();
                     //alert( );
+                     
 // $('#about_me_vl').val(editor.getData());
    var form =$('#contact_form').serialize();
                         // alert(form);
                         if($('#email').val() == ''){
                           // alert('fdfd');
                  $('.snackbar').html('Please Enter Email...!');
+                 my_toast();
+                          return false;
+                        }else{
+                           var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;  
+   if(!emailReg.test($('#email').val())) {  
+         $('.snackbar').html('Please Enter Valid Email...!');
+                 my_toast();
+                          return false;
+   }    
+                        }
+                        if($('#whatsapp_no').val().length != 10){
+                          // alert('fdfd');
+                 $('.snackbar').html('Please Enter Valid Whatsapp Number...!');
+                 my_toast();
+                          return false;
+                        }
+                        if($('#phone').val().length != 10){
+                          // alert('fdfd');
+                 $('.snackbar').html('Please Enter Valid Phone Number...!');
                  my_toast();
                           return false;
                         }
@@ -2166,10 +2374,24 @@ var user_id =  window.localStorage.getItem("user_id");
                                 boundary:{
                                     width:300,
                                     height:300
-                                }
+                                },
+                                  
+    enableOrientation: true
+                              
                             });
+                             
+                             $('.rotate-cw').click(function() {
+                              alert('fdfd');
+          $('#image_demo').cropit('rotateCW');
+        });
+        $('.rotate-ccw').click(function() {
+          // alert('fdfdfdfdd');
+        
+    $image_crop.croppie('rotate', '90');
+        });
 
                             $('#upload_image').on('change', function(){
+                              $('.cropit_div').show();
                                 var reader = new FileReader();
                                 reader.onload = function (event) {
                                     $image_crop.croppie('bind', {
@@ -2329,12 +2551,29 @@ $$(document).on('pageInit', '.page[data-page="about_me"]', function (e) {
 
                    $("#save_button").click(function() {
                     // var content = $( 'textarea.editor' ).val();
+                    var video_url = $('#video').val();
+                    var web_url = $('#website').val();
                     //alert( );
                     if($('#f_name').val() == ''){
                       $('.snackbar').html('Please Enter Full Name ');
                       my_toast();
                       return false;
                     }
+url_validate = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+if(!url_validate.test(video_url)){
+   
+     $('.snackbar').html('Please Enter Valid Video Url ');
+                      my_toast();
+                      return false;
+}
+
+url_validate = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+if(!url_validate.test(web_url)){
+   
+     $('.snackbar').html('Please Enter Valid Website Url ');
+                      my_toast();
+                      return false;
+}
 $('#about_me_vl').val(editor.getData());
    var form =$('#about_me_form').serialize();
                         // alert(form);
@@ -2634,6 +2873,8 @@ $("input[type='radio']").bind( "change", function(event, ui) {
                 
 })
 $$(document).on('pageInit', '.page[data-page="support"]', function (e) {
+  var user_id =  window.localStorage.getItem("user_id");
+  $('#user_idd').val(user_id);
     $(document).on('click', '#save_button', function(){  
 // alert('gf');
  
@@ -2856,6 +3097,7 @@ $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
    });
 
    $(document).on('click', '.t2', function() {
+    alert('fdfd');
     $('.t2').addClass('active');
     $('.t1').removeClass('active');
     $('.t3').removeClass('active');
@@ -2907,7 +3149,10 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
+ 
 
+ var referral =  window.localStorage.getItem("referral");
+ // alert(referral);
  $('.navbar').show();
     $('.back').hide();
       var permission = cordova.plugins.permissions;
@@ -2935,17 +3180,18 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
            
             success: function(data) {
                 // var data = JSON.stringify(data);
-                // alert(data.pay_status);
+                // alert(data.Refferal_id);
                window.localStorage.setItem("payment",data.pay_status);
                window.localStorage.setItem("user_id",data.id);
                window.localStorage.setItem("language",data.language);
                window.localStorage.setItem("referral",data.Refferal_id);
+               $('#referral_idd').val(data.Refferal_id);
                window.localStorage.setItem("mobile",data.mobile);
                window.localStorage.setItem("profession",data.profession);
                window.localStorage.setItem("about_me",data.about_me);
                window.localStorage.setItem("skype",data.skype);
-               window.localStorage.setItem("address_map_link",data.address_map_link);
                window.localStorage.setItem("address",data.address);
+               window.localStorage.setItem("address_map_link",data.address_map_link);
                window.localStorage.setItem("fb_url",data.fb_url);
 
                window.localStorage.setItem("y_tube_link",data.y_tube_link);
@@ -2966,7 +3212,8 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
                window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
                window.localStorage.setItem("company_img",data.company_img);
                window.localStorage.setItem("theme",data.theme);
-
+var referral =  window.localStorage.getItem("referral");
+                   // alert(referral);
               
                // alert(data.fb_url);
                 $('#user').html(data.name);
@@ -2983,9 +3230,19 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   app.initialize();
   //alert("app started"); 
  
-
+  var dropdown = document.getElementById('segment');
+dropdown.addEventListener('touchstart', function(e) {
+    e.stopPropagation();
+}, false);
    $(".segment").select2({
      'tags':true,
+      placeholder: "Decide Segment"
+      
+    });
+
+
+    $(".hh").select2({
+   
       placeholder: "Decide Segment"
       
     });
@@ -3015,34 +3272,34 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
        $('#share_form')[0].reset();
         
       });
-  // var list = $('.country-list');
-
+  var list = $('.country-list');
+// alert(list);
 $(document).on('click', '.flag-container', function() {
   // alert('dl');
   $('.country-list').removeClass('hide');
     // trigger.click();
 });
 
- var input = document.querySelector("#receivermobile");
+//  var input = document.querySelector("#receivermobile");
 
-    var a=window.intlTelInput(input, {
-    initialCountry: "auto",
-     geoIpLookup: function(success, failure) {
+//     var a=window.intlTelInput(input, {
+//     initialCountry: "auto",
+//      geoIpLookup: function(success, failure) {
 
 
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-      // alert(jsonp);
-      var countryCode = (resp && resp.country) ? resp.country : "";
-      // alert(countryCode);
-      success(countryCode);
+//     $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+//       // alert(resp.country);
+//       var countryCode = (resp && resp.country) ? resp.country : "";
+//       // alert(countryCode);
+//       success(countryCode);
 
-   $('.country-name').css('color','black');
-    });
-    },
+//    $('.country-name').css('color','black');
+//     });
+//     },
 
-  hiddenInput: "full_phone",
-  utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
-});
+//   hiddenInput: "full_phone",
+//   utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
+// });
       // alert(a);
     // Following code will be executed for page with data-page attribute equal to "about"
    
@@ -3076,13 +3333,13 @@ $("#segment").trigger('create');
                       var user_id =  window.localStorage.getItem("user_id");
                       var language =  window.localStorage.getItem("language");
                       var referral =  window.localStorage.getItem("referral");
+                      var rrr =  window.localStorage.getItem("referral");
                       var name =  window.localStorage.getItem("name");
                       var user_image =  window.localStorage.getItem("user_image");
-                   
                                 var user =  window.localStorage.getItem("user_id");
              $('#user_id').val(user);
              $('#language').val(language);
-             $('#referral').val(referral);
+             
              $('#user_name').val(name);
              
              var mail_link = 'mailto:?subject=Digital%20Bcard&body=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name;
@@ -3133,6 +3390,11 @@ $("#segment").trigger('create');
          
     },
         submitHandler: function (form) { // for demo
+         var c_code = $('#c_code').val();
+
+         var receivermobile = $('#receivermobile').val();
+         // alert(c_code+receivermobile);
+         $('#full_phone').val(c_code+receivermobile);
           form =$('#share_form').serialize();
          // alert(form);
                       var payment =  window.localStorage.getItem("payment");
@@ -3145,8 +3407,8 @@ $("#segment").trigger('create');
 
           var  action = $('#action').val();
           var  email = $('#email').val();
-        $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
+        // $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    // $('.loader').css('display','flex');
      $.ajax({
             url: "https://digitalbcards.in/api/send_whatsapp/",
             method: "POST",
@@ -3369,8 +3631,8 @@ $('#register_form').validate({ // initialize the plugin
                 my_toast();
     $('.loader').css('display','none');
 
-    // alert('sdsd');
-            location.href = "home.html";
+    
+            //window.location.href = "home.html";
             location.reload();
               }
             //location.reload();
@@ -3385,35 +3647,255 @@ $('#register_form').validate({ // initialize the plugin
    // $('.navbar').show();
     //$('.back').hide();
 })
+function open_model(name,id,s_value) {
+        // alert(name);
+        
+            $('#update_expertise').modal('show');
+            $('#e_name').val(name);
+            $('#e_value').val(s_value);
+            $('#tag_id').val(id);
+            // alert(name+id);   
+        }
+        function edit_key_client(name,id,description,tag_line){
+            $('#add_expertise').modal('show');
+            $('#image_demo').hide();
+            $('.imgd').attr('id','uploadFile0');
+            $('#add_key_client_form')[0].reset();
+            $('#name').val(name);
+            $('#action').attr('name','update_tag');
+            $('#s_value').val(description);
+            $('.modal-title').html('Edit Key Client');
+            $('.crop_image').html('Update');
+            $('.o_btn').attr('id','update_tag');
+             $("#imagePreview0").css('display','inline-block');
+             var bg ='url("https://digitalbcards.in/upload/'+tag_line+'")';
+                            $("#imagePreview0").css("background-image",bg);
+            // $('.edit_img_preview').show();
+            //  $('.edit_img_preview').html('<img src="https://digitalbcards.in/upload/'+tag_line+'">');
+            // $('.e_crop_me_img').val(tag_line);
+            $('#tag_id').val(id);
+            
+        }
+         function edit_memberships(name,id,description,tag_line){
+            $('#add_expertise').modal('show');
+            $('#image_demo').hide();
+            $('.imgd').attr('id','uploadFile0');
+            $('#add_memberships_form')[0].reset();
+            $('#name').val(name);
+            $('#action').attr('name','update_tag');
+            $('#s_value').val(description);
+            $('.modal-title').html('Edit Memberships');
+            $('.crop_image').html('Update');
+            $('.o_btn').attr('id','update_tag');
+             $("#imagePreview0").css('display','inline-block');
+             var bg ='url("https://digitalbcards.in/upload/'+tag_line+'")';
+                            $("#imagePreview0").css("background-image",bg);
+            // $('.edit_img_preview').show();
+            //  $('.edit_img_preview').html('<img src="https://digitalbcards.in/upload/'+tag_line+'">');
+            // $('.e_crop_me_img').val(tag_line);
+            $('#tag_id').val(id);
+            
+        }
+function edit_offer(name,id,description,tag_line){
+            $('#add_expertise').modal('show');
+            $('#image_demo').hide();
+            $('#add_offer_form')[0].reset();
+            $('#name').val(name);
+            
+            $('#s_value').val(description);
+            $('.modal-title').html('Edit Offer');
+            $('.crop_image').html('Update');
+            $('.o_btn').attr('id','update_tag');
+            $('.edit_img_preview').show();
+            $('.edit_img_preview').html('<img src="https://digitalbcards.in/upload/'+tag_line+'">');
+            $('.e_crop_me_img').val(tag_line);
+            $('#tag_id').val(id);
+} 
+        function testimonial_model(name,id,description,tag_line) {
+        // alert(name);
+        
+            $('#update_expertise').modal('show');
+            $('#e_name').val(name);
+            $('#e_msg').val(description);
+            $('#e_value').val(tag_line);
+            $('#tag_id').val(id);
+            // alert(name+id);   
+        }
+          function delete_tag(id,action,lable,api_link)
+            {
+              // alert(action);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+ var user_id =  window.localStorage.getItem("user_id");
 
-//     $$(document).on('click', '#rzp-button1', function(){  
+                var prom;
+                 var form_d = 'secrete=virus&'+action+'=1&id='+id+'&user_id='+user_id+'';
+                 // alert(form_d);
+                prom = "Are You Sure You Want To Delete This "+lable+"?";
+
+                if (confirm(prom))
+                {
+                    setTimeout(function ()
+                    {
+                        //=========ajax==========//
+                        jQuery.ajax({
+                            type: 'POST',
+                            data: form_d,
+                            url: 'https://digitalbcards.in/api/'+api_link+'/',
+                             dataType:"json",    
+                            beforeSend: function () {
+//                                $("#loading").show();
+                            },
+                            success: function (data) {
+                                if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_'+api_link).html(data.data);
+            // $('#add_expertise').modal('hide');
+    
+    $('.loader').css('display','none');
+     if(data.message !=''){
+      
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
                
-// // alert('here');
+     $('.snackbar').html(data.message);
+                 $('#my_'+api_link).html(data.data);
+            // $('#add_expertise').modal('hide');
+  
+                if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
 
+              }     
+                            },
+                            error: function (e) {
+                            }
+                        });
+                        //=========End of ajax====//
+                    }, 1000);
+                }else{
+                //location.reload();
+    $('.loader').css('display','none');
 
-// var options = {
-//      "key": "rzp_live_SrhWTuzFnqnF1F", // Enter the Key ID generated from the Dashboard
-//     "amount": "29935", // INR 299.35
-//     "name": "Acme Corp",
-//     "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
-//     "image": "https://example.com/your_logo",
-//     // "order_id": "order_9A33XWu170gUtm",//Order ID is generated as Orders API has been implemented. Refer the Checkout form table given below
-//     "handler": function (response){
-//         alert(response.razorpay_payment_id);
-//     },
-//     /**
-//       * You can track the modal lifecycle by * adding the below code in your options
-//       */
-//     "modal": {
-//         "ondismiss": function(){
-//           alert('Dismiss');
-//             // console.log(‘Checkout form closed’);
-//         }
-//     }
-// };
+                }
+            }
 
-// var rzp1 = new Razorpay(options);
-//  rzp1.open();
-//     e.preventDefault();
+   function setfb(){
+             var val=$('#s_name').val();
+             if(val==1)
+             {
+              $('#s_value').val("https://www.facebook.com/");
+             }
 
-//                   })
+         }
+          function checkfile(sender) {
+                        var validExts = new Array(".jpg",".jpeg", ".png");
+                        var fileExt = sender.value;
+                        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+                        if (validExts.indexOf(fileExt) < 0) {
+                        alert("Invalid file selected, valid files are of " +
+                           validExts.toString() + " types.");
+                           //document.getElementById('upload_form').reset();
+                           // document.getElementById("image").value = "";
+                          // $('#sub_check').attr("disabled", "disabled");
+                          location.reload();
+
+                        return false;
+                        }
+                        else {
+                             // $('#sub_check').removeAttr("disabled");          
+
+                            return true;
+                        }
+                        }
+                        function color(id) {
+ var user_id =  window.localStorage.getItem("user_id");
+                        
+                      jQuery.ajax({
+                                type: 'POST',
+                                data: {'action': 'setcolor', 'id': id,'user_id':user_id},
+                                url: 'https://digitalbcards.in/ajax.php',
+                                success: function (data) {
+                                    $('.snackbar').html(data);
+                                    my_toast();
+                                   location.reload();
+                                    
+                                },
+                                error: function (e) {
+
+                                }
+                                });
+
+        }
+
+function new_segment(){
+  $('#new_seg').show();
+}
+function add_segment(t){
+  $('#segment').append('<option value="'+t.value+'" selected="selected">'+t.value+'</option>');
+  $('#new_seg').hide();
+
+}
+        function update_profile(email){
+               $.ajax({
+            url: "https://digitalbcards.in/api/user_profile/", 
+            method: "POST",
+            data:{email:email,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+                // alert(data.pay_status);
+               window.localStorage.setItem("payment",data.pay_status);
+               window.localStorage.setItem("user_id",data.id);
+               window.localStorage.setItem("language",data.language);
+               window.localStorage.setItem("referral",data.Refferal_id);
+               window.localStorage.setItem("mobile",data.mobile);
+               window.localStorage.setItem("profession",data.profession);
+               window.localStorage.setItem("about_me",data.about_me);
+               window.localStorage.setItem("skype",data.skype);
+               window.localStorage.setItem("address",data.address);
+               window.localStorage.setItem("address_map_link",data.address_map_link);
+               window.localStorage.setItem("fb_url",data.fb_url);
+
+               window.localStorage.setItem("y_tube_link",data.y_tube_link);
+               window.localStorage.setItem("website",data.website);
+                
+               window.localStorage.setItem("whatsapp",data.whatsapp);
+               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
+               window.localStorage.setItem("name",data.name);
+               //window.localStorage.setItem("username",data.name);
+               window.localStorage.setItem("user_image",data.profile_img);
+
+               window.localStorage.setItem("company_name",data.company_name);
+               window.localStorage.setItem("vision",data.vision);
+               window.localStorage.setItem("mission",data.mission);
+               window.localStorage.setItem("about_comp",data.about_comp);
+               window.localStorage.setItem("comp_address",data.comp_address);
+               window.localStorage.setItem("map_link",data.map_link);
+               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
+               window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("theme",data.theme);
+
+              
+               // alert(data.fb_url);
+                $('#user').html(data.name);
+                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+                // $('#user_image').css("height",'80px');
+                // $('#user_image').css("width",'80px');
+               // $('#preloader').hide();
+    $('.loader').css('display','none');
+                
+              
+            //location.reload();
+          }
+        })
+        }
