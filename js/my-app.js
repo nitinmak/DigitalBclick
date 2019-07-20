@@ -15,14 +15,25 @@ $$(document).on('deviceready', function() {
     // my_toast();
 
 document.addEventListener("backbutton", function(e){
-  alert($.mobile.activePage[0].baseURI);
+  
+   var unique = window.localStorage.getItem("unique");
+  if(unique == 2){
+    alert('lead');
+  }else if(unique == 3){
+    alert(profile);
+  }
+
+
+
         if (confirm("Are you sure you want to Exit?")) {
             /* Here is where my AJAX code for logging off goes */
- //           localStor age.clear()
+ //           localStorage.clear()
  //                window.localStorage.setItem("login",0);
  // window.location = "index.html";
  // navigator.app.exitApp();
-  navigator.app.exitApp()
+  // navigator.app.exitApp()
+  history.go(-1);
+    navigator.app.backHistory();
 //   if (navigator.myApp) {
 //     navigator.myApp.exitApp();
 // } else if (navigator.device) {
@@ -3149,6 +3160,7 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
+               window.localStorage.setItem("unique",1);
  
 
  var referral =  window.localStorage.getItem("referral");
