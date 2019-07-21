@@ -230,6 +230,11 @@
                     </li>
                 </ul>
             </nav>
+
+
+            <div class="bk_link">
+                
+            </div>
             <form action="https://www.example.com/payment/success/" id="frm1" method="POST">
 <script
     src="https://checkout.razorpay.com/v1/checkout.js"
@@ -642,33 +647,13 @@ $('#'+link).attr('href','pay.html');
                             
 
                             function close_sidebar(link){
-                                alert(link);
-                                var url=window.location.href;
-                                alert(url);
+                                alert($('.page').data('page'));
+                                $('.bk_link').html('<a href="'+$('.page').data('page')+'.html" id="bck"></a>');
+
+                              
+                                
                                 //make_payment();
-                                if(link == 'homeee'){
-                                    window.localStorage.setItem("unique",1);
-                                }else if(link == 'lead'){
-                                    window.localStorage.setItem("unique",2);
-                                }else if(link == 'viewcard'){
-                                    window.localStorage.setItem("unique",3);
-                                }else if(link == 'profilee'){
-                                    window.localStorage.setItem("unique",4);
-                                }else if(link == 'vCard'){
-                                    window.localStorage.setItem("unique",5);
-                                }else if(link == 'referral'){
-                                    window.localStorage.setItem("unique",6);
-                                }else if(link == 'redeem'){
-                                    window.localStorage.setItem("unique",7);
-                                }else if(link == 'directory'){
-                                    window.localStorage.setItem("unique",8);
-                                }else if(link == 'support'){
-                                    window.localStorage.setItem("unique",9);
-                                }else if(link == 'settings'){
-                                    window.localStorage.setItem("unique",10);
-                                }else{
-                                    window.localStorage.setItem("unique",0);
-                                }
+                              
                              $('body').removeClass('with-panel-left-reveal');
                               // $('body').css('width','100%');
                               $('a.active').removeClass('active');
