@@ -29,7 +29,15 @@ document.addEventListener("backbutton", function(e){
         }
     
   }else{
+var unique2 =  window.localStorage.getItem("unique2");
+alert(unique2);
+if(unique2){
+    $$('#bck2').trigger("click");
+
+}else{
+
     $$('#bck').trigger("click");
+}    
   } 
 
 
