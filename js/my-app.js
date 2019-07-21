@@ -29,7 +29,7 @@ document.addEventListener("backbutton", function(e){
         }
     
   }else{
-    $$('#bck'),trigger("click");
+    $$('#bck').trigger("click");
   } 
 
 
