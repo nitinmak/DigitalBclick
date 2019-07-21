@@ -2047,6 +2047,7 @@ skils_action(form);
 })
 
 $$(document).on('pageInit', '.page[data-page="referral"]', function (e) {
+  window.localStorage.setItem("unique",'referral');
   var referral =  window.localStorage.getItem("referral");
  var user_id =  window.localStorage.getItem("user_id");
  // alert(referral)
@@ -2637,6 +2638,7 @@ var user_id =  window.localStorage.getItem("user_id");
    }
 })
 $$(document).on('pageInit', '.page[data-page="redeem"]', function (e) {
+  window.localStorage.setItem("unique",'redeem');
  var user_id =  window.localStorage.getItem("user_id");
 var form_d = 'secrete=virus&user_id='+user_id+'';
 save_redeem(form_d);
@@ -2727,6 +2729,7 @@ save_redeem(form);
   }
 })
 $$(document).on('pageInit', '.page[data-page="vcard"]', function (e) {
+  window.localStorage.setItem("unique",'vcard');
    // check_payment();       
 // myFunction();
  var user_id =  window.localStorage.getItem("user_id");
@@ -2873,6 +2876,7 @@ $("input[type='radio']").bind( "change", function(event, ui) {
                 
 })
 $$(document).on('pageInit', '.page[data-page="support"]', function (e) {
+  window.localStorage.setItem("unique",'support');
   var user_id =  window.localStorage.getItem("user_id");
   $('#user_idd').val(user_id);
     $(document).on('click', '#save_button', function(){  
@@ -2932,6 +2936,7 @@ $$(document).on('pageInit', '.page[data-page="support"]', function (e) {
 
 
 $$(document).on('pageInit', '.page[data-page="settings"]', function (e) {
+  window.localStorage.setItem("unique",'settings');
  var user_id =  window.localStorage.getItem("user_id");
  var email =  window.localStorage.getItem("email");
  $('#user_idd').val(user_id);
@@ -3022,7 +3027,7 @@ $('#setting_form').validate({ // initialize the plugin
 
 })
 $$(document).on('pageInit', '.page[data-page="directory"]', function (e) {
-
+window.localStorage.setItem("unique",'directory');
   var search = '';
                       // alert(user_id);
                       get_contacts(search);
@@ -3076,7 +3081,7 @@ $('#my_leadssss').html(data);
 
 })
 $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
-
+window.localStorage.setItem("unique",'viewcard');
    $(document).on('click', '#pay_button', function() {
 make_payment();
    })
@@ -3140,7 +3145,7 @@ $('#card').html(data);
  
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
-   
+   window.localStorage.setItem("unique",'profile');
    // check_payment();   
    // alert('gfgf');
  var user_id =  window.localStorage.getItem("user_id");
@@ -3149,7 +3154,7 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
-               window.localStorage.setItem("unique",1);
+               window.localStorage.setItem("unique",'home');
  
 
  var referral =  window.localStorage.getItem("referral");
