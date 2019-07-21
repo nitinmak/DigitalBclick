@@ -12,7 +12,7 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-    alert($('.page').data('page'));
+    // alert($('.page').data('page'));
     // my_toast();
 // alert($.mobile.activePage.is('#homepage'));
 document.addEventListener("backbutton", function(e){
@@ -29,15 +29,16 @@ document.addEventListener("backbutton", function(e){
         }
     
   }else{
-var unique2 =  window.localStorage.getItem("unique2");
-alert(unique2);
-if(unique2){
-    $$('#bck2').trigger("click");
+    if($('#bck').attr('href')){
+
+
+    $$('#bck').trigger("click");
 
 }else{
 
-    $$('#bck').trigger("click");
+    $$('#bck2').trigger("click");
 }    
+    }
   } 
 
 
