@@ -12,51 +12,29 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+    alert($('.page').data('page'));
     // my_toast();
-
+// alert($.mobile.activePage.is('#homepage'));
 document.addEventListener("backbutton", function(e){
   
-   var unique = window.localStorage.getItem("unique");
-  if(unique == 2){
-    alert('lead');
-  }else if(unique == 3){
-    alert(profile);
-  }
-
- var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-        // IOS DEVICE
-        history.go(-1);
-    } else if (userAgent.match(/Android/i)) {
-        // ANDROID DEVICE
-        navigator.app.backHistory();
-    } else {
-        // EVERY OTHER DEVICE
-        history.go(-1);
-    }
-
+  if($('.page').data('page') == 'index' || $('.page').data('page') == 'home'){
 
         if (confirm("Are you sure you want to Exit?")) {
-            /* Here is where my AJAX code for logging off goes */
- //           localStorage.clear()
- //                window.localStorage.setItem("login",0);
- // window.location = "index.html";
- // navigator.app.exitApp();
+    
   navigator.app.exitApp()
-  // history.go(-1);
-    // navigator.app.backHistory();
-//   if (navigator.myApp) {
-//     navigator.myApp.exitApp();
-// } else if (navigator.device) {
-//     navigator.myApp.exitApp();
-// } else {
-//     window.close();
-// }
+  
         }
         else {
             return false;
         }
     
+  }else{
+    $$('#bck'),trigger("click");
+  } 
+
+
+
+
 }, false);
  // **my permission code**
         var permission = cordova.plugins.permissions;
