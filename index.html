@@ -647,8 +647,11 @@ $('#'+link).attr('href','pay.html');
                             
 
                             function close_sidebar(link){
-                                alert($('.page').data('page'));
-                                $('.bk_link').html('<a href="'+$('.page').data('page')+'.html" id="bck"></a>');
+                                // alert($('.page').data('page'));
+ var unique =  window.localStorage.getItem("unique");
+
+            alert(unique)
+                                $('.bk_link').html('<a href="'+unique+'.html" id="bck"></a>');
 
                               
                                 
