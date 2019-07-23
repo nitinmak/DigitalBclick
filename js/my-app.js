@@ -34,13 +34,17 @@ document.addEventListener("backbutton", function(e){
     
   }else{
  
- if(unique == 'home'){
+ if(unique == '0'){
     $$('#bck2').trigger("click");
 
  }else{
-
+  if($('.page').data('page') == 'profile'){
     $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'home');
+    window.localStorage.setItem("unique",'profile');
+  }else{
+    window.localStorage.setItem("unique",'0');
+  }
+
  }
 
 
