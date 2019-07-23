@@ -34,38 +34,13 @@ document.addEventListener("backbutton", function(e){
     
   }else{
  
- if(unique == 0){
+ if(unique_home == 0){
     $$('#bck2').trigger("click");
 
  }else{
 
     $$('#bck').trigger("click");
-    if($('.page').data('page') != 'home'){
-    $$('#p_bck').trigger("click");
-    
-    }else if($('.page').data('page') != 'home'){
-      $$('#p_bck').trigger("click");
-    }else if($('.page').data('page') != 'lead'){
-      $$('#p_bck').trigger("click");
-    }else if($('.page').data('page') != 'contact_detail'){
-      $$('#p_bck').trigger("click");
-    }else if($('.page').data('page') != 'viewcard'){
-      $$('#p_bck').trigger("click");
-    }else if($('.page').data('page') != 'vcard'){
-      $$('#p_bck').trigger("click");
-    }else if($('.page').data('page') != 'referral'){
-      $$('#p_bck').trigger("click");
-    }else if($('.page').data('page') != 'redeem'){
-      $$('#p_bck').trigger("click");
-    }else if($('.page').data('page') != 'directory'){
-      $$('#p_bck').trigger("click");
-    }else if($('.page').data('page') != 'support'){
-      $$('#p_bck').trigger("click");
-    }else if($('.page').data('page') != 'settings'){
-      $$('#p_bck').trigger("click");
-    }else{
-    window.localStorage.setItem("unique",0);
-    }
+    // window.localStorage.setItem("unique_home",0);
  }
 
 
