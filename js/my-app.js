@@ -15,6 +15,9 @@ $$(document).on('deviceready', function() {
     // alert($('.page').data('page'));
     // my_toast();
 // alert($.mobile.activePage.is('#homepage'));
+
+document.addEventListener("backbutton", function(e){
+ 
 navigator.Backbutton.goBack(function() {
   alert('success');
   console.log('success')
@@ -23,41 +26,28 @@ navigator.Backbutton.goBack(function() {
   console.log('fail')
 });
 
-// document.addEventListener("backbutton", function(e){
- 
-//     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-//     if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-//         // IOS DEVICE
-//         history.go(-1);
-//     } else if (userAgent.match(/Android/i)) {
-//         // ANDROID DEVICE
-//         navigator.app.backHistory();
-//     } else {
-//         // EVERY OTHER DEVICE
-//         history.go(-1);
-//     } 
-//   // if($('.page').data('page') == 'index' || $('.page').data('page') == 'home'){
+  // if($('.page').data('page') == 'index' || $('.page').data('page') == 'home'){
 
-//   //       if (confirm("Are you sure you want to Exit?")) {
+  //       if (confirm("Are you sure you want to Exit?")) {
     
-//   // navigator.app.exitApp()
+  // navigator.app.exitApp()
   
-//   //       }
-//   //       else {
-//   //           return false;
-//   //       }
+  //       }
+  //       else {
+  //           return false;
+  //       }
     
-//   // }else{
+  // }else{
  
-//   //   $$('#bck').trigger("click");
+  //   $$('#bck').trigger("click");
 
-//   //   }
-//   // } 
-
-
+  //   }
+  // } 
 
 
-// }, false);
+
+
+}, false);
  // **my permission code**
         var permission = cordova.plugins.permissions;
 
