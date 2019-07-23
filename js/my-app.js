@@ -15,31 +15,44 @@ $$(document).on('deviceready', function() {
     // alert($('.page').data('page'));
     // my_toast();
 // alert($.mobile.activePage.is('#homepage'));
+// navigator.Backbutton.goBack(function() {
+//   alert('success');
+//   console.log('success')
+// }, function() {
+//   alert('fail');
+//   console.log('fail')
+// });
+
 document.addEventListener("backbutton", function(e){
-  
-  if($('.page').data('page') == 'index' || $('.page').data('page') == 'home'){
+ 
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+        // IOS DEVICE
+        history.go(-1);
+    } else if (userAgent.match(/Android/i)) {
+        // ANDROID DEVICE
+        navigator.app.backHistory();
+    } else {
+        // EVERY OTHER DEVICE
+        history.go(-1);
+    } 
+  // if($('.page').data('page') == 'index' || $('.page').data('page') == 'home'){
 
-        if (confirm("Are you sure you want to Exit?")) {
+  //       if (confirm("Are you sure you want to Exit?")) {
     
-  navigator.app.exitApp()
+  // navigator.app.exitApp()
   
-        }
-        else {
-            return false;
-        }
+  //       }
+  //       else {
+  //           return false;
+  //       }
     
-  }else{
-    if($('#bck').attr('href')){
+  // }else{
+ 
+  //   $$('#bck').trigger("click");
 
-
-    $$('#bck').trigger("click");
-
-}else{
-
-    $$('#bck2').trigger("click");
-}    
-    }
-  } 
+  //   }
+  // } 
 
 
 
@@ -329,7 +342,7 @@ $$(document).on('pageInit', function (e) {
     }
 })
 $$(document).on('pageInit', '.page[data-page="achievement"]', function (e) {
-
+window.localStorage.setItem("unique",'achievement');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -419,6 +432,7 @@ skils_action(form);
 
 })
 $$(document).on('pageInit', '.page[data-page="pay"]', function (e) {
+  window.localStorage.setItem("unique",'pay');
  // $( document ).ajaxStop(function(){
  //  alert("stop0");
  //  });
@@ -488,7 +502,7 @@ var rzp1 = new Razorpay(options);
                   })
 })
 $$(document).on('pageInit', '.page[data-page="testimonial"]', function (e) {
-
+window.localStorage.setItem("unique",'testimonial');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -591,7 +605,7 @@ skils_action(form);
 
 
 $$(document).on('pageInit', '.page[data-page="experience"]', function (e) {
-
+window.localStorage.setItem("unique",'experience');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -691,7 +705,7 @@ skils_action(form);
 
 })
 $$(document).on('pageInit', '.page[data-page="offer"]', function (e) {
-    
+    window.localStorage.setItem("unique",'offer');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -897,7 +911,7 @@ skils_action(form);
 
 
 $$(document).on('pageInit', '.page[data-page="gallery"]', function (e) {
-    
+    window.localStorage.setItem("unique",'gallery');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -1099,7 +1113,7 @@ skils_action(form);
 
 
 $$(document).on('pageInit', '.page[data-page="memberships"]', function (e) {
-    
+    window.localStorage.setItem("unique",'memberships');
  var user_id =  window.localStorage.getItem("user_id");
  $('#user_id_q').val(user_id);
  
@@ -2177,6 +2191,7 @@ update_profile(email);
 
  })
 $$(document).on('pageInit', '.page[data-page="contact_detail"]', function (e) {
+   window.localStorage.setItem("unique",'contact_detail');
  var user_id =  window.localStorage.getItem("user_id"); 
  var mobile =  window.localStorage.getItem("mobile"); 
  var email =  window.localStorage.getItem("email"); 
@@ -2336,6 +2351,7 @@ $$(document).on('pageInit', '.page[data-page="forgot_password"]', function (e) {
 })
 })
 $$(document).on('pageInit', '.page[data-page="upload_profile"]', function (e) {
+  window.localStorage.setItem("unique",'upload_profile');
 var user_id =  window.localStorage.getItem("user_id"); 
  var referral =  window.localStorage.getItem("referral"); 
  var user_image =  window.localStorage.getItem("user_image"); 
@@ -2484,6 +2500,7 @@ update_profile(email);
 
 })
 $$(document).on('pageInit', '.page[data-page="about_me"]', function (e) {
+    window.localStorage.setItem("unique",'about_me');
  var editor = CKEDITOR.replace('editor1');
   var referral =  window.localStorage.getItem("referral");
  
@@ -2631,6 +2648,7 @@ $('.pages').prepend(' <div class="loader justify-content-center "><div class="ma
 
 })
 $$(document).on('pageInit', '.page[data-page="theme"]', function (e) {
+  window.localStorage.setItem("unique",'theme');
 var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
  var theme =  window.localStorage.getItem("theme");
@@ -3476,6 +3494,7 @@ $("#segment").trigger('create');
 
 })
 $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
+  window.localStorage.setItem("unique",'lead');
             // check_payment();          
      // window.location = 'pay.html';
       $$('#payment_btn').trigger("click");
@@ -3531,6 +3550,7 @@ $('#my_leads').html(data);
 
 })
 $$(document).on('pageInit', '.page[data-page="register"]', function (e) {
+  window.localStorage.setItem("unique",'register');
     // Following code will be executed for page with data-page attribute equal to "about"
     //my_toast();
     $(document).on('click', '#login', function(){  
