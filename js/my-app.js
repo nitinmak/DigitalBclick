@@ -18,8 +18,9 @@ $$(document).on('deviceready', function() {
 
 document.addEventListener("backbutton", function(e){
  
+ var unique =  window.localStorage.getItem("unique");   
 
-  if($('.page').data('page') == 'index' || $('.page').data('page') == 'home'){
+  if($('.page').data('page') == 'home'){
 
         if (confirm("Are you sure you want to Exit?")) {
     
@@ -32,7 +33,15 @@ document.addEventListener("backbutton", function(e){
     
   }else{
  
+ if(unique == 0){
+    $$('#bck2').trigger("click");
+
+ }else{
+
     $$('#bck').trigger("click");
+    window.localStorage.setItem("unique",0);
+ }
+
 
     }
   
