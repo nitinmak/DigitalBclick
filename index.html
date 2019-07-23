@@ -645,7 +645,10 @@ $('#'+link).attr('href','pay.html');
 }
                             }
                             
-
+function set_back(){
+ var unique =  window.localStorage.getItem("unique");   
+ $('.bk_link').html('<a href="'+unique+'.html" id="bck"></a>');
+}
                             function close_sidebar(link){
                                 // alert($('.page').data('page'));
  var unique =  window.localStorage.getItem("unique");
