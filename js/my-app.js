@@ -18,8 +18,7 @@ $$(document).on('deviceready', function() {
 
 document.addEventListener("backbutton", function(e){
  
- var unique =  window.localStorage.getItem("unique");
- alert(unique);   
+ var unique =  window.localStorage.getItem("unique");   
  var unique_home =  window.localStorage.getItem("unique_home");   
 
   if(unique_home == 0){
@@ -41,7 +40,11 @@ document.addEventListener("backbutton", function(e){
  }else{
 
     $$('#bck').trigger("click");
+    if($('.page').data('page') == 'profile'){
+    window.localStorage.setItem("unique",'profile');
+    }else{
     window.localStorage.setItem("unique",0);
+    }
  }
 
 
