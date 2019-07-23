@@ -17,7 +17,8 @@ $$(document).on('deviceready', function() {
 // alert($.mobile.activePage.is('#homepage'));
 
 document.addEventListener("backbutton", function(e){
-  
+ 
+
   if($('.page').data('page') == 'index' || $('.page').data('page') == 'home'){
 
         if (confirm("Are you sure you want to Exit?")) {
@@ -34,7 +35,7 @@ document.addEventListener("backbutton", function(e){
     $$('#bck').trigger("click");
 
     }
-  } 
+  
 
 
 
