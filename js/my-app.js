@@ -17,32 +17,24 @@ $$(document).on('deviceready', function() {
 // alert($.mobile.activePage.is('#homepage'));
 
 document.addEventListener("backbutton", function(e){
- 
-navigator.Backbutton.goBack(function() {
-  alert('success');
-  console.log('success')
-}, function() {
-  alert('fail');
-  console.log('fail')
-});
-
-  // if($('.page').data('page') == 'index' || $('.page').data('page') == 'home'){
-
-  //       if (confirm("Are you sure you want to Exit?")) {
-    
-  // navigator.app.exitApp()
   
-  //       }
-  //       else {
-  //           return false;
-  //       }
-    
-  // }else{
- 
-  //   $$('#bck').trigger("click");
+  if($('.page').data('page') == 'index' || $('.page').data('page') == 'home'){
 
-  //   }
-  // } 
+        if (confirm("Are you sure you want to Exit?")) {
+    
+  navigator.app.exitApp()
+  
+        }
+        else {
+            return false;
+        }
+    
+  }else{
+ 
+    $$('#bck').trigger("click");
+
+    }
+  } 
 
 
 
