@@ -33,14 +33,14 @@ document.addEventListener("backbutton", function(e){
         }
     
   }else{
- 
- if(unique_home == 0){
+ alert(unique);
+ if(unique){
     $$('#bck2').trigger("click");
 
  }else{
 
     $$('#bck').trigger("click");
-    window.localStorage.setItem("unique_home",0);
+    // window.localStorage.setItem("unique_home",0);
  }
 
 
