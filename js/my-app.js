@@ -19,8 +19,9 @@ $$(document).on('deviceready', function() {
 document.addEventListener("backbutton", function(e){
  
  var unique =  window.localStorage.getItem("unique");   
+ var unique_home =  window.localStorage.getItem("unique_home");   
 
-  if($('.page').data('page') == 'home'){
+  if(unique_home == 0){
 
         if (confirm("Are you sure you want to Exit?")) {
     
@@ -335,6 +336,7 @@ $$(document).on('pageInit', function (e) {
 })
 $$(document).on('pageInit', '.page[data-page="achievement"]', function (e) {
 window.localStorage.setItem("unique",'achievement');
+window.localStorage.setItem("unique_home",'1');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -424,6 +426,7 @@ skils_action(form);
 
 })
 $$(document).on('pageInit', '.page[data-page="pay"]', function (e) {
+  window.localStorage.setItem("unique_home",'1');
   window.localStorage.setItem("unique",'pay');
  // $( document ).ajaxStop(function(){
  //  alert("stop0");
@@ -495,6 +498,7 @@ var rzp1 = new Razorpay(options);
 })
 $$(document).on('pageInit', '.page[data-page="testimonial"]', function (e) {
 window.localStorage.setItem("unique",'testimonial');
+window.localStorage.setItem("unique_home",'1');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -598,6 +602,7 @@ skils_action(form);
 
 $$(document).on('pageInit', '.page[data-page="experience"]', function (e) {
 window.localStorage.setItem("unique",'experience');
+window.localStorage.setItem("unique_home",'1');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -698,6 +703,7 @@ skils_action(form);
 })
 $$(document).on('pageInit', '.page[data-page="offer"]', function (e) {
     window.localStorage.setItem("unique",'offer');
+    window.localStorage.setItem("unique_home",'1');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -903,6 +909,7 @@ skils_action(form);
 
 
 $$(document).on('pageInit', '.page[data-page="gallery"]', function (e) {
+  window.localStorage.setItem("unique_home",'1');
     window.localStorage.setItem("unique",'gallery');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
@@ -1105,6 +1112,7 @@ skils_action(form);
 
 
 $$(document).on('pageInit', '.page[data-page="memberships"]', function (e) {
+  window.localStorage.setItem("unique_home",'1');
     window.localStorage.setItem("unique",'memberships');
  var user_id =  window.localStorage.getItem("user_id");
  $('#user_id_q').val(user_id);
@@ -1296,6 +1304,8 @@ processData:false,
             });
 })
 $$(document).on('pageInit', '.page[data-page="company_logo"]', function (e) {
+   window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'company_logo');
 var user_id =  window.localStorage.getItem("user_id"); 
  var referral =  window.localStorage.getItem("referral"); 
  var company_img =  window.localStorage.getItem("company_img"); 
@@ -1428,7 +1438,8 @@ update_profile(email);
 
 })
 $$(document).on('pageInit', '.page[data-page="key_client"]', function (e) {
-    
+    window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'key_client');
  var user_id =  window.localStorage.getItem("user_id");
  $('#user_id_q').val(user_id);
  
@@ -1612,7 +1623,8 @@ processData:false,
             });
 })
 $$(document).on('pageInit', '.page[data-page="education"]', function (e) {
-
+    window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'education');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -1704,7 +1716,8 @@ skils_action(form);
 
 })
 $$(document).on('pageInit', '.page[data-page="payment_link"]', function (e) {
-
+ window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'payment_link');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -1794,7 +1807,8 @@ skils_action(form);
 
 })
 $$(document).on('pageInit', '.page[data-page="social_link"]', function (e) {
-
+ window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'social_link');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -1886,7 +1900,8 @@ skils_action(form);
 
 })
 $$(document).on('pageInit', '.page[data-page="product"]', function (e) {
-
+window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'product');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -1976,7 +1991,8 @@ skils_action(form);
 
 })
 $$(document).on('pageInit', '.page[data-page="skils"]', function (e) {
-
+window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'skils');
  var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -2062,7 +2078,8 @@ skils_action(form);
 })
 
 $$(document).on('pageInit', '.page[data-page="referral"]', function (e) {
-  window.localStorage.setItem("unique",'referral');
+  window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'referral');
   var referral =  window.localStorage.getItem("referral");
  var user_id =  window.localStorage.getItem("user_id");
  // alert(referral)
@@ -2093,6 +2110,8 @@ $$(document).on('pageInit', '.page[data-page="referral"]', function (e) {
 
 });
 $$(document).on('pageInit', '.page[data-page="company"]', function (e) {
+    window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'company');
   var editor = CKEDITOR.replace('editor2');
  var user_id =  window.localStorage.getItem("user_id"); 
  var referral =  window.localStorage.getItem("referral"); 
@@ -2183,7 +2202,8 @@ update_profile(email);
 
  })
 $$(document).on('pageInit', '.page[data-page="contact_detail"]', function (e) {
-   window.localStorage.setItem("unique",'contact_detail');
+  window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'contact_detail');
  var user_id =  window.localStorage.getItem("user_id"); 
  var mobile =  window.localStorage.getItem("mobile"); 
  var email =  window.localStorage.getItem("email"); 
@@ -2301,6 +2321,8 @@ update_profile(email);
 
 })
 $$(document).on('pageInit', '.page[data-page="forgot_password"]', function (e) {
+    window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'forgot_password');
                   $("#save_button").click(function() {
  
   var form =$('#forgot_password').serialize();
@@ -2343,7 +2365,8 @@ $$(document).on('pageInit', '.page[data-page="forgot_password"]', function (e) {
 })
 })
 $$(document).on('pageInit', '.page[data-page="upload_profile"]', function (e) {
-  window.localStorage.setItem("unique",'upload_profile');
+ window.localStorage.setItem("unique_home",'1');
+    window.localStorage.setItem("unique",'upload_profile');
 var user_id =  window.localStorage.getItem("user_id"); 
  var referral =  window.localStorage.getItem("referral"); 
  var user_image =  window.localStorage.getItem("user_image"); 
@@ -2492,6 +2515,7 @@ update_profile(email);
 
 })
 $$(document).on('pageInit', '.page[data-page="about_me"]', function (e) {
+    window.localStorage.setItem("unique_home",'1');
     window.localStorage.setItem("unique",'about_me');
  var editor = CKEDITOR.replace('editor1');
   var referral =  window.localStorage.getItem("referral");
@@ -2640,6 +2664,7 @@ $('.pages').prepend(' <div class="loader justify-content-center "><div class="ma
 
 })
 $$(document).on('pageInit', '.page[data-page="theme"]', function (e) {
+    window.localStorage.setItem("unique_home",'1');
   window.localStorage.setItem("unique",'theme');
 var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
@@ -2657,6 +2682,8 @@ var user_id =  window.localStorage.getItem("user_id");
    }
 })
 $$(document).on('pageInit', '.page[data-page="redeem"]', function (e) {
+    window.localStorage.setItem("unique_home",'1');
+
   window.localStorage.setItem("unique",'redeem');
  var user_id =  window.localStorage.getItem("user_id");
 var form_d = 'secrete=virus&user_id='+user_id+'';
@@ -2749,6 +2776,8 @@ save_redeem(form);
 })
 $$(document).on('pageInit', '.page[data-page="vcard"]', function (e) {
   window.localStorage.setItem("unique",'vcard');
+    window.localStorage.setItem("unique_home",'1');
+
    // check_payment();       
 // myFunction();
  var user_id =  window.localStorage.getItem("user_id");
@@ -2896,6 +2925,8 @@ $("input[type='radio']").bind( "change", function(event, ui) {
 })
 $$(document).on('pageInit', '.page[data-page="support"]', function (e) {
   window.localStorage.setItem("unique",'support');
+    window.localStorage.setItem("unique_home",'1');
+
   var user_id =  window.localStorage.getItem("user_id");
   $('#user_idd').val(user_id);
     $(document).on('click', '#save_button', function(){  
@@ -2956,6 +2987,8 @@ $$(document).on('pageInit', '.page[data-page="support"]', function (e) {
 
 $$(document).on('pageInit', '.page[data-page="settings"]', function (e) {
   window.localStorage.setItem("unique",'settings');
+    window.localStorage.setItem("unique_home",'1');
+
  var user_id =  window.localStorage.getItem("user_id");
  var email =  window.localStorage.getItem("email");
  $('#user_idd').val(user_id);
@@ -3047,6 +3080,8 @@ $('#setting_form').validate({ // initialize the plugin
 })
 $$(document).on('pageInit', '.page[data-page="directory"]', function (e) {
 window.localStorage.setItem("unique",'directory');
+    window.localStorage.setItem("unique_home",'1');
+
   var search = '';
                       // alert(user_id);
                       get_contacts(search);
@@ -3101,6 +3136,8 @@ $('#my_leadssss').html(data);
 })
 $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
 window.localStorage.setItem("unique",'viewcard');
+    window.localStorage.setItem("unique_home",'1');
+
    $(document).on('click', '#pay_button', function() {
 make_payment();
    })
@@ -3165,6 +3202,7 @@ $('#card').html(data);
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
    window.localStorage.setItem("unique",'profile');
+     window.localStorage.setItem("unique_home",'1');
    // check_payment();   
    // alert('gfgf');
  var user_id =  window.localStorage.getItem("user_id");
@@ -3174,6 +3212,7 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
                window.localStorage.setItem("unique",'home');
+               window.localStorage.setItem("unique_home",'0');
  
 
  var referral =  window.localStorage.getItem("referral");
@@ -3487,6 +3526,8 @@ $("#segment").trigger('create');
 })
 $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
   window.localStorage.setItem("unique",'lead');
+    window.localStorage.setItem("unique_home",'1');
+
             // check_payment();          
      // window.location = 'pay.html';
       $$('#payment_btn').trigger("click");
@@ -3543,6 +3584,8 @@ $('#my_leads').html(data);
 })
 $$(document).on('pageInit', '.page[data-page="register"]', function (e) {
   window.localStorage.setItem("unique",'register');
+    window.localStorage.setItem("unique_home",'1');
+  
     // Following code will be executed for page with data-page attribute equal to "about"
     //my_toast();
     $(document).on('click', '#login', function(){  
