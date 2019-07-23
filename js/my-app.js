@@ -20,6 +20,7 @@ document.addEventListener("backbutton", function(e){
  
  var unique =  window.localStorage.getItem("unique");   
  var unique_home =  window.localStorage.getItem("unique_home");   
+ var unique_l =  window.localStorage.getItem("unique_l");   
 
   if(unique_home == 0){
 
@@ -33,14 +34,14 @@ document.addEventListener("backbutton", function(e){
         }
     
   }else{
- alert(unique);
- if(unique){
+ // alert(unique);
+ if(unique_l == 0){
     $$('#bck2').trigger("click");
 
  }else{
 
     $$('#bck').trigger("click");
-    // window.localStorage.setItem("unique_home",0);
+    window.localStorage.setItem("unique_l",0);
  }
 
 
