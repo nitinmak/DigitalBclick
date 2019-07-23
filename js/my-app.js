@@ -40,7 +40,7 @@ document.addEventListener("backbutton", function(e){
  }else{
 
     $$('#bck').trigger("click");
-    // window.localStorage.setItem("unique_home",0);
+    window.localStorage.setItem("unique_home",0);
  }
 
 
