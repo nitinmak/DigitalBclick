@@ -7,7 +7,18 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
+if(navigator.connection.type==0)
+{
+    alert('This application requires internet. Please connect to the internet.');
+    navigator.app.exitApp()
 
+}
+else if(navigator.connection.type=='none')
+{
+    alert('This application requires internet. Please connect to the internet.');
+    navigator.app.exitApp()
+
+}
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -15,6 +26,7 @@ $$(document).on('deviceready', function() {
     // alert($('.page').data('page'));
     // my_toast();
 // alert($.mobile.activePage.is('#homepage'));
+
 
 document.addEventListener("backbutton", function(e){
  
@@ -363,17 +375,18 @@ window.localStorage.setItem("unique_home",'1');
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
  // myApp.alert(user_id);
-  $( "tbody" ).sortable();
-    $( ".row_position" ).sortable({
-        delay: 150,
-        stop: function() {
-            var selectedData = new Array();
-            $('.row_position>tr').each(function() {
-                selectedData.push($(this).attr("id"));
-            });
-            updateOrder(selectedData);
-        }
-    });
+
+
+   
+$( function() {
+$("#srt_btn").draggable();
+});
+
+ // $( ".row_position" ).sortable("disable");
+
+
+  
+
  var form_d = 'secrete=virus&user_id='+user_id+'';
  skils_action(form_d);
                   $("#add_tag").click(function() {
@@ -4009,11 +4022,45 @@ function add_segment(t){
             type:'post',
             data:{position:data},
             success:function(){
-              $('.bk_link').append('<a href="profile.html" id="achiv"></a>');
-    $$('#achiv').trigger("click");
+    //           $('.bk_link').append('<a href="profile.html" id="achiv"></a>');
+    // $$('#achiv').trigger("click");
 
                       // location.reload();
                 // alert('your change successfully saved');
             }
         })
     }
+
+
+    function sortableEnable() {
+    $( ".row_position" ).sortable();
+    $( ".row_position" ).sortable( "option", "disabled", false );
+    // ^^^ this is required otherwise re-enabling sortable will not work!
+    $( ".row_position" ).disableSelection();
+        $( ".row_position" ).sortable({
+        delay: 150,
+        stop: function() {
+            var selectedData = new Array();
+            $('.row_position>tr').each(function() {
+                selectedData.push($(this).attr("id"));
+            });
+            // alert('here');
+            updateOrder(selectedData);
+        }
+    });
+
+     $('#srt_btn').attr('onClick', 'sortableDisable();');
+     $('#srt_btn').css('background', '#d59101');
+
+
+
+    return false;
+
+  }
+  function sortableDisable() {
+    $( ".row_position" ).sortable("disable");
+    $('#srt_btn').attr('onClick', 'sortableEnable();');
+    $('#srt_btn').css('background', '#c3b7b6');
+
+    return false;
+  }
