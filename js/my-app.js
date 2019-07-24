@@ -35,17 +35,17 @@ document.addEventListener("backbutton", function(e){
   }else{
  
  if(unique == 'home'){
-    alert('h');
+    // alert('h');
 
     $$('#bck2').trigger("click");
 
  }else if($('.page').data('page') == 'profile'){
-    alert('p');
+    // alert('p');
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'profile');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
   }else{
-    alert('else');
+    alert(unique);
 
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'home');
