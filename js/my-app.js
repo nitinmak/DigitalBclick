@@ -34,7 +34,7 @@ document.addEventListener("backbutton", function(e){
     
   }else{
  
- if(unique == '0'){
+ if(unique == 'home'){
     $$('#bck2').trigger("click");
 
  }else{
@@ -45,7 +45,7 @@ document.addEventListener("backbutton", function(e){
     window.localStorage.setItem("unique",'profile');
   }else{
     $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",0);
+    window.localStorage.setItem("unique",'home');
   }
 
  }
