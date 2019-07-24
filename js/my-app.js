@@ -37,12 +37,10 @@ document.addEventListener("backbutton", function(e){
  if(unique == 'home'){
     $$('#bck2').trigger("click");
 
- }else{
-  alert($('.page').data('page'));
-  if($('.page').data('page') == 'profile'){
+ }else if(unique == 'profile'){
     // alert('p');
     $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'profile');
+    window.localStorage.setItem("unique",'home');
   }else{
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'home');
@@ -51,7 +49,7 @@ document.addEventListener("backbutton", function(e){
  }
 
 
-    }
+    
   
 
 
