@@ -38,6 +38,7 @@ document.addEventListener("backbutton", function(e){
     $$('#bck2').trigger("click");
 
  }else{
+  alert($('.page').data('page'));
   if($('.page').data('page') == 'about_me' || $('.page').data('page') == 'upload_profile' || $('.page').data('page') == 'contact_detail' 
     || $('.page').data('page') == 'company_logo' || $('.page').data('page') == 'skils' || $('.page').data('page') == 'achievement' 
     || $('.page').data('page') == 'testimonial' || $('.page').data('page') == 'experience' || $('.page').data('page') == 'education' 
