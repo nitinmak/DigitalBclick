@@ -43,11 +43,13 @@ document.addEventListener("backbutton", function(e){
     alert('p');
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'profile');
+    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
   }else{
     alert('else');
 
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'home');
+    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
   }
 
  }
