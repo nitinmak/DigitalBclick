@@ -50,11 +50,11 @@ document.addEventListener("backbutton", function(e){
     || $('.page').data('page') == 'company' || $('.page').data('page') == 'product' || $('.page').data('page') == 'social_link' 
     || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
     || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
-alert($('.page').data('page'));
+// alert($('.page').data('page'))
 $$('#bck2').trigger("click");
 
   }else{
-    alert(unique);
+    // alert(unique);
 
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'home');
