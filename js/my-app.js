@@ -49,11 +49,6 @@ document.addEventListener("backbutton", function(e){
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'home');
-  }else if($('.page').data('page') == 'profile'){
-    // alert('p');
-    $('.bk_link').html('<a href="home.html" id="bck"></a>');
-    $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'home');
   }else{
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",0);
