@@ -4016,9 +4016,9 @@ function add_segment(t){
         })
         }
 
-  function updateOrder(data) {
+  function updateOrder(data,u) {
         $.ajax({
-            url:"https://digitalbcards.in/achievement_ajax.php",
+            url:u,
             type:'post',
             data:{position:data},
             success:function(){
@@ -4044,13 +4044,35 @@ function add_segment(t){
             $('.row_position>tr').each(function() {
                 selectedData.push($(this).attr("id"));
             });
-            // alert('here');
-            updateOrder(selectedData);
+            var u = '';
+            var unique =  window.localStorage.getItem("unique");   
+            if(unique == 'achievement'){
+              u = 'https://digitalbcards.in/achievement_ajax.php';
+            }else if(unique == 'skils'){
+            u = 'https://digitalbcards.in/skills_refresh_order.php';
+            }else if(unique == 'testimonial'){
+            u = 'https://digitalbcards.in/testimonial_ajax.php';
+            }else if(unique == 'experience'){
+            u = 'https://digitalbcards.in/experience_ajax.php';
+            }else if(unique == 'education'){
+            u = 'https://digitalbcards.in/education_ajax.php';
+            }else if(unique == 'product'){
+            u = 'https://digitalbcards.in/product_ajax.php';
+            }else if(unique == 'offer'){
+            u = 'https://digitalbcards.in/offer_ajax.php';
+            }else if(unique == 'key_client'){
+            u = 'https://digitalbcards.in/key_clients_ajax.php';
+            }
+
+
+            
+            
+
+            updateOrder(selectedData,u);
         }
     });
-
-     $('#srt_btn').attr('onClick', 'sortableDisable();');
-     $('#srt_btn').css('background', '#d59101');
+    $('#srt_btn').attr('onClick', 'sortableDisable();');
+    $('#srt_btn').css('background', '#d59101');
 
 
 
