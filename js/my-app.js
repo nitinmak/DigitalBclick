@@ -44,6 +44,15 @@ document.addEventListener("backbutton", function(e){
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'profile');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+  }else if($('.page').data('page') == 'about_me' || $('.page').data('page') == 'upload_profile' || $('.page').data('page') == 'contact_detail' 
+    || $('.page').data('page') == 'company_logo' || $('.page').data('page') == 'skils' || $('.page').data('page') == 'achievement' 
+    || $('.page').data('page') == 'testimonial' || $('.page').data('page') == 'experience' || $('.page').data('page') == 'education' 
+    || $('.page').data('page') == 'company' || $('.page').data('page') == 'product' || $('.page').data('page') == 'social_link' 
+    || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
+    || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
+
+$$('#bck2').trigger("click");
+
   }else{
     alert(unique);
 
