@@ -40,7 +40,7 @@ document.addEventListener("backbutton", function(e){
  }else if(unique == 'profile'){
     // alert('p');
     $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'home');
+    window.localStorage.setItem("unique",'profile');
   }else{
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'home');
