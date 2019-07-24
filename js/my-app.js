@@ -44,7 +44,7 @@ document.addEventListener("backbutton", function(e){
     window.localStorage.setItem("unique",'profile');
   }else{
     $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",$('.page').data('page'));
+    window.localStorage.setItem("unique",0);
   }
 
  }
