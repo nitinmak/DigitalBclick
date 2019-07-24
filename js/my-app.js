@@ -38,8 +38,20 @@ document.addEventListener("backbutton", function(e){
     $$('#bck2').trigger("click");
 
  }else{
-  if($('.page').data('page') == 'profile'){
+  if($('.page').data('page') == 'about_me' || $('.page').data('page') == 'upload_profile' || $('.page').data('page') == 'contact_detail' 
+    || $('.page').data('page') == 'company_logo' || $('.page').data('page') == 'skils' || $('.page').data('page') == 'achievement' 
+    || $('.page').data('page') == 'testimonial' || $('.page').data('page') == 'experience' || $('.page').data('page') == 'education' 
+    || $('.page').data('page') == 'company' || $('.page').data('page') == 'product' || $('.page').data('page') == 'social_link' 
+    || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
+    || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
     // alert('p');
+   $('.bk_link').html('<a href="profile.html" id="bck"></a>');
+    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+    $$('#bck').trigger("click");
+    window.localStorage.setItem("unique",'home');
+  }else if($('.page').data('page') == 'profile'){
+    // alert('p');
+    $('.bk_link').html('<a href="home.html" id="bck"></a>');
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'home');
   }else{
