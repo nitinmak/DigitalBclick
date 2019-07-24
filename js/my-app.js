@@ -49,6 +49,8 @@ document.addEventListener("backbutton", function(e){
 
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'home');
+     var unique =  window.localStorage.getItem("unique");
+    $('.bk_link').html('<a href="'+unique+'.html" id="bck"></a>');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
   }
 
