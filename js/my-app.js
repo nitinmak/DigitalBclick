@@ -34,7 +34,7 @@ document.addEventListener("backbutton", function(e){
     
   }else{
  
- if($('.page').data('page') == 'home'){
+ if(unique == 'home'){
     alert('h');
 
     $$('#bck2').trigger("click");
