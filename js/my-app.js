@@ -363,6 +363,17 @@ window.localStorage.setItem("unique_home",'1');
  var referral =  window.localStorage.getItem("referral");
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
  // myApp.alert(user_id);
+  $( "tbody" ).sortable();
+    $( ".row_position" ).sortable({
+        delay: 150,
+        stop: function() {
+            var selectedData = new Array();
+            $('.row_position>tr').each(function() {
+                selectedData.push($(this).attr("id"));
+            });
+            updateOrder(selectedData);
+        }
+    });
  var form_d = 'secrete=virus&user_id='+user_id+'';
  skils_action(form_d);
                   $("#add_tag").click(function() {
@@ -3991,3 +4002,18 @@ function add_segment(t){
           }
         })
         }
+
+  function updateOrder(data) {
+        $.ajax({
+            url:"https://digitalbcards.in/achievement_ajax.php",
+            type:'post',
+            data:{position:data},
+            success:function(){
+              $('.bk_link').append('<a href="profile.html" id="achiv"></a>');
+    $$('#achiv').trigger("click");
+
+                      // location.reload();
+                // alert('your change successfully saved');
+            }
+        })
+    }
