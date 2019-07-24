@@ -17,9 +17,9 @@ $$(document).on('deviceready', function() {
 // alert($.mobile.activePage.is('#homepage'));
 
 document.addEventListener("backbutton", function(e){
- 
  var unique =  window.localStorage.getItem("unique");   
  var unique_home =  window.localStorage.getItem("unique_home");   
+ alert(unique);
 
   if(unique_home == 0){
 
