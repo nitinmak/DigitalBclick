@@ -30,6 +30,34 @@ input[type="text"] {
 }
         </style>
       
+      
+      <style type="text/css">
+        .kc_fab_main_btn{
+  background-color:#F44336;
+  position: fixed;
+  top:520px;
+    right: 20px;
+    z-index: 9999999;
+  width:60px;
+  height:60px;
+  border-radius:100%;
+  background:#c3b7b6;
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:36px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.3s;  
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.kc_fab_main_btn:focus {
+  transform:scale(1.1);
+  transform:rotate(45deg);
+  -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+
+}
+      </style>
 <div class="card" style="background-color: #07314a;">
    <div class="card-header">
       <div class="col-50">
@@ -44,11 +72,14 @@ input[type="text"] {
                                         <i class="fa fa-plus m-r-5"></i>
                                         <span class="btn-text">Add Achievement</span>
                                     </a>
+
                                  
                                    
                                 </div>
                             </div>
+                          
    </div>
+   
   <div class="card-body" >
     
 
@@ -74,13 +105,14 @@ input[type="text"] {
                                                     <th>Delete</th>
       </tr>
                                                     </thead>
-                                                    <tbody id="my_achievement" class="row_position"  style="color: White" >
+                                                    <tbody id="my_achievement"  class="row_position"  style="color: White" >
                                                         
                                                     </tbody>
                                                 </table>
                                             </div>
                                           </div>
                                         </form>
+    <button  onclick="sortableEnable()" id="srt_btn" class="kc_fab_main_btn "><i class="fa fa-sort"></i></button>
                                       </div>
                                            
          
@@ -94,7 +126,6 @@ input[type="text"] {
    
   </p> 
 </div>
-    
   </div>
 </div>
                        
@@ -169,8 +200,17 @@ input[type="text"] {
 
     </div>
     </div>
-    </form>               
+    </form>       
+     
+<script type="text/javascript">
+  $(document).bind('pageinit', function() {
+// alert('fdfd');
+  $( "tbody" ).sortable();
+  $("tbody").disableSelection();
+  $("#srt_btn").draggable();
 
+})
+</script>
 
     </div>
   </div>
