@@ -38,10 +38,11 @@ document.addEventListener("backbutton", function(e){
     $$('#bck2').trigger("click");
 
  }else{
+  alert($('.page').data('page'));
   if($('.page').data('page') == 'profile'){
     // alert('p');
     $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'home');
+    window.localStorage.setItem("unique",'profile');
   }else{
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",0);
