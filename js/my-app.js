@@ -53,6 +53,7 @@ if ($('#view_card_in_popup').is(':visible')) {
 
     $('#view_card_in_popup').modal('hide');
   }else{
+    $('#view_card_in_popup').modal('hide');
 $$('#bck2').trigger("click");
   }
 
@@ -63,6 +64,7 @@ $$('#bck2').trigger("click");
 
     $('#view_card_in_popup').modal('hide');
   }else{
+    $('#view_card_in_popup').modal('hide');
      $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'profile');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
@@ -91,6 +93,7 @@ if($('#view_card_in_popup').modal('show')){
 
     $('#view_card_in_popup').modal('hide');
   }else{
+    $('#view_card_in_popup').modal('hide');
 $$('#bck2').trigger("click");
   }
 
