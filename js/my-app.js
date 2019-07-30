@@ -68,7 +68,7 @@ $$('#bck2').trigger("click");
      $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'profile');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
-  
+ } 
   }else if($('.page').data('page') == 'profile'){
     // alert('p');
    
