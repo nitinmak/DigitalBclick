@@ -45,39 +45,28 @@ document.addEventListener("backbutton", function(e){
         }
     
   }else{
- 
- if(unique == 'home'){
-    // alert('h');
-
-if ($('#view_card_in_popup').is(':visible')) {
+  if ($('#view_card_in_popup').is(':visible')) {
 
     $('#view_card_in_popup').modal('hide');
   }else{
-    $('#view_card_in_popup').modal('hide');
-$$('#bck2').trigger("click");
-  }
+ if(unique == 'home'){
+    // alert('h');
+
+    $$('#bck2').trigger("click");
 
   }else if($('.page').data('page') == 'viewcard'){
     // alert('p');
     
-    if ($('#view_card_in_popup').is(':visible')) {
-
-    $('#view_card_in_popup').modal('hide');
-  }else{
-    $('#view_card_in_popup').modal('hide');
+   
      $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'profile');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
- } 
+  
   }else if($('.page').data('page') == 'profile'){
     // alert('p');
-   
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'profile');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
-  
-   
-  
   }else if($('.page').data('page') == 'about_me' || $('.page').data('page') == 'upload_profile' || $('.page').data('page') == 'contact_detail' 
     || $('.page').data('page') == 'company_logo' || $('.page').data('page') == 'skils' || $('.page').data('page') == 'achievement' 
     || $('.page').data('page') == 'testimonial' || $('.page').data('page') == 'experience' || $('.page').data('page') == 'education' 
@@ -85,14 +74,7 @@ $$('#bck2').trigger("click");
     || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
     || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
 // alert($('.page').data('page'))
-  if ($('#view_card_in_popup').is(':visible')) {
-
-    $('#view_card_in_popup').modal('hide');
-  }else{
-    $('#view_card_in_popup').modal('hide');
 $$('#bck2').trigger("click");
-  }
-
 
   }else{
     // alert(unique);
@@ -103,6 +85,7 @@ $$('#bck2').trigger("click");
     $('.bk_link').html('<a href="'+unique+'.html" id="bck"></a>');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
   }
+}
 
  }
 
