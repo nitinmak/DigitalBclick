@@ -49,13 +49,36 @@ document.addEventListener("backbutton", function(e){
  if(unique == 'home'){
     // alert('h');
 
-    $$('#bck2').trigger("click");
+if($('#view_card_in_popup').modal('show')){
 
- }else if($('.page').data('page') == 'profile'){
+    $('#view_card_in_popup').modal('hide');
+  }else{
+$$('#bck2').trigger("click");
+  }
+
+  }else if($('.page').data('page') == 'viewcard'){
     // alert('p');
+    
+    if($('#view_card_in_popup').modal('show')){
+
+    $('#view_card_in_popup').modal('hide');
+  }else{
+     $$('#bck').trigger("click");
+    window.localStorage.setItem("unique",'profile');
+    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+  }
+  }else if($('.page').data('page') == 'profile'){
+    // alert('p');
+   if($('#view_card_in_popup').modal('show')){
+
+    $('#view_card_in_popup').modal('hide');
+  }else{
     $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'profile');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+  }
+   
+  
   }else if($('.page').data('page') == 'about_me' || $('.page').data('page') == 'upload_profile' || $('.page').data('page') == 'contact_detail' 
     || $('.page').data('page') == 'company_logo' || $('.page').data('page') == 'skils' || $('.page').data('page') == 'achievement' 
     || $('.page').data('page') == 'testimonial' || $('.page').data('page') == 'experience' || $('.page').data('page') == 'education' 
@@ -63,7 +86,13 @@ document.addEventListener("backbutton", function(e){
     || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
     || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
 // alert($('.page').data('page'))
+if($('#view_card_in_popup').modal('show')){
+
+    $('#view_card_in_popup').modal('hide');
+  }else{
 $$('#bck2').trigger("click");
+  }
+
 
   }else{
     // alert(unique);
@@ -2257,6 +2286,8 @@ $$(document).on('pageInit', '.page[data-page="contact_detail"]', function (e) {
  var skype =  window.localStorage.getItem("skype"); 
  var address =  window.localStorage.getItem("address"); 
  var address_map_link =  window.localStorage.getItem("address_map_link"); 
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 
  var fb_url =  window.localStorage.getItem("fb_url"); 
 // alert(address);
@@ -2468,7 +2499,7 @@ var user_id =  window.localStorage.getItem("user_id");
                             });
                              
                              $('.rotate-cw').click(function() {
-                              alert('fdfd');
+                              // alert('fdfd');
           $('#image_demo').cropit('rotateCW');
         });
         $('.rotate-ccw').click(function() {
@@ -3204,7 +3235,7 @@ $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
    });
 
    $(document).on('click', '.t2', function() {
-    alert('fdfd');
+    // alert('fdfd');
     $('.t2').addClass('active');
     $('.t1').removeClass('active');
     $('.t3').removeClass('active');
@@ -3259,7 +3290,10 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
                window.localStorage.setItem("unique",'home');
                window.localStorage.setItem("unique_home",'0');
- 
+  $('#receivermobile').bind('copy paste cut',function(e) { 
+ e.preventDefault(); //disable cut,copy,paste
+ alert('cut,copy & paste options are disabled !!');
+ });
 
  var referral =  window.localStorage.getItem("referral");
  // alert(referral);
@@ -4086,3 +4120,24 @@ function add_segment(t){
 
     return false;
   }
+  function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+function DisableCopyPaste (e) 
+{
+ // Message to display
+ var message = "Cntrl key/ Right Click Option disabled";
+ // check mouse right click or Ctrl key press
+var kCode = event.keyCode || e.charCode; 
+//FF and Safari use e.charCode, while IE use e.keyCode
+ if (kCode == 17 || kCode == 2)
+ {
+ alert(message);
+ return false;
+ }
+}
