@@ -49,7 +49,7 @@ document.addEventListener("backbutton", function(e){
  if(unique == 'home'){
     // alert('h');
 
-if($('#view_card_in_popup').modal('show')){
+if ($('#view_card_in_popup').is(':visible')) {
 
     $('#view_card_in_popup').modal('hide');
   }else{
@@ -59,7 +59,7 @@ $$('#bck2').trigger("click");
   }else if($('.page').data('page') == 'viewcard'){
     // alert('p');
     
-    if($('#view_card_in_popup').modal('show')){
+    if ($('#view_card_in_popup').is(':visible')) {
 
     $('#view_card_in_popup').modal('hide');
   }else{
@@ -69,7 +69,7 @@ $$('#bck2').trigger("click");
   }
   }else if($('.page').data('page') == 'profile'){
     // alert('p');
-   if($('#view_card_in_popup').modal('show')){
+   if ($('#view_card_in_popup').is(':visible')) {
 
     $('#view_card_in_popup').modal('hide');
   }else{
