@@ -49,12 +49,22 @@ document.addEventListener("backbutton", function(e){
  if(unique == 'home'){
     // alert('h');
 
+if ($('#view_card_in_popup').is(':visible')) {
 
+    $('#view_card_in_popup').modal('hide');
+  }else{
+    $('#view_card_in_popup').modal('hide');
 $$('#bck2').trigger("click");
+  }
 
   }else if($('.page').data('page') == 'viewcard'){
     // alert('p');
     
+    if ($('#view_card_in_popup').is(':visible')) {
+
+    $('#view_card_in_popup').modal('hide');
+  }else{
+    $('#view_card_in_popup').modal('hide');
      $$('#bck').trigger("click");
     window.localStorage.setItem("unique",'profile');
     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
@@ -75,7 +85,7 @@ $$('#bck2').trigger("click");
     || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
     || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
 // alert($('.page').data('page'))
-if($('#view_card_in_popup').modal('show')){
+  if ($('#view_card_in_popup').is(':visible')) {
 
     $('#view_card_in_popup').modal('hide');
   }else{
