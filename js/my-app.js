@@ -3407,6 +3407,7 @@ $(document).on('click', '.flag-container', function() {
     // trigger.click();
 });
 
+$("#countries").msDropdown();
 //  var input = document.querySelector("#receivermobile");
 
 //     var a=window.intlTelInput(input, {
@@ -3436,6 +3437,28 @@ $(document).on('click', '.flag-container', function() {
 
 
                       var user_id =  window.localStorage.getItem("user_id");
+
+
+//                        $.ajax({
+//             url: "https://digitalbcards.in/api/country/", 
+//             method: "POST",
+//             data:{user_id:user_id,secrete:"virus"}, 
+//             dataType:"json",            
+           
+//             success: function(data) {
+//                 // var data = JSON.stringify(data);
+// alert(data);
+// $('#countries').append(data);
+// $("#countries").trigger('create');
+//     $('.loader').css('display','none');
+
+//             //    $('#username').html(data.name);
+//              //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+              
+//             //location.reload();
+//           }
+//         });  
+
                       // alert(user_id);
                               $.ajax({
             url: "https://digitalbcards.in/api/segment/", 
