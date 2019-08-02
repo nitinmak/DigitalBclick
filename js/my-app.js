@@ -3270,31 +3270,35 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
-  //alert("page initialize");
+
                window.localStorage.setItem("unique",'home');
                window.localStorage.setItem("unique_home",'0');
+  // alert("page initialize");
+
   $('#receivermobile').bind('copy paste cut',function(e) { 
  e.preventDefault(); //disable cut,copy,paste
  alert('cut,copy & paste options are disabled !!');
  });
+  // alert("page hhsja initialize");
+
 
  var referral =  window.localStorage.getItem("referral");
  // alert(referral);
  $('.navbar').show();
     $('.back').hide();
-      var permission = cordova.plugins.permissions;
-  permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+  //     var permission = cordova.plugins.permissions;
+  // permission.hasPermission(permission.READ_CONTACTS,function(results){
+  //           if(!results[permission])
+  //           {
+  //               permission.requestPermission(permission.READ_CONTACTS,function(results){
+  //                   if(results[permission]){
+  //                          alert("permission granted");
+  //                  }
+  //               },)
+  //               // alert("permission granted failed");
+  //           }
+  //       }, 
+  //       )
 
      var email =  window.localStorage.getItem("email");
       $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
@@ -3407,7 +3411,6 @@ $(document).on('click', '.flag-container', function() {
     // trigger.click();
 });
 
-$("#countries").msDropdown();
 //  var input = document.querySelector("#receivermobile");
 
 //     var a=window.intlTelInput(input, {
@@ -3437,28 +3440,6 @@ $("#countries").msDropdown();
 
 
                       var user_id =  window.localStorage.getItem("user_id");
-
-
-                       $.ajax({
-            url: "https://digitalbcards.in/api/country/", 
-            method: "POST",
-            data:{user_id:user_id,secrete:"virus"}, 
-            dataType:"json",            
-           
-            success: function(data) {
-                // var data = JSON.stringify(data);
-// alert(data);
-$('#cccc').append(data);
-$("#cccc").trigger('create');
-    $('.loader').css('display','none');
-
-            //    $('#username').html(data.name);
-             //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
-              
-            //location.reload();
-          }
-        });  
-
                       // alert(user_id);
                               $.ajax({
             url: "https://digitalbcards.in/api/segment/", 
@@ -3479,6 +3460,52 @@ $("#segment").trigger('create');
             //location.reload();
           }
         });  
+
+                                $.ajax({
+            url: "https://digitalbcards.in/api/country/", 
+            method: "POST",
+            data:{user_id:user_id,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+// alert(data);
+$('#cccc').append(data);
+$("#cccc").trigger('create');
+    $('.loader').css('display','none');
+
+            //    $('#username').html(data.name);
+             //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+              
+            //location.reload();
+          }
+        });  
+$('.smart-select').on('smartselect:closed');
+
+$(document).on('change', '#cccc', function(){  
+  $$('.back').trigger('click');
+   setTimeout(function () {
+      city=$$(this).val();
+   
+img = $$("#cccc").find("option:checked").data('image');
+name = $$("#cccc").find("option:checked").text();
+
+$('.item-inner .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'<i class="material-icons">keyboard_arrow_right</i>');
+// $('.item-inner .item-after').html('<img src="'+img+'"> ');    
+     }, 100);
+})
+
+
+
+
+
+var name = $$("#cccc").find("option:checked").text();
+var d= $$("#cccc").find("option:checked").data('image');
+// $('.item-inner .item-after').html('<img src="'+d+'"> ');
+$('.item-inner .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'<i class="material-icons">keyboard_arrow_right</i>');
+
+                                // $$("#cccc").val(getCookie("timerTasks")).parent().find('.item-after').html($$("#cccc").find("option:checked").data('image'));
+
 
                       var user_id =  window.localStorage.getItem("user_id");
                       var language =  window.localStorage.getItem("language");
@@ -3540,11 +3567,11 @@ $("#segment").trigger('create');
          
     },
         submitHandler: function (form) { // for demo
-         var c_code = $('#c_code').val();
-
+         // var c_code = $('#c_code').val();
+var c_code = $$("#cccc").find("option:checked").val();
          var receivermobile = $('#receivermobile').val();
-         // alert(c_code+receivermobile);
-         $('#full_phone').val(c_code+receivermobile);
+         alert(c_code+receivermobile);
+         $('#full_phone').val('+'+c_code+receivermobile);
           form =$('#share_form').serialize();
          // alert(form);
                       var payment =  window.localStorage.getItem("payment");
