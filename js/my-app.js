@@ -4180,3 +4180,9 @@ var kCode = event.keyCode || e.charCode;
  return false;
  }
 }
+function details(id){
+  alert(id);
+  window.localStorage.setItem("lead_id",id);
+
+  $$('#lead_details').trigger('click');
+}
