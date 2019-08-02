@@ -3490,7 +3490,7 @@ $(document).on('change', '#cccc', function(){
 img = $$("#cccc").find("option:checked").data('image');
 name = $$("#cccc").find("option:checked").text();
 
-$('.item-inner .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'<i class="material-icons">keyboard_arrow_right</i>');
+$('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'<i class="material-icons">keyboard_arrow_right</i>');
 // $('.item-inner .item-after').html('<img src="'+img+'"> ');    
      }, 100);
 })
@@ -3502,7 +3502,7 @@ $('.item-inner .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +
 var name = $$("#cccc").find("option:checked").text();
 var d= $$("#cccc").find("option:checked").data('image');
 // $('.item-inner .item-after').html('<img src="'+d+'"> ');
-$('.item-inner .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'<i class="material-icons">keyboard_arrow_right</i>');
+$('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'<i class="material-icons">keyboard_arrow_right</i>');
 
                                 // $$("#cccc").val(getCookie("timerTasks")).parent().find('.item-after').html($$("#cccc").find("option:checked").data('image'));
 
