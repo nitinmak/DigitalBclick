@@ -3516,8 +3516,8 @@ $('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'<i class
                       var user_id =  window.localStorage.getItem("user_id");
                       var language =  window.localStorage.getItem("language");
                       var referral =  window.localStorage.getItem("referral");
-                      var rrr =  window.localStorage.getItem("referral");
                       var name =  window.localStorage.getItem("name");
+                      var rrr =  window.localStorage.getItem("referral");
                       var user_image =  window.localStorage.getItem("user_image");
                                 var user =  window.localStorage.getItem("user_id");
              $('#user_id').val(user);
@@ -3643,6 +3643,47 @@ var c_code = $$("#cccc").find("option:checked").val();
           
 
 })
+$$(document).on('pageInit', '.page[data-page="lead_details"]', function (e) {
+window.localStorage.setItem("unique",'lead_details');
+    window.localStorage.setItem("unique_home",'1');
+    var lead_id =  window.localStorage.getItem("lead_id");
+    var user_id =  window.localStorage.getItem("user_id");
+       $.ajax({
+            url: "https://digitalbcards.in/api/lead_details/", 
+            method: "POST",
+            data:{user_id:user_id,lead_id:lead_id,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+// alert(data);
+// alert(data.name);
+var referral =  window.localStorage.getItem("referral");
+                      var name =  window.localStorage.getItem("name");
+
+$('#lead_name').html('<b>'+data.name+'</b>');
+$('#lead_position').html(data.position);
+$('#lead_company_name').html(data.company_name);
+$('#lead_address').html(data.company_address +','+ data.address2);
+$('#lead_since').html('<b>Contact Since : '+data.since+' Days</b>')
+  var ph_link  = 'tel:'+data.mobile+'';
+  var em_link  = 'mailto:'+data.email+'';
+  var sms_link  = 'sms:'+data.mobile+'';
+var link_wp = 'https://api.whatsapp.com/send?phone='+data.mobile+'&text=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name;
+   $('#lead_phone').attr('onClick', 'share_social("'+ph_link+'");');
+   $('#lead_email').attr('onClick', 'share_social("'+em_link+'");');
+   $('#lead_sms').attr('onClick', 'share_social("'+sms_link+'");');
+   $('#lead_wp').attr('onClick', 'share_social("'+link_wp+'");');
+
+    $('.loader').css('display','none');
+
+            //    $('#username').html(data.name);
+             //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+              
+            //location.reload();
+          }
+        });
+})
 $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
   window.localStorage.setItem("unique",'lead');
     window.localStorage.setItem("unique_home",'1');
@@ -3665,6 +3706,15 @@ $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
 //   $('#search input', this).focus();
 
 //   });
+
+
+$(document).on('click', '.details', function(){  
+
+ window.localStorage.setItem("lead_id",$(this).attr('id'));
+
+  $$('#lead_details').trigger('click');
+
+  })
     $('#search').on('input', function(e){
 
       var search = $(this).val();
