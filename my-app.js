@@ -3158,7 +3158,7 @@ $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
    });
 
    $(document).on('click', '.t2', function() {
-    // alert('fdfd');
+    alert('fdfd');
     $('.t2').addClass('active');
     $('.t1').removeClass('active');
     $('.t3').removeClass('active');
