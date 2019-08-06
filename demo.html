@@ -93,9 +93,9 @@
   background: none;
   
 }
-/*.razorpay-payment-button{
+.razorpay-payment-button{
     display: none;
-}*/
+}
 </style>
 </head>
 
@@ -207,110 +207,7 @@
                     <div class="page-content" >
 
 
-  <div class="card" style="background-color: #07314a;">
-  <div class="card-header">
-    
-                            <div class="col-12">
-                
-                                <h2 class=" text-center text-white">Make Payemnt</h2>
-                            </div>
-                            
-                     <div class="snackbar">Some text some message..</div>
-  </div>
-  <div class="card-body" >
-                            <div class="col-12">
-                               
 
-                                               <form method="post" id="setting_form">
-                                    <div class="card-body  text-white">
-                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
-                                        <div class="row">
-                                              <div class="col-12">
-
-                                                <div class="form-group">
-                                              
-                                        <h5 style="color: white">Make A Payment  RS 1500  to Use Bcard Features.</h5>
-                                                  <input type="hidden" name="secrete" value="virus">
-                                                  <input type="hidden" name="user_id" id="user_idd">
-                                                  <input type="hidden" name="email" id="emaill">
-                                                  <input type="hidden" name="phone" id="phone">
-
-                                                   </div>
-                                       
-                                            </div>
-                                   
-                                               
-                                                <!-- <p>You SMS credit is 1</p> -->
-                                             
-                                            <!-- <div class="col-12">
-                                            <div class="form-group bmd-form-group">
-                                                        <label class="bmd-label-static">Confirm Password</label>
-                                                        <input type="password" class="form-control" id="re_pass" name="re_pass" onblur="check_repass();" >
-                                                        <small class="form-control-feedback"></small>
-                                                    </div>
-                                            </div>
-                                            -->
-                                           
-                                        </div>
-                                        </div>
-                                        <div class="block" style="width: 100%; padding: 5px;">
-  <p class="row">
-    <button type="button" name="send_sms" id="make_pay"  class="col-xs button button-fill color-orange" style="width: 47%;">Pay Now</button>
-    <a  href="home.html" onclick="location.href='home.html'" class="col-xs button button-fill color-orange" style="width: 47%;">Skip</a>
-   
-  </p> 
- 
-</div>
-                                            
-                                </form>
-<div id="res">
-    
-</div>
-                           
-                                        </div>
-                                        <br>
-                                        
-                                            
-                                    </div>
-                                </div>
-                            </div>
-                         
-                        </div>
-                     
-                    </div>
-                    <br>
-            </div>
-            <div class="modal1 fade" id="colorscheme" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content ">
-                    <div class="modal-header border-bottom theme-header">
-                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
-                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="text-center theme-color">
-                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
-                            <p>Share my Digital BCard in your network.</p>
-                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
-                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
-                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
-                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
-                            <br>
-                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
-                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
-                         
-                        </div>
-                        <hr class="mt-4">
-                        <div class="row align-items-center mt-4">
-                           
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
 
@@ -363,43 +260,6 @@
                $('.navbar').show();
     $('.back').hide();
                 $("#menu_side").load("sidebar.html"); 
- $(document).on('click', '#make_pay', function(){  
-    
-     
-    var referral =  window.localStorage.getItem("referral");
- // var user_id =  window.localStorage.getItem("user_id");
- // alert(referral)
-  
-    $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-   $('.loader').css('display','flex');
- var user_id =  window.localStorage.getItem("user_id");
- var email =  window.localStorage.getItem("email");
- var password =  window.localStorage.getItem("password");
- location.href="https://digitalbcards.in/index.php?e="+email+"&p="+password+"";
- // alert(user_id);
-//                                 $.ajax({
-//             url: "https://digitalbcards.in/api/payment/", 
-//             method: "POST",
-//             data:{email:email,password:password,user_id:user_id,secrete:"virus"}, 
-//             dataType:"json",            
-           
-//             success: function(data) {
-//                 // var data = JSON.stringify(data);
-// alert(data);
-// $('#res').html(data);
-//  document.forms['customerData'].submit();
-//     $('.loader').css('display','none');
-
-//             //    $('#username').html(data.name);
-//              //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
-              
-//             //location.reload();
-//           }
-//         });  
-    
-
-
-                  })
                           </script>      
 
 
