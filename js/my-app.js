@@ -261,8 +261,9 @@ if(islogin == 1){
             method: "POST",
             data:form, 
             dataType:"json",            
-           
-            success: function(data) {
+           success: function(data) {
+              alert(data);
+              alert(data.status);
               if(data.status == 0){
                $('.snackbar').html(data.message);
                 my_toast();
