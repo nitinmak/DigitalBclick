@@ -98,20 +98,20 @@ $$('#bck2').trigger("click");
 
 }, false);
  // *my permission code*
-        // var permission = cordova.plugins.permissions;
+        var permission = cordova.plugins.permissions;
 
-        // permission.hasPermission(permission.READ_CONTACTS,function(results){
-        //     if(!results[permission])
-        //     {
-        //         permission.requestPermission(permission.READ_CONTACTS,function(results){
-        //             if(results[permission]){
-        //                    alert("permission granted");
-        //            }
-        //         },)
-        //         // alert("permission granted failed");
-        //     }
-        // }, 
-        // )
+        permission.hasPermission(permission.READ_CONTACTS,function(results){
+            if(!results[permission])
+            {
+                permission.requestPermission(permission.READ_CONTACTS,function(results){
+                    if(results[permission]){
+                           alert("permission granted");
+                   }
+                },)
+                // alert("permission granted failed");
+            }
+        }, 
+        )
 
 //                                $.ajax({
 //             url: "https://digitalbcards.in/api/fetch_amount/", 
@@ -167,7 +167,6 @@ $("input").focusin(function(){
         var islogin = window.localStorage.getItem("login");
         var email = window.localStorage.getItem("email");
 // alert(email); 
-update_profile(email);
        
 
 
@@ -176,20 +175,22 @@ update_profile(email);
   // alert(payment);
 // $('#div_frm').show();
 if(islogin == 1){
+  var email = window.localStorage.getItem("email");
+update_profile(email);
   // $('#div_frm').hide();
-    // var permission = cordova.plugins.permissions;
-    // permission.hasPermission(permission.READ_CONTACTS,function(results){
-    //         if(!results[permission])
-    //         {
-    //             permission.requestPermission(permission.READ_CONTACTS,function(results){
-    //                 if(results[permission]){
-    //                        alert("permission granted");
-    //                }
-    //             },)
-    //             // alert("permission granted failed");
-    //         }
-    //     }, 
-    //     )
+    var permission = cordova.plugins.permissions;
+    permission.hasPermission(permission.READ_CONTACTS,function(results){
+            if(!results[permission])
+            {
+                permission.requestPermission(permission.READ_CONTACTS,function(results){
+                    if(results[permission]){
+                           alert("permission granted");
+                   }
+                },)
+                // alert("permission granted failed");
+            }
+        }, 
+        )
   // alert('fdfd');
   // alert(payment);
    if(payment == 0){
@@ -251,10 +252,10 @@ if(islogin == 1){
           // alert(email);
                 window.localStorage.setItem("email",email);
                 var email =  window.localStorage.getItem("email");
+// alert(email);
 
          $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
-alert(email);
                 
      $.ajax({
             url: "https://digitalbcards.in/api/login/", 
@@ -263,8 +264,7 @@ alert(email);
             dataType:"json",            
            
             success: function(data) {
-              alert(data);
-              alert(data.status);
+
               if(data.status == 0){
                $('.snackbar').html(data.message);
                 my_toast();
