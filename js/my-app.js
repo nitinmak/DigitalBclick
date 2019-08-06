@@ -97,7 +97,7 @@ $$('#bck2').trigger("click");
 
 
 }, false);
- // **my permission code**
+ // *my permission code*
         var permission = cordova.plugins.permissions;
 
         permission.hasPermission(permission.READ_CONTACTS,function(results){
@@ -174,8 +174,9 @@ update_profile(email);
 
         var payment = window.localStorage.getItem("payment");
   // alert(payment);
-
+// $('#div_frm').show();
 if(islogin == 1){
+  // $('#div_frm').hide();
     var permission = cordova.plugins.permissions;
     permission.hasPermission(permission.READ_CONTACTS,function(results){
             if(!results[permission])
@@ -276,7 +277,60 @@ if(islogin == 1){
 
                  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
+                     $.ajax({
+            url: "https://digitalbcards.in/api/user_profile/", 
+            method: "POST",
+            data:{email:email,secrete:"virus"}, 
+            dataType:"json",            
            
+            success: function(data) {
+                // var data = JSON.stringify(data);
+                // alert(data.Refferal_id);
+               window.localStorage.setItem("payment",data.pay_status);
+               window.localStorage.setItem("user_id",data.id);
+               window.localStorage.setItem("language",data.language);
+               window.localStorage.setItem("referral",data.Refferal_id);
+               window.localStorage.setItem("mobile",data.mobile);
+               window.localStorage.setItem("profession",data.profession);
+               window.localStorage.setItem("about_me",data.about_me);
+               window.localStorage.setItem("skype",data.skype);
+               window.localStorage.setItem("address",data.address);
+                window.localStorage.setItem("address_map_link",data.address_map_link);
+               window.localStorage.setItem("fb_url",data.fb_url);
+
+               window.localStorage.setItem("y_tube_link",data.y_tube_link);
+               window.localStorage.setItem("website",data.website);
+                
+               window.localStorage.setItem("whatsapp",data.whatsapp);
+               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
+               window.localStorage.setItem("name",data.name);
+               //window.localStorage.setItem("username",data.name);
+               window.localStorage.setItem("user_image",data.profile_img);
+
+               window.localStorage.setItem("company_name",data.company_name);
+               window.localStorage.setItem("vision",data.vision);
+               window.localStorage.setItem("mission",data.mission);
+               window.localStorage.setItem("about_comp",data.about_comp);
+               window.localStorage.setItem("comp_address",data.comp_address);
+               window.localStorage.setItem("map_link",data.map_link);
+               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
+               window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("theme",data.theme);
+var referral =  window.localStorage.getItem("referral");
+                   // alert(referral);
+              
+               // alert(data.fb_url);
+                $('#user').html(data.name);
+                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+                // $('#user_image').css("height",'80px');
+                // $('#user_image').css("width",'80px');
+               // $('#preloader').hide();
+    $('.loader').css('display','none');
+                
+              
+            //location.reload();
+          }
+        }) 
 
               var payment =   window.localStorage.getItem("payment");
               // alert(payment);
@@ -3217,31 +3271,35 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
-  //alert("page initialize");
+
                window.localStorage.setItem("unique",'home');
                window.localStorage.setItem("unique_home",'0');
+  // alert("page initialize");
+
   $('#receivermobile').bind('copy paste cut',function(e) { 
  e.preventDefault(); //disable cut,copy,paste
  alert('cut,copy & paste options are disabled !!');
  });
+  // alert("page hhsja initialize");
+
 
  var referral =  window.localStorage.getItem("referral");
  // alert(referral);
  $('.navbar').show();
     $('.back').hide();
-      var permission = cordova.plugins.permissions;
-  permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+  //     var permission = cordova.plugins.permissions;
+  // permission.hasPermission(permission.READ_CONTACTS,function(results){
+  //           if(!results[permission])
+  //           {
+  //               permission.requestPermission(permission.READ_CONTACTS,function(results){
+  //                   if(results[permission]){
+  //                          alert("permission granted");
+  //                  }
+  //               },)
+  //               // alert("permission granted failed");
+  //           }
+  //       }, 
+  //       )
 
      var email =  window.localStorage.getItem("email");
       $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
@@ -3404,8 +3462,7 @@ $("#segment").trigger('create');
           }
         });  
 
-
-                                 $.ajax({
+                                $.ajax({
             url: "https://digitalbcards.in/api/country/", 
             method: "POST",
             data:{user_id:user_id,secrete:"virus"}, 
@@ -3442,18 +3499,22 @@ $('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'&nbsp;&
 
 
 
+
+
 var name = $$("#cccc").find("option:checked").text();
 var d= $$("#cccc").find("option:checked").data('image');
 // $('.item-inner .item-after').html('<img src="'+d+'"> ');
 $('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
 // $('.sliding').html('<img src="'+d+'">'+ '&nbsp;&nbsp;' + name);
 
+                                // $$("#cccc").val(getCookie("timerTasks")).parent().find('.item-after').html($$("#cccc").find("option:checked").data('image'));
+
 
                       var user_id =  window.localStorage.getItem("user_id");
                       var language =  window.localStorage.getItem("language");
                       var referral =  window.localStorage.getItem("referral");
-                      var rrr =  window.localStorage.getItem("referral");
                       var name =  window.localStorage.getItem("name");
+                      var rrr =  window.localStorage.getItem("referral");
                       var user_image =  window.localStorage.getItem("user_image");
                                 var user =  window.localStorage.getItem("user_id");
              $('#user_id').val(user);
@@ -3509,11 +3570,11 @@ $('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'&nbsp;&n
          
     },
         submitHandler: function (form) { // for demo
-         var c_code = $('#c_code').val();
-
+         // var c_code = $('#c_code').val();
+var c_code = $$("#cccc").find("option:checked").val();
          var receivermobile = $('#receivermobile').val();
-         // alert(c_code+receivermobile);
-         $('#full_phone').val(c_code+receivermobile);
+         alert(c_code+receivermobile);
+         $('#full_phone').val('+'+c_code+receivermobile);
           form =$('#share_form').serialize();
          // alert(form);
                       var payment =  window.localStorage.getItem("payment");
@@ -3631,6 +3692,19 @@ $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
      // $$('#payment_btn').trigger('click');
      // $(document).ready(function() { $$('#payment_btn').trigger('click'); });
 
+
+ // $('#about')[0].click();
+ var search = '';
+                      // alert(user_id);
+                      get_contact(search);
+                        
+//   $('#search').click(function() {
+// // myApp.alert('my leads');
+//   $('#search input', this).focus();
+
+//   });
+
+
 $(document).on('click', '.details', function(){  
 
  window.localStorage.setItem("lead_id",$(this).attr('id'));
@@ -3638,25 +3712,6 @@ $(document).on('click', '.details', function(){
   $$('#lead_details').trigger('click');
 
   })
- // $('#about')[0].click();
- var search = '';
-                      // alert(user_id);
-                      get_contact(search);
-
-
-                      $(document).on('click', '.details', function(){  
-
- window.localStorage.setItem("lead_id",$(this).attr('id'));
-
-  $$('#lead_details').trigger('click');
-
-  })
-                        
-//   $('#search').click(function() {
-// // myApp.alert('my leads');
-//   $('#search input', this).focus();
-
-//   });
     $('#search').on('input', function(e){
 
       var search = $(this).val();
@@ -4171,4 +4226,10 @@ var kCode = event.keyCode || e.charCode;
  alert(message);
  return false;
  }
+}
+function details(id){
+  alert(id);
+  window.localStorage.setItem("lead_id",id);
+
+  $$('#lead_details').trigger('click');
 }
