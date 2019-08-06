@@ -251,17 +251,18 @@ if(islogin == 1){
           // alert(email);
                 window.localStorage.setItem("email",email);
                 var email =  window.localStorage.getItem("email");
-// alert(email);
 
          $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
+alert(email);
                 
      $.ajax({
             url: "https://digitalbcards.in/api/login/", 
             method: "POST",
             data:form, 
             dataType:"json",            
-           success: function(data) {
+           
+            success: function(data) {
               alert(data);
               alert(data.status);
               if(data.status == 0){
