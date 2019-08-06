@@ -97,7 +97,7 @@ $$('#bck2').trigger("click");
 
 
 }, false);
- // **my permission code**
+ // *my permission code*
         var permission = cordova.plugins.permissions;
 
         permission.hasPermission(permission.READ_CONTACTS,function(results){
@@ -174,8 +174,9 @@ update_profile(email);
 
         var payment = window.localStorage.getItem("payment");
   // alert(payment);
-
+// $('#div_frm').show();
 if(islogin == 1){
+  // $('#div_frm').hide();
     var permission = cordova.plugins.permissions;
     permission.hasPermission(permission.READ_CONTACTS,function(results){
             if(!results[permission])
@@ -3270,31 +3271,35 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
-  //alert("page initialize");
+
                window.localStorage.setItem("unique",'home');
                window.localStorage.setItem("unique_home",'0');
+  // alert("page initialize");
+
   $('#receivermobile').bind('copy paste cut',function(e) { 
  e.preventDefault(); //disable cut,copy,paste
  alert('cut,copy & paste options are disabled !!');
  });
+  // alert("page hhsja initialize");
+
 
  var referral =  window.localStorage.getItem("referral");
  // alert(referral);
  $('.navbar').show();
     $('.back').hide();
-      var permission = cordova.plugins.permissions;
-  permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+  //     var permission = cordova.plugins.permissions;
+  // permission.hasPermission(permission.READ_CONTACTS,function(results){
+  //           if(!results[permission])
+  //           {
+  //               permission.requestPermission(permission.READ_CONTACTS,function(results){
+  //                   if(results[permission]){
+  //                          alert("permission granted");
+  //                  }
+  //               },)
+  //               // alert("permission granted failed");
+  //           }
+  //       }, 
+  //       )
 
      var email =  window.localStorage.getItem("email");
       $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
@@ -3457,8 +3462,7 @@ $("#segment").trigger('create');
           }
         });  
 
-
-                                 $.ajax({
+                                $.ajax({
             url: "https://digitalbcards.in/api/country/", 
             method: "POST",
             data:{user_id:user_id,secrete:"virus"}, 
@@ -3495,18 +3499,22 @@ $('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'&nbsp;&
 
 
 
+
+
 var name = $$("#cccc").find("option:checked").text();
 var d= $$("#cccc").find("option:checked").data('image');
 // $('.item-inner .item-after').html('<img src="'+d+'"> ');
 $('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
 // $('.sliding').html('<img src="'+d+'">'+ '&nbsp;&nbsp;' + name);
 
+                                // $$("#cccc").val(getCookie("timerTasks")).parent().find('.item-after').html($$("#cccc").find("option:checked").data('image'));
+
 
                       var user_id =  window.localStorage.getItem("user_id");
                       var language =  window.localStorage.getItem("language");
                       var referral =  window.localStorage.getItem("referral");
-                      var rrr =  window.localStorage.getItem("referral");
                       var name =  window.localStorage.getItem("name");
+                      var rrr =  window.localStorage.getItem("referral");
                       var user_image =  window.localStorage.getItem("user_image");
                                 var user =  window.localStorage.getItem("user_id");
              $('#user_id').val(user);
@@ -3562,11 +3570,11 @@ $('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'&nbsp;&n
          
     },
         submitHandler: function (form) { // for demo
-         var c_code = $('#c_code').val();
-
+         // var c_code = $('#c_code').val();
+var c_code = $$("#cccc").find("option:checked").val();
          var receivermobile = $('#receivermobile').val();
-         // alert(c_code+receivermobile);
-         $('#full_phone').val(c_code+receivermobile);
+         alert(c_code+receivermobile);
+         $('#full_phone').val('+'+c_code+receivermobile);
           form =$('#share_form').serialize();
          // alert(form);
                       var payment =  window.localStorage.getItem("payment");
@@ -3684,6 +3692,19 @@ $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
      // $$('#payment_btn').trigger('click');
      // $(document).ready(function() { $$('#payment_btn').trigger('click'); });
 
+
+ // $('#about')[0].click();
+ var search = '';
+                      // alert(user_id);
+                      get_contact(search);
+                        
+//   $('#search').click(function() {
+// // myApp.alert('my leads');
+//   $('#search input', this).focus();
+
+//   });
+
+
 $(document).on('click', '.details', function(){  
 
  window.localStorage.setItem("lead_id",$(this).attr('id'));
@@ -3691,25 +3712,6 @@ $(document).on('click', '.details', function(){
   $$('#lead_details').trigger('click');
 
   })
- // $('#about')[0].click();
- var search = '';
-                      // alert(user_id);
-                      get_contact(search);
-
-
-                      $(document).on('click', '.details', function(){  
-
- window.localStorage.setItem("lead_id",$(this).attr('id'));
-
-  $$('#lead_details').trigger('click');
-
-  })
-                        
-//   $('#search').click(function() {
-// // myApp.alert('my leads');
-//   $('#search input', this).focus();
-
-//   });
     $('#search').on('input', function(e){
 
       var search = $(this).val();
@@ -4224,4 +4226,10 @@ var kCode = event.keyCode || e.charCode;
  alert(message);
  return false;
  }
+}
+function details(id){
+  alert(id);
+  window.localStorage.setItem("lead_id",id);
+
+  $$('#lead_details').trigger('click');
 }
