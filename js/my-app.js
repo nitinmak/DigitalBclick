@@ -248,14 +248,12 @@ if(islogin == 1){
           form =$('#login_form').serialize();
           var  action = $('#action').val();
           var  email = $('#email').val();
-          alert(email+'fdfdfd');
+          // alert(email+'fdfdfd');
                 window.localStorage.setItem("email",email);
                 var email =  window.localStorage.getItem("email");
-alert(email+'set');
+// alert(email+'set');
 
-         $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
-                
+         alert(form);
      $.ajax({
             url: "https://digitalbcards.in/api/login/", 
             method: "POST",
