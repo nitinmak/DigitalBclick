@@ -3496,7 +3496,8 @@ $(document).on('change', '#cccc', function(){
 img = $$("#cccc").find("option:checked").data('image');
 name = $$("#cccc").find("option:checked").text();
 
-$('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'<i class="material-icons">keyboard_arrow_right</i>');
+$('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
+// $('.sliding').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name);
 // $('.item-inner .item-after').html('<img src="'+img+'"> ');    
      }, 100);
 })
@@ -3508,7 +3509,8 @@ $('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'<i clas
 var name = $$("#cccc").find("option:checked").text();
 var d= $$("#cccc").find("option:checked").data('image');
 // $('.item-inner .item-after').html('<img src="'+d+'"> ');
-$('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'<i class="material-icons">keyboard_arrow_right</i>');
+$('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
+// $('.sliding').html('<img src="'+d+'">'+ '&nbsp;&nbsp;' + name);
 
                                 // $$("#cccc").val(getCookie("timerTasks")).parent().find('.item-after').html($$("#cccc").find("option:checked").data('image'));
 
