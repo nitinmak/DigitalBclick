@@ -23,9 +23,6 @@ else if(navigator.connection.type=='none')
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-    // function onDeviceReady() {
-
-// }
     // alert($('.page').data('page'));
     // my_toast();
 // alert($.mobile.activePage.is('#homepage'));
@@ -100,7 +97,7 @@ $$('#bck2').trigger("click");
 
 
 }, false);
- // **my permission code**
+ // *my permission code*
         var permission = cordova.plugins.permissions;
 
         permission.hasPermission(permission.READ_CONTACTS,function(results){
@@ -177,9 +174,9 @@ update_profile(email);
 
         var payment = window.localStorage.getItem("payment");
   // alert(payment);
-$('#div_frm').show();
+// $('#div_frm').show();
 if(islogin == 1){
-  $('#div_frm').hide();
+  // $('#div_frm').hide();
     var permission = cordova.plugins.permissions;
     permission.hasPermission(permission.READ_CONTACTS,function(results){
             if(!results[permission])
@@ -205,8 +202,6 @@ if(islogin == 1){
 
   }
  // window.location.href = "home.html"
-  }else{
-    $('#div_frm').show();
   }
     $(document).on('click', '#login_user', function(){  
 
