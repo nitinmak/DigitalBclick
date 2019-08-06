@@ -22,10 +22,11 @@
     <platform name="android">
   
  <preference name="SplashScreenDelay" value="10000" />
- <splash src="res/screen/splash-port-hdpi.png" density="hdpi"/>
-    <splash src="res/screen/splash-port-ldpi.png" density="ldpi"/>
-    <splash src="res/screen/splash-port-mdpi.png" density="mdpi"/>
-    <splash src="res/screen/splash-port-xhdpi.png" density="xhdpi"/>
+ <splash src="res/screen/screen-hdpi-portrait.png"/>
+  
+    <splash src="res/screen/screen-ldpi-portrait.png" />
+    <splash src="res/screen/screen-mdpi-portrait.png"/>
+    <splash src="res/screen/screen-xhdpi-portrait.png" />
         <allow-intent href="market:*" />
         <uses-permission android-targetSdkVersion="28" android-name="android.permission.READ_CONTACTS" />
         <uses-permission android-targetSdkVersion="28" android-name="android.permission.WRITE_CONTACTS" />
