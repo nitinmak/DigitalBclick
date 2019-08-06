@@ -134,48 +134,48 @@ $$('#bck2').trigger("click");
 //       $$('#payment_btn').trigger("click");
 //     $( "#payment_btn" ).trigger( "click" );
 //   }
-   $(document).on('click', '.t1', function() {
+   // $(document).on('click', '.t1', function() {
     
-    $('.t1').addClass('active');
-    $('.t2').removeClass('active');
-    $('.t3').removeClass('active');
-   });
+   //  $('.t1').addClass('active');
+   //  $('.t2').removeClass('active');
+   //  $('.t3').removeClass('active');
+   // });
 
-   $(document).on('click', '.t2', function() {
-    $('.t2').addClass('active');
-    $('.t1').removeClass('active');
-    $('.t3').removeClass('active');
-   });
+   // $(document).on('click', '.t2', function() {
+   //  $('.t2').addClass('active');
+   //  $('.t1').removeClass('active');
+   //  $('.t3').removeClass('active');
+   // });
 
-   $(document).on('click', '.t3', function() {
-    $('.t3').addClass('active');
-    $('.t1').removeClass('active');
-    $('.t2').removeClass('active');
-   });
-var windowHeightSeventyPercent = parseInt(screen.height * 0.7); //To support multiple devices
+   // $(document).on('click', '.t3', function() {
+   //  $('.t3').addClass('active');
+   //  $('.t1').removeClass('active');
+   //  $('.t2').removeClass('active');
+   // });
+// var windowHeightSeventyPercent = parseInt(screen.height * 0.7); //To support multiple devices
 
-$("input").focusin(function(){
-   $("body").height($("body").height()+parseInt(windowHeightSeventyPercent)); //Make page body scroll by adding height to make user to fillup field.
-});
+// $("input").focusin(function(){
+//    $("body").height($("body").height()+parseInt(windowHeightSeventyPercent)); //Make page body scroll by adding height to make user to fillup field.
+// });
 
- $("input").focusout(function(){
-   $("body").height($("body").height()-parseInt(windowHeightSeventyPercent));
- });
+//  $("input").focusout(function(){
+//    $("body").height($("body").height()-parseInt(windowHeightSeventyPercent));
+//  });
 
         // myApp.alert('Here comes About page');
                 // window.localStorage.setItem("payment",0);
         var islogin = window.localStorage.getItem("login");
-        var email = window.localStorage.getItem("email");
-// alert(email); 
+alert(islogin); 
        
 
 
 
-        var payment = window.localStorage.getItem("payment");
   // alert(payment);
 // $('#div_frm').show();
 if(islogin == 1){
-  var email = window.localStorage.getItem("email");
+        var email = window.localStorage.getItem("email");
+        var payment = window.localStorage.getItem("payment");
+  
 update_profile(email);
   // $('#div_frm').hide();
     var permission = cordova.plugins.permissions;
