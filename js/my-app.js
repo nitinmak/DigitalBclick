@@ -251,7 +251,7 @@ if(islogin == 1){
           alert(email+'fdfdfd');
                 window.localStorage.setItem("email",email);
                 var email =  window.localStorage.getItem("email");
-// alert(email);
+alert(email+'set');
 
          $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
