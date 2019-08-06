@@ -248,7 +248,7 @@ if(islogin == 1){
           form =$('#login_form').serialize();
           var  action = $('#action').val();
           var  email = $('#email').val();
-          alert(email);
+          alert(email+'fdfdfd');
                 window.localStorage.setItem("email",email);
                 var email =  window.localStorage.getItem("email");
 // alert(email);
@@ -263,6 +263,7 @@ if(islogin == 1){
             dataType:"json",            
            
             success: function(data) {
+              alert(data.status);
               if(data.status == 0){
                $('.snackbar').html(data.message);
                 my_toast();
