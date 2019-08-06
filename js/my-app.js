@@ -98,20 +98,20 @@ $$('#bck2').trigger("click");
 
 }, false);
  // *my permission code*
-        var permission = cordova.plugins.permissions;
+        // var permission = cordova.plugins.permissions;
 
-        permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+        // permission.hasPermission(permission.READ_CONTACTS,function(results){
+        //     if(!results[permission])
+        //     {
+        //         permission.requestPermission(permission.READ_CONTACTS,function(results){
+        //             if(results[permission]){
+        //                    alert("permission granted");
+        //            }
+        //         },)
+        //         // alert("permission granted failed");
+        //     }
+        // }, 
+        // )
 
 //                                $.ajax({
 //             url: "https://digitalbcards.in/api/fetch_amount/", 
@@ -177,19 +177,19 @@ update_profile(email);
 // $('#div_frm').show();
 if(islogin == 1){
   // $('#div_frm').hide();
-    var permission = cordova.plugins.permissions;
-    permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+    // var permission = cordova.plugins.permissions;
+    // permission.hasPermission(permission.READ_CONTACTS,function(results){
+    //         if(!results[permission])
+    //         {
+    //             permission.requestPermission(permission.READ_CONTACTS,function(results){
+    //                 if(results[permission]){
+    //                        alert("permission granted");
+    //                }
+    //             },)
+    //             // alert("permission granted failed");
+    //         }
+    //     }, 
+    //     )
   // alert('fdfd');
   // alert(payment);
    if(payment == 0){
@@ -248,12 +248,14 @@ if(islogin == 1){
           form =$('#login_form').serialize();
           var  action = $('#action').val();
           var  email = $('#email').val();
-          // alert(email+'fdfdfd');
+          // alert(email);
                 window.localStorage.setItem("email",email);
                 var email =  window.localStorage.getItem("email");
-// alert(email+'set');
+// alert(email);
 
-         alert(form);
+         $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+                
      $.ajax({
             url: "https://digitalbcards.in/api/login/", 
             method: "POST",
@@ -261,17 +263,15 @@ if(islogin == 1){
             dataType:"json",            
            
             success: function(data) {
-              alert(data.status);
               if(data.status == 0){
                $('.snackbar').html(data.message);
                 my_toast();
                 
     $('.loader').css('display','none');
     
-                alert(data.message);
+                // alert(data.message);
               }else{
-                 location.reload();
-alert(email);
+// alert(email);
                 window.localStorage.setItem("login",1);
                 window.localStorage.setItem("email",email);
 
@@ -285,7 +285,7 @@ alert(email);
            
             success: function(data) {
                 // var data = JSON.stringify(data);
-                alert(data.Refferal_id);
+                // alert(data.Refferal_id);
                window.localStorage.setItem("payment",data.pay_status);
                window.localStorage.setItem("user_id",data.id);
                window.localStorage.setItem("language",data.language);
