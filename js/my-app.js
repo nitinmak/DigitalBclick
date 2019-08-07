@@ -11,8 +11,59 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() { 
     console.log("Device is ready!");
+    alert('dsds');
  $(document).on('click', '#login_user', function(){
-   form =$('#login_form').serialize();
+   $('#login_form').validate({ // initialize the plugin
+        errorLabelContainer: "#cs-error-note",
+   
+     errorClass: 'errors',
+    rules: {
+     
+       
+        email: {
+           
+            required: true,
+            email:true,
+            
+        },
+         password: {
+           
+            required: true,
+            
+        },
+        
+    },
+    messages: {
+       
+        
+         email: {
+           
+            required: "Please enter  Email.",
+            email:"Please Enter Proper Email",
+            
+        },
+         password: {
+           
+            required: "Please enter  Password.",
+            
+            
+        },
+        
+       
+         
+    },
+        submitHandler: function (form) { // for demo
+          form =$('#login_form').serialize();
+          var  action = $('#action').val();
+          var  email = $('#email').val();
+          // alert(email);
+                window.localStorage.setItem("email",email);
+                var email =  window.localStorage.getItem("email");
+// alert(email);
+
+         $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+            
      $.ajax({
             url: "https://digitalbcards.in/api/login/", 
             method: "POST",
@@ -24,16 +75,26 @@ $$(document).on('deviceready', function() {
               if(data.status == 0){
                $('.snackbar').html(data.message);
                 my_toast();
-                alert(data.message);
+                alert(data.message+'dsds');
+                $('.loader').css('display','none');
                 
-                // $('.loader').css('display','none');
+                $('.loader').css('display','none');
               }else{
-                alert(data.message);
+                 window.localStorage.setItem("login",1);
+                window.localStorage.setItem("email",email);
+                // update_profile(email);
+                alert(data.message+'dsdsfdwsaaa');
+                $('.loader').css('display','none');
 
               }
             }
 
       })
+
+//             return false; // for demo
+        }
+    });
+
  })
 
 
