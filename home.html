@@ -1,0 +1,474 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <!-- <a href="javascript:void(0)" class="menu-left"><i class="material-icons">menu</i></a> -->
+            <a href="#" class="link icon-only open-panel menu-left"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding" style="text-align: center;font-size: 20px">Dashboard</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="home" class="page">
+       <div class="page-content" style="background: white;" >
+        <div class="col-12">
+          <center><img src="img/new_logo.jpg" width="100%"  height="100px" alt="" style="margin-top: 10px;padding: 8px;width: 250px;height: 79px;" ></center>
+        </div>
+        <!-- <a href="pay.html" id="payment_btn" ></a> -->
+            <div class="card">
+               <a href="profile.html" onclick="set_back()"  style="color: white;">
+    <div class="card-header"  style="background-color: #d49100; padding: 0;">
+         <div class="col-60 ml-3" style="color: white;font-size: 14px">
+                      Update DBcard
+                    </div>
+                    <div class="col-40" style="margin-right: 10px;">
+                         
+                                 <i class="fa fa-pencil-square-o" style="font-size:20px;"></i>
+
+                    </div>
+    </div>
+  </a>
+   <style type="text/css">
+    .select2-container--default .select2-selection--multiple .select2-selection__choice
+    {
+      background-color: #07324a;
+    }
+   
+
+
+
+
+
+        
+
+.select2-container--default .select2-selection--multiple {
+    background-color: #07314a; /*#d49100*/;
+    border-bottom: 1px solid #fff;}
+
+.select2-container--default .select2-selection--multiple {  border-bottom: 1px solid #fff;border-top: none;border-right: none;border-left: none;}
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: solid white 1px;
+    outline: 0;
+}
+
+
+/*.modal-header .close {
+    margin-top: -31px;
+}
+*/
+
+.newse{
+        padding-top: 3%;
+}
+  .reg1{
+      white-space: nowrap !important;
+    color: red !important;
+    display: inherit;
+        padding-top: 27px;
+    vertical-align: middle;
+    display: table-cell;
+        padding-left: 2%;
+}
+.bmd-form-group .bmd-label-static {
+    top: 0rem;
+    left: 0px;
+    font-size: 0.75rem;
+}
+
+
+/*newdesign*/
+/*[data-sidebar="primary"] .content .content-top {
+    background: #d49100 !important;
+    color: #ffffff;
+}
+[data-sidebar="primary"] .content .left-sidebar-section > ul > li .btn-flat:hover {
+    background-color: #07314a !important;
+    color: #ffffff;
+}
+.left-sidebar-1 .wrapper .content .left-sidebar-section ul li .btn-flat
+{
+        background: #d49100;
+}*/
+
+/*end*/
+
+/*@media only screen and (max-width: 600px) {
+   .btnsz {
+    width: 100%;
+}
+}
+@media only screen and (min-width: 600px) {
+   .btnsz {
+    width: 100%;
+}
+}*/
+.btn.btn-primary.active, .btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:focus:active, .btn.btn-primary:active, .btn.btn-primary[disabled].active, .btn.btn-primary[disabled]:hover, .btn.btn-primary[disabled]:focus, .btn.btn-primary[disabled]:focus:active, .btn.btn-primary[disabled]:active {
+    background: #f58569;
+    color: #07314a;
+}
+
+.btn.btn-primary, .btn.btn-primary[disabled] {
+    background: #fff !important;
+    color: #07314a;
+    font-size:#fff;
+}
+[data-layout="default-sidebar-1"] .main .page-on-top {
+    margin-left: 20px;
+    margin-right: 20px;
+        margin-top: 0%;
+    background: #07314a;
+    box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12);
+    padding: 40px;
+    -webkit-transform: translate3d(0, -60px, 0);
+    transform: translate3d(0, -60px, 0);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.breadcrumb > li {
+    padding-left: 10px;}
+
+.qrimg img
+{
+ height: 70px;
+width:70px;
+}
+.dbtt1
+{
+    line-height: 1.5;
+}
+ .select2-container--default .select2-search--inline .select2-search__field
+{
+color:#fff;
+}
+
+
+
+
+@media only screen and (max-width: 767px){
+ 
+ .select2-container--default .select2-selection--multiple {
+    background-color:/* #07314a;*/ #07314a;
+}
+
+}
+
+
+
+
+    </style>
+    <div class="card-content mt-1" style=" padding: 0;">
+         <div class="card rounded-50 border-0  bg-primary" style="margin: 0">
+                                    <div class="card-header" style="background-color: #07314a;">
+                                        <div class="row" style="width: 100%; margin: auto;" data-toggle="modal" data-target="#colors">
+                                            <div class="col-md-12 col-sm-12" >
+                                                <div style="float: left;">
+                                                <h5 class="card-title  text-white"><p class="mb-0" style="font-size: 15px;color:white">Share DBcard / Save Contact</p></h5>
+                                                </div>
+                                                <div style="float: right;">
+                                                <a style="text-align: right;"  href="#" data-toggle="modal" data-target="#colors"><i class="fa fa-share-alt text-white" ></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <form method="post" id="share_form">   
+                                    <div class="card-body  text-white" style="background-color: #07314a;">
+                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
+                                        <div class="row">
+                                           <div class="row" style="width: 100%; margin: auto;">
+                                            <div class="col-100" >
+                                                <div style="width:80%;float: left;">
+                                              
+                                                 
+                                                     
+                                              
+                                                </div>
+                                              
+                                            </div>
+                                        </div>
+                                              <div class="col-12">
+                                                <div class="form-group bmd-form-group ">
+                                                  <input type='text' value=''  class='form-control icon-input text-white' id="receivername" name="name"placeholder="Type Receiver’s Name"><a><i class='fa fa-users fa-2x times-icon' onclick="displaycontacts();" style="color: #d49100" aria-hidden='true'></i></a>
+                                                <!-- <label>Phone Number</label> -->
+                                                 <!-- <input type="text" class="form-control text-white " required="" id="receivername" name="name" placeholder="Type Receiver’s Name" > -->
+                                               <!--   <input type='text' value='' onclick="displaycontacts()" class='form-control icon-input' id="receivername" name="name"placeholder="Type Receiver’s Name">   -->
+                        <!-- </div> -->
+                         <div id="showcontacts" style="display:none;">
+                          <!-- <select id="contacts-list" class="form-control" name="phoneno" onchange="updateContacts();">
+                            </select>
+ -->                           
+                         </div>
+                                                <input type="hidden" class="form-control"  id="language" name="language" >
+                                                <input type="hidden" class="form-control"  id="referral_idd" name="referral" >
+                                                <input type="hidden" class="form-control"  id="user_id" name="user_id" >
+                                                <input type="hidden" class="form-control"  id="user_name" name="user_name" >
+                                                  <input type="hidden" name="secrete" value="virus">
+                                                </div>
+                                            </div>
+                                                <div class="col-12">
+                                                <div class="form-group">
+                                                    <div class="snackbar">Some text some message..</div>
+                                                <!-- <label>Phone Number</label> -->
+                                                  
+                                                           
+<!-- Open In Popup + Searchbar + Multiple -->
+
+ 
+    <select placeholder="Decide Segment" class="form-control select2 selid icon-input " style="width:100%" id="segment" name="segment[]"  multiple required="">
+        <option value="-1" selected>Decide Segment</option>
+         
+   
+     
+     
+    </select><a><i class='fa fa-plus fa-2x times-icon' onclick="new_segment();" style="color: #d49100;z-index: 11111;font-size: 25px" aria-hidden='true'></i></a>
+
+    
+<!-- Open In Sheet -->
+
+<!-- Open In Popover -->
+
+                                                       
+                                                </div>
+                                            </div>
+                                             <div class="col-12" style="display: none;" id="new_seg">
+                                                <div class="form-group bmd-form-group cc1">
+                                                    <input type="text" onblur="add_segment(this)" class="form-control text-white " id="nw_segment" name="new_segment"    placeholder="Enter New segment" > 
+                          <!-- <ul id="contacts-list"></ul> -->
+                                                    <!-- <input type="text" class="form-control  text-white" value="+91"> -->
+                                                </div>
+                                            </div>
+                                              <style type="text/css">
+        
+       input, input:before, input:after {
+      -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
+     } 
+    
+     .check-icon {
+right:50px;
+position:absolute;
+top:5px;
+font-size: 1.5em;
+}
+
+.times-icon {
+right:20px;
+position:absolute;
+top:5px;
+font-size: 1.5em;
+    color: black;
+}
+.country-list{
+  z-index: 99;
+}
+.icon-input {
+padding-right:60px !important;
+}
+.form-control{
+  background: none;
+  color:white;
+
+  /*border-bottom: 1px groove;*/
+  
+}
+.item-after{
+  display: none !important;
+}
+.list-block .item-link .item-inner
+{
+  background-image:none;
+}
+          </style>
+          <link rel="stylesheet" href="vendor/materializeicon/material-icons.css"> 
+             <div class="col-12">
+                    <div class="form-group bmd-form-group cc1">
+   
+   <div class = "list-block">
+                        <ul>
+                           <li>
+                              <a  data-searchbar = "true" data-searchbar-placeholder = "Search Countries" class="item-link smart-select smart-select-init" data-open-in="sheet">
+                              
+                                 <select name = "countries" id="cccc">
+  <option  data-option-image="https://digitalbcards.in/flags/in.png" data-image="https://digitalbcards.in/flags/in.png" selected="selected" value="91">INDIA (+91) </option>
+ 
+
+                                    
+                                 </select>
+                                 
+                                 <div class = "item-content">
+                                    <div class = "item-inner" id="cc">
+                                       <div class = "item-title"></div>
+                                    </div>
+                                 </div>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                   </div></div>
+
+
+                                            
+                                             <div class="col-12">
+                                                <div class="form-group bmd-form-group cc1">
+                                                    <input type="text" minlength="10"  pattern="\d*" class="form-control text-white " id="receivermobile" name="mobile" onkeypress="return isNumber(event)"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
+                          <!-- <ul id="contacts-list"></ul> -->
+                                                    <input type="hidden" class="form-control  text-white" name="full_phone" id="full_phone" >
+                                                </div>
+                                            </div>
+
+                                                <div class="col-12">
+                                                <div class="form-group">
+                                                  
+                                                 
+                                                <!-- <label>Phone Number</label> -->
+                                               
+                                                </div>
+                                            </div>
+
+                                           <div class="col-12">
+                                                <div class="form-group">
+
+    
+                                                <!-- <label>Phone Number</label> -->
+                                                  <input type="email" class="form-control" id="email" name="email" placeholder="Type Receiver’s Email">
+                                                </div>
+                                            </div>
+                                            <div id="test" style="display: none;width: 100%">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="position" name="position" autocomplete="off" placeholder="Position">
+                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="address" name="address" placeholder="Address Line 1">
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="address2" name="address2" placeholder="Address Line 2">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="city" name="city" placeholder="City">
+
+                                                </div>
+                                            </div>
+                                         
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" minlength="6" maxlength="6" class="form-control" id="zip_code" name="zip_code" placeholder="Zip Code">
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="state" name="state" placeholder="State">
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="country" name="country" placeholder="Country Name">
+                                                  
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <input type="url" class="form-control" id="website" name="website" placeholder="Website">
+                                                
+                                                  
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <label>Birth Date</label>
+                                                <input type="date" placeholder="Birthday" class="form-control" id="birthday" name="birthday">
+                                                  
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <label>Anniversary</label>
+                                                <input type="date" class="form-control" id="anniversory" name="anniversory">
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    </div>
+    <div class="card-footer" >
+<!-- <div class="block">
+  <div class="row">
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMS</button>
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMS</button>
+  </div>
+</div>
+ -->
+<!-- <div class="block">
+  <div class="row">
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMS</button>
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send fdfd</button>
+  </div>
+</div>
+
+<div class="block">
+  <div class="row">
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMffdS</button>
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMS</button>
+</div> -->
+
+
+<div class="block" style="width: 100%; padding: 5px;">
+  <p class="row">
+    <button type="button" name="send_sms"  id="button" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">More</button>
+    <button type="button" id="reset_form" name="send_sms" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Reset</button>
+   
+  </p> 
+  <p class="row">
+    <button type="submit" id="save_only" name="save_only" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">SAVE NOW</button>
+    <button type="submit" name="send_whatsapp" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;" >WhatsApp</button>
+ <!-- <button class="col button color-orange">colcol-xs-3tton button-fill color-orange -->
+  </p>
+  <p class="row">
+    <button type="submit" name="send_email" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Send Email</button>
+    <button type="submit" name="send_sms" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Send SMS</button>
+  </p>
+</div>
+<script type="text/javascript">
+
+</script>
+    </div>
+</div>
+                  
+
+
+          
+               
+        </div>
+    </div>
+</div>
+
+
