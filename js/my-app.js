@@ -3493,7 +3493,9 @@ $(document).on('change', '#cccc', function(){
 img = $$("#cccc").find("option:checked").data('image');
 name = $$("#cccc").find("option:checked").text();
 
+
 $('#cc .item-title').html('<img src="'+img+'">');
+$('.navbar').show();
 // $('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
 // $('.sliding').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name);
 // $('.item-inner .item-after').html('<img src="'+img+'"> ');    
@@ -3502,7 +3504,7 @@ $('#cc .item-title').html('<img src="'+img+'">');
 
 
 
-
+$('.navbar').show();
 
 var name = $$("#cccc").find("option:checked").text();
 var d= $$("#cccc").find("option:checked").data('image');
