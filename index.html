@@ -11,15 +11,19 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
    <!--  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
-<meta http-equiv="Content-Security-Policy" script-src='unsafe-inline';>
+   <meta http-equiv="Content-Security-Policy" 
+          content="default-src *; 
+                   style-src 'self' 'unsafe-inline' 'unsafe-eval'; 
+                   script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+
     <!-- Required meta tags-->
-    <meta charset="utf-8">
+   <!--  <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-tap-highlight" content="no"> -->
     
 
 
