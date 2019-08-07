@@ -30,6 +30,8 @@ input[type="text"] {
 }
         </style>
       
+      
+     
 <div class="card" style="background-color: #07314a;">
    <div class="card-header">
       <div class="col-50">
@@ -44,11 +46,14 @@ input[type="text"] {
                                         <i class="fa fa-plus m-r-5"></i>
                                         <span class="btn-text">Add Achievement</span>
                                     </a>
+
                                  
                                    
                                 </div>
                             </div>
+                          
    </div>
+   
   <div class="card-body" >
     
 
@@ -74,13 +79,14 @@ input[type="text"] {
                                                     <th>Delete</th>
       </tr>
                                                     </thead>
-                                                    <tbody id="my_achievement" style="color: White" >
+                                                    <tbody id="my_achievement"  class="row_position"  style="color: White" >
                                                         
                                                     </tbody>
                                                 </table>
                                             </div>
                                           </div>
                                         </form>
+    <button  onclick="sortableEnable()" id="srt_btn" class="kc_fab_main_btn "><i class="fa fa-sort"></i></button>
                                       </div>
                                            
          
@@ -94,7 +100,6 @@ input[type="text"] {
    
   </p> 
 </div>
-    
   </div>
 </div>
                        
@@ -169,8 +174,17 @@ input[type="text"] {
 
     </div>
     </div>
-    </form>               
+    </form>       
+     
+<script type="text/javascript">
+  $(document).bind('pageinit', function() {
+// alert('fdfd');
+  $( "tbody" ).sortable();
+  $("tbody").disableSelection();
+  $("#srt_btn").draggable();
 
+})
+</script>
 
     </div>
   </div>
