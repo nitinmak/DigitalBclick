@@ -11,7 +11,8 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() { 
     console.log("Device is ready!");
- $(document).on('click', '#login_user', function(){  
+ $(document).on('click', '#login_user', function(){
+   form =$('#login_form').serialize();
      $.ajax({
             url: "https://digitalbcards.in/api/login/", 
             method: "POST",
