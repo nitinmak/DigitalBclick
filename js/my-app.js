@@ -3579,7 +3579,7 @@ $('#cc .item-title').html('<img src="'+d+'">');
          // var c_code = $('#c_code').val();
 var c_code = $$("#cccc").find("option:checked").val();
          var receivermobile = $('#receivermobile').val();
-         alert(c_code+receivermobile);
+         // alert(c_code+receivermobile);
          $('#full_phone').val('+'+c_code+receivermobile);
           form =$('#share_form').serialize();
          // alert(form);
