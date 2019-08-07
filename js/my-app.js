@@ -82,9 +82,7 @@ $("input").focusin(function(){
         // myApp.alert('Here comes About page');
                 // window.localStorage.setItem("payment",0);
         var islogin = window.localStorage.getItem("login");
-        var email = window.localStorage.getItem("email");
 // alert(email); 
-update_profile(email);
        
 
 
@@ -93,6 +91,7 @@ update_profile(email);
   // alert(payment);
 
 if(islogin == 1){
+        var email = window.localStorage.getItem("email");
     var permission = cordova.plugins.permissions;
     permission.hasPermission(permission.READ_CONTACTS,function(results){
             if(!results[permission])
@@ -106,6 +105,7 @@ if(islogin == 1){
             }
         }, 
         )
+update_profile(email);
   // alert('fdfd');
   // alert(payment);
    if(payment == 0){
