@@ -7,18 +7,18 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-if(navigator.connection.type==0)
-{
-    alert('This application requires internet. Please connect to the internet.');
-    navigator.app.exitApp()
+// if(navigator.connection.type==0)
+// {
+//     alert('This application requires internet. Please connect to the internet.');
+//     navigator.app.exitApp()
 
-}
-else if(navigator.connection.type=='none')
-{
-    alert('This application requires internet. Please connect to the internet.');
-    navigator.app.exitApp()
+// }
+// else if(navigator.connection.type=='none')
+// {
+//     alert('This application requires internet. Please connect to the internet.');
+//     navigator.app.exitApp()
 
-}
+// }
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -28,66 +28,66 @@ $$(document).on('deviceready', function() {
 // alert($.mobile.activePage.is('#homepage'));
 
 
-document.addEventListener("backbutton", function(e){
+// document.addEventListener("backbutton", function(e){
  
- var unique =  window.localStorage.getItem("unique");   
- var unique_home =  window.localStorage.getItem("unique_home");   
+//  var unique =  window.localStorage.getItem("unique");   
+//  var unique_home =  window.localStorage.getItem("unique_home");   
 
-  if(unique_home == 0){
+//   if(unique_home == 0){
 
-        if (confirm("Are you sure you want to Exit?")) {
+//         if (confirm("Are you sure you want to Exit?")) {
     
-  navigator.app.exitApp()
+//   navigator.app.exitApp()
   
-        }
-        else {
-            return false;
-        }
+//         }
+//         else {
+//             return false;
+//         }
     
-  }else{
-  if ($('#view_card_in_popup').is(':visible')) {
+//   }else{
+//   if ($('#view_card_in_popup').is(':visible')) {
 
-    $('#view_card_in_popup').modal('hide');
-  }else{
- if(unique == 'home'){
-    // alert('h');
+//     $('#view_card_in_popup').modal('hide');
+//   }else{
+//  if(unique == 'home'){
+//     // alert('h');
 
-    $$('#bck2').trigger("click");
+//     $$('#bck2').trigger("click");
 
-  }else if($('.page').data('page') == 'viewcard'){
-    // alert('p');
+//   }else if($('.page').data('page') == 'viewcard'){
+//     // alert('p');
     
    
-     $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'profile');
-    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+//      $$('#bck').trigger("click");
+//     window.localStorage.setItem("unique",'profile');
+//     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
   
-  }else if($('.page').data('page') == 'profile'){
-    // alert('p');
-    $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'profile');
-    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
-  }else if($('.page').data('page') == 'about_me' || $('.page').data('page') == 'upload_profile' || $('.page').data('page') == 'contact_detail' 
-    || $('.page').data('page') == 'company_logo' || $('.page').data('page') == 'skils' || $('.page').data('page') == 'achievement' 
-    || $('.page').data('page') == 'testimonial' || $('.page').data('page') == 'experience' || $('.page').data('page') == 'education' 
-    || $('.page').data('page') == 'company' || $('.page').data('page') == 'product' || $('.page').data('page') == 'social_link' 
-    || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
-    || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
-// alert($('.page').data('page'))
-$$('#bck2').trigger("click");
+//   }else if($('.page').data('page') == 'profile'){
+//     // alert('p');
+//     $$('#bck').trigger("click");
+//     window.localStorage.setItem("unique",'profile');
+//     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+//   }else if($('.page').data('page') == 'about_me' || $('.page').data('page') == 'upload_profile' || $('.page').data('page') == 'contact_detail' 
+//     || $('.page').data('page') == 'company_logo' || $('.page').data('page') == 'skils' || $('.page').data('page') == 'achievement' 
+//     || $('.page').data('page') == 'testimonial' || $('.page').data('page') == 'experience' || $('.page').data('page') == 'education' 
+//     || $('.page').data('page') == 'company' || $('.page').data('page') == 'product' || $('.page').data('page') == 'social_link' 
+//     || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
+//     || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
+// // alert($('.page').data('page'))
+// $$('#bck2').trigger("click");
 
-  }else{
-    // alert(unique);
+//   }else{
+//     // alert(unique);
 
-    $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'home');
-     var unique =  window.localStorage.getItem("unique");
-    $('.bk_link').html('<a href="'+unique+'.html" id="bck"></a>');
-    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
-  }
-}
+//     $$('#bck').trigger("click");
+//     window.localStorage.setItem("unique",'home');
+//      var unique =  window.localStorage.getItem("unique");
+//     $('.bk_link').html('<a href="'+unique+'.html" id="bck"></a>');
+//     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+//   }
+// }
 
- }
+//  }
 
 
     
@@ -96,22 +96,22 @@ $$('#bck2').trigger("click");
 
 
 
-}, false);
+// }, false);
  // **my permission code**
-        var permission = cordova.plugins.permissions;
+        // var permission = cordova.plugins.permissions;
 
-        permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+        // permission.hasPermission(permission.READ_CONTACTS,function(results){
+        //     if(!results[permission])
+        //     {
+        //         permission.requestPermission(permission.READ_CONTACTS,function(results){
+        //             if(results[permission]){
+        //                    alert("permission granted");
+        //            }
+        //         },)
+        //         // alert("permission granted failed");
+        //     }
+        // }, 
+        // )
 
 //                                $.ajax({
 //             url: "https://digitalbcards.in/api/fetch_amount/", 
@@ -134,33 +134,33 @@ $$('#bck2').trigger("click");
 //       $$('#payment_btn').trigger("click");
 //     $( "#payment_btn" ).trigger( "click" );
 //   }
-   $(document).on('click', '.t1', function() {
+//    $(document).on('click', '.t1', function() {
     
-    $('.t1').addClass('active');
-    $('.t2').removeClass('active');
-    $('.t3').removeClass('active');
-   });
+//     $('.t1').addClass('active');
+//     $('.t2').removeClass('active');
+//     $('.t3').removeClass('active');
+//    });
 
-   $(document).on('click', '.t2', function() {
-    $('.t2').addClass('active');
-    $('.t1').removeClass('active');
-    $('.t3').removeClass('active');
-   });
+//    $(document).on('click', '.t2', function() {
+//     $('.t2').addClass('active');
+//     $('.t1').removeClass('active');
+//     $('.t3').removeClass('active');
+//    });
 
-   $(document).on('click', '.t3', function() {
-    $('.t3').addClass('active');
-    $('.t1').removeClass('active');
-    $('.t2').removeClass('active');
-   });
-var windowHeightSeventyPercent = parseInt(screen.height * 0.7); //To support multiple devices
+//    $(document).on('click', '.t3', function() {
+//     $('.t3').addClass('active');
+//     $('.t1').removeClass('active');
+//     $('.t2').removeClass('active');
+//    });
+// var windowHeightSeventyPercent = parseInt(screen.height * 0.7); //To support multiple devices
 
-$("input").focusin(function(){
-   $("body").height($("body").height()+parseInt(windowHeightSeventyPercent)); //Make page body scroll by adding height to make user to fillup field.
-});
+// $("input").focusin(function(){
+//    $("body").height($("body").height()+parseInt(windowHeightSeventyPercent)); //Make page body scroll by adding height to make user to fillup field.
+// });
 
- $("input").focusout(function(){
-   $("body").height($("body").height()-parseInt(windowHeightSeventyPercent));
- });
+//  $("input").focusout(function(){
+//    $("body").height($("body").height()-parseInt(windowHeightSeventyPercent));
+//  });
 
         // myApp.alert('Here comes About page');
                 // window.localStorage.setItem("payment",0);
@@ -176,30 +176,30 @@ $("input").focusin(function(){
   // alert(payment);
 
 if(islogin == 1){
-    var permission = cordova.plugins.permissions;
-    permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+    // var permission = cordova.plugins.permissions;
+    // permission.hasPermission(permission.READ_CONTACTS,function(results){
+    //         if(!results[permission])
+    //         {
+    //             permission.requestPermission(permission.READ_CONTACTS,function(results){
+    //                 if(results[permission]){
+    //                        alert("permission granted");
+    //                }
+    //             },)
+    //             // alert("permission granted failed");
+    //         }
+    //     }, 
+    //     )
   // alert('fdfd');
   // alert(payment);
-   if(payment == 0){
-// alert($('#payment_btn').attr('href'));
-     // $('.payment_btn').trigger('click');
-      $$('#payment_btn').trigger("click");
-    $( "#payment_btn" ).trigger( "click" );
-  }else{
-    $$('#home').trigger("click");
+//    if(payment == 0){
+// // alert($('#payment_btn').attr('href'));
+//      // $('.payment_btn').trigger('click');
+//       $$('#payment_btn').trigger("click");
+//     $( "#payment_btn" ).trigger( "click" );
+//   }else{
+//     $$('#home').trigger("click");
 
-  }
+//   }
  // window.location.href = "home.html"
   }
 
@@ -254,7 +254,7 @@ if(islogin == 1){
                 var email =  window.localStorage.getItem("email");
 // alert(email);
 
-         $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
 
                 
