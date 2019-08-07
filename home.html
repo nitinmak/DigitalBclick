@@ -166,8 +166,8 @@ color:#fff;
 
     </style>
     <div class="card-content mt-1" style=" padding: 0;">
-         <div class="card rounded-50 border-0  bg-primary" style="margin: 0">
-                                    <div class="card-header" style="background-color: #07314a;">
+         <div class="card rounded-50 border-0  bg-primary  " style="margin-top:30px">
+                                    <div class="card-header " style="background-color: #07314a;">
                                         <div class="row" style="width: 100%; margin: auto;" data-toggle="modal" data-target="#colors">
                                             <div class="col-md-12 col-sm-12" >
                                                 <div style="float: left;">
@@ -277,11 +277,28 @@ padding-right:60px !important;
 }
 .form-control{
   background: none;
-  color:white;
-
-  /*border-bottom: 1px groove;*/
-  
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-radius: 0px;
+  color: white;
 }
+.block .btn {
+    border-radius: 0px;
+    padding-right: 20px;
+    padding: 6px 12px;
+    padding-left: 20px;
+}
+ .card-header:after
+{
+  display: none;
+}
+.card-footer:before
+{
+  display: none;
+}
+    
+    
 .item-after{
   display: none !important;
 }
@@ -291,16 +308,19 @@ padding-right:60px !important;
 }
           </style>
           <link rel="stylesheet" href="vendor/materializeicon/material-icons.css"> 
-             <div class="col-12">
-                    <div class="form-group bmd-form-group cc1">
-   
-   <div class = "list-block">
+         
+
+
+                                            
+                                             <div class="col-12">
+                                                <div class="form-group bmd-form-group cc1">
+                                                     <div class = " list-block icon-input " style="border-bottom:1px solid;    top: -5px;"  >
                         <ul>
                            <li>
-                              <a  data-searchbar = "true" data-searchbar-placeholder = "Search Countries" class="item-link smart-select smart-select-init" data-open-in="sheet">
+                              <a  data-searchbar = "true" data-searchbar-placeholder = "Search Countries"  class="item-link smart-select smart-select-init" data-open-in="sheet">
                               
                                  <select name = "countries" id="cccc">
-  <option  data-option-image="https://digitalbcards.in/flags/in.png" data-image="https://digitalbcards.in/flags/in.png" selected="selected" value="91">INDIA (+91) </option>
+  <option  data-option-image="https://digitalbcards.in/flags/in.png" data-image="https://digitalbcards.in/flags/in.png" selected="selected" value="91"></option>
  
 
                                     
@@ -315,13 +335,8 @@ padding-right:60px !important;
                            </li>
                         </ul>
                      </div>
-                   </div></div>
-
-
-                                            
-                                             <div class="col-12">
-                                                <div class="form-group bmd-form-group cc1">
-                                                    <input type="text" minlength="10"  pattern="\d*" class="form-control text-white " id="receivermobile" name="mobile" onkeypress="return isNumber(event)"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
+                      <input type='text' value='' minlength="10"  pattern="\d*"  class='form-control times-icon  text-white' style="width:80%;border: none;    font-size: 14px;" id="receivermobile" name="mobile" onkeypress="return isNumber(event)"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric">
+                                                   
                           <!-- <ul id="contacts-list"></ul> -->
                                                     <input type="hidden" class="form-control  text-white" name="full_phone" id="full_phone" >
                                                 </div>

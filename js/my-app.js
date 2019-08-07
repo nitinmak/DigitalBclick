@@ -98,20 +98,20 @@ $$('#bck2').trigger("click");
 
 }, false);
  // *my permission code*
-        var permission = cordova.plugins.permissions;
+        // var permission = cordova.plugins.permissions;
 
-        permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+        // permission.hasPermission(permission.READ_CONTACTS,function(results){
+        //     if(!results[permission])
+        //     {
+        //         permission.requestPermission(permission.READ_CONTACTS,function(results){
+        //             if(results[permission]){
+        //                    alert("permission granted");
+        //            }
+        //         },)
+        //         // alert("permission granted failed");
+        //     }
+        // }, 
+        // )
 
 //                                $.ajax({
 //             url: "https://digitalbcards.in/api/fetch_amount/", 
@@ -165,7 +165,7 @@ $$('#bck2').trigger("click");
         // myApp.alert('Here comes About page');
                 // window.localStorage.setItem("payment",0);
         var islogin = window.localStorage.getItem("login");
-alert(islogin); 
+// alert(islogin); 
        
 
 
@@ -178,19 +178,19 @@ if(islogin == 1){
   
 update_profile(email);
   // $('#div_frm').hide();
-    var permission = cordova.plugins.permissions;
-    permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+    // var permission = cordova.plugins.permissions;
+    // permission.hasPermission(permission.READ_CONTACTS,function(results){
+    //         if(!results[permission])
+    //         {
+    //             permission.requestPermission(permission.READ_CONTACTS,function(results){
+    //                 if(results[permission]){
+    //                        alert("permission granted");
+    //                }
+    //             },)
+    //             // alert("permission granted failed");
+    //         }
+    //     }, 
+    //     )
   // alert('fdfd');
   // alert(payment);
    if(payment == 0){
@@ -3493,7 +3493,8 @@ $(document).on('change', '#cccc', function(){
 img = $$("#cccc").find("option:checked").data('image');
 name = $$("#cccc").find("option:checked").text();
 
-$('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
+$('#cc .item-title').html('<img src="'+img+'">');
+// $('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
 // $('.sliding').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name);
 // $('.item-inner .item-after').html('<img src="'+img+'"> ');    
      }, 100);
@@ -3506,7 +3507,8 @@ $('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'&nbsp;&
 var name = $$("#cccc").find("option:checked").text();
 var d= $$("#cccc").find("option:checked").data('image');
 // $('.item-inner .item-after').html('<img src="'+d+'"> ');
-$('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
+$('#cc .item-title').html('<img src="'+d+'">');
+// $('#cc .item-title').html('<img src="'+d+'">'+ '&nbsp;&nbsp;'+ name   +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
 // $('.sliding').html('<img src="'+d+'">'+ '&nbsp;&nbsp;' + name);
 
                                 // $$("#cccc").val(getCookie("timerTasks")).parent().find('.item-after').html($$("#cccc").find("option:checked").data('image'));
