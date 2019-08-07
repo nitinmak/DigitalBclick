@@ -3486,7 +3486,7 @@ $("#cccc").trigger('create');
 $('.smart-select').on('smartselect:closed');
 
 $(document).on('change', '#cccc', function(){  
-  $$('.back').trigger('click');
+  $$('.close-popup').trigger('click');
    setTimeout(function () {
       city=$$(this).val();
    
@@ -3504,7 +3504,7 @@ $('.navbar').show();
 
 
 
-
+// $('.navbar').show();
 
 var name = $$("#cccc").find("option:checked").text();
 var d= $$("#cccc").find("option:checked").data('image');
