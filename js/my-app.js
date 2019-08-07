@@ -9,85 +9,272 @@ var mainView = myApp.addView('.view-main', {
 
 
 // Handle Cordova Device Ready Event
-$$(document).on('deviceready', function() {
+$$(document).on('deviceready', function() { 
     console.log("Device is ready!");
-if(navigator.connection.type==0)
-{
-    alert('This application requires internet. Please connect to the internet.');
-    navigator.app.exitApp()
+ $(document).on('click', '#login_user', function(){  
+     $.ajax({
+            url: "https://digitalbcards.in/api/login/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
 
-}
-else if(navigator.connection.type=='none')
-{
-    alert('This application requires internet. Please connect to the internet.');
-    navigator.app.exitApp()
+              if(data.status == 0){
+               $('.snackbar').html(data.message);
+                my_toast();
+                alert(data.message);
+                
+                // $('.loader').css('display','none');
+              }else{
+                alert(data.message);
 
-}
-    // alert($('.page').data('page'));
-    // my_toast();
-// alert($.mobile.activePage.is('#homepage'));
+              }
+            }
+
+      })
+ })
 
 
-document.addEventListener("backbutton", function(e){
+})
+
+
+//   $('#login_form').validate({ // initialize the plugin
+//         errorLabelContainer: "#cs-error-note",
+   
+//      errorClass: 'errors',
+//     rules: {
+     
+       
+//         email: {
+           
+//             required: true,
+//             email:true,
+            
+//         },
+//          password: {
+           
+//             required: true,
+            
+//         },
+        
+//     },
+//     messages: {
+       
+        
+//          email: {
+           
+//             required: "Please enter  Email.",
+//             email:"Please Enter Proper Email",
+            
+//         },
+//          password: {
+           
+//             required: "Please enter  Password.",
+            
+            
+//         },
+        
+       
+         
+//     },
+//         submitHandler: function (form) { // for demo
+//           form =$('#login_form').serialize();
+//           var  action = $('#action').val();
+//           var  email = $('#email').val();
+//           // alert(email);
+//                 window.localStorage.setItem("email",email);
+//                 var email =  window.localStorage.getItem("email");
+// // alert(email);
+
+//          $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+//     $('.loader').css('display','flex');
+                
+//      $.ajax({
+//             url: "https://digitalbcards.in/api/login/", 
+//             method: "POST",
+//             data:form, 
+//             dataType:"json",            
+           
+//             success: function(data) {
+
+//               if(data.status == 0){
+//                $('.snackbar').html(data.message);
+//                 my_toast();
+                
+//     $('.loader').css('display','none');
+    
+//                 // alert(data.message);
+//               }else{
+// // alert(email);
+//                 window.localStorage.setItem("login",1);
+//                 window.localStorage.setItem("email",email);
+
+//                  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+//     $('.loader').css('display','flex');
+//                      $.ajax({
+//             url: "https://digitalbcards.in/api/user_profile/", 
+//             method: "POST",
+//             data:{email:email,secrete:"virus"}, 
+//             dataType:"json",            
+           
+//             success: function(data) {
+//                 // var data = JSON.stringify(data);
+//                 // alert(data.Refferal_id);
+//                window.localStorage.setItem("payment",data.pay_status);
+//                window.localStorage.setItem("user_id",data.id);
+//                window.localStorage.setItem("language",data.language);
+//                window.localStorage.setItem("referral",data.Refferal_id);
+//                window.localStorage.setItem("mobile",data.mobile);
+//                window.localStorage.setItem("profession",data.profession);
+//                window.localStorage.setItem("about_me",data.about_me);
+//                window.localStorage.setItem("skype",data.skype);
+//                window.localStorage.setItem("address",data.address);
+//                 window.localStorage.setItem("address_map_link",data.address_map_link);
+//                window.localStorage.setItem("fb_url",data.fb_url);
+
+//                window.localStorage.setItem("y_tube_link",data.y_tube_link);
+//                window.localStorage.setItem("website",data.website);
+                
+//                window.localStorage.setItem("whatsapp",data.whatsapp);
+//                window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
+//                window.localStorage.setItem("name",data.name);
+//                //window.localStorage.setItem("username",data.name);
+//                window.localStorage.setItem("user_image",data.profile_img);
+
+//                window.localStorage.setItem("company_name",data.company_name);
+//                window.localStorage.setItem("vision",data.vision);
+//                window.localStorage.setItem("mission",data.mission);
+//                window.localStorage.setItem("about_comp",data.about_comp);
+//                window.localStorage.setItem("comp_address",data.comp_address);
+//                window.localStorage.setItem("map_link",data.map_link);
+//                window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
+//                window.localStorage.setItem("company_img",data.company_img);
+//                window.localStorage.setItem("theme",data.theme);
+// var referral =  window.localStorage.getItem("referral");
+//                    // alert(referral);
+              
+//                // alert(data.fb_url);
+//                 $('#user').html(data.name);
+//                 $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+//                 // $('#user_image').css("height",'80px');
+//                 // $('#user_image').css("width",'80px');
+//                // $('#preloader').hide();
+//     $('.loader').css('display','none');
+                
+              
+//             //location.reload();
+//           }
+//         }) 
+
+//               var payment =   window.localStorage.getItem("payment");
+//               // alert(payment);
+//                // alert(data.message);
+//                $('.snackbar').html(data.message);
+//   // setTimeout(function(){ $('.snackbar').show(); }, 3000);
+//                 my_toast();
+//                 if(payment != ''){
+//                   location.reload();
+//                 }else{
+
+//     $$('#payment_btn').trigger("click");
+//                 }
+//     $('.loader').css('display','none');
+
+//               // $('#home').click();
+//               // $('#icon').html('<i class="fa fa-check font-30 icon-circle icon-l color-green-dark bg-white shadow-icon-large"></i>');
+//               // $('#error_msg_title').html('Login Succes');            
+//         // $('#error_msg').html(data.message);            
+// // $('#attention').addClass('active-menu-box-modal');
+//  // window.location.href = "home.html"
+//               }
+//             //location.reload();
+//           }
+//         })
+//             return false; // for demo
+//         }
+//     });
+// })
+
+
+
+// if(navigator.connection.type==0)
+// {
+//     alert('This application requires internet. Please connect to the internet.');
+//     navigator.app.exitApp()
+
+// }
+// else if(navigator.connection.type=='none')
+// {
+//     alert('This application requires internet. Please connect to the internet.');
+//     navigator.app.exitApp()
+
+// }
+//     // alert($('.page').data('page'));
+//     // my_toast();
+// // alert($.mobile.activePage.is('#homepage'));
+
+
+// document.addEventListener("backbutton", function(e){
  
- var unique =  window.localStorage.getItem("unique");   
- var unique_home =  window.localStorage.getItem("unique_home");   
+//  var unique =  window.localStorage.getItem("unique");   
+//  var unique_home =  window.localStorage.getItem("unique_home");   
 
-  if(unique_home == 0){
+//   if(unique_home == 0){
 
-        if (confirm("Are you sure you want to Exit?")) {
+//         if (confirm("Are you sure you want to Exit?")) {
     
-  navigator.app.exitApp()
+//   navigator.app.exitApp()
   
-        }
-        else {
-            return false;
-        }
+//         }
+//         else {
+//             return false;
+//         }
     
-  }else{
-  if ($('#view_card_in_popup').is(':visible')) {
+//   }else{
+//   if ($('#view_card_in_popup').is(':visible')) {
 
-    $('#view_card_in_popup').modal('hide');
-  }else{
- if(unique == 'home'){
-    // alert('h');
+//     $('#view_card_in_popup').modal('hide');
+//   }else{
+//  if(unique == 'home'){
+//     // alert('h');
 
-    $$('#bck2').trigger("click");
+//     $$('#bck2').trigger("click");
 
-  }else if($('.page').data('page') == 'viewcard'){
-    // alert('p');
+//   }else if($('.page').data('page') == 'viewcard'){
+//     // alert('p');
     
    
-     $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'profile');
-    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+//      $$('#bck').trigger("click");
+//     window.localStorage.setItem("unique",'profile');
+//     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
   
-  }else if($('.page').data('page') == 'profile'){
-    // alert('p');
-    $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'profile');
-    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
-  }else if($('.page').data('page') == 'about_me' || $('.page').data('page') == 'upload_profile' || $('.page').data('page') == 'contact_detail' 
-    || $('.page').data('page') == 'company_logo' || $('.page').data('page') == 'skils' || $('.page').data('page') == 'achievement' 
-    || $('.page').data('page') == 'testimonial' || $('.page').data('page') == 'experience' || $('.page').data('page') == 'education' 
-    || $('.page').data('page') == 'company' || $('.page').data('page') == 'product' || $('.page').data('page') == 'social_link' 
-    || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
-    || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
-// alert($('.page').data('page'))
-$$('#bck2').trigger("click");
+//   }else if($('.page').data('page') == 'profile'){
+//     // alert('p');
+//     $$('#bck').trigger("click");
+//     window.localStorage.setItem("unique",'profile');
+//     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+//   }else if($('.page').data('page') == 'about_me' || $('.page').data('page') == 'upload_profile' || $('.page').data('page') == 'contact_detail' 
+//     || $('.page').data('page') == 'company_logo' || $('.page').data('page') == 'skils' || $('.page').data('page') == 'achievement' 
+//     || $('.page').data('page') == 'testimonial' || $('.page').data('page') == 'experience' || $('.page').data('page') == 'education' 
+//     || $('.page').data('page') == 'company' || $('.page').data('page') == 'product' || $('.page').data('page') == 'social_link' 
+//     || $('.page').data('page') == 'payment_link' || $('.page').data('page') == 'gallery' || $('.page').data('page') == 'offer' 
+//     || $('.page').data('page') == 'key_client' || $('.page').data('page') == 'memberships' || $('.page').data('page') == 'theme'){
+// // alert($('.page').data('page'))
+// $$('#bck2').trigger("click");
 
-  }else{
-    // alert(unique);
+//   }else{
+//     // alert(unique);
 
-    $$('#bck').trigger("click");
-    window.localStorage.setItem("unique",'home');
-     var unique =  window.localStorage.getItem("unique");
-    $('.bk_link').html('<a href="'+unique+'.html" id="bck"></a>');
-    $('.bk_link').append('<a href="home.html" id="bck2"></a>');
-  }
-}
+//     $$('#bck').trigger("click");
+//     window.localStorage.setItem("unique",'home');
+//      var unique =  window.localStorage.getItem("unique");
+//     $('.bk_link').html('<a href="'+unique+'.html" id="bck"></a>');
+//     $('.bk_link').append('<a href="home.html" id="bck2"></a>');
+//   }
+// }
 
- }
+//  }
 
 
     
@@ -96,22 +283,22 @@ $$('#bck2').trigger("click");
 
 
 
-}, false);
- // *my permission code*
-        var permission = cordova.plugins.permissions;
+// }, false);
+//  // *my permission code*
+//         var permission = cordova.plugins.permissions;
 
-        permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+//         permission.hasPermission(permission.READ_CONTACTS,function(results){
+//             if(!results[permission])
+//             {
+//                 permission.requestPermission(permission.READ_CONTACTS,function(results){
+//                     if(results[permission]){
+//                            alert("permission granted");
+//                    }
+//                 },)
+//                 // alert("permission granted failed");
+//             }
+//         }, 
+//         )
 
 //                                $.ajax({
 //             url: "https://digitalbcards.in/api/fetch_amount/", 
@@ -164,215 +351,53 @@ $$('#bck2').trigger("click");
 
         // myApp.alert('Here comes About page');
                 // window.localStorage.setItem("payment",0);
-        var islogin = window.localStorage.getItem("login");
-alert(islogin); 
+        // var islogin = window.localStorage.getItem("login");
+// alert(islogin); 
        
 
 
 
   // alert(payment);
 // $('#div_frm').show();
-if(islogin == 1){
-        var email = window.localStorage.getItem("email");
-        var payment = window.localStorage.getItem("payment");
+// if(islogin == 1){
+//         var email = window.localStorage.getItem("email");
+//         var payment = window.localStorage.getItem("payment");
   
-update_profile(email);
-  // $('#div_frm').hide();
-    var permission = cordova.plugins.permissions;
-    permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
-  // alert('fdfd');
-  // alert(payment);
-   if(payment == 0){
-// alert($('#payment_btn').attr('href'));
-     // $('.payment_btn').trigger('click');
-      $$('#payment_btn').trigger("click");
-    $( "#payment_btn" ).trigger( "click" );
-  }else{
-    $$('#home').trigger("click");
+// update_profile(email);
+//   // $('#div_frm').hide();
+//     var permission = cordova.plugins.permissions;
+//     permission.hasPermission(permission.READ_CONTACTS,function(results){
+//             if(!results[permission])
+//             {
+//                 permission.requestPermission(permission.READ_CONTACTS,function(results){
+//                     if(results[permission]){
+//                            alert("permission granted");
+//                    }
+//                 },)
+//                 // alert("permission granted failed");
+//             }
+//         }, 
+//         )
+//   // alert('fdfd');
+//   // alert(payment);
+//    if(payment == 0){
+// // alert($('#payment_btn').attr('href'));
+//      // $('.payment_btn').trigger('click');
+//       $$('#payment_btn').trigger("click");
+//     $( "#payment_btn" ).trigger( "click" );
+//   }else{
+//     $$('#home').trigger("click");
 
-  }
- // window.location.href = "home.html"
-  }
-    $(document).on('click', '#login_user', function(){  
-
-  $('#login_form').validate({ // initialize the plugin
-        errorLabelContainer: "#cs-error-note",
+//   }
+//  // window.location.href = "home.html"
+//   }
    
-     errorClass: 'errors',
-    rules: {
-     
-       
-        email: {
-           
-            required: true,
-            email:true,
-            
-        },
-         password: {
-           
-            required: true,
-            
-        },
-        
-    },
-    messages: {
-       
-        
-         email: {
-           
-            required: "Please enter  Email.",
-            email:"Please Enter Proper Email",
-            
-        },
-         password: {
-           
-            required: "Please enter  Password.",
-            
-            
-        },
-        
-       
-         
-    },
-        submitHandler: function (form) { // for demo
-          form =$('#login_form').serialize();
-          var  action = $('#action').val();
-          var  email = $('#email').val();
-          // alert(email);
-                window.localStorage.setItem("email",email);
-                var email =  window.localStorage.getItem("email");
-// alert(email);
-
-         $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
-                
-     $.ajax({
-            url: "https://digitalbcards.in/api/login/", 
-            method: "POST",
-            data:form, 
-            dataType:"json",            
-           
-            success: function(data) {
-
-              if(data.status == 0){
-               $('.snackbar').html(data.message);
-                my_toast();
-                
-    $('.loader').css('display','none');
-    
-                // alert(data.message);
-              }else{
-// alert(email);
-                window.localStorage.setItem("login",1);
-                window.localStorage.setItem("email",email);
-
-                 $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
-                     $.ajax({
-            url: "https://digitalbcards.in/api/user_profile/", 
-            method: "POST",
-            data:{email:email,secrete:"virus"}, 
-            dataType:"json",            
-           
-            success: function(data) {
-                // var data = JSON.stringify(data);
-                // alert(data.Refferal_id);
-               window.localStorage.setItem("payment",data.pay_status);
-               window.localStorage.setItem("user_id",data.id);
-               window.localStorage.setItem("language",data.language);
-               window.localStorage.setItem("referral",data.Refferal_id);
-               window.localStorage.setItem("mobile",data.mobile);
-               window.localStorage.setItem("profession",data.profession);
-               window.localStorage.setItem("about_me",data.about_me);
-               window.localStorage.setItem("skype",data.skype);
-               window.localStorage.setItem("address",data.address);
-                window.localStorage.setItem("address_map_link",data.address_map_link);
-               window.localStorage.setItem("fb_url",data.fb_url);
-
-               window.localStorage.setItem("y_tube_link",data.y_tube_link);
-               window.localStorage.setItem("website",data.website);
-                
-               window.localStorage.setItem("whatsapp",data.whatsapp);
-               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
-               window.localStorage.setItem("name",data.name);
-               //window.localStorage.setItem("username",data.name);
-               window.localStorage.setItem("user_image",data.profile_img);
-
-               window.localStorage.setItem("company_name",data.company_name);
-               window.localStorage.setItem("vision",data.vision);
-               window.localStorage.setItem("mission",data.mission);
-               window.localStorage.setItem("about_comp",data.about_comp);
-               window.localStorage.setItem("comp_address",data.comp_address);
-               window.localStorage.setItem("map_link",data.map_link);
-               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
-               window.localStorage.setItem("company_img",data.company_img);
-               window.localStorage.setItem("theme",data.theme);
-var referral =  window.localStorage.getItem("referral");
-                   // alert(referral);
-              
-               // alert(data.fb_url);
-                $('#user').html(data.name);
-                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
-                // $('#user_image').css("height",'80px');
-                // $('#user_image').css("width",'80px');
-               // $('#preloader').hide();
-    $('.loader').css('display','none');
-                
-              
-            //location.reload();
-          }
-        }) 
-
-              var payment =   window.localStorage.getItem("payment");
-              // alert(payment);
-               // alert(data.message);
-               $('.snackbar').html(data.message);
-  // setTimeout(function(){ $('.snackbar').show(); }, 3000);
-                my_toast();
-                if(payment != ''){
-                  location.reload();
-                }else{
-
-    $$('#payment_btn').trigger("click");
-                }
-    $('.loader').css('display','none');
-
-              // $('#home').click();
-              // $('#icon').html('<i class="fa fa-check font-30 icon-circle icon-l color-green-dark bg-white shadow-icon-large"></i>');
-              // $('#error_msg_title').html('Login Succes');            
-        // $('#error_msg').html(data.message);            
-// $('#attention').addClass('active-menu-box-modal');
- // window.location.href = "home.html"
-              }
-            //location.reload();
-          }
-        })
-            return false; // for demo
-        }
-    });
-})
-
-});
 
 
 // Now we need to run the code that will be executed only for About page.
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-myApp.onPageInit('skils', function (page) {
-    // Do something here for "about" page
 
-})
 
 // Option 2. Using one 'pageInit' event handler for all pages:
 $$(document).on('pageInit', function (e) {
