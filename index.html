@@ -405,10 +405,10 @@
  function collapse(id){
 
 
- $('.user-image').hide();
-   $('.social').hide();
+ // $('.user-image').hide();
+   // $('.social').hide();
    $('.middle-block').css('visibility', 'hidden');
-   
+   // alert('dsdssss');
        if (id!=1) {
        if(($('#collapse1').attr('class'))=='panel-collapse collapse in'){
       $('#collapse1').removeClass('in');
@@ -502,11 +502,12 @@ if (id!=5) {
 
      if(($('#collapse'+id).attr('class'))=='panel-collapse collapse in'){
       // $('#collapse1').removeClass('in');
+      // alert('dsds');
        $('.user-image').show();
       $('.social').show();
       $('.middle-block').css('visibility', 'visible');
       
-   };
+   }
   
 
 

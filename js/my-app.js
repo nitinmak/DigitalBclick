@@ -11,6 +11,7 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+// alert('fdfd');
 if(navigator.connection.type==0)
 {
     alert('This application requires internet. Please connect to the internet.');
@@ -3273,7 +3274,14 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
+// alert('dsds');
+  // $("#share_form").submit();
 
+// $$('.whatsaapp').trigger("click");
+$(document).on('blur', '#email', function() {
+// alert('dsds');
+dddd();
+})
                window.localStorage.setItem("unique",'home');
                window.localStorage.setItem("unique_home",'0');
   // alert("page initialize");
@@ -4238,4 +4246,98 @@ function details(id){
   window.localStorage.setItem("lead_id",id);
 
   $$('#lead_details').trigger('click');
+}
+
+function dddd(){
+  // alert('fdfd');
+       $('#share_form').validate({ // initialize the plugin
+        errorLabelContainer: "#cs-error-note",
+   
+     errorClass: 'errors',
+    rules: {
+     
+        "segment[]": "required",
+       
+         name: {
+           
+            required: true,
+            
+        },
+        
+        
+        
+    },
+    messages: {
+       
+        "segment[]": "Please Select Segment",
+        
+         name: {
+           
+            required: "Please enter  Reciver Name.",
+            
+            
+        },
+        
+        
+       
+         
+    },
+        submitHandler: function (form) { // for demo
+         // var c_code = $('#c_code').val();
+var c_code = $$("#cccc").find("option:checked").val();
+         var receivermobile = $('#receivermobile').val();
+         // alert(c_code+receivermobile);
+         $('#full_phone').val('+'+c_code+receivermobile);
+          form =$('#share_form').serialize();
+         // alert(form);
+                      var payment =  window.localStorage.getItem("payment");
+
+        if(payment == 0){
+   $('.snackbar').html('Make a payment to use Bcard features.');
+            my_toast();
+          return false;
+}else{
+
+          var  action = $('#action').val();
+          var  email = $('#email').val();
+        // $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    // $('.loader').css('display','flex');
+     $.ajax({
+            url: "https://digitalbcards.in/api/send_whatsapp/",
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+               // alert(data,message);
+              if(data.status == 0){
+                 $('.snackbar').html(data.message);
+  
+    $('.loader').css('display','none');
+                my_toast();
+                // alert(data.message);
+
+              }else if(data.status == 2){
+
+                
+                // alert(data.message);
+                   $('.snackbar').html(data.message);
+  
+             $('.loader').css('display','none');
+                my_toast();
+            window.location.href = data.url;
+              }else{
+                 $('.snackbar').html(data.message);
+  
+                my_toast();
+    $('.loader').css('display','none');
+
+              }
+            //location.reload();
+          }
+        })
+         }
+            return false; // for demo
+        }
+    }); 
 }
