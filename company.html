@@ -54,6 +54,72 @@ input[type="text"] {
 
 
 </style>
+ <style>
+            #imagePreview0, #imagePreview1, #imagePreview2, #imagePreview3 
+            {
+                width: 180px;
+                height: 180px;
+                margin-top: 2%;
+                background-position: center center;
+                background-size: cover;
+                -webkit-box-shadow: 0 0 1px 1px rgb(251, 238, 238);
+                display: inline-block;
+            }
+                        .croppie-container
+            { 
+            height: 85%!important;
+                width: 100%!important;
+             }
+             .btn.btn-success, .btn.btn-success[disabled] {
+    background: #ffffff;
+    color: #07314a;
+}
+.crimg
+{
+        margin-left: 15px;
+}
+.uploadcard
+{
+    padding-top: 0
+}
+
+
+@media (max-width: 1024px)
+{
+  /*  .rwupload
+    {
+        text-align: center;
+    }*/
+    .crimg
+{
+        margin-left: 5em;
+}
+
+}
+
+@media (max-width: 800px)
+{
+    .crimg {
+    margin-left: 6em;
+}
+}
+
+@media (max-width: 767px)
+{
+     .rwupload
+    {
+        text-align: center;
+    }
+       .crimg {
+    margin-left: 0em;
+}
+.uploadleft
+{
+    padding-left: 0
+}
+}
+
+</style>
                    
                            <div class="card" style="background-color: #07314a;">
    <div class="card-header">
@@ -139,13 +205,58 @@ input[type="text"] {
                                                         <small class="form-control-feedback"></small>
                                                 </div>
                                             </div>
+                                             <div class="col-12">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">GST No</label>
+                                                        <input class="form-control text-white " type="text" id="gst_no" name="gst_no" >
+                                                        <small class="form-control-feedback"></small>
+                                                </div>
+                                            </div>
+                                          <div class="col-12">
+                                               <!-- <form method="post" id="company_form" enctype="multipart/form-data"> -->
+                                                  <!-- <input type="hidden" name="secrete" value="virus"> -->
+
+                                            <!-- <input type="hidden" name="user_id" id="user_idq"> -->
+                                            <!-- <input type="hidden" name="add_am" value="1" id="add_am"> -->
+                                             <div class="row">
+                                                <div class="col-xs-12 col-xl-11 uploadleft">
+                                                    <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static " style="margin-left: 15px;">Gst Document</label>
+                                                         <input  type="file" name="image" value="" class="img" style="padding-top: 2%;" onchange="checkfile( this )" id="upload_image"  /><br>
+
+                                                                 <div id="image_demo" style="width:350px; max-width:100%; margin-top:30px; display: none ;"></div>
+
+                                                         <div style="margin-left: 20px;" id="imagePreview0">
+                                                         <!-- <img class="uploadcard " width="180" height="190" src="../upload/<?php echo $my_profile['company_img']; ?>"> -->
+                                                    </div>
+                                                </div>
+
+                                                    <input type="hidden" name="crop_me_img" id="crop_me_img">
+                                                    <input type="hidden" name="add_am" value="1">
+
+
+                                                <!-- <div class="form-group">
+                                                    <label class="col-md-3 control-label">Image</label>
+                                                    <div class="col-md-4">
+                                                        
+                                                         <input id="uploadFile0" type="file" name="image" value="" class="img" style="padding-left:10%;" onchange="checkfile( this )" /><br>
+                                                 
+                                                         <img width="180" height="190" src="../upload/<?php echo $my_profile['company_img']; ?>">
+                                                        </div>
+                                                    </div> --> 
+                                                </div>
+                                               
+                                               </div>
+                                           
+                                            </div>
                                            </div>
                                         
                                         <div class="card-footer" >
                                         <div class="col-12">
                                             <!-- <input type="hidden" name="add_am" value="1"> -->
                                            <!-- <button type="submit" id="save_button" class="button button-rounded button-green-3d button-green">Submit</button> -->
-                                            <button  type="button" name="add_am" id="save_button" style="background: #007aff;border:none;color:white;font-size: 10px" class="btn  mb-1 btn-light px-4">Submit</button>
+                                           <a href="#"   class="btn mb-1 btn-light px-4 crop_image" style="background: #007aff;border:none;color:white">Submit</a>
+                                            <button  type="button" name="add_am" id="save_button"  style="display: none; " class="btn  mb-1 btn-light px-4">Submit</button>
                                            <a href="#"   class="btn view_card mb-1 btn-light  px-4" style="text-align: center;margin: 0px 1px 0px 1px;background: #007aff;border:none;color:white;font-size: 10px">Preview Card</a>
                                            <a href="profile.html"  class="btn backpage  mb-1 btn-light  px-4" style="background: #007aff;border:none;color:white;font-size: 10px">Back</a>
                                            <!-- <a href="vcard.html" id="v"></a> -->

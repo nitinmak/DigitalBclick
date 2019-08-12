@@ -318,6 +318,8 @@ update_profile(email);
                window.localStorage.setItem("map_link",data.map_link);
                window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
                window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("gst_no",data.gst_no);
+               window.localStorage.setItem("gst_img",data.gst_img);
                window.localStorage.setItem("theme",data.theme);
 var referral =  window.localStorage.getItem("referral");
                    // alert(referral);
@@ -2180,7 +2182,12 @@ $$(document).on('pageInit', '.page[data-page="company"]', function (e) {
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
  
  var company_name =  window.localStorage.getItem("company_name"); 
- // alert(company_name);
+ var gst_no =  window.localStorage.getItem("gst_no"); 
+ var gst_img =  window.localStorage.getItem("gst_img"); 
+ // alert(gst_no);
+ var bg ='url("https://digitalbcards.in/upload/'+gst_img+'")';
+                            $("#imagePreview0").css("background-image",bg);
+
  var vision =  window.localStorage.getItem("vision"); 
  var mission =  window.localStorage.getItem("mission"); 
  var about_comp =  window.localStorage.getItem("about_comp"); 
@@ -2192,6 +2199,7 @@ $$(document).on('pageInit', '.page[data-page="company"]', function (e) {
  $('#c_name').val(company_name);
  $('#vision').val(vision);
  $('#mission').val(mission);
+ $('#gst_no').val(gst_no);
  $('#about_comp').val(about_comp);
  CKEDITOR.instances['editor2'].setData(about_comp)
  // CKEDITOR.instances.editor.setData(about_comp);
@@ -2199,12 +2207,95 @@ $$(document).on('pageInit', '.page[data-page="company"]', function (e) {
  $('#map_link').val(map_link);
  $('#about_cyoutube').val(about_cyoutube);
 
+ $(function () {
+                           $("#uploadFile0").on("change", function ()
+                           {
+                               var img = $("#uploadFile0").val();
+                               if (img == '') {
+                                   $("#imagePreview0").removeAttr("style");
+                               }
+                               var files = !!this.files ? this.files : [];
+                               if (!files.length || !window.FileReader)
+                                   return; // no file selected, or no FileReader support
+
+                               if (/^image/.test(files[0].type)) { // only image file
+                                   var reader = new FileReader(); // instance of the FileReader
+                                   reader.readAsDataURL(files[0]); // read the local file
+
+                                   reader.onloadend = function () { // set image data as background of div
+                                       $("#imagePreview0").css("background-image", "url(" + this.result + ")");
+                                   }
+                               }
+                           });
+                       });
+       document.addEventListener("DOMContentLoaded", function(event) {
+                        document.querySelectorAll('img').forEach(function(img){
+                            img.onerror = function(){this.style.display='none';};
+                        })
+                    });
+                    (function($) {
+                        $(document).ready(function(){
+                            // $('#div1').hide();
+                            $('#div2').hide();
+                            $image_crop = $('#image_demo').croppie({
+                                enableExif: true,
+                                viewport: {
+                                    width:200,
+                                    height:200,
+                                    type:'square' //circle
+                                },
+                                boundary:{
+                                    width:300,
+                                    height:300
+                                }
+                            });
+
+                            $('#upload_image').on('change', function(){
+                                var reader = new FileReader();
+                                reader.onload = function (event) {
+                                    $image_crop.croppie('bind', {
+                                        url: event.target.result
+                                    }).then(function(){
+                                        console.log('jQuery bind complete');
+                                    });
+                                }
+                                reader.readAsDataURL(this.files[0]);
+                                /* $('#uploadimageModal').modal('show');*/
+                                $('#image_demo').show();
+                                $('#imagePreview0').hide();
+                            });
+
+                            $('.crop_image').click(function(event){
+                               
+                                $image_crop.croppie('result', {
+                                    type: 'canvas',
+                                    size: 'viewport'
+                                }).then(function(response){
+                                    // alert(response);
+                                    $('#crop_me_img').val(response);
+                                    // $('#div2').show();
+                                    // $('#abc').hide();
+                                    // $('#div2').css( 'pointer-events', 'none' );
+                                    // $('#div3').hide();
+                                       $('#save_button').trigger( "click" );
+
+
+                                })
+                            });
+
+                        });
+                    })(jQuery);
+
     $("#save_button").click(function() {
                     // var content = $( 'textarea.editor' ).val();
                     //alert( );
                     $('#about_comp').val(editor.getData());
 // $('#about_me_vl').val(editor.getData());
-   var form =$('#contact_form').serialize();
+   // var form =$('#contact_form').serialize();
+     var formData = new FormData($("#contact_form")[0]);                    
+ // alert(formData);
+ 
+
                         // alert(form);
                          if($('#c_name').val() == ''){
                           $('.snackbar').html('Enter company name');
@@ -2226,8 +2317,11 @@ $('.pages').prepend(' <div class="loader justify-content-center "><div class="ma
                                 $.ajax({
             url: "https://digitalbcards.in/api/company/", 
             method: "POST",
-            data:form, 
-            dataType:"json",            
+            data:formData,  
+            dataType:"json",  
+            contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false,           
            
             success: function(data) {
               // alert(data.status);
@@ -3352,6 +3446,8 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
                window.localStorage.setItem("map_link",data.map_link);
                window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
                window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("gst_no",data.gst_no);
+               window.localStorage.setItem("gst_img",data.gst_img);
                window.localStorage.setItem("theme",data.theme);
 var referral =  window.localStorage.getItem("referral");
                    // alert(referral);
@@ -4132,6 +4228,8 @@ function add_segment(t){
                window.localStorage.setItem("map_link",data.map_link);
                window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
                window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("gst_no",data.gst_no);
+               window.localStorage.setItem("gst_img",data.gst_img);
                window.localStorage.setItem("theme",data.theme);
 
               
