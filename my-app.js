@@ -12,6 +12,7 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+    alert('fdfd');
     // alert($('.page').data('page'));
     // my_toast();
 // alert($.mobile.activePage.is('#homepage'));
@@ -52,20 +53,20 @@ document.addEventListener("backbutton", function(e){
 
 }, false);
  // **my permission code**
-        var permission = cordova.plugins.permissions;
+        // var permission = cordova.plugins.permissions;
 
-        permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+        // permission.hasPermission(permission.READ_CONTACTS,function(results){
+        //     if(!results[permission])
+        //     {
+        //         permission.requestPermission(permission.READ_CONTACTS,function(results){
+        //             if(results[permission]){
+        //                    alert("permission granted");
+        //            }
+        //         },)
+        //         // alert("permission granted failed");
+        //     }
+        // }, 
+        // )
 
 //                                $.ajax({
 //             url: "https://digitalbcards.in/api/fetch_amount/", 
@@ -130,19 +131,19 @@ update_profile(email);
   // alert(payment);
 
 if(islogin == 1){
-    var permission = cordova.plugins.permissions;
-    permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+    // var permission = cordova.plugins.permissions;
+    // permission.hasPermission(permission.READ_CONTACTS,function(results){
+    //         if(!results[permission])
+    //         {
+    //             permission.requestPermission(permission.READ_CONTACTS,function(results){
+    //                 if(results[permission]){
+    //                        alert("permission granted");
+    //                }
+    //             },)
+    //             // alert("permission granted failed");
+    //         }
+    //     }, 
+    //     )
   // alert('fdfd');
   // alert(payment);
    if(payment == 0){
@@ -3210,28 +3211,35 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
-  //alert("page initialize");
+  alert("page initialize");
+  
+ $$('.whatsaapp').trigger("click");
                window.localStorage.setItem("unique",'home');
                window.localStorage.setItem("unique_home",'0');
  
 
  var referral =  window.localStorage.getItem("referral");
  // alert(referral);
+$(document).on('click', '.whatsaapp', function() {
+alert('dsds');
+  $("#share_form").submit();
+ 
+ })
  $('.navbar').show();
     $('.back').hide();
-      var permission = cordova.plugins.permissions;
-  permission.hasPermission(permission.READ_CONTACTS,function(results){
-            if(!results[permission])
-            {
-                permission.requestPermission(permission.READ_CONTACTS,function(results){
-                    if(results[permission]){
-                           alert("permission granted");
-                   }
-                },)
-                // alert("permission granted failed");
-            }
-        }, 
-        )
+  //     var permission = cordova.plugins.permissions;
+  // permission.hasPermission(permission.READ_CONTACTS,function(results){
+  //           if(!results[permission])
+  //           {
+  //               permission.requestPermission(permission.READ_CONTACTS,function(results){
+  //                   if(results[permission]){
+  //                          alert("permission granted");
+  //                  }
+  //               },)
+  //               // alert("permission granted failed");
+  //           }
+  //       }, 
+  //       )
 
      var email =  window.localStorage.getItem("email");
       $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
@@ -3460,7 +3468,7 @@ $("#segment").trigger('create');
          // alert(c_code+receivermobile);
          $('#full_phone').val(c_code+receivermobile);
           form =$('#share_form').serialize();
-         // alert(form);
+         alert(form);
                       var payment =  window.localStorage.getItem("payment");
 
         if(payment == 0){
