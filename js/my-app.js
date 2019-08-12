@@ -3276,12 +3276,11 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
 // alert('dsds');
   // $("#share_form").submit();
-
+// dddd();
 // $$('.whatsaapp').trigger("click");
-$(document).on('blur', '#email', function() {
+// $(document).on('click', '.whatsaapp', function() {
 // alert('dsds');
-dddd();
-})
+// })
                window.localStorage.setItem("unique",'home');
                window.localStorage.setItem("unique_home",'0');
   // alert("page initialize");
@@ -4249,7 +4248,7 @@ function details(id){
 }
 
 function dddd(){
-  // alert('fdfd');
+  alert('fdfd');
        $('#share_form').validate({ // initialize the plugin
         errorLabelContainer: "#cs-error-note",
    
@@ -4289,7 +4288,7 @@ var c_code = $$("#cccc").find("option:checked").val();
          // alert(c_code+receivermobile);
          $('#full_phone').val('+'+c_code+receivermobile);
           form =$('#share_form').serialize();
-         // alert(form);
+         alert(form);
                       var payment =  window.localStorage.getItem("payment");
 
         if(payment == 0){
