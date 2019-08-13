@@ -675,7 +675,7 @@ $('#view_card_in_popup').modal('show');
 if(payment == 0){
     // $("#frm1").submit();
     // alert(link);
-$('#'+link).attr('href','pay.html');
+// $('#'+link).attr('href','pay.html');
   // setTimeout(function(){ 
  $$('#'+link).trigger('click');
    // }, 2000);
@@ -713,14 +713,7 @@ function set_back(){
                                var payment =  window.localStorage.getItem("payment");
 
 // alert(payment);
-if(payment == 0){
-    // $("#frm1").submit();
-    // alert(link);
-$('#'+link).attr('href','pay.html');
-  // setTimeout(function(){ 
- $$('#'+link).trigger('click');
-   // }, 2000);
-}
+
 // check_payment(link);
                             }
          function logout(){

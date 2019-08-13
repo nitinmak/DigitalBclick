@@ -194,15 +194,15 @@ update_profile(email);
         )
   // alert('fdfd');
   // alert(payment);
-   if(payment == 0){
-// alert($('#payment_btn').attr('href'));
-     // $('.payment_btn').trigger('click');
-      $$('#payment_btn').trigger("click");
-    $( "#payment_btn" ).trigger( "click" );
-  }else{
-    $$('#home').trigger("click");
+//    if(payment == 0){
+// // alert($('#payment_btn').attr('href'));
+//      // $('.payment_btn').trigger('click');
+//       $$('#payment_btn').trigger("click");
+//     $( "#payment_btn" ).trigger( "click" );
+//   }else{
 
-  }
+//   }
+    $$('#home').trigger("click");
  // window.location.href = "home.html"
   }
     $(document).on('click', '#login_user', function(){  
@@ -343,12 +343,12 @@ var referral =  window.localStorage.getItem("referral");
                $('.snackbar').html(data.message);
   // setTimeout(function(){ $('.snackbar').show(); }, 3000);
                 my_toast();
-                if(payment != ''){
                   location.reload();
-                }else{
+    //             if(payment != ''){
+    //             }else{
 
-    $$('#payment_btn').trigger("click");
-                }
+    // $$('#payment_btn').trigger("click");
+    //             }
     $('.loader').css('display','none');
 
               // $('#home').click();
@@ -3296,9 +3296,9 @@ $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
 window.localStorage.setItem("unique",'viewcard');
     window.localStorage.setItem("unique_home",'1');
 
-   $(document).on('click', '#pay_button', function() {
-make_payment();
-   })
+//    $(document).on('click', '#pay_button', function() {
+// make_payment();
+//    })
 
 })
 $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
@@ -3688,11 +3688,11 @@ var c_code = $$("#cccc").find("option:checked").val();
          // alert(form);
                       var payment =  window.localStorage.getItem("payment");
 
-        if(payment == 0){
-   $('.snackbar').html('Make a payment to use Bcard features.');
-            my_toast();
-          return false;
-}else{
+//         if(payment == 0){
+//    $('.snackbar').html('Make a payment to use Bcard features.');
+//             my_toast();
+//           return false;
+// }else{
 
           var  action = $('#action').val();
           var  email = $('#email').val();
@@ -3732,7 +3732,7 @@ var c_code = $$("#cccc").find("option:checked").val();
             //location.reload();
           }
         })
-         }
+         // }
             return false; // for demo
         }
     }); 
@@ -3796,8 +3796,8 @@ $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
 
             // check_payment();          
      // window.location = 'pay.html';
-      $$('#payment_btn').trigger("click");
-    $( "#payment_btn" ).trigger( "click" );
+    //   $$('#payment_btn').trigger("click");
+    // $( "#payment_btn" ).trigger( "click" );
      // $$('#payment_btn').trigger('click');
      // $(document).ready(function() { $$('#payment_btn').trigger('click'); });
 
@@ -4386,14 +4386,14 @@ var c_code = $$("#cccc").find("option:checked").val();
          // alert(c_code+receivermobile);
          $('#full_phone').val('+'+c_code+receivermobile);
           form =$('#share_form').serialize();
-         alert(form);
+         // alert(form);
                       var payment =  window.localStorage.getItem("payment");
 
-        if(payment == 0){
-   $('.snackbar').html('Make a payment to use Bcard features.');
-            my_toast();
-          return false;
-}else{
+//         if(payment == 0){
+//    $('.snackbar').html('Make a payment to use Bcard features.');
+//             my_toast();
+//           return false;
+// }else{
 
           var  action = $('#action').val();
           var  email = $('#email').val();
@@ -4433,7 +4433,7 @@ var c_code = $$("#cccc").find("option:checked").val();
             //location.reload();
           }
         })
-         }
+         // }
             return false; // for demo
         }
     }); 
