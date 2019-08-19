@@ -99,7 +99,6 @@
 </style>
 </head>
 
-
 <body>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
@@ -125,7 +124,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content ">
                     <div class="modal-header border-bottom theme-header">
-                        <p class="text-uppercase font-weight-bold text-white my-2">Share Your Card</p>
+                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
                         <button type="button" class="close " data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -159,8 +158,8 @@
              <div class="modal1 fade"  id="view_card_in_popup" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content ">
-                    <div class="modal-header border-bottom" style="    background-color: #d59101;">
-                        <p class="title text-uppercase font-weight-bold  text-dark my-2">Share your Card</p>
+                    <div class="modal-header border-bottom">
+                        <p class="title text-uppercase font-weight-bold text-dark my-2">Choose your color</p>
                         <button type="button" class="close " data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -191,7 +190,6 @@
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                         <a href="#" class="link icon-only open-panel"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
-                        
                     <div class="right">
                     <!-- <div class="center sliding">Awesome App</div> -->
                         <!--
@@ -232,40 +230,34 @@
             <div class="page-content " style="background: white;">
           
              <div class="col-12">
-          <center><img src="img/new_logo.jpg" class="new_logo" width="100%"  height="95px" alt="" style="margin-top: 10px;margin-bottom: 10px;padding: 8px;" ></center>
+          <center><img src="img/new_logo.jpg" width="100%"  height="100px" alt="" style="margin-top: 10px;margin-bottom: 10px;padding: 8px;" ></center>
         </div>
         <!-- <a href="pay.html" id="payment_btn" ></a> -->
             <div class="card">
-               <a href="profile.html"  id="profil" onclick="close_sidebar('profil')" style="color: white;">
+               <a href="profile.html"  style="color: white;">
     <div class="card-header"  style="background-color: #d49100; padding: 0;">
-          <div class="col-60 ml-3" style="color: white;">
-                     Update DBcard
+         <div class="col-60 ml-3" style="color: white;">
+                      YOUR DBCARD
                     </div>
                     <div class="col-40">
-                           
-                                 <i class=" social fa fa-pencil-square-o" style="font-size:20px;color: white" ></i>
+                         <a href="profile.html" id="profileee" onclick="close_sidebar('profileee')"  class="social" style="color: white;">
+                                 <i class="fa fa-pencil-square-o" style="font-size:20px;"></i></a>
                     </div>
     </div>
   </a>
     <div class="card-content mt-1" style=" padding: 0;">
-         <div class="card rounded-50 border-0  bg-primary" style="margin-top:30px">
+         <div class="card rounded-50 border-0  bg-primary" style="margin: 0">
                                     <div class="card-header" style="background-color: #07314a;">
-                                        <a   href="#" data-toggle="modal" data-target="#colors">
-                                         <div class="row" data-toggle="modal" data-target="#colors" style="width: 100%; margin: auto;">
+                                        <div class="row" style="width: 100%; margin: auto;">
                                             <div class="col-md-12 col-sm-12" >
                                                 <div style="float: left;">
                                                 <h5 class="card-title  text-white"><p class="mb-0" style="font-size: 15px;color:white">Share DBcard / Save Contact</p></h5>
                                                 </div>
-                                              </a>
-                                                 <a   href="#" data-toggle="modal" data-target="#colors" style="text-align: right;">
-                                                <div style="float: right; padding-left: 20px;padding-right: 1px;">
-                                               <i class="fa fa-share-alt text-white" ></i>
+                                                <div style="float: right;">
+                                                <a style="text-align: right;"  href="#" data-toggle="modal" data-target="#colors"><i class="fa fa-share-alt text-white" ></i></a>
                                                 </div>
-                                              </a>
                                             </div>
-                                          
                                         </div>
-                                      </a>
                                     </div>
                                      <form method="post" id="share_form">   
                                     <div class="card-body  text-white" style="background-color: #07314a;">
@@ -290,14 +282,14 @@
                                                <!--   <input type='text' value='' onclick="displaycontacts()" class='form-control icon-input' id="receivername" name="name"placeholder="Type Receiver’s Name">   -->
                         <!-- </div> -->
                          <div id="showcontacts" style="display:none;">
-                          <!-- <select id="contacts-list" class="form-control text-white" name="phoneno" onchange="updateContacts();">
+                          <!-- <select id="contacts-list" class="form-control" name="phoneno" onchange="updateContacts();">
                             </select>
  -->                           
                          </div>
-                                                <input type="hidden" class="form-control text-white"  id="language" name="language" >
-                                                <input type="hidden" class="form-control text-white"  id="referral" name="referral" >
-                                                <input type="hidden" class="form-control text-white"  id="user_id" name="user_id" >
-                                                <input type="hidden" class="form-control text-white"  id="user_name" name="user_name" >
+                                                <input type="hidden" class="form-control"  id="language" name="language" >
+                                                <input type="hidden" class="form-control"  id="referral" name="referral" >
+                                                <input type="hidden" class="form-control"  id="user_id" name="user_id" >
+                                                <input type="hidden" class="form-control"  id="user_name" name="user_name" >
                                                   <input type="hidden" name="secrete" value="virus">
                                                 </div>
                                             </div>
@@ -305,24 +297,38 @@
                                                 <div class="form-group">
                                                     <div class="snackbar" style="z-index: 99999999999999999999999">Some text some message..</div>
                                                 <!-- <label>Phone Number</label> -->
-                                                <select placeholder="Decide Segment" class="form-control select2 selid icon-input " style="width:100%" id="segment" name="segment[]"  multiple required="">
-        <option value="-1" selected>Decide Segment</option>
-        
-   
+                                                     <div class = "list-block">
+                                                        <ul>
+                                                           
+<!-- Open In Popup + Searchbar + Multiple -->
+<li>
+  <a class="item-link smart-select smart-select-init" data-open-in="popup"  data-searchbar="true" data-searchbar-placeholder="Search car">
+    <select placeholder="Decide Segment" class="form-control select2 selid" style="width:100%" id="segment" name="segment[]"  multiple required="">
+      <optgroup label="Japanese">
+        <!-- <option value="honda" selected>Honda</option> -->
+        <option value="-1" selected></option>
+        <!-- <option value="mazda">Mazda</option> -->
+        <!-- <option value="nissan">Nissan</option> -->
+        <!-- <option value="toyota">Toyota</option> -->
+      </optgroup>
      
-     
-    </select><a><i class='fa fa-plus fa-2x times-icon' id="dsa"  style="color: #d49100;z-index: 11111;font-size: 25px" aria-hidden='true'></i></a>
+    </select>
+    <div class="item-content">
+      <div class="item-inner">
+        <div class="item-title">Segment</div>
+      </div>
+    </div>
+  </a>
+</li>
+<!-- Open In Sheet -->
 
+<!-- Open In Popover -->
+
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                                <div class="col-12" style="display: none;" id="new_seg">
-                                                <div class="form-group bmd-form-group cc1">
-                                                    <input type="text" onblur="add_segment(this)" class="form-control text-white " id="nw_segment" name="new_segment"    placeholder="Enter New segment" > 
-                          <!-- <ul id="contacts-list"></ul> -->
-                                                    <!-- <input type="text" class="form-control  text-white" value="+91"> -->
-                                                </div>
-                                            </div>
-                                 <style type="text/css">
+                                              <style type="text/css">
         
        input, input:before, input:after {
       -webkit-user-select: initial;
@@ -331,7 +337,9 @@
       -ms-user-select: initial;
       user-select: initial;
      } 
-    
+     .item-after{
+      display: none !important;
+     }
      .check-icon {
 right:50px;
 position:absolute;
@@ -355,54 +363,18 @@ padding-right:60px !important;
 .form-control{
   background: none;
   color:white;
-
-
-  /*border-bottom: 1px groove;*/
+  border: none;
+  border-bottom: 1px groove;
   
-}
-.item-after{
-  display: none !important;
-}
-.list-block .item-link .item-inner
-{
-  background-image:none;
 }
           </style>
                                              <div class="col-12">
                                                 <div class="form-group bmd-form-group cc1">
-                                                              <div class = " list-block icon-input " style="border-bottom:1px solid;    top: -5px;"  >
-                        <ul>
-                           <li>
-                              <a  data-searchbar = "true" data-searchbar-placeholder = "Search Countries"  class="item-link smart-select smart-select-init" data-open-in="popup">
-                              
-                                 <select name = "countries" id="cccc">
-  <option  data-option-image="https://digitalbcards.in/flags/in.png" data-image="https://digitalbcards.in/flags/in.png" selected="selected" value="91"></option>
- 
-
-                                    
-                                 </select>
-                                 
-                                 <div class = "item-content">
-                                    <div class = "item-inner" id="cc">
-                                       <div class = "item-title"></div>
-                                    </div>
-                                 </div>
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                      <input type='text' minlength="10"  pattern="\d*"  class='form-control times-icon  text-white' style="width:80%;border: none;    font-size: 14px;" id="receivermobile" name="mobile" onkeypress="return isNumber(event)"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric">
-                                                    <input type="hidden" class="form-control  text-white" name="full_phone" id="full_phone" >
+                                                    <input type="text" pattern="\d*" class="form-control text-white " id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
                           <!-- <ul id="contacts-list"></ul> -->
                                                     <!-- <input type="text" class="form-control  text-white" value="+91"> -->
                                                 </div>
                                             </div>
-                                           <!--  <div class="col-12">
-                                                <div class="form-group bmd-form-group cc1">
-                                                    <input type="text" minlength="10"  pattern="\d*" class="form-control text-white " id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
-                          
-                                                </div>
-                                            </div> -->
                                            <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
@@ -413,28 +385,28 @@ padding-right:60px !important;
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="position" name="position" autocomplete="off" placeholder="Position">
+                                                <input type="text" class="form-control" id="position" name="position" autocomplete="off" placeholder="Position">
                                                 
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="address" name="address" placeholder="Address Line 1">
+                                                <input type="text" class="form-control" id="address" name="address" placeholder="Address Line 1">
                                                  
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="address2" name="address2" placeholder="Address Line 2">
+                                                <input type="text" class="form-control" id="address2" name="address2" placeholder="Address Line 2">
                                                     
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="city" name="city" placeholder="City">
+                                                <input type="text" class="form-control" id="city" name="city" placeholder="City">
 
                                                 </div>
                                             </div>
@@ -442,42 +414,42 @@ padding-right:60px !important;
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="zip_code" name="zip_code" placeholder="Zip Code">
+                                                <input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="Zip Code">
                                                  
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="state" name="state" placeholder="State">
+                                                <input type="text" class="form-control" id="state" name="state" placeholder="State">
                                                  
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                <input type="text" class="form-control text-white" id="country" name="country" placeholder="Country Name">
+                                                <input type="text" class="form-control" id="country" name="country" placeholder="Country Name">
                                                   
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                <input type="text" class="form-control text-white" id="website" name="website" placeholder="Website">
+                                                <input type="text" class="form-control" id="website" name="website" placeholder="Website">
                                                 
                                                   
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                <label>Birth Date</label>
-                                                <input type="date" placeholder="Birthday" class="form-control text-white" id="birthday" name="birthday">
+                                                <label>Birthdate</label>
+                                                <input type="date" placeholder="Birthday" class="form-control" id="birthday" name="birthday">
                                                   
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                <label>Anniversary</label>
-                                                <input type="date" class="form-control text-white" id="anniversory" name="anniversory">
+                                                <label>Anniversory</label>
+                                                <input type="date" class="form-control" id="anniversory" name="anniversory">
                                                   
                                                 </div>
                                             </div>
@@ -507,19 +479,19 @@ padding-right:60px !important;
 
 <div class="block" style="width: 100%; padding: 5px;">
   <p class="row">
-    <button type="submit" name="send_whatsapp" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;" >WhatsApp</button>
+    <button type="button" name="send_sms"  id="button" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">More</button>
+    <button type="button" id="reset_form" name="send_sms" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Reset</button>
+   
+  </p> 
+  <p class="row">
     <button type="submit" id="save_only" name="save_only" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">SAVE NOW</button>
+    <button type="submit" name="send_whatsapp" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;" >WhatsApp</button>
  <!-- <button class="col button color-orange">colcol-xs-3tton button-fill color-orange -->
   </p>
   <p class="row">
     <button type="submit" name="send_email" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Send Email</button>
     <button type="submit" name="send_sms" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Send SMS</button>
   </p>
-  <p class="row">
-    <button type="button" name="send_sms"  id="button" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">More</button>
-    <button type="button" id="reset_form" name="send_sms" class="col-xs btn  btnsz1" style="width: 47%;background-color: white;    color: #07314a;">Reset</button>
-   
-  </p> 
 </div>
 
     </div>
@@ -580,17 +552,6 @@ padding-right:60px !important;
 
    <script type="text/javascript">
 
-
-
-    $(document).on('click', '#dsa', function(){  
-      $('#new_seg').show();
-  })
-
-function add_segment(t){
-  $('#segment').append('<option value="'+t.value+'" selected="selected">'+t.value+'</option>');
-  $('#new_seg').hide();
-
-}
   function update_profile(email){
                $.ajax({
             url: "https://digitalbcards.in/api/user_profile/", 
@@ -609,8 +570,6 @@ function add_segment(t){
                window.localStorage.setItem("profession",data.profession);
                window.localStorage.setItem("about_me",data.about_me);
                window.localStorage.setItem("skype",data.skype);
-                window.localStorage.setItem("address_map_link",data.address_map_link);
-               window.localStorage.setItem("address",data.address);
                window.localStorage.setItem("fb_url",data.fb_url);
 
                window.localStorage.setItem("y_tube_link",data.y_tube_link);
@@ -630,14 +589,12 @@ function add_segment(t){
                window.localStorage.setItem("map_link",data.map_link);
                window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
                window.localStorage.setItem("company_img",data.company_img);
-                window.localStorage.setItem("gst_no",data.gst_no);
-               window.localStorage.setItem("gst_img",data.gst_img);
                window.localStorage.setItem("theme",data.theme);
 
               
                // alert(data.fb_url);
                 $('#user').html(data.name);
-                $('#').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
                 // $('#user_image').css("height",'80px');
                 // $('#user_image').css("width",'80px');
                // $('#preloader').hide();
@@ -689,8 +646,6 @@ function add_segment(t){
                window.localStorage.setItem("profession",data.profession);
                window.localStorage.setItem("about_me",data.about_me);
                window.localStorage.setItem("skype",data.skype);
-                window.localStorage.setItem("address_map_link",data.address_map_link);
-               window.localStorage.setItem("address",data.address);
                window.localStorage.setItem("fb_url",data.fb_url);
 
                window.localStorage.setItem("y_tube_link",data.y_tube_link);
@@ -742,7 +697,6 @@ function add_segment(t){
    // $("#button").click(function() {
     // $(document).on('click', '.testclick', function() {
       // alert('fdfd');
-  
   $(document).on('click', '#button', function(){  
     // $(document).on('click', '#button', function(){  
       // alert('fdfd');
@@ -774,26 +728,26 @@ $(document).on('click', '.flag-container', function() {
     // trigger.click();
 });
 
-//  var input = document.querySelector("#receivermobile");
+ var input = document.querySelector("#receivermobile");
 
-//     var a=window.intlTelInput(input, {
-//     initialCountry: "auto",
-//      geoIpLookup: function(success, failure) {
+    var a=window.intlTelInput(input, {
+    initialCountry: "auto",
+     geoIpLookup: function(success, failure) {
 
 
-//     $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-//       // alert(jsonp);
-//       var countryCode = (resp && resp.country) ? resp.country : "";
-//       // alert(countryCode);
-//       success(countryCode);
+    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      // alert(jsonp);
+      var countryCode = (resp && resp.country) ? resp.country : "";
+      // alert(countryCode);
+      success(countryCode);
 
-//    $('.country-name').css('color','black');
-//     });
-//     },
+   $('.country-name').css('color','black');
+    });
+    },
 
-//   hiddenInput: "full_phone",
-//   utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
-// });
+  hiddenInput: "full_phone",
+  utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
+});
       // alert(a);
     // Following code will be executed for page with data-page attribute equal to "about"
    
@@ -823,54 +777,6 @@ $('#segment').append(data);
             //location.reload();
           }
         });  
-
-
-                                $.ajax({
-            url: "https://digitalbcards.in/api/country/", 
-            method: "POST",
-            data:{user_id:user_id,secrete:"virus"}, 
-            dataType:"json",            
-           
-            success: function(data) {
-                // var data = JSON.stringify(data);
-// alert(data);
-$('#cccc').append(data);
-$("#cccc").trigger('create');
-    $('.loader').css('display','none');
-
-            //    $('#username').html(data.name);
-             //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
-              
-            //location.reload();
-          }
-        });  
-$('.smart-select').on('smartselect:closed');
-
-$(document).on('change', '#cccc', function(){  
-  $$('.close-popup').trigger('click');
-   setTimeout(function () {
-      city=$$(this).val();
-   
-img = $$("#cccc").find("option:checked").data('image');
-name = $$("#cccc").find("option:checked").text();
-
-
-$('#cc .item-title').html('<img src="'+img+'">');
-$('.navbar').show();
-// $('#cc .item-title').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name +'&nbsp;&nbsp; <i style="font-size:20px" class="fa fa-angle-right"></i>');
-// $('.sliding').html('<img src="'+img+'">'+ '&nbsp;&nbsp;' + name);
-// $('.item-inner .item-after').html('<img src="'+img+'"> ');    
-     }, 100);
-})
-
-
-
-// $('.navbar').show();
-
-var name = $$("#cccc").find("option:checked").text();
-var d= $$("#cccc").find("option:checked").data('image');
-// $('.item-inner .item-after').html('<img src="'+d+'"> ');
-$('#cc .item-title').html('<img src="'+d+'">');
 
                       var user_id =  window.localStorage.getItem("user_id");
                       var language =  window.localStorage.getItem("language");
@@ -932,11 +838,6 @@ $('#cc .item-title').html('<img src="'+d+'">');
          
     },
         submitHandler: function (form) { // for demo
-            var c_code = $$("#cccc").find("option:checked").val();
-
-         var receivermobile = $('#receivermobile').val();
-         // alert(c_code+receivermobile);
-         $('#full_phone').val(c_code+receivermobile);
           form =$('#share_form').serialize();
          // alert(form);
                       var payment =  window.localStorage.getItem("payment");
