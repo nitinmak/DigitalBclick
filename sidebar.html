@@ -767,11 +767,11 @@ $('#'+link).attr('href','pay.html');
 if(payment == 0){
     // $("#frm1").submit();
     // alert(link);
-$('#'+link).attr('href','pay.html');
-    location.href = 'pay.html'
+// $('#'+link).attr('href','pay.html');
+    // location.href = 'pay.html'
 
   // setTimeout(function(){ 
- // $$('#'+link).trigger('click');
+ $$('#'+lnk).trigger('click');
    // }, 2000);
 }else{
 location.href = lnk;
@@ -825,18 +825,9 @@ $('#view_card_in_popup').modal('show');
                                var payment =  window.localStorage.getItem("payment");
 
 // alert(payment);
-if(payment == 0){
-    // $("#frm1").submit();
-    // alert(link);
-$('#'+link).attr('href','pay.html');
-    location.href = 'pay.html'
 
-  // setTimeout(function(){ 
- // $$('#'+link).trigger('click');
-   // }, 2000);
-}else{
 location.href = lnk;
-}
+
 }
 
  function logout(){
