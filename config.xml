@@ -78,25 +78,25 @@
 	     <preference name="android-build-tool" value="gradle" /> 
 		
 		<edit-config platform="ios" target="NSCameraUsageDescription" file="*-Info.plist" >
-    		<string>This app requires constant access to your Camera in order to Click your poto, even when the screen is off.</string>
-	</edit-config>
+    			<string>DigitalbCards requires permission to access Camera on your device</string>
+		</edit-config>
  
-
-<!-- 	    <edit-config  target="*-Info.plist" parent="NSCameraUsageDescription" mode="replace">
-	        <string>It is used for  take aphoto for user profile.</string>
-	    </edit-config> -->
+		    <edit-config  target="*-Info.plist" parent="NSCameraUsageDescription" mode="replace">
+			<string>DigitalbCards used for  take a photo for user profile.</string>
+		    </edit-config>
 	    
-	<config-file platform="ios" target="*-Info.plist" parent="NSContactsUsageDescription">
-	        <string>It is used for pick contact To share your Id</string>
-	    </config-file>
+		<config-file platform="ios" target="*-Info.plist" parent="NSContactsUsageDescription">
+	        	<string>DigitalbCards used for pick contact To share your Id</string>
+	    	</config-file>
 
 
 	    <config-file  target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
-	        <string>It is used for Pick photo to set user profile</string>
+	        <string>DigitalbCards used for Pick photo to set user profile</string>
 	    </config-file>
 
 
 	    <edit-config  target="*-Info.plist" parent="NSPhotoLibraryUsageDescription" mode="replace">
-	        <string>It is used for Pick photo to set user profile</string>
+	        <string>DigitalbCards used for Pick photo to set user profile</string>
 	    </edit-config>
+		
 	</widget>
