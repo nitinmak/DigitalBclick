@@ -78,12 +78,12 @@
 	     <preference name="android-build-tool" value="gradle" /> 
 		
 		<edit-config platform="ios" target="NSCameraUsageDescription" file="*-Info.plist" >
-    		<string>This app requires constant access to your Camera in order to Click your poto, even when the screen is off.</string>
+    		<string>Digital bcards use you camera to click your photo and set your profile.</string>
 	</edit-config>
  
 
 <!-- 	    <edit-config  target="*-Info.plist" parent="NSCameraUsageDescription" mode="replace">
-	        <string>It is used for  take aphoto for user profile.</string>
+	        <string>Digital bcards use you camera to click your photo and set your profile.</string>
 	    </edit-config> -->
 	    
 	<config-file platform="ios" target="*-Info.plist" parent="NSContactsUsageDescription">
